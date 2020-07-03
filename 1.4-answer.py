@@ -11,7 +11,7 @@ def palindromePerm(string):
     for letter in string:
         if letter.isalpha():
             s1 = s1 + letter
-    s1 = str(s1.islower())
+    s1 = str(s1.lower())
     print("s1 ", s1)
     # set up a list
     s1_list = set(s1)
@@ -23,6 +23,8 @@ def palindromePerm(string):
     for letter in s1:
         s1_dict[letter] += 1
     length = len(s1)
+    for key, value in s1_dict.items():
+        print(key, value)
     # with even length:  if all counts even, no odd counts = True
     if length % 2 == 0:
         for key, value in s1_dict.items():
@@ -34,8 +36,8 @@ def palindromePerm(string):
         for key, value in s1_dict.items():
             if value % 2 != 0:
                 for key1, value1 in s1_dict.items():
-                    if value1 % 2 != 0:
-                        print(False)
+                    if value1 % 2 != 0 and key != key1:
+                        print("else", False)
                         return False
     # return true if you made it here
     print(True)
