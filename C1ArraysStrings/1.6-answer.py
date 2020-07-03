@@ -39,8 +39,8 @@ def string_compression(string):
     for z in range(0, len(substrings)):
         # print(substrings[z][0])
         compressed = compressed + substrings[z][0] + str(count_array[z])
-    print(compressed)
     if len(compressed) < length:
+        print(compressed)
         return compressed
     else: 
         print(string)
