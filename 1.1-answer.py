@@ -13,4 +13,6 @@ def isStringUnique(string):
         return True
     return False
 
+
 isStringUnique('abcdefg')
+isStringUnique('abcdefgabcde')
