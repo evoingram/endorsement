@@ -4,7 +4,6 @@
 
 # 4 x 4 matrix 
 
-
 # the following function is adapted from 1.7 solution:
 def print_matrix(matrix):
     length = len(matrix)
