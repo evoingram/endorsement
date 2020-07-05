@@ -34,7 +34,7 @@ class LinkedList:
             else:
                 after2.next = current_head
                 after2 = after2.next
-            curr = curr.next
+            current_head = current_head.next
         after2.next = None
 
         # merge the list
