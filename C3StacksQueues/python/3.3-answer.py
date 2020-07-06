@@ -32,17 +32,19 @@ class Stacks:
         for x in range(0, stack_length):
             lengths.append(len(self.SetofStacks[x]))
         for x in range(0, stack_length):
-            length = len(self.SetofStacks[x]
+            length = len(self.SetofStacks[x])
             # if first stack is at threshold then
             if length >= current_threshold:
                 # remove last item of last stack
                 deleted = self.pop()
-                for y in range(length-1, 0, -1):
+                for y in range(length, 0, -1):
                     current_length = len(self.SetofStacks[y])
                     item_to_move = self.SetofStacks[y][current_length]
                     # move last item of previous stack to last stack
+                    self.SetofStacks[y+1].insert(0, item_to_move)
                     # repeat until you get to first stack
-                    # then add item to top of first stack
+                # then add item to top of first stack
+                self.SetofStacks[0].insert(0, item)
             # else if first stack not at threshold then:
             else:
                 # add item to top of first stack
