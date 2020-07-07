@@ -20,14 +20,15 @@ def build_order(projects, dependencies):
             for z in range(0, dependencies_length):
                 if projects[y] == dependencies[z][0]:
                     for w in range(0, projects_length):
-                        if w < y:
-                            item_to_move = projects[w]
-                            # remove dependencies[1]/projects[w]
-                            del projects[w]
-                            # add dependencies[1] to before projects[y]
-                            projects.insert(y-1, item_to_move)
-                        # else move on to next dependencies
-    
+                        if projects[w] == dependencies[z][1]:
+                            if w < y:
+                                item_to_move = projects[w]
+                                # remove dependencies[1]/projects[w]
+                                del projects[w]
+                                # add dependencies[1] to before projects[y]
+                                projects.insert(y-1, item_to_move)
+                            # else move on to next dependencies
+        
     # check if new projects list matches all dependencies
     for x in range(0, projects_length):
         for y in range(0, projects_length):
