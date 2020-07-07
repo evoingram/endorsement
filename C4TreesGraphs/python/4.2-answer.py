@@ -3,6 +3,8 @@
 # Given a sorted (increasing order) array with unique integer elements, write an algorithm to 
     # create a binary search tree with minimal height.
 
+import statistics
+
 class BinarySearchTree:
     def __init__(self, value):
         self.value = value
@@ -30,5 +32,8 @@ class BinarySearchTree:
     
     def minimal_tree(self, array):
         length = len(array)
+        median = statistics.median(array)
+        self.insert(median)
         for x in range(0, length):
-            self.insert(value)
+            if x != median:
+                self.insert(value)
