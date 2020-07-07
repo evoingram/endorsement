@@ -20,7 +20,6 @@ class LinkedList:
             return None
         previous_head = None
         while current_head: 
-            pass
             # if is in cache, skip
             if current_head.data in cache:
                 previous_head.next = current_head.next 
