@@ -41,6 +41,7 @@ Also I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).
 - [ ] [30 Days of React](https://www.youtube.com/watch?v=100pKUE3OPI&list=PLlxurZn3gw7oc5ebo1EvnuBO8u532X9zn, "30 Days of React")  
 - [ ] [Mobile](https://www.youtube.com/playlist?list=PLlxurZn3gw7rkriBgH6KvCkEUF8uc1FNJ, "mobile")  
 - [ ] [UML](https://www.youtube.com/playlist?list=PLlxurZn3gw7qJCVtGcAQ_ikonlIkklE-t)
+- [ ] [Excellent Interview-Related Tips from Dan Croitor](https://www.youtube.com/c/DanCroitor/videos)
 
 ### Note Taking
 YMMV, but I highly recommend [Cornell note-taking](http://lawyerist.com/75163/cornell-method-note-taking/?utm_source=lawyerist_sidebar) style for note taking with a weekly review (answering the questions) to stay refreshed on what you learned.
@@ -120,3 +121,4 @@ If you're having trouble figuring out what to learn next, my suggestion is to fi
 - Handwriting notes isn't for everyone, but it does force you to think about what you're writing for a longer time than if you're typing the same thing.
 - Don't be afraid to write design docs, UML diagrams, robust general documentation, Postman docs/tests, and the like for even small projects, because it proves you know how to do it and shows leadership, shows that you can keep the big picture in mind.
 - Put general comments throughout your code while you're writing your project so you know why stuff is the way it is and maybe extremely short summaries of what it does, because you aren't going to remember why you did something six months down the road when you need it.  It will be useful to have this info for interviews.
+- If you are terrified of public speaking, there is only one way to get over it, and that's to practice it.  Go on Zoom, answer an interview question, no matter if it's behavioral or technical, draw, go through the motions, and talk out loud, recording it to watch it later.  Then when you watch it, make some general notes about things you didn't like or think can be improved.  Do this over and over and over again until you are comfortable.  There are services out there that you can do this with a buddy or an interviewer, free and paid, but if you are able to self-evaluate, you only need yourself.
