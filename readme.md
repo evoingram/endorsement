@@ -20,14 +20,22 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 - [TypeScript]()
 - [Azure]()
 - [PowerShell]()
-- [System Design & Architecture]() (includes object-oriented design patterns)
+- [System Design & Architecture]() (includes UML & object-oriented design patterns)
 - [System Design Interviews]()
 - [interview tips]()
 - [code review tips]()
 - [behavioral questions]()
 - [self-study questions]() (only questions, no answers for this section!)
-- [agile]()
+- [Agile]()
 - [hot-seat questions]()
+- [operating system]()
+- [Cortana]()
+- [Visual Basic]()
+- [Tailwind]()
+- [GraphQL]()
+- [Emmet]()
+- [Postman]()
+- [Bootstrap]()
 
 ## Learning Resources
 
@@ -44,6 +52,7 @@ I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a g
 - [ ] [Visual Studio](https://channel9.msdn.com/Shows/Visual-Studio-Toolbox, "Visual Studio")  
 - [ ] [Operating System Tutorial](https://www.tutorialspoint.com/operating_system/index.htm)
 - [ ] [Azure Tutorial](https://www.tutorialspoint.com/microsoft_azure/index.htm)
+- [ ] [Google Style Guide]()
 
 ### Video
 Also I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).  Lambda students receive a free six-month sub as part of the GitHub Student Pack.
@@ -125,6 +134,7 @@ I wanted to share these links because there's some really good info on job-relat
 - [ ] Building Secure and Reliable Systems
 - [ ] Art of Agile Development
 - [ ] Continuous Delivery
+- [ ] Intro to Algorithms
 - [ ] DevOps Toolkit
 - [ ] DevOps Web Development
 - [ ] The Lean Startup
