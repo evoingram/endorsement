@@ -3,16 +3,16 @@
 This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful. 
 
 ## Table of Contents:
-### - [Notes](#notes)
-   #### - [Languages & Frameworks](#languages-&-frameworks)
-   #### - [Theory & Concepts](#theory-&-concepts)
-   #### - [Software](#software)
-   #### - [Books](#books)
-#### - [Miscellaneous](#miscellaneous)
-### - [Learning Resources](#learning-resources)
-### - [What Project Do I Do Next?](#what-project-do-i-do-next)
-### - [What Do I Learn Next?](#what-do-i-learn-next)
-### - [Other Tips](#other-tips)
+* [Notes](#notes)
+  * [Languages & Frameworks](#languages-&-frameworks)
+  * [Theory & Concepts](#theory-&-concepts)
+  * [Software](#software)
+  * [Books](#books)
+  * [Miscellaneous](#miscellaneous)
+* [Learning Resources](#learning-resources)
+* [What Project Do I Do Next?](#what-project-do-i-do-next)
+* [What Do I Learn Next?](#what-do-i-learn-next)
+* [Other Tips](#other-tips)
 
 ## Notes
 ### TBD on completion of this section
