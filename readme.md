@@ -86,7 +86,9 @@ I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a g
 - [ ] [Visual Studio](https://channel9.msdn.com/Shows/Visual-Studio-Toolbox, "Visual Studio")  
 - [ ] [Operating System Tutorial](https://www.tutorialspoint.com/operating_system/index.htm)
 - [ ] [Azure Tutorial](https://www.tutorialspoint.com/microsoft_azure/index.htm)
-- [ ] [Google Style Guide]()
+- [ ] [Microsoft Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/)
+- [ ] [Google Style Guide 1](https://developers.google.com/style/)
+- [ ] [Google Style Guide 2](https://google.github.io/styleguide/cppguide.html)
 
 ### Video
 Also I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).  Lambda students receive a free six-month sub as part of the GitHub Student Pack.
