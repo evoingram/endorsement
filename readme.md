@@ -40,6 +40,7 @@ Also I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).
 - [ ] [Linux](https://www.youtube.com/watch?v=wBp0Rb-ZJak&list=PLlxurZn3gw7pbBOiw_FFZIpgvo07xCNDi,"Linux")  
 - [ ] [30 Days of React](https://www.youtube.com/watch?v=100pKUE3OPI&list=PLlxurZn3gw7oc5ebo1EvnuBO8u532X9zn, "30 Days of React")  
 - [ ] [Mobile](https://www.youtube.com/playlist?list=PLlxurZn3gw7rkriBgH6KvCkEUF8uc1FNJ, "mobile")  
+- [ ] [UML](https://www.youtube.com/playlist?list=PLlxurZn3gw7qJCVtGcAQ_ikonlIkklE-t)
 
 ### Note Taking
 YMMV, but I highly recommend [Cornell note-taking](http://lawyerist.com/75163/cornell-method-note-taking/?utm_source=lawyerist_sidebar) style for note taking with a weekly review (answering the questions) to stay refreshed on what you learned.
@@ -116,4 +117,4 @@ If you're having trouble figuring out what to learn next, my suggestion is to fi
 - Make sure your GitHub squares are green at least five days a week if at all possible.
 - Start creating your portfolio early so you can give it the time and effort it deserves.
 - Handwriting notes isn't for everyone, but it does force you to think about what you're writing for a longer time than if you're typing the same thing.
-- Don't be afraid to write design docs, UML diagrams, and the like for even small projects, because it proves you know how to do it and shows leadership, shows that you can keep the big picture in mind.
+- Don't be afraid to write design docs, UML diagrams, robust general documentation, Postman docs/tests, and the like for even small projects, because it proves you know how to do it and shows leadership, shows that you can keep the big picture in mind.
