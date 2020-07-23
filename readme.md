@@ -4,10 +4,10 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 
 ## Table of Contents:
 ### - [Notes](#notes)
-     #### - [Languages & Frameworks](#languages-&-frameworks)
-     #### - [Theory & Concepts](#theory-&-concepts)
-     #### - [Software](#software)
-     d#### - [Books](#books)
+   #### - [Languages & Frameworks](#languages-&-frameworks)
+   #### - [Theory & Concepts](#theory-&-concepts)
+   #### - [Software](#software)
+   #### - [Books](#books)
 #### - [Miscellaneous](#miscellaneous)
 ### - [Learning Resources](#learning-resources)
 ### - [What Project Do I Do Next?](#what-project-do-i-do-next)
