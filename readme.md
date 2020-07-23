@@ -5,7 +5,7 @@ This is mostly my Cracking the Coding Interview challenge answers as well as cop
 ## Learning Resources
 
 ### Written
-I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a great base or starter place to go for your knowledge.  There are a TON of different languages, frameworks, and fundamental computer science concepts explained there, including object-oriented design, data science and algorithms, how to use various cloud providers, languages, frameworks, operating systems, and more.  Study and take notes on that, and then any videos you go on to watch or other things you do to learn will be very easy to understand and follow through on.  
+I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a great base or starter place to go for your knowledge.  There are a TON of different languages, frameworks, and fundamental computer science concepts explained there, including object-oriented design, data science and algorithms, how to use various cloud providers, languages, frameworks, operating systems, and more.  Study and take notes on a subject there, and then any videos you go on to watch or other things you do to learn will be very easy to understand and follow through on.  
 
 - [ ] [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [ ] [OOAD Tutorial](https://www.tutorialspoint.com/object_oriented_analysis_design/ooad_quick_guide.htm)
