@@ -77,7 +77,7 @@ I wanted to share these links because there's some really good info on job-relat
 
 ### Books I've read:
 - [X] Clean Code, Bob Martin, teaches you how to write clean code
-- [X] The Clean Coder, Bob Martin, teaches you what a professional software engineer looks like in terms of behavior in the workplace
+- [X] The Clean Coder, Bob Martin, teaches you what a professional software engineer looks like in terms of behavior and best practices in the workplace
 - [X] Clean Architecture, Bob Martin, teaches you how to design clean software architecture
 - [X] Design Patterns:  Elements of Reusable Object-Oriented Software, Gang of Four, teaches you 23 main object-oriented design patterns
 - [X] Web Scalability for Startup Engineers, Artur-Ejsmont, teaches you everything you need to know about scalability and then some
