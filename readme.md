@@ -20,9 +20,9 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 * [What Project Do I Do Next?](#what-project-do-i-do-next)
 * [What Do I Learn Next?](#what-do-i-learn-next)
 * [Other Tips](#other-tips)
-
-
-
+<br>
+<br>
+<br>
 
 ## Notes
 ### TBD on completion of this section
