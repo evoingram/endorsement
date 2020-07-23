@@ -3,20 +3,23 @@
 This is mostly my Cracking the Coding Interview challenge answers as well as copies of my notes from my time at Lambda.  
 
 ## Learning Resources
-I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a great base or starter place to go for your knowledge.  There are a TON of different languages, frameworks, and fundamental computer science concepts explained there, including object-oriented design, data science and algorithms, how to use various cloud providers, languages, frameworks, operating systems, and more.  Study and take notes on that, and then any videos you go on to watch or other things you do to learn will be very easy to understand and follow through on.  Also I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).  Lambda students receive a free six-month sub as part of the GitHub Student Pack.
 
-### Note Taking
-YMMV, but I highly recommend [Cornell note-taking](http://lawyerist.com/75163/cornell-method-note-taking/?utm_source=lawyerist_sidebar) style for note taking with a weekly review (answering the questions) to stay refreshed on what you learned.
-
-### Links
-Here's some valuable links you might find useful:
+### Written
+I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a great base or starter place to go for your knowledge.  There are a TON of different languages, frameworks, and fundamental computer science concepts explained there, including object-oriented design, data science and algorithms, how to use various cloud providers, languages, frameworks, operating systems, and more.  Study and take notes on that, and then any videos you go on to watch or other things you do to learn will be very easy to understand and follow through on.  
 
 - [ ] [System Design Primer](https://github.com/donnemartin/system-design-primer)
-- [ ] [System Design Playlist](https://www.youtube.com/playlist?list=PLlxurZn3gw7o3pZIf7V9FH2BPOJUQLJtv)
-- [ ] [Design Patterns Playlist](https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)
 - [ ] [OOAD Tutorial](https://www.tutorialspoint.com/object_oriented_analysis_design/ooad_quick_guide.htm)
 - [ ] [Docker Tutorial](https://www.tutorialspoint.com/docker/index.htm)
 - [ ] [TypeScript docs](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html)
+- [ ] [GSAP](https://greensock.com/learning,"GSAP")  
+- [ ] [Visual Studio](https://visualstudio.microsoft.com/vs/getting-started/, "Visual Studio")  
+- [ ] [Visual Studio](https://channel9.msdn.com/Shows/Visual-Studio-Toolbox, "Visual Studio")  
+
+### Video
+Also I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).  Lambda students receive a free six-month sub as part of the GitHub Student Pack.
+
+- [ ] [System Design Playlist](https://www.youtube.com/playlist?list=PLlxurZn3gw7o3pZIf7V9FH2BPOJUQLJtv)
+- [ ] [Design Patterns Playlist](https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)
 - [ ] [Front End Masters LPs](https://frontendmasters.com/learn/, "FEM")
 - [ ] [FEM React LP](https://frontendmasters.com/learn/react/, "FEM")
 - [ ] [Azure](https://www.youtube.com/playlist?list=PLlxurZn3gw7rFyv1cR6xLplotwUyRItTN, "Azure")  
@@ -34,17 +37,16 @@ Here's some valuable links you might find useful:
 - [ ] [Python](https://www.youtube.com/playlist?list=PLlxurZn3gw7obIkOY7jDvsBPkC7psDt5y, "Python")  
 - [ ] [C++](https://www.youtube.com/playlist?list=PLlxurZn3gw7oreqz4S1Ys4Nkg1-EdwL5v,"C++")  
 - [ ] [HTML/CSS/GSAP/SVG](https://www.youtube.com/playlist?list=PLlxurZn3gw7rNOv6MMSK0tpkfAMANUPLj,"HTML/CSS/GSAP/SVG")  
-- [ ] [GSAP](https://greensock.com/learning,"GSAP")  
 - [ ] [Linux](https://www.youtube.com/watch?v=wBp0Rb-ZJak&list=PLlxurZn3gw7pbBOiw_FFZIpgvo07xCNDi,"Linux")  
 - [ ] [30 Days of React](https://www.youtube.com/watch?v=100pKUE3OPI&list=PLlxurZn3gw7oc5ebo1EvnuBO8u532X9zn, "30 Days of React")  
 - [ ] [Mobile](https://www.youtube.com/playlist?list=PLlxurZn3gw7rkriBgH6KvCkEUF8uc1FNJ, "mobile")  
-- [ ] [Visual Studio](https://visualstudio.microsoft.com/vs/getting-started/, "Visual Studio")  
-- [ ] [Visual Studio](https://channel9.msdn.com/Shows/Visual-Studio-Toolbox, "Visual Studio")  
-[](,"")  
+
+### Note Taking
+YMMV, but I highly recommend [Cornell note-taking](http://lawyerist.com/75163/cornell-method-note-taking/?utm_source=lawyerist_sidebar) style for note taking with a weekly review (answering the questions) to stay refreshed on what you learned.
 
 ### Insightful Employment-Related Reddit Posts
 
-(I know, I know)
+(I know, I know.)
 
 I wanted to share these links because there's some really good info on job-related things like how to have a productive 1:1 with your manager at a job, how to deal with incomplete specs on a project, etc.:
 
@@ -73,16 +75,16 @@ I wanted to share these links because there's some really good info on job-relat
 - [what to do during onboard as a new employee to make a good impression on your manager 6](https://www.reddit.com/r/cscareerquestions/comments/gzx6fv/what_should_you_do_when_joining_a_new_company/ftj4aql?utm_source=share&utm_medium=web2x)
 - [how to help grow a junior dev](https://www.reddit.com/r/ExperiencedDevs/comments/gskgwo/how_to_help_grow_a_junior_dev/fs6iu7s?utm_source=share&utm_medium=web2x)
 
-## Looking for a book to read?
+### Looking for a book to read?
 
-### Books I've read:
+#### Books I've read:
 - [X] Clean Code, Bob Martin, teaches you how to write clean code
 - [X] The Clean Coder, Bob Martin, teaches you what a professional software engineer looks like in terms of behavior and best practices in the workplace
 - [X] Clean Architecture, Bob Martin, teaches you how to design clean software architecture
 - [X] Design Patterns:  Elements of Reusable Object-Oriented Software, Gang of Four, teaches you 23 main object-oriented design patterns
 - [X] Web Scalability for Startup Engineers, Artur Ejsmont, teaches you everything you need to know about scalability and then some
 
-### On my list to read, after my interview studying dies down a bit:
+#### On my list to read, after my interview studying dies down a bit:
 - [ ] Agile Estimating and Planning
 - [ ] TDD:  Extensive Tutorial
 - [ ] Test Driven
@@ -99,3 +101,18 @@ I wanted to share these links because there's some really good info on job-relat
 - [ ] Pro Git
 - [ ] Elements of Computing Systems:  Building a Modern Computer from First Principles
 - [ ] Art of Computer Programming
+
+## What project do I do next?
+There are lots of other ways to figure it out, but my suggestion is to use your previous or current work experience as a muse of sorts to figure out a unique project you can build.  What problems can you solve with your tech AND real-world knowledge that you would use your built app to solve?  If there's an industry you want to work in, research what different tech companies are doing in that space and build a clone of one of those things, preferably NOT in the language of the original.  Try really hard to come up with things like this, where you applied yourself and your skills to generate the idea, because that is how you stand out in a world of to-do lists.  Your interview answers will stand out as well as your projects.
+
+## What do I learn next? 
+If you're having trouble figuring out what to learn next, my suggestion is to figure out what industry you want to work in or what place or type of place you want to work at, and then do research on the various job boards and read a lot of job descriptions to get a feel for what people in those places know and expect their tech employees to know.  Read what job ads for your next career step are requiring.  Then go learn what you find.  This is a place where you could also potentially leverage your previous work experience to figure out what to learn.
+
+## Remember, you are in the driver's seat for your career.  You are the one that needs to figure out what you need to learn so you can grow and progress your career.
+
+## Other Tips
+- Make detailed readmes; don't make hiring people work to have to find out what your app does, how it works, key features, tech stack, who worked on it with you, what you did/your role, etc.  A lot of people don't do this, so it stands out.  Also try out Code Climate badges.
+- Fill out your about-me readme on your GitHub profile.
+- Make sure your GitHub squares are green at least five days a week if at all possible.
+- Start creating your portfolio early so you can give it the time and effort it deserves.
+- Handwriting notes isn't for everyone, but it does force you to think about what you're writing for a longer time than if you're typing the same thing.
