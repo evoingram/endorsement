@@ -116,3 +116,4 @@ If you're having trouble figuring out what to learn next, my suggestion is to fi
 - Make sure your GitHub squares are green at least five days a week if at all possible.
 - Start creating your portfolio early so you can give it the time and effort it deserves.
 - Handwriting notes isn't for everyone, but it does force you to think about what you're writing for a longer time than if you're typing the same thing.
+- Don't be afraid to write design docs, UML diagrams, and the like for even small projects, because it proves you know how to do it and shows leadership, shows that you can keep the big picture in mind.
