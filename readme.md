@@ -49,6 +49,7 @@ Here's some valuable links you might find useful:
 I wanted to share these links because there's some really good info on job-related things like how to have a productive 1:1 with your manager at a job, how to deal with incomplete specs on a project, etc.:
 
 [how to deal with incomplete specs on a project 1](https://www.reddit.com/r/ExperiencedDevs/comments/hsothj/starting_project_with_incomplete_spec/fyl5ahl?utm_source=share&utm_medium=web2x)
+
 [how to deal with incomplete specs on a project 2](https://www.reddit.com/r/ExperiencedDevs/comments/hsothj/starting_project_with_incomplete_spec/fycjyip?utm_source=share&utm_medium=web2x)
 [how to have a productive 1:1 with your manager 1](https://www.reddit.com/r/ExperiencedDevs/comments/htj235/working_with_a_constant_fear_of_getting_piped/fyiq4ww?utm_source=share&utm_medium=web2x)
 [how to have a productive 1:1 with your manager 2](https://www.reddit.com/r/girlsgonewired/comments/hb64kw/what_are_your_1on1s_with_your_managers_like/fv7d5u4?utm_source=share&utm_medium=web2x)
