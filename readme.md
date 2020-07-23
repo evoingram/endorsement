@@ -1,6 +1,34 @@
 # Endorsement Repo
 
 This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful.  
+## Notes
+### TBD on completion of this section
+- [Computer Science]()
+- [Git & Bash Terminal, VS Code Shortcuts]()
+- [HTML & CSS]()
+- [JavaScript]()
+- [React & Redux]()
+- [Node, Knex, Express, SQL]()
+- [Object-Oriented Analysis & Design]()
+- [Docker]()
+- [Clean Code]()
+- [Clean Coder]()
+- [Regex]()
+- [Clean Architecture]()
+- [Java]()
+- [Scalability]()
+- [TypeScript]()
+- [Azure]()
+- [PowerShell]()
+- [System Design & Architecture]() (includes object-oriented design patterns)
+- [System Design Interviews]()
+- [interview tips]()
+- [code review tips]()
+- [behavioral questions]()
+- [self-study questions]() (only questions, no answers for this section!)
+- [agile]()
+- [hot-seat questions]()
+
 ## Learning Resources
 
 ### Written
