@@ -7,6 +7,7 @@ This is mostly my Cracking the Coding Interview challenge answers as well as cop
 ### Written
 I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a great base or starter place to go for your knowledge.  There are a TON of different languages, frameworks, and fundamental computer science concepts explained there, including object-oriented design, data science and algorithms, how to use various cloud providers, languages, frameworks, operating systems, and more.  Study and take notes on a subject there, and then any videos you go on to watch or other things you do to learn will be very easy to understand and follow through on.  
 
+- [ ] [TutorialsPoint](https://www.tutorialspoint.com)
 - [ ] [System Design Primer](https://github.com/donnemartin/system-design-primer)
 - [ ] [OOAD Tutorial](https://www.tutorialspoint.com/object_oriented_analysis_design/ooad_quick_guide.htm)
 - [ ] [Docker Tutorial](https://www.tutorialspoint.com/docker/index.htm)
@@ -14,6 +15,8 @@ I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a g
 - [ ] [GSAP](https://greensock.com/learning,"GSAP")  
 - [ ] [Visual Studio](https://visualstudio.microsoft.com/vs/getting-started/, "Visual Studio")  
 - [ ] [Visual Studio](https://channel9.msdn.com/Shows/Visual-Studio-Toolbox, "Visual Studio")  
+- [ ] [Operating System Tutorial](https://www.tutorialspoint.com/operating_system/index.htm)
+- [ ] [Azure Tutorial](https://www.tutorialspoint.com/microsoft_azure/index.htm)
 
 ### Video
 Also I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).  Lambda students receive a free six-month sub as part of the GitHub Student Pack.
