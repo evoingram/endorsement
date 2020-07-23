@@ -3,39 +3,49 @@
 This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful.  
 ## Notes
 ### TBD on completion of this section
-- [Computer Science]()
-- [Git & Bash Terminal, VS Code Shortcuts]()
+### Languages & Frameworks
 - [HTML & CSS]()
 - [JavaScript]()
 - [React & Redux]()
 - [Node, Knex, Express, SQL]()
-- [Object-Oriented Analysis & Design]()
-- [Docker]()
-- [Clean Code]()
-- [Clean Coder]()
-- [Regex]()
-- [Clean Architecture]()
 - [Java]()
-- [Scalability]()
 - [TypeScript]()
-- [Azure]()
-- [PowerShell]()
-- [System Design & Architecture]() (includes UML & object-oriented design patterns)
-- [System Design Interviews]()
-- [interview tips]()
-- [code review tips]()
-- [behavioral questions]()
-- [self-study questions]() (only questions, no answers for this section!)
-- [Agile]()
-- [hot-seat questions]()
-- [operating system]()
-- [Cortana]()
 - [Visual Basic]()
 - [Tailwind]()
 - [GraphQL]()
 - [Emmet]()
-- [Postman]()
 - [Bootstrap]()
+- [Regex]()
+
+### Theory & Concepts
+- [Computer Science]()
+- [Object-Oriented Analysis & Design]()
+- [Scalability]()
+- [System Design & Architecture]() (includes UML & object-oriented design patterns)
+- [System Design Interviews]()
+- [Agile]()
+- [operating system]()
+
+### Software
+- [PowerShell]()
+- [Git & Bash Terminal, VS Code Shortcuts]()
+- [Docker]()
+- [Azure]()
+- [Cortana]()
+- [Postman]()
+
+### Books
+- [Clean Code]()
+- [Clean Coder]()
+- [Clean Architecture]()
+
+### Miscellaneous
+- [interview tips]()
+- [code review tips]()
+- [behavioral questions]()
+- [self-study questions]() (only questions, no answers for this section!)
+- [hot-seat questions]()
+
 
 ## Learning Resources
 
