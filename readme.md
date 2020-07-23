@@ -112,9 +112,11 @@ If you're having trouble figuring out what to learn next, my suggestion is to fi
 ## Remember, you are in the driver's seat for your career.  You are the one that needs to figure out what you need to learn so you can grow and progress your career.
 
 ## Other Tips
-- Make detailed readmes; don't make hiring people work to have to find out what your app does, how it works, key features, tech stack, who worked on it with you, what you did/your role, etc.  A lot of people don't do this, so it stands out.  Also try out Code Climate badges.
+- Make detailed readmes; don't make hiring people work to have to find out what your app does, how it works, key features, tech stack, who worked on it with you, what you did/your role, etc.  A lot of people don't do this, so it stands out.  This also helps refresh you before going to an interview of the highlights of a particular project so you can talk about it easier at the interview.
+- Also try out Code Climate badges. 
 - Fill out your about-me readme on your GitHub profile.
 - Make sure your GitHub squares are green at least five days a week if at all possible.
 - Start creating your portfolio early so you can give it the time and effort it deserves.
 - Handwriting notes isn't for everyone, but it does force you to think about what you're writing for a longer time than if you're typing the same thing.
 - Don't be afraid to write design docs, UML diagrams, robust general documentation, Postman docs/tests, and the like for even small projects, because it proves you know how to do it and shows leadership, shows that you can keep the big picture in mind.
+- Put general comments throughout your code while you're writing your project so you know why stuff is the way it is and maybe extremely short summaries of what it does, because you aren't going to remember why you did something six months down the road when you need it.  It will be useful to have this info for interviews.
