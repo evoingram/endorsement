@@ -89,6 +89,7 @@ I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a g
 - [ ] [Microsoft Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/)
 - [ ] [Google Style Guide 1](https://developers.google.com/style/)
 - [ ] [Google Style Guide 2](https://google.github.io/styleguide/cppguide.html)
+- [ ] [HighScalability.com Examples](http://highscalability.com/blog/category/example)
 
 ### Video
 Also I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).  Lambda students receive a free six-month sub as part of the GitHub Student Pack.
