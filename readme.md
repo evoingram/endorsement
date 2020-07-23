@@ -1,9 +1,9 @@
 # Endorsement Repo
 
 This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful. 
-
-
-
+<br>
+<br>
+<br>
 ## Table of Contents:
 * [Notes](#notes)
   * [Languages & Frameworks](#languages-&-frameworks)
