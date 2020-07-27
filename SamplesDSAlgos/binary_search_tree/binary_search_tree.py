@@ -4,8 +4,9 @@ from dll_queue import Queue
 from dll_stack import Stack
 
 """
-Binary search trees are a data structure that enforce an ordering over the data they store. That ordering in turn makes it a lot more 
-efficient at searching for a particular piece of data in the tree. 
+Binary search trees are a data structure that enforce an ordering over the data they store. 
+That ordering in turn makes it a lot more efficient at searching for a particular piece of 
+    data in the tree. 
 
 This part of the project comprises two days:
 1. [X] Implement the methods `insert`, `contains`, `get_max`, and `for_each` on the BSTNode class.
