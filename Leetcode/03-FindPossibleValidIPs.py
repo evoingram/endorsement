@@ -34,7 +34,7 @@ def is_valid(possible_ip):
     # splitting at period
     ip_address = possible_ip.split(".") 
 
-    # checking for the corner cases 
+    # checking for corner cases 
     for subaddress in ip_address: 
 
         # get length of subaddress
