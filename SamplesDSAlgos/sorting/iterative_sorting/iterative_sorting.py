@@ -2,11 +2,10 @@
 # os.chdir("E:\\projects\\LambdaSchool\\m6\\63a1\\src\\iterative_sorting\")
 # exec(open("iterative_sorting.py").read())
 
-# Always select and move smallest element until all are in order.
-
+# BUBBLE SORT:  
+    # Always select and move smallest element until all are in order.
 # time complexity:   O(n^2)
 # space complexity:  O(1)
-
 def selection_sort(arr):
     # get array length and array length - 1
     array_length = len(arr)
@@ -44,87 +43,83 @@ def selection_sort(arr):
             arr[smallest_index] = current_item_x
             # set current item as smallest item
             arr[x] = smallest_item
-            
+
     # return sorted array
     return arr
 
-# TO-DO:  implement the Bubble Sort function below
+# BUBBLE SORT:
+    # loop through array and compare each index with index next to it
+    # if out of order, swap them
+    # loop over array until everything in place AND 
+        # nothing swapped during last iteration
+# time complexity:  O(n^2)
+# space complexity:  O(1)
 def bubble_sort(arr):
-    '''
-        procedure bubbleSort( arr : array of items )
-        length = arr.count;
-        for i = 0 to length-1 do:
-            swapped = false
-            for j = 0 to length-1 do:
-                /* compare the adjacent elements */
-                if arr[j] > arr[j+1] then
-                    /* swap them */
-                    swap( arr[j], arr[j+1] )
-                    swapped = true
-            # if no number was swapped that means array is sorted now, break the loop.*/
-            if(not swapped):
-                break
-        return arr
-        end procedure 
-    '''
+    # get number of items in array
     length = arr.count
-    for i in range(0, len(arr) - 1):
+    # get index of next to last item
+    next_to_last = len(arr) - 1
+    # loop x through 0 to one before end
+    for x in range(0, next_to_last):
+        # swapped starts out false
         swapped = False
-        for j in range(0, len(arr)-1):
-            # compare the adjacent elements
-            if arr[j] > arr[j+1]:
-                # swap them
-                # swap(arr[j], arr[j+1])
-                j_value = arr[j]
-                j1_value = arr[j+1]
-                arr[j] = j1_value
-                arr[j+1] = j_value
+        # loop y through 0 to one before end
+        for y in range(0, next_to_last):
+            # compare current and next items
+                # if current item larger than next, swap
+            if arr[y] > arr[y+1]:
+                # swap current and next items
+                y_value = arr[y]
+                next_y_value = arr[y+1]
+                arr[y] = next_y_value
+                arr[y+1] = y_value
+                # set swapped to true
                 swapped = True
-        # if no number was swapped that means array is sorted now, break the loop.*/
+        # if no number was swapped that means array is sorted now, break the loop.
         if swapped is False:
             break
+    # return sorted array
     return arr
 
-    '''
-        procedure bubbleSort( list : array of items )
-        loop = list.count;
-        for i = 0 to loop-1 do:
-            swapped = false
-            for j = 0 to loop-1 do:
-                /* compare the adjacent elements */
-                if list[j] > list[j+1] then
-                    /* swap them */
-                    swap( list[j], list[j+1] )
-                    swapped = true
-                end if
-            end for
-            /*if no number was swapped that means
-            array is sorted now, break the loop.*/
-            if(not swapped) then
-                break
-            end if
-        end for
-        end procedure return list
-    '''
+# COUNT SORT:
+    # get maximum element from array
+    # define count array of size [max+1]
+    # set all elements in the count array to 0
+    # increase count of each number which are found in the array
+    # find cumulative frequency
+    # store the number in the output array
+    # decrease count for same numbers (count[i])
+    # return the output array
 
-
-# STRETCH: implement the Count Sort function below
+# time complexity:  O(n+k)
+    # O(Maximum key value – Minimum key value), linear
+# space complexity:  O(k)
+# not an in-place sorting algorithm
+# stable sort
+# inefficient if range of key value k is very large
+# can only sort discrete values like integer
 def count_sort(arr, maximum=-1):
     if arr == []:
         return arr 
     # get maximum element from array
-    maxElement = maximum
-    for i in range(0, len(arr)-1):
-        if arr[i] > maxElement:
-            maxElement = arr[i]
-        if arr[i] < 0:
+    max_element = maximum
+    for x in range(0, len(arr)-1):
+        # get current item
+        current_item = arr[x]
+        # if current item > max element, set max as current item
+        if current_item > max_element:
+            max_element = current_item
+        # negative numbers not allowed
+        if current_item < 0:
             return "Error, negative numbers not allowed in Count Sort"
 
-    arrOutput = [0] * (maxElement+1)
-    # max = getMax(array, maximum)
-    count = [0] * (maxElement+1) # create count array (max+1 number of elements)
+    arr_output = [0] * (max_element+1)
 
-    for i in range(0, (maxElement-1)):
+    # max = getMax(array, maximum)
+    # create count array (max+1 number of elements)
+    count = [0] * (max_element+1) 
+
+    for i in range(0, (max_element-1)):
         # initialize count array to all zero
         count[i] = 0
 
@@ -132,7 +127,7 @@ def count_sort(arr, maximum=-1):
         # increase number count in count array.
         count[arr[i]] += 1
         
-    for i in range(1, maxElement - 1):
+    for i in range(1, max_element - 1):
         # find cumulative frequency
         count[i] += count[i - 1]
         
@@ -140,53 +135,19 @@ def count_sort(arr, maximum=-1):
         if i >= 0:
             x = arr[i]
             y = count[x]
-            arrOutput[x] = arr[i]
+            arr_output[x] = arr[i]
             if count[x] >= 1:
                 # decrease count for same numbers
                 count[x] -= 1
 
-    arrDifference = int(len(arrOutput) - len(arr))
+    arr_difference = int(len(arr_output) - len(arr))
 
-    for i in range((len(arrOutput) - 1), -1, -1):
+    for i in range((len(arr_output) - 1), -1, -1):
         
-        if int(arrOutput[i]) == int(0):
-            del arrOutput[i]
+        if int(arr_output[i]) == int(0):
+            del arr_output[i]
 
-    if int(len(arrOutput)) < int(len(arr)):
-        arrOutput.insert(0, 0)
+    if int(len(arr_output)) < int(len(arr)):
+        arr_output.insert(0, 0)
 
-    return arrOutput
-
-
-
-
-
-
-
-    '''
-    Begin
-        max = get maximum element from array.
-        define count array of size [max+1]
-
-        for i := 0 to max:
-            count[i] = 0 # set all elements in the count array to 0
-        done
-
-        for i := 1 to size:
-            increase count of each number which have found in the array
-        done
-
-        for i := 1 to max:
-            count[i] = count[i] + count[i+1] # find cumulative frequency
-        done
-
-        for i := size to 1 decrease by 1 do
-            store the number in the output array
-            decrease count[i]
-        done
-
-        return the output array
-    End
-    '''
-
-    return arr
+    return arr_output
