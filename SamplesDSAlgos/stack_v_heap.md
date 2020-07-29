@@ -1,9 +1,8 @@
 # Stack vs Heap Memory Allocation
+
 Memory in a C/C++ program can either be allocated on stack or heap.
 
-## Prerequisite
-
-Memory layout of C program
+## Prerequisite:  Memory layout of C program
 
 ## Stack Allocation
 
