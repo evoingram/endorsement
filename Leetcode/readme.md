@@ -46,6 +46,7 @@ Giving time/space complexities in comments and a 2-3 line explanation is also ex
 - [Number of fractions that sum up to 1](https://leetcode.com/discuss/interview-question/684355/)
 
 ### More Easy Problems
+
 Title | Acceptance | Frequency | Difficulty
 ---- | --- | --- | ---
 258|Add Digits|51.5%|Easy|
@@ -134,7 +135,6 @@ Title | Acceptance | Frequency | Difficulty
 91|Decode Ways|20.0%|Medium|
 151|Reverse Words in a String|15.7%|Medium|
 8|String to Integer (atoi)|13.9%|Medium|
-
 
 ### More Hard Problems
 
