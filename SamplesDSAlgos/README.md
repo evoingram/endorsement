@@ -6,8 +6,8 @@
 
 # Sorting Algorithms
 
-|           |     Best    |   Average   |  Worst |Worst Space|
-|:---------:|:-----------:|:-----------:|:------:|:---------:|
+|           |  Time Best  | Time Average | Time Worst |Worst Space|
+|:---------:|:-----------:|:------------:|:----------:|:---------:|
 |   Quick   | O(n log(n)) | O(n log(n)) | O(n^2) | O(log(n)) |
 |   Merge   | O(n log(n)) | O(n log(n)) | O(n^2) |    O(n)   |
 |    Heap   |     O(n)    | O(n log(n)) | O(n^2) |    O(1)   |
