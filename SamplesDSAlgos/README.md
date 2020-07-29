@@ -1,45 +1,38 @@
-# Data Structures 
+# Data Structures Left
 
-Topics:
- * Queues
- * Stacks
- * Doubly Linked Lists
- * LRU Caches
- * Binary Search Trees
- * Tree Traversal
+## Data Structures
 
-Stretch Goals:
- * Heaps
- * AVL Trees
+|   Data Structure   | Average Access | Worst Access | Average Search | Worst Search | Average Insertion | Worst Insertion | Average Deletion | Worst Deletion | Worst Space |
+|:------------------:|:--------------:|--------------|:--------------:|--------------|:-----------------:|-----------------|:----------------:|----------------|-------------|
+|        Array       |      O(1)      | O(1)         |      O(n)      | O(n)         |        O(n)       | O(n)            |       O(n)       | O(n)           | O(n)        |
+|        Stack       |      O(n)      | O(n)         |      O(n)      | O(n)         |        O(1)       | O(1)            |       O(1)       | O(1)           | O(n)        |
+|        Queue       |      O(n)      | O(n)         |      O(n)      | O(n)         |        O(1)       | O(1)            |       O(1)       | O(1)           | O(n)        |
+| Singly Linked List |      O(n)      | O(n)         |      O(n)      | O(n)         |        O(1)       | O(1)            |       O(1)       | O(1)           | O(n)        |
+| Doubly Linked List |      O(n)      | O(n)         |      O(n)      | O(n)         |        O(1)       | O(1)            |       O(1)       | O(1)           | O(n)        |
+|      Skip List     |    O(log(n))   | O(n)         |    O(log(n))   | O(n)         |     O(log(n))     | O(n)            |     O(log(n))    | O(n)           | O(n log(n)) |
+|     Hash Table     |       N/A      | N/A          |      O(1)      | O(n)         |        O(1)       | O(n)            |       O(1)       | O(n)           | O(n)        |
+| Binary Search Tree |    O(log(n))   | O(n)         |    O(log(n))   | O(n)         |     O(log(n))     | O(n)            |     O(log(n))    | O(n)           | O(n)        |
+|      AVL Tree      |    O(log(n))   | O(log(n))    |    O(log(n))   | O(log(n))    |     O(log(n))     | O(log(n))       |     O(log(n))    | O(log(n))      | O(n)        |
 
-## Tasks
-* [X] Day 1 In Class:  `doubly_linked_list`
-* [X] Day 1 Homework:  `queue_and_stack`
-* [X] Day 2 In Class:  No Starter.  Interview problems described below.
-* [X] Day 2 Homework:  `lru_cache`
-* [X] Day 3 In Class:  No Starter. Research and planning exercise below.
-* [ ] Day 3 Homework:  `binary_search_tree` part 1
-* [X] Day 4 In Class:  No Starter. White-boarding exercise below.
-* [ ] Day 4 Homework: `binary_search_tree` part 2
-* [ ] stretch:  generic heap
-* [ ] stretch:  avl tree
+## Sorting Algorithms
 
-* [X] Day 1: Implement Stacks and Queues
-* [X] Day 2: Implement a Doubly Linked List
-* [ ] Day 3: Implement a Binary Search Tree
-* [ ] Day 4: Implement additional traversal methods on the Binary Search Tree
-* [ ] stretch:  generic heap
-* [ ] stretch:  avl tree
+|           |     Best    |   Average   |  Worst |Worst Space|
+|:---------:|:-----------:|:-----------:|:------:|:---------:|
+|   Quick   | O(n log(n)) | O(n log(n)) | O(n^2) | O(log(n)) |
+|   Merge   | O(n log(n)) | O(n log(n)) | O(n^2) |    O(n)   |
+|    Heap   |     O(n)    | O(n log(n)) | O(n^2) |    O(1)   |
+|   Bubble  |     O(n)    |    O(n^2)   | O(n^2) |    O(1)   |
+| Insertion |     O(n)    |    O(n^2)   | O(n^2) |    O(1)   |
+| Selection |    O(n^2)   |    O(n^2)   | O(n^2) |    O(1)   |
+|    Tree   | O(n log(n)) | O(n log(n)) | O(n^2) |    O(n)   |
+|   Bucket  |    O(n+k)   |    O(n+k)   | O(n^2) |    O(n)   |
+|   Radix   |    O(nk)    |    O(nk)    |  O(nk) |   O(n+k)  |
+|  Counting |    O(n+k)   |    O(n+k)   | O(n+k) |    O(k)   |
 
- > NOTE: The quickest and easiest way to reliably import a file in Python is to just copy and paste the file you want to import into the same directory as the file that wants to import. This obviously isn't considered best practice, but it is the most reliable way to do it across all platforms.  If the import isn't working, feel free to try this method.
+### Dynamic Programming
 
-### Queues
- * Should have the methods: `enqueue`, `dequeue`, and `len`.
-   * `enqueue` should add an item to the back of the queue.
-   * `dequeue` should remove and return an item from the front of the queue.
-   * `len` returns the number of items in the queue.
- 
-![Image of Queue](https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/600px-Data_Queue.svg.png)
+- way of making algorithm more efficient by storing some of the intermediate results
+- works really well when your algorithm has a lot of repetitive computations
 
 ### Doubly Linked Lists
  * The `ListNode` class, which represents a single node in the doubly-linked list, has already been implemented for you. Inspect this code and try to understand what it is doing to the best of your ability.
@@ -96,8 +89,6 @@ Given the above spec, try to get a working implementation that passes the tests.
 Once you've gotten the tests passing, it's time to analyze the runtime complexity of your `get` and `set` operations. There's a way to get both operations down to sub-linear time. In fact, we can get them each down to constant time by picking the right data structures to use. 
 
 Here are you some things to think about with regards to optimizing your implementation: If you opted to use a dictionary to work with key-value pairs, we know that dictionaries give us constant access time, which is great. It's cheap and efficient to fetch pairs. A problem arises though from the fact that dictionaries don't have any way of remembering the order in which key-value pairs are added. But we definitely need something to remember the order in which pairs are added. Can you think of some ways to get around this constraint?
-
-## Stretch Goals
 
 ### Generic Heaps
 A max heap is pretty useful, but what's even more useful is to have our heap be generic such that the user can define their own priority function and pass it to the heap to use.
