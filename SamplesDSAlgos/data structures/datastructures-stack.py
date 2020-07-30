@@ -23,10 +23,10 @@ What is the difference between using an array vs. a linked list when
     # return elements in (Last In First Out)/FIFO order. 
 
 # time complexity:   Avg   | Worst
-# Access:       O(n)   |   O(n)
-# Search:       O(n)   |   O(n)
-# Insertion:    O(1)   |   O(1)
-# Deletion:     O(1)   |   O(1)
+    # Access:       O(n)   |   O(n)
+    # Search:       O(n)   |   O(n)
+    # Insertion:    O(1)   |   O(1)
+    # Deletion:     O(1)   |   O(1)
 
 # space complexity:  O(n)
 

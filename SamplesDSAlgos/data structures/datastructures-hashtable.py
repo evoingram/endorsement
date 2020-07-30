@@ -3,8 +3,14 @@
 
 """
 # HASH TABLE
-# time complexity:   O()
-# space complexity:  O()
+
+    # time complexity:   Avg   |   Worst
+        # Access:       N/A    |   N/A
+        # Search:       O(1)   |   O(n)
+        # Insertion:    O(1)   |   O(n)
+        # Deletion:     O(1)   |   O(n)
+
+    # space complexity:  O(n)
 
 
 class HashTableEntry:
@@ -19,7 +25,6 @@ class HashTableEntry:
 
 # Hash table can't have fewer than this many slots
 MIN_CAPACITY = 8
-
 
 class HashTable:
     """
