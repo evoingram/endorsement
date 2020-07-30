@@ -34,6 +34,13 @@ To solve this, we will follow these steps −
 
 '''
 
+"""
+
+"""
+# TRIE
+# time complexity:   O()
+# space complexity:  O()
+
 
 class Trie(object):
     def __init__(self):

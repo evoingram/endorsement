@@ -1,3 +1,11 @@
+
+"""
+
+"""
+# SINGLY LINKED LIST
+# time complexity:   O()
+# space complexity:  O()
+
 class Node:
     def __init__(self, value=None, next_node=None):
         # the value at this linked list node

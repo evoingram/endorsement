@@ -21,6 +21,14 @@ Stretch: [X] What if you could only use instances of your Stack class to impleme
 from singly_linked_list import LinkedList
 
 
+"""
+
+"""
+# QUEUE
+# time complexity:   O()
+# space complexity:  O()
+
+
 class Queue:
     def __init__(self):
         self.size = 0

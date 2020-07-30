@@ -12,6 +12,13 @@ This part of the project comprises two days:
 1. [X] Implement the methods `insert`, `contains`, `get_max`, and `for_each` on the BSTNode class.
 2. Implement the `in_order_print`, `bft_print`, and `dft_print` methods on the BSTNode class.
 """
+"""
+
+"""
+# BINARY SEARCH TREE
+# time complexity:   O()
+# space complexity:  O()
+
 class BinarySearchTree:
     def __init__(self, value):
         self.value = value

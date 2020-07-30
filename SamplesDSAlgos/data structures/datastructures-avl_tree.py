@@ -2,6 +2,13 @@
 Node class to keep track of
 the data internal to individual nodes
 """
+"""
+
+"""
+# AVL TREE
+# time complexity:   O()
+# space complexity:  O()
+
 class Node:
     def __init__(self, key):
         self.key = key
