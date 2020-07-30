@@ -7,8 +7,10 @@
     # if out of order, swap them
     # loop over array until everything in place AND 
         # nothing swapped during last iteration
-# time complexity:  O(n^2)
+
+# time complexity:  Best O(n)   |   Avg O(n^2)   |   Worst O(n^2)
 # space complexity:  O(1)
+
 def bubble_sort(arr):
     # get number of items in array
     length = arr.count

@@ -2,6 +2,11 @@ import unittest
 from unittest.mock import MagicMock
 from generic_heap import Heap
 
+# HEAP SORT:
+    # 
+
+# time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
+# space complexity:  O(1)
 
 class HeapTests(unittest.TestCase):
     def setUp(self):

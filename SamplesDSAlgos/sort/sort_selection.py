@@ -4,8 +4,10 @@
 
 # SELECTION SORT:  
     # Always select and move smallest element until all are in order.
-# time complexity:   O(n^2)
+    
+# time complexity:  Best O(n^2)   |   Avg O(n^2)   |   Worst O(n^2)
 # space complexity:  O(1)
+
 def selection_sort(arr):
     # get array length and array length - 1
     array_length = len(arr)

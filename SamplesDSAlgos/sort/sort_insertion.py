@@ -1,11 +1,14 @@
-# Start at beginning of list. 
-# Assume sorted list of length 1 where first element is only sorted element.
-# Grab second element and insert into correct spot in list.
-# Now sorted list length = 2.
-# Continue until unsorted is complete.
 
-# time complexity:   O(n) (worst-case O(n^2))
+# INSERTION SORT:
+    # Start at beginning of list. 
+    # Assume sorted list of length 1 where first element is only sorted element.
+    # Grab second element and insert into correct spot in list.
+    # Now sorted list length = 2.
+    # Continue until unsorted is complete.
+
+# time complexity:  Best O(n)   |   Avg O(n^2)   |   Worst O(n^2)
 # space complexity:  O(1)
+
 
 def insertion_sort(array):
     # get array length

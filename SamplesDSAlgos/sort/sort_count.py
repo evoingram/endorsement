@@ -12,13 +12,15 @@
     # decrease count for same numbers (count[i])
     # return the output array
 
-# time complexity:  O(n+k)
-    # O(Maximum key value – Minimum key value), linear
-# space complexity:  O(k)
 # not an in-place sorting algorithm
 # stable sort
 # inefficient if range of key value k is very large
 # can only sort discrete values like integer
+
+# time complexity:  Best O(n+k)   |   Avg O(n+k)   |   Worst O(n+k)
+    # O(Maximum key value – Minimum key value), linear
+# space complexity:  O(k)
+
 def count_sort(arr, maximum=-1):
     if arr == []:
         return arr 
