@@ -13,6 +13,16 @@ What is the difference between an array and a linked list?
     LLs don't need to be allocated with a static amount of memory up front.
     You can keep adding elements to linked lists as much as you want; 
         can't with arrays.
+        
+What is the difference between singly and doubly linked lists?
+    A singly linked list is a set of nodes where each node has two fields ‘data’ 
+        and ‘link’. 
+        The ‘data’ field stores actual piece of information and ‘link’ field is used 
+            to point to next node. 
+        Basically ‘link’ field is nothing but address only.
+    A doubly linked list contains an extra pointer, typically called previous 
+        pointer, together with next pointer and data which are there in singly 
+        linked list.
 """
 # SINGLY LINKED LIST
 # made of bunch of nodes that point to next one in list
