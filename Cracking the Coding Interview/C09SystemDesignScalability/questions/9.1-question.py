@@ -1,6 +1,6 @@
 # Stock Data
 
-# Imagine you are building some sort off service that will be called by up to 1k client
+# Imagine you are building some sort of service that will be called by up to 1k client
     # apps to get simple end-of-day stock price info (open, close, high, low).  
 # You may assume you already have the data.
 # You can store it in any format you wish.
