@@ -3,21 +3,43 @@ sys.path.append('../queue_and_stack')
 from dll_queue import Queue
 from dll_stack import Stack
 
-"""
-Binary search trees are a data structure that enforce an ordering over the data they store. 
-That ordering in turn makes it a lot more efficient at searching for a particular piece of 
-    data in the tree. 
-
-This part of the project comprises two days:
-1. [X] Implement the methods `insert`, `contains`, `get_max`, and `for_each` on the BSTNode class.
-2. Implement the `in_order_print`, `bft_print`, and `dft_print` methods on the BSTNode class.
-"""
-"""
-
-"""
 # BINARY SEARCH TREE
-# time complexity:   O()
-# space complexity:  O()
+# Binary search trees are a data structure that enforce an ordering over the data they store. 
+# That ordering in turn makes it a lot more efficient at searching for a particular piece of 
+    # data in the tree. 
+# extremely efficient data structure with searching
+# consists entirely of nodes holding values, with each node referencing other nodes
+# in trees in general, each node is not constrained to just referencing a single other node
+# tree data structures where each node can reference 0-2 other nodes, left & right
+# maintain invariant/rule that if a node has a left child node it points to, that left node's 
+    # value is strictly less than parent node value and, respectively, right child is greater
+# trees can be thought of as linked lists, but without constraint that each node only points to 
+    # one other node; can point to multiple nodes in tree
+# linked lists themselves count as trees
+# a common trees classification is to talk about them in terms of the max number of nodes that
+    # a single node can point to
+# more efficient than array or linked list
+# inefficient to insert into a BST
+# performance of BST depends quite a lot on whether tree is balanced or not
+# useful structure for middle ground between linked lists and arraylists
+# bst makes it very easy and simple to add & find new elements
+    # just change pointer to add new elements like linked lists
+# performs well if you stay away from edge cases
+
+# RELATED TERMS
+    # root:      topmost node in tree
+    # child:     node directly connected to another node when moving away from root node
+    # parent:    node directly connected to another node when moving towards root node
+    # siblings:  nodes sharing same parent
+    # leaf:      node with no children
+    
+# time complexity:     Avg      |   Worst
+    # Access:       O(log(n))   |   O(n)
+    # Search:       O(log(n))   |   O(n)
+    # Insertion:    O(log(n))   |   O(n)
+    # Deletion:     O(log(n))   |   O(n)
+
+# space complexity:  O(n)
 
 class BinarySearchTree:
     def __init__(self, value):
@@ -86,12 +108,8 @@ class BinarySearchTree:
             self.right.for_each(cb)
 
 
-
-    # DAY 2 Project -----------------------
-
     # Print all the values in order from low to high
-    # Hint:  Use a recursive, depth first traversal
-
+    # recursive, depth first traversal
     def in_order_print(self, node):
         # if left tree exists, recursively run this function to print its node values
         if self.left:
@@ -102,8 +120,8 @@ class BinarySearchTree:
             self.right.in_order_print(node)
 
 
-    # Print the value of every node, starting with the given node in an iterative breadth first traversal
-
+    # Print the value of every node, starting with the given node 
+    # iterative breadth first traversal
     def bft_print(self, node):
         # get current queue 
         current_queue = Queue()
@@ -128,8 +146,8 @@ class BinarySearchTree:
             current_queue = next_queue
 
 
-    # Print the value of every node, starting with the given node in an iterative depth first traversal
-
+    # Print the value of every node, starting with the given node 
+    # iterative depth first traversal
     def dft_print(self, node):
         # set stack as current stack 
         current_stack = Stack()
@@ -149,12 +167,7 @@ class BinarySearchTree:
                 current_stack.push(current_node.right)
 
 
-    # STRETCH Goals -------------------------
-    # Note: Research may be required
-
-
     # Print Pre-order recursive DFT
-
     def pre_order_dft(self, node):
         # print node value 
         print(node.value)
@@ -167,7 +180,6 @@ class BinarySearchTree:
 
 
     # Print Post-order recursive DFT
-
     def post_order_dft(self, node):
         # if left tree of node exists, run again on it
         if node.left:

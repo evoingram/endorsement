@@ -3,14 +3,50 @@ sys.path.append('../queue_and_stack')
 from dll_queue import Queue
 from dll_stack import Stack
 
-"""
-Binary search trees are a data structure that enforce an ordering over the data they store. That ordering in turn makes it a lot more 
-efficient at searching for a particular piece of data in the tree. 
+# A traversal is completed when every node has been explored.
+# A search is completed when the search target is found.
 
-This part of the project comprises two days:
-1. [X] Implement the methods `insert`, `contains`, `get_max`, and `for_each` on the BSTNode class.
-2. Implement the `in_order_print`, `bft_print`, and `dft_print` methods on the BSTNode class.
-"""
+# DEPTH & BREADTH FIRST SEARCHES
+# Depth First:    Algorithm explores as far as possible along each branch before backtracking
+    # for each node, process node, process left subtree, then right subtree, then add, copy, etc.
+    # ---------------------------
+    # one that continues traveling forward on each branch until a dead end is reached
+    # search then retreats to first unexplored path and follows next unexplored path until that 
+        # one, too, reaches a dead end
+    # continues until all nodes have been visited
+    # recursive or iterative --> makes use of stack
+    
+# Breadth First:  Algorithm explores all neighbor nodes at present depth prior to moving on to next level
+    # can be resolved iteratively (preferred) or recursively
+    # useful when what you're seeking is closer to root node
+    # process one layer/level at a time
+    # process node, add left child to queue, then right child
+    # dequeue them off queue and call function on that node
+    # repeat until none left
+    # ---------------------------
+    # opposite of depth-first
+    # explore layer by layer, moving outward from starting point
+    # at each node, we discover to list of nodes to explore
+    # then explore nodes in order we encounter them
+        # use queue for this
+    # will jump around a bit because next node we visit might not be connected to current
+
+# time complexity:   O(Vertices + Edges) (Worst)
+# space complexity:  O(Vertices) (Worst)
+
+# IN-ORDER, PRE-ORDER, AND POST-ORDER TRAVERSALS
+    # for depth-first traversals only
+# In-Order:  recursively call method on left tree, process node, call method on right tree
+    # use for sorted list out of BST
+# Pre-Order:  process node, recursively call method on left tree, call method on right tree
+    # use for deep copy of tree
+# Post-Order: recursively call method on left tree, call method on right tree, process node 
+    # use for deleting tree
+
+# time complexity:     O(n) 
+# space complexity:  O(1)
+
+
 class BinarySearchTree:
     def __init__(self, value):
         self.value = value
@@ -78,12 +114,9 @@ class BinarySearchTree:
             self.right.for_each(cb)
 
 
-
-    # DAY 2 Project -----------------------
-
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
-
+    # left, node, right
     def in_order_print(self, node):
         # if left tree exists, recursively run this function to print its node values
         if self.left:
@@ -94,8 +127,8 @@ class BinarySearchTree:
             self.right.in_order_print(node)
 
 
-    # Print the value of every node, starting with the given node in an iterative breadth first traversal
-
+    # Print the value of every node, starting with the given node 
+    # iterative breadth first traversal
     def bft_print(self, node):
         # get current queue 
         current_queue = Queue()
@@ -120,8 +153,8 @@ class BinarySearchTree:
             current_queue = next_queue
 
 
-    # Print the value of every node, starting with the given node in an iterative depth first traversal
-
+    # Print the value of every node, starting with the given node 
+    # iterative depth first traversal
     def dft_print(self, node):
         # set stack as current stack 
         current_stack = Stack()
@@ -141,12 +174,8 @@ class BinarySearchTree:
                 current_stack.push(current_node.right)
 
 
-    # STRETCH Goals -------------------------
-    # Note: Research may be required
-
-
     # Print Pre-order recursive DFT
-
+    # node, left, right
     def pre_order_dft(self, node):
         # print node value 
         print(node.value)
@@ -159,7 +188,7 @@ class BinarySearchTree:
 
 
     # Print Post-order recursive DFT
-
+    # left, right, node
     def post_order_dft(self, node):
         # if left tree of node exists, run again on it
         if node.left:

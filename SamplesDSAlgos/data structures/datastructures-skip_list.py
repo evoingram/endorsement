@@ -1,30 +1,69 @@
 '''
-Skip List | Set 1 (Introduction)
 Can we search in a sorted linked list in better than O(n) time?
-The worst case search time for a sorted linked list is O(n) as we can only linearly traverse the list and cannot skip nodes while searching. For a Balanced Binary Search Tree, we skip almost half of the nodes after one comparison with root. For a sorted array, we have random access and we can apply Binary Search on arrays.
+    The worst case search time for a sorted linked list is O(n) as we 
+        can only linearly traverse the list and cannot skip nodes 
+        while searching. 
+    For a Balanced Binary Search Tree, we skip almost half of the nodes 
+        after one comparison with root. 
+    For a sorted array, we have random access and we can apply binary 
+    search on arrays.
 
-Can we augment sorted linked lists to make the search faster? The answer is Skip List. The idea is simple, we create multiple layers so that we can skip some nodes. See the following example list with 16 nodes and two layers. The upper layer works as an “express lane” which connects only main outer stations, and the lower layer works as a “normal lane” which connects every station. Suppose we want to search for 50, we start from first node of “express lane” and keep moving on “express lane” till we find a node whose next is greater than 50. Once we find such a node (30 is the node in following example) on “express lane”, we move to “normal lane” using pointer from this node, and linearly search for 50 on “normal lane”. In following example, we start from 30 on “normal lane” and with linear search, we find 50.
+Can we augment sorted linked lists to make the search faster? 
+    The answer is Skip List. 
+    The idea is simple, we create multiple layers so that we can 
+        skip some nodes. 
+    See the following example list with 16 nodes and two layers. 
+    The upper layer works as an “express lane” which connects only 
+        main outer stations.
+    The lower layer works as a “normal lane” which connects every station. 
+    Suppose we want to search for 50, we start from first node of “express 
+        lane” and keep moving on “express lane” till we find a node whose 
+        next is greater than 50.
+    Once we find such a node (30 is the node in following example) on 
+        “express lane”, we move to “normal lane” using pointer from this 
+        node, and linearly search for 50 on “normal lane”. 
+    In following example, we start from 30 on “normal lane” and with linear 
+        search, we find 50.
 
-What is the time complexity with two layers? The worst case time complexity is number of nodes on “express lane” plus number of nodes in a segment (A segment is number of “normal lane” nodes between two “express lane” nodes) of “normal lane”. So if we have n nodes on “normal lane”, √n (square root of n) nodes on “express lane” and we equally divide the “normal lane”, then there will be √n nodes in every segment of “normal lane” . √n is actually optimal division with two layers. With this arrangement, the number of nodes traversed for a search will be O(√n). Therefore, with O(√n) extra space, we are able to reduce the time complexity to O(√n).
+What is the time complexity with two layers? 
+    The worst case time complexity is number of nodes on “express lane” 
+        plus number of nodes in a segment (A segment is number of “normal 
+        lane” nodes between two “express lane” nodes) of “normal lane”. 
+    So if we have n nodes on “normal lane”, √n (square root of n) nodes on 
+        “express lane” and we equally divide the “normal lane”, then there 
+        will be √n nodes in every segment of “normal lane” . 
+    √n is actually optimal division with two layers. With this arrangement, 
+        the number of nodes traversed for a search will be O(√n). 
+    Therefore, with O(√n) extra space, we are able to reduce the time 
+        complexity to O(√n).
 
 
 Can we do better?
-The time complexity of skip lists can be reduced further by adding more layers. In fact, the time complexity of search, insert and delete can become O(Logn) in average case with O(n) extra space. We will soon be publishing more posts on Skip Lists.
+    The time complexity of skip lists can be reduced further by adding more layers. 
+    In fact, the time complexity of search, insert and delete can become O(Logn) in 
+        average case with O(n) extra space. 
+
 Deciding nodes level
 
-Each element in the list is represented by a node, the level of the node is chosen randomly while insertion in the list. Level does not depend on the number of elements in the node. The level for node is decided by the following algorithm –
+    Each element in the list is represented by a node, the level of the node is chosen 
+        randomly while insertion in the list. 
+        Level does not depend on the number of elements in the node. 
+        The level for node is decided by the following algorithm –
 
-randomLevel()
-lvl := 1
-//random() that returns a random value in [0...1)
-while random() < p and lvl < MaxLevel do
-lvl := lvl + 1
-return lvl
-MaxLevel is the upper bound on number of levels in the skip list. It can be determined as – L(N) = log_{p/2}{N}. Above algorithm assure that random level will never be greater than MaxLevel. Here p is the fraction of the nodes with level i pointers also having level i+1 pointers and N is the number of nodes in the list.
+            randomLevel()
+            lvl := 1
+            //random() that returns a random value in [0...1)
+            while random() < p and lvl < MaxLevel do
+            lvl := lvl + 1
+            return lvl
+
+        MaxLevel is the upper bound on number of levels in the skip list. 
+        It can be determined as – L(N) = log_{p/2}{N}. 
+        Above algorithm assure that random level will never be greater than MaxLevel. 
+        Here p is the fraction of the nodes with level i pointers also having level i+1 pointers 
+            and N is the number of nodes in the list.
 
 Node Structure
-
-
 
 Each node carries a key and a forward array carrying pointers to nodes of a different level. A level i node carries i forward pointers indexed through 0 to i.
 Skip Node
@@ -68,8 +107,14 @@ Following is the code for insertion of key in Skip list –
 
 """
 # SKIP LIST
-# time complexity:   O()
-# space complexity:  O()
+
+# time complexity:     Avg      |   Worst
+    # Access:       O(log(n))   |   O(n)
+    # Search:       O(log(n))   |   O(n)
+    # Insertion:    O(log(n))   |   O(n)
+    # Deletion:     O(log(n))   |   O(n)
+
+# space complexity:  O(n log(n))
 
 
 
