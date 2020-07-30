@@ -1,3 +1,56 @@
+
+"""
+
+"""
+# HASH TABLE
+    # array with elements indexed by hashed key
+    # associative arrays and dictionaries
+    # objects
+    # caches (memcached)
+    # dynamic programming, memoization
+    # send key through hashing function (MD5, SHA1, etc.), which converts to addressable space (index)
+    # powerful for maps because now our key points to where our object is being stored
+    # powerful for sets because we can check where if anything exists at that memory address and, if 
+        # so, then it exists; if not, then key is not in set
+    # no look-up cost when deleting or adding
+    # not useful for something with an order
+    # need sufficiently large amount of memory to store all objects without collisions
+        # can balloon quickly
+    # need good hashing algorithm that spits out viable table address
+    # needs several qualities:
+        # idempotent (critical), good distribution of values, performant
+
+    # key/value data storage & retrieval
+        # data stored as array
+        # key converted to integer via hash functino
+        # hashed key converted to array index via modulo function
+
+# hash function:  one-way mapping from arbitrary data to fixed data size & type
+    # different hash functions with different attributes:
+        # deterministic
+        # uniform distribution
+        # non-invertible
+        # continuous versus non-continuous
+# hash-table collision:  when two keys hash to same index
+    # collisions are unavoidable
+    # open addressing & linked-list chaining to avoid collisions
+# linked-list chaining:  elements in hash table are stored as linked lists
+    # when retrieving a value, traverse down linked list until you find matching key
+# hash-table resizing:  can occur when load factor passes certain threshhold
+    # create new hash table with double capacity
+    # copy elements from old to new one at a time
+    # resizing = O(n) & occurs at O(log (n)) frequency
+# load factor:  number of entries / hash-table capacity
+
+# time complexity:   Avg   |   Worst
+    # Access:       N/A    |   N/A
+    # Search:       O(1)   |   O(n)
+    # Insertion:    O(1)   |   O(n)
+    # Deletion:     O(1)   |   O(n)
+
+# space complexity:  O(n)
+
+
 class HashTableEntry:
     """
     Linked List hash table key/value pair
@@ -10,7 +63,6 @@ class HashTableEntry:
 
 # Hash table can't have fewer than this many slots
 MIN_CAPACITY = 8
-
 
 class HashTable:
     """

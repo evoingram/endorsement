@@ -48,6 +48,13 @@ Radix-Sort(A, d)
 
 # A function to do counting sort of arr[] according to 
 # the digit represented by exp. 
+
+# RADIX SORT:
+    # 
+
+# time complexity:  Best O(nk)   |   Avg O(nk)   |   Worst O(nk)
+# space complexity:  O(n+k)
+
 def countingSort(arr, exp1): 
 
     n = len(arr) 

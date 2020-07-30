@@ -13,8 +13,8 @@
 # recursive
 # better with runtimes than many iterative solutions
 
-# time complexity:  O(n log(n)) (worst O(n^2))
-# space complexity:  O(log(n)) (worst)
+# time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n^2)
+# space complexity:  O(log(n))
 
 def partition(data):
     # pick the first element in data as our pivot

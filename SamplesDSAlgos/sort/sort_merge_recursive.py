@@ -1,4 +1,10 @@
 
+# MERGE SORT (RECURSIVE):
+    # 
+
+# time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
+# space complexity:  O(n)
+
 # complete the helper function below to merge 2 sorted arrays 
 def merge(arrA, arrB):
     '''
