@@ -15,7 +15,7 @@ from dll_stack import Stack
         # one, too, reaches a dead end
     # continues until all nodes have been visited
     # recursive or iterative --> makes use of stack
-    
+
 # Breadth First:  Algorithm explores all neighbor nodes at present depth prior to moving on to next level
     # can be resolved iteratively (preferred) or recursively
     # useful when what you're seeking is closer to root node
@@ -45,6 +45,44 @@ from dll_stack import Stack
 
 # time complexity:     O(n) 
 # space complexity:  O(1)
+
+'''
+DEPTH-FIRST SEARCH RECURSIVE PSEUDOCODE
+procedure DFS(G, v) is
+    label v as discovered
+    for all directed edges from v to w that are in G.adjacentEdges(v) do
+        if vertex w is not labeled as discovered then
+            recursively call DFS(G, w)
+'''
+'''
+DEPTH-FIRST SEARCH ITERATIVE PSEUDOCODE
+procedure DFS_iterative(G, v) is
+    let S be a stack
+    S.push(v)
+    while S is not empty do
+        v = S.pop()
+        if v is not labeled as discovered then
+            label v as discovered
+            for all edges from v to w in G.adjacentEdges(v) do 
+                S.push(w)
+'''
+
+'''
+BREADTH-FIRST SEARCH PSEUDOCODE
+1  procedure BFS(G, root) is
+2      let Q be a queue
+3      label root as discovered
+4      Q.enqueue(root)
+5      while Q is not empty do
+6          v := Q.dequeue()
+7          if v is the goal then
+8              return v
+9          for all edges from v to w in G.adjacentEdges(v) do
+10             if w is not labeled as discovered then
+11                 label w as discovered
+12                 w.parent := v
+13                 Q.enqueue(w)
+'''
 
 
 class BinarySearchTree:
