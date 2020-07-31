@@ -1,113 +1,127 @@
 '''
-Radix Sort is a non-comparative sorting algorithm with asymptotic complexity O(nd). It is one of the most efficient and fastest linear sorting algorithms. Radix sort was developed to sort large integers. As integer is treated as a string of digits so we can also call it as string sorting algorithm.
+Radix Sort is a non-comparative sorting algorithm with asymptotic complexity O(nd). 
+It is one of the most efficient and fastest linear sorting algorithms. 
+Radix sort was developed to sort large integers. 
+As integer is treated as a string of digits so we can also call it as string 
+    sorting algorithm.
 
-The lower bound for comparison based sorting algorithm is O(n*log n) like merge sort, quick sort, heap sort. So radix sort is efficient than comparison sorting algorithm until the number of digits (key) is less than log n. Counting sort can’t be used if a range of key value is large (suppose range is 1 to n2) so radix sort is the best choice to sort in linear time.
-
-In radix sort, we first sort the elements based on last digit (least significant digit). Then the result is again sorted by second digit, continue this process for all digits until we reach most significant digit. We use counting sort to sort elements of every digit, so time complexity is O(nd).
-
-Here are some key points of radix sort algorithm –
-
-Radix Sort is a linear sorting algorithm.
-Time complexity of Radix Sort is O(nd), where n is the size of array and d is the number of digits in the largest number.
-It is not an in-place sorting algorithm as it requires extra additional space.
-Radix Sort is stable sort as relative order of elements with equal values is maintained.
-Radix sort can be slower than other sorting algorithms like merge sort and quick sort, if the operations are not efficient enough. These operations include inset and delete functions of the sub-list and the process of isolating the digits we want.
-Radix sort is less flexible than other sorts as it depends on the digits or letter. Radix sort needs to be rewritten if the type of data is changed.
+So radix sort is efficient than comparison sorting algorithm until the number of
+    digits (key) is less than log n. 
+Counting sort can’t be used if a range of key value is large (suppose range is 1 to n2) 
+    so radix sort is the best choice to sort in linear time.
 '''
 
 '''
-pseudocode
-Radix-Sort(A, d)
-//It works same as counting sort for d number of passes.
-//Each key in A[1..n] is a d-digit integer.
-//(Digits are numbered 1 to d from right to left.)
-    for j = 1 to d do
-        //A[]-- Initial Array to Sort
-        int count[10] = {0};
-        //Store the count of "keys" in count[]
-        //key- it is number at digit place j
-        for i = 0 to n do
-         count[key of(A[i]) in pass j]++
-        for k = 1 to 10 do
-         count[k] = count[k] + count[k-1]
-        //Build the resulting array by checking
-        //new position of A[i] from count[k]
-        for i = n-1 downto 0 do
-         result[ count[key of(A[i])] ] = A[j]
-         count[key of(A[i])]--
-        //Now main array A[] contains sorted numbers
-        //according to current digit place
-        for i=0 to n do
-          A[i] = result[i]
-    end for(j)
-
-
+pseudocode:
+    Radix-Sort(A, d)
+    //It works same as count sort for d number of passes.
+    //Each key in A[1..n] is a d-digit integer.
+    //(Digits are numbered 1 to d from right to left.)
+        for j = 1 to d do
+            //A[]-- Initial Array to Sort
+            int count[10] = {0};
+            //Store the count of "keys" in count[]
+            //key- it is number at digit place j
+            for i = 0 to n do
+            count[key of(A[i]) in pass j]++
+            for k = 1 to 10 do
+            count[k] = count[k] + count[k-1]
+            //Build the resulting array by checking
+            //new position of A[i] from count[k]
+            for i = n-1 downto 0 do
+            result[ count[key of(A[i])] ] = A[j]
+            count[key of(A[i])]--
+            //Now main array A[] contains sorted numbers
+            //according to current digit place
+            for i=0 to n do
+            A[i] = result[i]
+        end for(j)
 '''
-
-# Python program for implementation of Radix Sort 
-
-# A function to do counting sort of arr[] according to 
-# the digit represented by exp. 
 
 # RADIX SORT:
-    # 
+    # only used to sort numbers
+    # sort numbers from least to most significant digit
+        # sort by ones place, then tens place, then hundreds place, etc.
+    # use count sort as sorting subroutine
+        
+    # linear sorting algorithm.
+    # not an in-place sorting algorithm as it requires extra additional space
+    # stable sort as relative order of elements with equal values is maintained
+    # can be slower than other sorting algorithms like merge and quick sort if 
+        # operations are not efficient enough. 
+        # These operations include insert and delete functions of the sub-list &
+            # the process of isolating the digits we want.
+    # less flexible than other sorts as it depends on the digits or letter
+    # needs to be rewritten if the type of data is changed
 
 # time complexity:  Best O(nk)   |   Avg O(nk)   |   Worst O(nk)
 # space complexity:  O(n+k)
 
-def countingSort(arr, exp1): 
 
-    n = len(arr) 
+# Python program for implementation of Radix Sort   
+# A function to do counting sort of arr[] according to 
+# the digit represented by exp. 
+def count_sort(original_array, digit_place):
+    # get array length
+    array_length = len(original_array)
 
-    # The output array elements that will have sorted arr 
-    output = [0] * (n) 
+    # empty sorted array, same length as unsorted
+    output = [0] * (array_length)
 
-    # initialize count array as 0 
-    count = [0] * (10) 
+    # initialize count array as 0
+    count_array = [0] * (10)
 
-    # Store count of occurrences in count[] 
-    for i in range(0, n): 
-        index = (arr[i]/exp1) 
-        count[ (index)%10 ] += 1
+    # store count of occurrences in count array
+    for i in range(0, array_length):
+        # set index as current item/digit place
+        index = (original_array[i]/digit_place)
+        # get modulo 10 of index
+        index_m10 = int((index) % 10)
+        # add 1 to index_m10 of count array
+        count_array[index_m10] += 1
 
     # Change count[i] so that count[i] now contains actual 
-    #  position of this digit in output array 
-    for i in range(1,10): 
-        count[i] += count[i-1] 
+        # position of this digit in output array
+    for x in range(1, 10):
+        count_array[x] += count_array[x-1]
 
-    # Build the output array 
-    i = n-1
-    while i>=0: 
-        index = (arr[i]/exp1) 
-        output[ count[ (index)%10 ] - 1] = arr[i] 
-        count[ (index)%10 ] -= 1
-        i -= 1
+    # build the output array
+    array_length_one_short = array_length - 1
+    while array_length_one_short >= 0:
+        # set index as current item/digit place
+        index = (original_array[array_length_one_short]/digit_place)
+        # get modulo 10 of index
+        index_m10 = int((index) % 10)
+        # subtract 1 from index_m10 of count array
+        count_index_m10 = int(count_array[index_m10])-1
+        # set output[count_index_m10] as original_array[array_length_one_short]
+        output[count_index_m10] = original_array[array_length_one_short]
+        # subtract one from corresponding entry of count array
+        count_array[index_m10] -= 1
+        # subtract one from index
+        array_length_one_short -= 1
 
-    # Copying the output array to arr[], 
-    # so that arr now contains sorted numbers 
-    i = 0
-    for i in range(0,len(arr)): 
-        arr[i] = output[i] 
+    # copy output array to original array so that it now contains sorted numbers
+    x = 0
+    for x in range(0, len(original_array)):
+        original_array[x] = output[x]
 
-# Method to do Radix Sort 
-def radixSort(arr): 
+def radix_sort(original_array):
 
-    # Find the maximum number to know number of digits 
-    max1 = max(arr) 
+    # find the maximum number to know number of digits
+    max1 = max(original_array)
 
-    # Do counting sort for every digit. Note that instead 
-    # of passing digit number, exp is passed. exp is 10^i 
-    # where i is current digit number 
+    # do count sort for every digit
+    # instead of passing digit number, exp is passed
+    # exp is 10^current digit number
     exp = 1
-    while max1/exp > 0: 
-        countingSort(arr,exp) 
+    while max1/exp > 0:
+        count_sort(original_array, exp)
         exp *= 10
 
-# Driver code to test above 
-arr = [ 170, 45, 75, 90, 802, 24, 2, 66] 
-radixSort(arr) 
 
-for i in range(len(arr)): 
-    print(arr[i]), 
+arr = [170, 45, 75, 90, 802, 24, 2, 66]
+radix_sort(arr)
+print("Sorted array is " + str(arr))
 
-# This code is contributed by Mohit Kumra 
+# contributed by Mohit Kumra
