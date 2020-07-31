@@ -1,11 +1,12 @@
 # Endorsement Repo
 <br>
-[Daily Grind](https://gist.github.com/evoingram/8b0f2c49954907c67b684ce3cd0c1fd3)<br> 
+<br> 
 This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful. 
 <br>
 <br>
 
 ## Table of Contents:
+* [Daily Grind](https://gist.github.com/evoingram/8b0f2c49954907c67b684ce3cd0c1fd3)
 * [Notes](#notes)
   * [Languages & Frameworks](#languages-&-frameworks)
   * [Theory & Concepts](#theory-&-concepts)
