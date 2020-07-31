@@ -1,7 +1,4 @@
 
-"""
-
-"""
 # HASH TABLE
     # array with elements indexed by hashed key
     # associative arrays and dictionaries
