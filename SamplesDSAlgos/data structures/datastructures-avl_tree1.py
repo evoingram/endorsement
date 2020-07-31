@@ -28,13 +28,11 @@ A tree class to keep track of things like the balance factor
 
 # space complexity:  O(n)
 
-
 class Node:
     def __init__(self, key):
         self.key = key
         self.left = None
         self.right = None
-
 
 class AVLTree:
     def __init__(self, node=None):
