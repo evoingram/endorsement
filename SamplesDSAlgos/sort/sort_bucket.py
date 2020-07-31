@@ -1,73 +1,76 @@
 '''
-Bucket sort is mainly useful when input is uniformly distributed over a range. 
-For example, consider the following problem.
-Sort a large set of floating point numbers which are in range from 0.0 to 1.0 and 
-    are uniformly distributed across the range. 
 How do we sort the numbers efficiently?
 
-A simple way is to apply a comparison based sorting algorithm. 
-The lower bound for comparison-based sorting algorithm (Merge Sort, Heap Sort, Quick-Sort .. etc) is Ω(n Log n), i.e., they cannot do better than nLogn.
-Can we sort the array in linear time? Counting sort can not be applied here as we use keys as index in counting sort. Here keys are floating point numbers. 
-The idea is to use bucket sort. Following is bucket algorithm.
-'''
+    A simple way is to apply a comparison based sorting algorithm. 
+    The lower bound for comparison-based sorting algorithm (merge, heap, quick,
+        etc.) is Ω(n Log n), can't do better than n log n.
 
+Count sort can't be used as we use keys as index in count sort. 
+Here keys are floating point numbers. 
 '''
-bucketSort(arr[], n)
-1) Create n empty buckets (Or lists).
-2) Do following for every array element arr[i].
-.......a) Insert arr[i] into bucket[n*array[i]]
-3) Sort individual buckets using insertion sort.
-4) Concatenate all sorted buckets.
-'''
+# BUCKET SORT
 
-'''
-Time Complexity: If we assume that insertion in a bucket takes O(1) time then steps 1 and 2 of the above algorithm clearly take O(n) time. The O(1) is easily possible if we use a linked list to represent a bucket (In the following code, C++ vector is used for simplicity). Step 4 also takes O(n) time as there will be n items in all buckets.
-The main step to analyze is step 3. This step also takes O(n) time on average if all numbers are uniformly distributed (please refer CLRS book for more details)
+    # mainly useful when input is uniformly distributed over a range.
+    # buckets created to put elements into
+        # number of elements = number of buckets
+    # apply insertion sort to each bucket
+    # concatenate buckets to get sorted array
 
-Following is the implementation of the above algorithm.
-'''
+# time complexity:  Best O(n+k)   |   Avg O(n+k)   |   Worst O(n^2)
+# space complexity:  O(n)
 
-# Python3 program to sort an array  
-# using bucket sort  
-def insertionSort(b): 
-    for i in range(1, len(b)): 
-        up = b[i] 
-        j = i - 1
-        while j >=0 and b[j] > up:  
-            b[j + 1] = b[j] 
-            j -= 1
-        b[j + 1] = up      
-    return b      
-              
-def bucketSort(x): 
-    arr = [] 
-    slot_num = 10 # 10 means 10 slots, each 
-                  # slot's size is 0.1 
-    for i in range(slot_num): 
-        arr.append([]) 
-          
-    # Put array elements in different buckets  
-    for j in x: 
-        index_b = int(slot_num * j)  
-        arr[index_b].append(j) 
-      
-    # Sort individual buckets  
-    for i in range(slot_num): 
-        arr[i] = insertionSort(arr[i]) 
-          
-    # concatenate the result 
-    k = 0
-    for i in range(slot_num): 
-        for j in range(len(arr[i])): 
-            x[k] = arr[i][j] 
-            k += 1
-    return x 
-  
-# Driver Code 
-x = [0.897, 0.565, 0.656, 
-     0.1234, 0.665, 0.3434]  
-print("Sorted Array is") 
-print(bucketSort(x)) 
-  
-# This code is contributed by 
-# Oneil Hsiao 
+
+def insertion_sort(bucket):
+    bucket_length = len(bucket)
+    for bucket_index in range(1, bucket_length):
+        # get current item in bucket
+        current_item = bucket[bucket_index]
+        # get previous bucket index
+        previous_bucket_index = bucket_index - 1
+        # while previous bucket index is at least 0 AND
+            # value of previous bucket item > current bucket item
+        while previous_bucket_index >= 0 and bucket[previous_bucket_index] > current_item:
+            current_bucket_index = previous_bucket_index + 1
+            # set item at current bucket index as value of previous bucket item
+            bucket[current_bucket_index] = bucket[previous_bucket_index]
+            # subtract one from previous bucket index
+            previous_bucket_index -= 1
+        current_bucket_index = previous_bucket_index + 1
+        # set item at current bucket index as current item
+        bucket[current_bucket_index] = current_item
+    # return sorted bucket
+    return bucket
+
+def bucket_sort(original_array):
+    bucket_holder = []
+    length = len(original_array)
+    slot_num = length
+
+    # create empty buckets
+    for bucket in range(slot_num):
+        bucket_holder.append([])
+
+    # put array elements in different buckets
+    for item in original_array:
+        single_bucket_index = int(slot_num * item)
+        bucket_holder[single_bucket_index].append(item)
+
+    # sort individual buckets
+    for i in range(slot_num):
+        bucket_holder[i] = insertion_sort(bucket_holder[i])
+
+    # concatenate the result
+    original_array_index = 0
+    for bucket in range(slot_num):
+        bucket_length = len(bucket_holder[bucket])
+        for single_bucket_index in range(bucket_length):
+            current_bucket_item = bucket_holder[bucket][single_bucket_index]
+            original_array[original_array_index] = current_bucket_item
+            original_array_index += 1
+    return original_array
+
+x = [0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434]
+print("Original Array is " + str(x)) 
+print("Sorted Array is   " + str(bucket_sort(x)))
+
+# contributed by Oneil Hsiao
