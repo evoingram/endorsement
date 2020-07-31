@@ -1,7 +1,3 @@
-import unittest
-from unittest.mock import MagicMock
-from max_heap import Heap
-
 
 '''
 binary heap:    binary tree, similar to BSTs
@@ -90,82 +86,43 @@ binary tree represented as array
 # time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
 # space complexity:  O(1)
 
-class HeapTests(unittest.TestCase):
-    def setUp(self):
-        self.heap = Heap()
+def heapify(arr, heap_size, root_index):
+    largest_item_index = root_index  # Initialize largest as root
+    left_child_index = 2 * root_index + 1     # left = 2*i + 1
+    right_child_index = 2 * root_index + 2     # right = 2*i + 2
 
-    def test_heap_insert_works(self):
-        self.heap.insert(6)
-        self.heap.insert(8)
-        self.heap.insert(10)
-        self.heap.insert(9)
-        self.heap.insert(1)
-        self.heap.insert(9)
-        self.heap.insert(9)
-        self.heap.insert(5) 
-        self.assertEqual(self.heap.storage, [10, 9, 9, 6, 1, 8, 9, 5])
+    # check if left child of root exists and is greater than root
+    root_value = arr[root_index]
+    if left_child_index < heap_size and root_value < arr[left_child_index]:
+        largest_item_index = left_child_index
 
-    def test_get_max_works(self):
-        self.heap.insert(6)
-        self.heap.insert(8)
-        self.heap.insert(10)
-        self.heap.insert(9)
-        self.heap.insert(1)
-        self.heap.insert(9)
-        self.heap.insert(9)
-        self.heap.insert(5)
-        self.assertEqual(self.heap.get_size(), 8)
-        self.assertEqual(self.heap.get_max(), 10)
+    # check if right child of root exists and is greater than root
+    if right_child_index < heap_size and arr[largest_item_index] < arr[right_child_index]:
+        largest_item_index = right_child_index
 
-    def test_get_max_after_delete(self):
-        self.heap.insert(6)
-        self.heap.insert(8)
-        self.heap.insert(10)
-        self.heap.insert(9)
-        self.heap.insert(1)
-        self.heap.insert(9)
-        self.heap.insert(9)
-        self.heap.insert(5)
-        self.heap.delete()
-        self.assertEqual(self.heap.get_max(), 9)
-        self.heap.delete()
-        self.assertEqual(self.heap.get_max(), 9)
-        self.heap.delete()
-        self.assertEqual(self.heap.get_max(), 9)
-        self.heap.delete()
-        self.assertEqual(self.heap.get_max(), 8)
-        self.heap.delete()
-        self.assertEqual(self.heap.get_max(), 6)
+    # if largest & root indexes don't match, swap them
+    if largest_item_index != root_index:
+        arr[root_index], arr[largest_item_index] = arr[largest_item_index], arr[root_index]
 
-    def test_delete_elements_in_order(self):
-        self.heap.insert(6)
-        self.heap.insert(7)
-        self.heap.insert(5)
-        self.heap.insert(8)
-        self.heap.insert(10)
-        self.heap.insert(1)
-        self.heap.insert(2)
-        self.heap.insert(5)
+        # heapify the root
+        heapify(arr, heap_size, largest_item_index)
 
-        descending_order = []
+# main function to sort an array of given size
+def heap_sort(arr):
+    array_length = len(arr)
 
-        while self.heap.get_size() > 0:
-            descending_order.append(self.heap.delete())
+    # build a max heap
+    for i in range(array_length//2 - 1, -1, -1):
+        heapify(arr, array_length, i)
 
-        self.assertEqual(descending_order, [10, 8, 7, 6, 5, 5, 2, 1])
+    # One by one extract elements
+    for i in range(array_length-1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]  # swap
+        heapify(arr, i, 0)
 
-    def test_bubble_up_was_called(self):
-        self.heap._bubble_up = MagicMock()
-        self.heap.insert(5)
-        self.assertTrue(self.heap._bubble_up.called)
+arr = [12, 11, 13, 5, 6, 7]
+heap_sort(arr)
+n = len(arr)
+print("Sorted array is " + str(arr))
 
-    def test_sift_down_was_called(self):
-        self.heap._sift_down = MagicMock()
-        self.heap.insert(10)
-        self.heap.insert(11)
-        self.heap.delete()
-        self.assertTrue(self.heap._sift_down.called)
-
-
-if __name__ == '__main__':
-    unittest.main()
+# contributed by Mohit Kumra
