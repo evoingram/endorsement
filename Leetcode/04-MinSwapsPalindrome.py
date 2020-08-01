@@ -31,7 +31,8 @@ def min_swap(string):
         letter[alphabet_index] += 1
 
     for l in letter:
-        if l & 1 == 1: odd += 1
+        if l & 1 == 1: 
+            odd += 1
 
     if odd > 1:
         return -1
