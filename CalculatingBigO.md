@@ -11,6 +11,8 @@
 
 ## Time Complexity
 
+no loops or exit & return = O(1)
+
 0 nested loops = `O(n)`
 1 nested loops = `O(n^2)`
 2 nested loops = `O(n^3)`
