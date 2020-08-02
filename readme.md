@@ -45,23 +45,31 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 
 ### Theory & Concepts
 
+#### Computer Science
+
 - [Data Structures & Algorithms](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos)
 - [Calculating Big O](https://github.com/evoingram/endorsement/tree/master/notes/CalculatingBigO.md)
 - [Stack Overflow Big O Explanation](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos\general%20info\bigOexplanation.md)
 - [Stacks v. Heaps](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos\general%20info\stack_v_heap.md)
 - [Bit Manipulation](https://github.com/evoingram/endorsement/tree/master/notes/bit-manipulation.md)
+- [computers](https://github.com/evoingram/endorsement/tree/master/notes/Computers.md)
+- [operating system]
+
+#### Object-Oriented Analysis & Design
+
 - [Object-Oriented Analysis & Design](https://github.com/evoingram/endorsement/tree/master/notes/OOAD.md)
 - [Object-Oriented Interview Tips](https://github.com/evoingram/endorsement/tree/master/notes/OODInterviewTips.md)
 - [Object-Oriented Design Patterns](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md)
 - [Object-Oriented Design Patterns Glossary](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFourGlossary.md)
 - [Object-Oriented Design Patterns Quick List](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFourQL.md)
+
+#### System Design
+
 - [Scalability](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md)
 - [System Design & Architecture](https://github.com/evoingram/endorsement/tree/master/notes/SystemDesign.md)
 - [UML](https://github.com/evoingram/endorsement/tree/master/notes/UML.md)
 - [System Design Interviews](https://github.com/evoingram/endorsement/tree/master/notes/SystemSpecific.md)
 - [Agile](https://github.com/evoingram/endorsement/tree/master/notes/Agile.md)
-- [computers](https://github.com/evoingram/endorsement/tree/master/notes/Computers.md)
-- [operating system]
 
 ### Software
 
