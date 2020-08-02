@@ -2,6 +2,10 @@
 
 * [Main GO4 Section](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md)
 * [Glossary of Terms](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFourGlossary.md)
+* [Architectural](#architectural-patterns)
+* [Creational](#creational-patterns)
+* [Structural](#structural-patterns)
+* [Behavioral](#behavioral-patterns)
 
 ## SOLID Principles by Bob Martin
 
