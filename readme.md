@@ -82,20 +82,20 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 
 ### Books
 
-- [Clean Code](https://github.com/evoingram/repo/blob/master/notes/CleanCode.md)
-- [Clean Coder](https://github.com/evoingram/repo/blob/master/notes/CleanCoder.md)
-- [Clean Architecture](https://github.com/evoingram/repo/blob/master/notes/CLeanArch.md)
+- [Clean Code](https://github.com/evoingram/endorsement/blob/master/notes/CleanCode.md)
+- [Clean Coder](https://github.com/evoingram/endorsement/blob/master/notes/CleanCoder.md)
+- [Clean Architecture](https://github.com/evoingram/endorsement/blob/master/notes/CLeanArch.md)
 - [Gang of Four book](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md)
 - [Web Scalability for Startup Engineers](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md)
 
 ### Miscellaneous
 
-- [problem solving tips](https://github.com/evoingram/repo/blob/master/notes/ProblemSolving.md)
-- [coding challenge tips](https://github.com/evoingram/repo/blob/master/notes/CodingChallengePatterns.md)
-- [interview tips](https://github.com/evoingram/repo/blob/master/notes/InterviewTips.md)
-- [code review tips](https://github.com/evoingram/repo/blob/master/notes/CodeReviewTips.md)
-- [behavioral questions](https://github.com/evoingram/repo/blob/master/notes/BehavioralQuestions.md)
-- [hot-seat questions](https://github.com/evoingram/repo/blob/master/notes/HotSeat.md)
+- [problem solving tips](https://github.com/evoingram/endorsement/blob/master/notes/ProblemSolving.md)
+- [coding challenge tips](https://github.com/evoingram/endorsement/blob/master/notes/CodingChallengePatterns.md)
+- [interview tips](https://github.com/evoingram/endorsement/blob/master/notes/InterviewTips.md)
+- [code review tips](https://github.com/evoingram/endorsement/blob/master/notes/CodeReviewTips.md)
+- [behavioral questions](https://github.com/evoingram/endorsement/blob/master/notes/BehavioralQuestions.md)
+- [hot-seat questions](https://github.com/evoingram/endorsement/blob/master/notes/HotSeat.md)
 
 ## Learning Resources
 
