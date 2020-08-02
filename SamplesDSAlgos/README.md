@@ -1,3 +1,4 @@
+# Notes about individual data structures and algorithms may be found directly within samples.
 
 # Dynamic Programming
 
