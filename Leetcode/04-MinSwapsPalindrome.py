@@ -63,4 +63,4 @@ def min_swap(string):
 
     return res
 
-min_swap('racecar')
+print(min_swap('racecra'))
