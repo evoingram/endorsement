@@ -23,65 +23,69 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 * [What Do I Learn Next?](#what-do-i-learn-next)
 * [Other Tips](#other-tips)
 <br>
-<br>
-<br>
 
 ## Notes
 
 ### TBD on completion of this section
 ### Languages & Frameworks
 
-- [HTML & CSS]()
-- [JavaScript]()
-- [React & Redux]()
-- [Node, Knex, Express, SQL]()
-- [Java]()
-- [TypeScript]()
-- [Visual Basic]()
-- [Tailwind]()
-- [GraphQL]()
-- [Emmet]()
-- [Bootstrap]()
-- [Regex]()
+- [HTML & CSS](https://github.com/evoingram/endorsement/tree/master/notes/HTML-CSS.md)
+- [JavaScript](https://github.com/evoingram/endorsement/tree/master/notes/JavaScript.md)
+- [React & Redux](https://github.com/evoingram/endorsement/tree/master/notes/ReactRedux.md)
+- [Node, Knex, Express](https://github.com/evoingram/endorsement/tree/master/notes/Node.md)
+- [SQL](https://github.com/evoingram/endorsement/tree/master/notes/SQL.md)
+- [Java](https://github.com/evoingram/endorsement/tree/master/notes/Java.md)
+- [TypeScript](https://github.com/evoingram/endorsement/tree/master/notes/TypeScript.md)
+- [Visual Basic]
+- [Tailwind]
+- [GraphQL](https://github.com/evoingram/endorsement/tree/master/notes/GraphQL.md)
+- [Emmet]
+- [Bootstrap]
+- [Regex](https://github.com/evoingram/endorsement/tree/master/notes/Regex.md)
 
 ### Theory & Concepts
 
-- [Computer Science](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos)
-- [Calculating Big O](https://github.com/evoingram/endorsement/tree/master/CalculatingBigO.md)
-- [Stack Overflow4 Big O Explanation](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos\general%20info\bigOexplanation.md)
+- [Data Structures & Algorithms](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos)
+- [Calculating Big O](https://github.com/evoingram/endorsement/tree/master/notes/CalculatingBigO.md)
+- [Stack Overflow Big O Explanation](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos\general%20info\bigOexplanation.md)
 - [Stacks v. Heaps](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos\general%20info\stack_v_heap.md)
-- [Bit Manipulation](https://github.com/evoingram/endorsement/tree/master/bit-manipulation.md)
-- [Object-Oriented Analysis & Design]()
-- [Object-Oriented Interview Tips](https://github.com/evoingram/endorsement/tree/master/OODInterviewTips.md)
-- [Scalability]()
-- [System Design & Architecture]() (includes UML & object-oriented design patterns)
-- [System Design Interviews]()
-- [Agile]()
-- [operating system]()
+- [Bit Manipulation](https://github.com/evoingram/endorsement/tree/master/notes/bit-manipulation.md)
+- [Object-Oriented Analysis & Design](https://github.com/evoingram/endorsement/tree/master/notes/OOAD.md)
+- [Object-Oriented Interview Tips](https://github.com/evoingram/endorsement/tree/master/notes/OODInterviewTips.md)
+- [Object-Oriented Design Patterns](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md)
+- [Scalability](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md)
+- [System Design & Architecture](https://github.com/evoingram/endorsement/tree/master/notes/SystemDesign.md)
+- [UML](https://github.com/evoingram/endorsement/tree/master/notes/UML.md)
+- [System Design Interviews](https://github.com/evoingram/endorsement/tree/master/notes/SystemSpecific.md)
+- [Agile](https://github.com/evoingram/endorsement/tree/master/notes/Agile.md)
+- [computers](https://github.com/evoingram/endorsement/tree/master/notes/Computers.md)
+- [operating system]
 
 ### Software
 
-- [PowerShell]()
-- [Git & Bash Terminal, VS Code Shortcuts]()
-- [Docker]()
-- [Azure]()
-- [Cortana]()
-- [Postman]()
+- [PowerShell]
+- [Git & Bash Terminal, VS Code Shortcuts](https://github.com/evoingram/endorsement/tree/master/notes/Shortcuts.md)
+- [Docker](https://github.com/evoingram/endorsement/tree/master/notes/Docker.md)
+- [Azure](https://github.com/evoingram/endorsement/tree/master/notes/Azure.md)
+- [Cortana]
+- [Postman]
 
 ### Books
 
-- [Clean Code]()
-- [Clean Coder]()
-- [Clean Architecture]()
+- [Clean Code](https://github.com/evoingram/repo/blob/master/notes/CleanCode.md)
+- [Clean Coder](https://github.com/evoingram/repo/blob/master/notes/CleanCoder.md)
+- [Clean Architecture](https://github.com/evoingram/repo/blob/master/notes/CLeanArch.md)
+- [Gang of Four book](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md)
+- [Web Scalability for Startup Engineers](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md)
 
 ### Miscellaneous
 
-- [problem solving tips](https://github.com/evoingram/repo/blob/master/ProblemSolving.md)
-- [coding challenge tips](https://github.com/evoingram/repo/blob/master/CodingChallengePatterns.md)
-- [interview tips]()
-- [code review tips]()
-- [behavioral questions]()
-- [hot-seat questions]()
+- [problem solving tips](https://github.com/evoingram/repo/blob/master/notes/ProblemSolving.md)
+- [coding challenge tips](https://github.com/evoingram/repo/blob/master/notes/CodingChallengePatterns.md)
+- [interview tips](https://github.com/evoingram/repo/blob/master/notes/InterviewTips.md)
+- [code review tips](https://github.com/evoingram/repo/blob/master/notes/CodeReviewTips.md)
+- [behavioral questions](https://github.com/evoingram/repo/blob/master/notes/BehavioralQuestions.md)
+- [hot-seat questions](https://github.com/evoingram/repo/blob/master/notes/HotSeat.md)
 
 ## Learning Resources
 
