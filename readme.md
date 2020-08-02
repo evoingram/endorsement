@@ -49,8 +49,8 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 
 * [Data Structures & Algorithms](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos)
 * [Calculating Big O](https://github.com/evoingram/endorsement/tree/master/notes/CalculatingBigO.md)
-* [Stack Overflow Big O Explanation](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos\general%20info\bigOexplanation.md)
-* [Stacks v. Heaps](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos\general%20info\stack_v_heap.md)
+* [Stack Overflow Big O Explanation](https://github.com/evoingram/endorsement/tree/master/notes/bigOexplanation.md)
+* [Stacks v. Heaps](https://github.com/evoingram/endorsement/tree/master/notes/stack_v_heap.md)
 * [Bit Manipulation](https://github.com/evoingram/endorsement/tree/master/notes/bit-manipulation.md)
 * [computers](https://github.com/evoingram/endorsement/tree/master/notes/Computers.md)
 * [operating system]
