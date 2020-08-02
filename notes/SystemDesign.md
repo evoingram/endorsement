@@ -1,5 +1,23 @@
 # System Design
 
+## Points to Consider for System Design
+
+|                            |                     |
+|:--------------------------:|:-------------------:|
+| requirements               | indexes             |
+| API creation               | messaging queue     |
+| DB design & table creation | consistent hashing  |
+| logic to solve problem     | LRU                 |
+| system workflow            | Hadoop              |
+| load balancer              | Cassandra           |
+| caching                    | microservices       |
+| sharding                   |                     |
+
+* What are the dependencies?
+* How do you break your project into independent components?
+* What are your primary data objects, nouns, classes?
+* What does the data flow between them look like?
+
 ## [Conference Talk given by Venkat Subramaniam](https://www.youtube.com/watch?v=llGgO74uXMI)
 
 The previous link is a really informative and interesting video about software design principles, and he's a pretty funny guy. It is an old video but it's not coding, so the principles are not really outdated in that sense.

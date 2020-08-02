@@ -1,7 +1,7 @@
 # Endorsement Repo
 <br>
 <br> 
-This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful. 
+This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful.
 <br>
 <br>
 
@@ -53,6 +53,8 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 - [Object-Oriented Analysis & Design](https://github.com/evoingram/endorsement/tree/master/notes/OOAD.md)
 - [Object-Oriented Interview Tips](https://github.com/evoingram/endorsement/tree/master/notes/OODInterviewTips.md)
 - [Object-Oriented Design Patterns](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md)
+- [Object-Oriented Design Patterns Glossary](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFourGlossary.md)
+- [Object-Oriented Design Patterns Quick List](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFourQL.md)
 - [Scalability](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md)
 - [System Design & Architecture](https://github.com/evoingram/endorsement/tree/master/notes/SystemDesign.md)
 - [UML](https://github.com/evoingram/endorsement/tree/master/notes/UML.md)
@@ -176,6 +178,7 @@ I wanted to share these links because there's some really good info on job-relat
 
 #### Books I've read
 
+I highly recommend every one of these.
 
 - [X] Clean Code, Bob Martin, teaches you how to write clean code
 - [X] The Clean Coder, Bob Martin, teaches you what a professional software engineer looks like in terms of behavior and best practices in the workplace
@@ -215,14 +218,14 @@ If you're having trouble figuring out what to learn next, my suggestion is to fi
 
 ## Other Tips
 
-- Make detailed readmes; don't make hiring people work to have to find out what your app does, how it works, key features, tech stack, who worked on it with you, what you did/your role, etc.  A lot of people don't do this, so it stands out.  This also helps refresh you before going to an interview of the highlights of a particular project so you can talk about it easier at the interview.
-- Also try out Code Climate badges.
-- Fill out your about-me readme on your GitHub profile.
-- Make sure your GitHub squares are green at least five days a week if at all possible.
-- Start creating your portfolio early so you can give it the time and effort it deserves.
-- Handwriting notes isn't for everyone, but it does force you to think about what you're writing for a longer time than if you're typing the same thing.
-- Don't be afraid to write design docs, UML diagrams, robust general documentation, Postman docs/tests, and the like for even small projects, because it proves you know how to do it and shows leadership, shows that you can keep the big picture in mind.
-- Put general comments throughout your code while you're writing your project so you know why stuff is the way it is and maybe extremely short summaries of what it does, because you aren't going to remember why you did something six months down the road when you need it.  It will be useful to have this info for interviews.
-- If you are terrified of public speaking, there is only one way to get over it, and that's to practice it.  Go on Zoom, answer an interview question, no matter if it's behavioral or technical, draw, go through the motions, and talk out loud, recording it to watch it later.  Then when you watch it, make some general notes about things you didn't like or think can be improved.  Do this over and over and over again until you are comfortable.  There are services out there that you can do this with a buddy or an interviewer, free and paid, but if you are able to self-evaluate, you only need yourself.
-- Contribute to open source; it can be documentation or other things, not necessarily code.
-- If you are intending on interviewing at a place that requires a system design interview, you need a few weeks to a month to properly study everything you need to know.  Giving it only a few days will not be enough!
+* Make detailed readmes; don't make hiring people work to have to find out what your app does, how it works, key features, tech stack, who worked on it with you, what you did/your role, etc.  A lot of people don't do this, so it stands out.  This also helps refresh you before going to an interview of the highlights of a particular project so you can talk about it easier at the interview.
+* Also try out Code Climate badges.
+* Fill out your about-me readme on your GitHub profile.
+* Make sure your GitHub squares are green at least five days a week if at all possible.
+* Start creating your portfolio early so you can give it the time and effort it deserves.
+* Handwriting notes isn't for everyone, but it does force you to think about what you're writing for a longer time than if you're typing the same thing.
+* Don't be afraid to write design docs, UML diagrams, robust general documentation, Postman docs/tests, and the like for even small projects, because it proves you know how to do it and shows leadership, shows that you can keep the big picture in mind.
+* Put general comments throughout your code while you're writing your project so you know why stuff is the way it is and maybe extremely short summaries of what it does, because you aren't going to remember why you did something six months down the road when you need it.  It will be useful to have this info for interviews.
+* If you are terrified of public speaking, there is only one way to get over it, and that's to practice it.  Go on Zoom, answer an interview question, no matter if it's behavioral or technical, draw, go through the motions, and talk out loud, recording it to watch it later.  Then when you watch it, make some general notes about things you didn't like or think can be improved.  Do this over and over and over again until you are comfortable.  There are services out there that you can do this with a buddy or an interviewer, free and paid, but if you are able to self-evaluate, you only need yourself.
+* Contribute to open source; it can be documentation or other things, not necessarily code.
+* If you are intending on interviewing at a place that requires a system design interview, you need a few weeks to a month to properly study everything you need to know.  Giving it only a few days will not be enough!
