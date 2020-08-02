@@ -91,7 +91,7 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 ### Miscellaneous
 
 * [problem solving tips](https://github.com/evoingram/endorsement/blob/master/notes/ProblemSolving.md)
-* [coding challenge tips](https://github.com/evoingram/endorsement/blob/master/notes/CodingChallengePatterns.md)
+* [coding challenge patterns](https://github.com/evoingram/endorsement/blob/master/notes/CodingChallengePatterns.md)
 * [interview tips](https://github.com/evoingram/endorsement/blob/master/notes/InterviewTips.md)
 * [code review tips](https://github.com/evoingram/endorsement/blob/master/notes/CodeReviewTips.md)
 * [behavioral questions](https://github.com/evoingram/endorsement/blob/master/notes/BehavioralQuestions.md)
