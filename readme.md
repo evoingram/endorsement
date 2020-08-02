@@ -84,7 +84,7 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 
 - [Clean Code](https://github.com/evoingram/endorsement/blob/master/notes/CleanCode.md)
 - [Clean Coder](https://github.com/evoingram/endorsement/blob/master/notes/CleanCoder.md)
-- [Clean Architecture](https://github.com/evoingram/endorsement/blob/master/notes/CLeanArch.md)
+- [Clean Architecture](https://github.com/evoingram/endorsement/blob/master/notes/CleanArch.md)
 - [Gang of Four book](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md)
 - [Web Scalability for Startup Engineers](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md)
 
