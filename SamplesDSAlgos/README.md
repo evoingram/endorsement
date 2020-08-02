@@ -1,5 +1,8 @@
 # Notes about individual data structures and algorithms may be found directly within samples.
 
+**theoretical CS**:  writing big O complexity analysis<br>
+**experimental CS**:  run function with 100k inputs & measure how long it took<br>
+
 # Dynamic Programming
 
 - way of making algorithm more efficient by storing some of the intermediate results

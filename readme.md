@@ -27,8 +27,10 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 <br>
 
 ## Notes
+
 ### TBD on completion of this section
 ### Languages & Frameworks
+
 - [HTML & CSS]()
 - [JavaScript]()
 - [React & Redux]()
@@ -43,8 +45,14 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 - [Regex]()
 
 ### Theory & Concepts
-- [Computer Science]()
+
+- [Computer Science](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos)
+- [Calculating Big O](https://github.com/evoingram/endorsement/tree/master/CalculatingBigO.md)
+- [Stack Overflow4 Big O Explanation](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos\general%20info\bigOexplanation.md)
+- [Stacks v. Heaps](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos\general%20info\stack_v_heap.md)
+- [Bit Manipulation](https://github.com/evoingram/endorsement/tree/master/bit-manipulation.md)
 - [Object-Oriented Analysis & Design]()
+- [Object-Oriented Interview Tips](https://github.com/evoingram/endorsement/tree/master/OODInterviewTips.md)
 - [Scalability]()
 - [System Design & Architecture]() (includes UML & object-oriented design patterns)
 - [System Design Interviews]()
@@ -52,6 +60,7 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 - [operating system]()
 
 ### Software
+
 - [PowerShell]()
 - [Git & Bash Terminal, VS Code Shortcuts]()
 - [Docker]()
@@ -60,21 +69,24 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 - [Postman]()
 
 ### Books
+
 - [Clean Code]()
 - [Clean Coder]()
 - [Clean Architecture]()
 
 ### Miscellaneous
+
+- [problem solving tips](https://github.com/evoingram/repo/blob/master/ProblemSolving.md)
+- [coding challenge tips](https://github.com/evoingram/repo/blob/master/CodingChallengePatterns.md)
 - [interview tips]()
 - [code review tips]()
 - [behavioral questions]()
-- [self-study questions]() (only questions, no answers for this section!)
 - [hot-seat questions]()
-
 
 ## Learning Resources
 
 ### Written
+
 I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a great base or starter place to go for your knowledge.  There are a TON of different languages, frameworks, and fundamental computer science concepts explained there, including object-oriented design, data science and algorithms, how to use various cloud providers, languages, frameworks, operating systems, and more.  Study and take notes on a subject there, and then any videos you go on to watch or other things you do to learn will be very easy to understand and follow through on.  
 
 - [ ] [TutorialsPoint](https://www.tutorialspoint.com)
@@ -93,6 +105,7 @@ I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a g
 - [ ] [HighScalability.com Examples](http://highscalability.com/blog/category/example)
 
 ### Video
+
 Also I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).  Lambda students receive a free six-month sub as part of the GitHub Student Pack.
 
 - [ ] [System Design Playlist](https://www.youtube.com/playlist?list=PLlxurZn3gw7o3pZIf7V9FH2BPOJUQLJtv)
@@ -121,6 +134,7 @@ Also I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).
 - [ ] [Excellent Interview-Related Tips from Dan Croitor](https://www.youtube.com/c/DanCroitor/videos)
 
 ### Note Taking
+
 YMMV, but I highly recommend [Cornell note-taking](http://lawyerist.com/75163/cornell-method-note-taking/?utm_source=lawyerist_sidebar) style for note taking with a weekly review (answering the questions) to stay refreshed on what you learned.
 
 ### Insightful Employment-Related Reddit Posts
@@ -156,14 +170,17 @@ I wanted to share these links because there's some really good info on job-relat
 
 ### Looking for a book to read?
 
-#### Books I've read:
+#### Books I've read
+
+
 - [X] Clean Code, Bob Martin, teaches you how to write clean code
 - [X] The Clean Coder, Bob Martin, teaches you what a professional software engineer looks like in terms of behavior and best practices in the workplace
 - [X] Clean Architecture, Bob Martin, teaches you how to design clean software architecture
 - [X] Design Patterns:  Elements of Reusable Object-Oriented Software, Gang of Four, teaches you 23 main object-oriented design patterns
 - [X] Web Scalability for Startup Engineers, Artur Ejsmont, teaches you everything you need to know about scalability and then some
 
-#### On my list to read, after my interview studying dies down a bit:
+#### On my list to read, after my interview studying dies down a bit
+
 - [ ] Agile Estimating and Planning
 - [ ] TDD:  Extensive Tutorial
 - [ ] Test Driven
@@ -183,14 +200,17 @@ I wanted to share these links because there's some really good info on job-relat
 - [ ] Art of Computer Programming
 
 ## What project do I do next?
+
 There are lots of other ways to figure it out, but my suggestion is to use your previous or current work experience as a muse of sorts to figure out a unique project you can build.  What problems can you solve with your tech AND real-world knowledge that you would use your built app to solve?  If there's an industry you want to work in, research what different tech companies are doing in that space and build a clone of one of those things, preferably NOT in the language of the original.  Try really hard to come up with things like this, where you applied yourself and your skills to generate the idea, because that is how you stand out in a world of to-do lists.  Your interview answers will stand out as well as your projects.
 
 ## What do I learn next? 
+
 If you're having trouble figuring out what to learn next, my suggestion is to figure out what industry you want to work in or what place or type of place you want to work at, and then do research on the various job boards and read a lot of job descriptions to get a feel for what people in those places know and expect their tech employees to know.  Read what job ads for your next career step are requiring.  Then go learn what you find.  This is a place where you could also potentially leverage your previous work experience to figure out what to learn.
 
 ## Remember, you are in the driver's seat for your career.  You are the one that needs to figure out what you need to learn so you can grow and progress your career.
 
 ## Other Tips
+
 - Make detailed readmes; don't make hiring people work to have to find out what your app does, how it works, key features, tech stack, who worked on it with you, what you did/your role, etc.  A lot of people don't do this, so it stands out.  This also helps refresh you before going to an interview of the highlights of a particular project so you can talk about it easier at the interview.
 - Also try out Code Climate badges. 
 - Fill out your about-me readme on your GitHub profile.

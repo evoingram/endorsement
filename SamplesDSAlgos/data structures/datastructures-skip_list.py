@@ -1,3 +1,6 @@
+
+import random
+
 '''
 Can we search in a sorted linked list in better than O(n) time?
     The worst case search time for a sorted linked list is O(n) as we 
@@ -45,68 +48,47 @@ Can we do better?
 
 Deciding nodes level
 
-    Each element in the list is represented by a node, the level of the node is chosen 
-        randomly while insertion in the list. 
-        Level does not depend on the number of elements in the node. 
-        The level for node is decided by the following algorithm –
+    Each element in the list is represented by a node, the level of the node is 
+        chosen randomly while insertion in the list. 
+    Level does not depend on the number of elements in the node. 
+    The level for node is decided by the following algorithm –
 
-            randomLevel()
-            lvl := 1
-            //random() that returns a random value in [0...1)
-            while random() < p and lvl < MaxLevel do
-            lvl := lvl + 1
-            return lvl
+        randomLevel()
+        lvl := 1
+        //random() that returns a random value in [0...1)
+        while random() < p and lvl < MaxLevel do
+        lvl := lvl + 1
+        return lvl
 
-        MaxLevel is the upper bound on number of levels in the skip list. 
-        It can be determined as – L(N) = log_{p/2}{N}. 
-        Above algorithm assure that random level will never be greater than MaxLevel. 
-        Here p is the fraction of the nodes with level i pointers also having level i+1 pointers 
-            and N is the number of nodes in the list.
+    Max level is the upper bound on number of levels in the skip list. 
+    It can be determined as – L(N) = log_{p/2}{N}. 
+    Above algorithm assure that random level will never be greater than MaxLevel. 
+    Here p is the fraction of the nodes with level i pointers also having level i+1 pointers 
+        and N is the number of nodes in the list.
 
 Node Structure
 
-Each node carries a key and a forward array carrying pointers to nodes of a different level. A level i node carries i forward pointers indexed through 0 to i.
+Each node carries a key and a forward array carrying pointers to nodes 
+    of a different level. 
+A level i node carries i forward pointers indexed through 0 to i.
+
 Skip Node
 
-Insertion in Skip List
-
-We will start from highest level in the list and compare key of next node of the current node with the key to be inserted. Basic idea is If –
-
-Key of next node is less than key to be inserted then we keep on moving forward on the same level
-Key of next node is greater than the key to be inserted then we store the pointer to current node i at update[i] and move one level down and continue our search.
+We will start from highest level in the list and compare key of next node 
+    of the current node with the key to be inserted. 
+Basic idea is if: 
+    key of next node is less than key to be inserted, then we keep on moving 
+        forward on the same level
+    key of next node is greater than the key to be inserted, then we store 
+        the pointer to current node i at update[i], move one level down, 
+        and continue our search.
 At the level 0, we will definitely find a position to insert given key.
 '''
 
-'''
-Following is the pseudo code for the insertion algorithm –
-
-Insert(list, searchKey)
-local update[0...MaxLevel+1]
-x := list -> header
-for i := list -> level downto 0 do
-    while x -> forward[i] -> key  forward[i]
-update[i] := x
-x := x -> forward[0]
-lvl := randomLevel()
-if lvl > list -> level then
-for i := list -> level + 1 to lvl do
-    update[i] := list -> header
-    list -> level := lvl
-x := makeNode(lvl, searchKey, value)
-for i := 0 to level do
-    x -> forward[i] := update[i] -> forward[i]
-    update[i] -> forward[i] := x
-Here update[i] holds the pointer to node at level i from which we moved down to level i-1 and pointer of node left to insertion position at level 0. Consider this example where we want to insert key 17 –
-Insert node
-Following is the code for insertion of key in Skip list –
-'''
-
-# Python3 code for inserting element in skip list
-
-"""
-
-"""
 # SKIP LIST
+    # create multiple layers in a sorted list so we can skip some nodes
+    # has express lane, use express lane to find 'bucket' or 'chunk which 
+        # your result is found in
 
 # time complexity:     Avg      |   Worst
     # Access:       O(log(n))   |   O(n)
@@ -117,14 +99,7 @@ Following is the code for insertion of key in Skip list –
 # space complexity:  O(n log(n))
 
 
-
-
-import random
 class Node(object):
-    '''
-    Class to implement node
-    '''
-
     def __init__(self, key, level):
         self.key = key
 
@@ -133,96 +108,78 @@ class Node(object):
 
 
 class SkipList(object):
-    '''
-    Class for Skip list
-    '''
-
-    def __init__(self, max_lvl, P):
+    def __init__(self, max_level, P):
         # Maximum level for this skip list
-        self.MAXLVL = max_lvl
+        self.max_level = max_level
 
         # P is the fraction of the nodes with level
-        # i references also having level i+1 references
+            # i references also having level i+1 references
         self.P = P
 
         # create header node and initialize key to -1
-        self.header = self.createNode(self.MAXLVL, -1)
+        self.header = self.create_node(self.max_level, -1)
 
         # current level of skip list
         self.level = 0
 
-    # create  new node
-    def createNode(self, lvl, key):
+    # create new node
+    def create_node(self, lvl, key):
         n = Node(key, lvl)
         return n
 
     # create random level for node
-    def randomLevel(self):
-        lvl = 0
-        while random.random() < self.P and \
-                lvl < self.MAXLVL:
-                  lvl += 1
-        return lvl
+    def random_level(self):
+        current_level = 0
+        while random.random() < self.P and current_level < self.max_level:
+            current_level += 1
+        return current_level
 
     # insert given key in skip list
-    def insertElement(self, key):
+    def insert_element(self, key):
         # create update array and initialize it
-        update = [None]*(self.MAXLVL+1)
+        update = [None]*(self.max_level+1)
         current = self.header
 
-        '''
-        start from highest level of skip list
-        move the current reference forward while key
-        is greater than key of node next to current
-        Otherwise inserted current in update and
-        move one level down and continue search
-        '''
+        # start from highest level of skip list
         for i in range(self.level, -1, -1):
-            while current.forward[i] and \
-                    current.forward[i].key < key:
+            # move the current reference forward while key is 
+                # greater than key of node next to current
+            while current.forward[i] and current.forward[i].key < key:
                 current = current.forward[i]
+            # Otherwise inserted current in update, move 
+                # one level down, and continue search
             update[i] = current
-
-        '''  
-        reached level 0 and forward reference to  
-        right, which is desired position to  
-        insert key. 
-        '''
+        # reached level 0 and forward reference to right, which is 
+            # desired position to insert key. 
         current = current.forward[0]
 
-        ''' 
-        if current is NULL that means we have reached 
-           to end of the level or current's key is not equal 
-           to key to insert that means we have to insert 
-           node between update[0] and current node 
-       '''
+        # If current is NULL, that means we have reached to end of the level 
+            # or current's key is not equal to key to insert.
+        # That means we have to insert node between update[0] and current node.
         if current == None or current.key != key:
             # Generate a random level for node
-            rlevel = self.randomLevel()
+            r_level = self.random_level()
 
-            ''' 
-            If random level is greater than list's current 
-            level (node with highest level inserted in  
-            list so far), initialize update value with reference 
-            to header for further use 
-            '''
-            if rlevel > self.level:
-                for i in range(self.level+1, rlevel+1):
+            # If random level is greater than list's current level (node with highest 
+                # level inserted in list so far), initialize update value with reference 
+                # to header for further use 
+            if r_level > self.level:
+                for i in range(self.level+1, r_level+1):
                     update[i] = self.header
-                self.level = rlevel
+                self.level = r_level
 
             # create new node with random level generated
-            n = self.createNode(rlevel, key)
+            node_random_level = self.create_node(r_level, key)
 
             # insert node by rearranging references
-            for i in range(rlevel+1):
-                n.forward[i] = update[i].forward[i]
-                update[i].forward[i] = n
+            for i in range(r_level+1):
+                node_random_level.forward[i] = update[i].forward[i]
+                update[i].forward[i] = node_random_level
 
             print("Successfully inserted key {}".format(key))
 
-    # Display skip list level wise
-    def displayList(self):
+    # display skip list level wise
+    def display_list(self):
         print("\n*****Skip List******")
         head = self.header
         for lvl in range(self.level+1):
@@ -233,22 +190,19 @@ class SkipList(object):
                 node = node.forward[lvl]
             print("")
 
-# Driver to test above code
-
-
 def main():
     lst = SkipList(3, 0.5)
-    lst.insertElement(3)
-    lst.insertElement(6)
-    lst.insertElement(7)
-    lst.insertElement(9)
-    lst.insertElement(12)
-    lst.insertElement(19)
-    lst.insertElement(17)
-    lst.insertElement(26)
-    lst.insertElement(21)
-    lst.insertElement(25)
-    lst.displayList()
+    lst.insert_element(3)
+    lst.insert_element(6)
+    lst.insert_element(7)
+    lst.insert_element(9)
+    lst.insert_element(12)
+    lst.insert_element(19)
+    lst.insert_element(17)
+    lst.insert_element(26)
+    lst.insert_element(21)
+    lst.insert_element(25)
+    lst.display_list()
 
 
 main()

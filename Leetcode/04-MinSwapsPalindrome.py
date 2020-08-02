@@ -13,7 +13,7 @@ Example 4:  Input: "ntiin"  | Output:  1
 # time complexity:  O(n^2)
 # space complexity: O()
 
-def minSwap(string):
+def min_swap(string):
     # convert string to list
     list_of_string = list(string)
     # check if list_of_string can be palindrome
@@ -21,10 +21,18 @@ def minSwap(string):
     letter = [0] * 26
 
     for i in list_of_string: 
-        letter[ord(i) - ord('a')] += 1
+        # get unicode char of current letter
+        unicode_i = ord(i)
+        # get unicode char of letter 'a'
+        unicode_a = ord('a')
+        # get alphabet index
+        alphabet_index = unicode_i-unicode_a
+        # get current letter count for each letter in string
+        letter[alphabet_index] += 1
 
     for l in letter:
-        if l & 1 == 1: odd += 1
+        if l & 1 == 1: 
+            odd += 1
 
     if odd > 1:
         return -1
@@ -54,3 +62,5 @@ def minSwap(string):
             res, t = res + 1, t + 1
 
     return res
+
+print(min_swap('racecra'))

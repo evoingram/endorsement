@@ -1,79 +1,74 @@
 # https://www.tutorialspoint.com/implement-trie-prefix-tree-in-python
-'''
-pseudocode:
-Suppose we have to make the trie structure, with three basic operations like insert(), search(), startsWith() methods. We can assume that all inputs are in lowercase letters. For example, if we call the functions as follows, we will see the outputs
 
-    Trie trie = new Trie()
-    trie.insert(“apple”)
-    trie.search(“apple”)     //This will return true
-    trie.search(“app”)        //This will return false
-    trie.startsWith(“app”)   //This will return true
-    trie.insert(“app”)
-    trie.search(“app”)        //This will return true
-To solve this, we will follow these steps −
-
-    Initially make one dictionary called child.
-    The insert method will be like −
-    current := child
-    for each letter l in word −
-        if l is not present in current, then current[l] := new dictionary
-    current := current[l]
-    current[#] = 1
-    The search method will be like −
-    current := child
-    for each letter l in word −
-        if l is not present in current, then return false
-        current := current[l]
-    return true if current[#] = 1, otherwise false
-    The startsWith method will be like −
-    current := child
-    for each letter l in word −
-        if l is not present in current, then return false
-        current := current[l]
-    return True
-
-'''
-
-"""
-
-"""
 # TRIE
-# time complexity:   O()
-# space complexity:  O()
+    # tree optimized for searching by prefix
+    # auto-complete really useful ffor this
+    # starts wth root node that doesn't represent anything
+    # has bunch of child nodes representing 1 letter
+        # each of those has child nodes representing next letter
+    # can add weights to certain edges/children so they are suggested first
+    # space is its own node
+    
+# time complexity:     Avg        |   Worst
+    # Access:       O(n)          |   O(n)
+    # Search:       O(key_length) |   O(n)
+    # Insertion:    O(key_length) |   O(n)
+    # Deletion:     O(key_length) |   O(n)
 
+# space complexity:  O(ALPHABET_SIZE * key_length * N)
 
 class Trie(object):
     def __init__(self):
         self.child = {}
 
     def insert(self, word):
-        current = self.child
-        for l in word:
-            if l not in current:
-                current[l] = {}
-            current = current[l]
-        current['#'] = 1
+        # get current child
+        current_child = self.child
+        # loop through each letter in word
+        for letter in word:
+            # if current letter doesn't match current child
+            if letter not in current_child:
+                # set current letter's dictionary entry in 
+                    # current child as empty dictionary
+                current_child[letter] = {}
+            # set current child as current letter's dictionary 
+                # entry in current child
+            current_child = current_child[letter]
+        # 
+        current_child['#'] = 1
 
     def search(self, word):
-        current = self.child
-        for l in word:
-            if l not in current:
+        # get current child
+        current_child = self.child
+        # loop through each letter in word
+        for letter in word:
+            # if current letter doesn't match current child
+            if letter not in current_child:
                 return False
-            current = current[l]
-        return '#' in current
+            # set current child as current letter's dictionary 
+                # entry in current child
+            current_child = current_child[letter]
+        return '#' in current_child
 
-    def startsWith(self, prefix):
-        current = self.child
-        for l in prefix:
-            if l not in current:
+    def starts_with(self, prefix):
+        # get current child
+        current_child = self.child
+        # loop through each letter in prefix
+        for letter in prefix:
+            # if current letter doesn't match current child
+            if letter not in current_child:
+                # not found
                 return False
-            current = current[l]
+            # set current child as current letter's dictionary 
+                # entry in current child
+            current_child = current_child[letter]
+        # found
         return True
 
 ob1 = Trie()
 ob1.insert("apple")
 print(ob1.search("apple"))
 print(ob1.search("app"))
-print(ob1.startsWith("app"))
+print(ob1.starts_with("app"))
 ob1.insert("app")
 print(ob1.search("app"))
