@@ -1,7 +1,7 @@
 # Endorsement Repo
 <br>
 <br> 
-This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful. 
+This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful.
 <br>
 <br>
 
@@ -23,65 +23,71 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 * [What Do I Learn Next?](#what-do-i-learn-next)
 * [Other Tips](#other-tips)
 <br>
-<br>
-<br>
 
 ## Notes
 
 ### TBD on completion of this section
 ### Languages & Frameworks
 
-- [HTML & CSS]()
-- [JavaScript]()
-- [React & Redux]()
-- [Node, Knex, Express, SQL]()
-- [Java]()
-- [TypeScript]()
-- [Visual Basic]()
-- [Tailwind]()
-- [GraphQL]()
-- [Emmet]()
-- [Bootstrap]()
-- [Regex]()
+- [HTML & CSS](https://github.com/evoingram/endorsement/tree/master/notes/HTML-CSS.md)
+- [JavaScript](https://github.com/evoingram/endorsement/tree/master/notes/JavaScript.md)
+- [React & Redux](https://github.com/evoingram/endorsement/tree/master/notes/ReactRedux.md)
+- [Node, Knex, Express](https://github.com/evoingram/endorsement/tree/master/notes/Node.md)
+- [SQL](https://github.com/evoingram/endorsement/tree/master/notes/SQL.md)
+- [Java](https://github.com/evoingram/endorsement/tree/master/notes/Java.md)
+- [TypeScript](https://github.com/evoingram/endorsement/tree/master/notes/TypeScript.md)
+- [Visual Basic]
+- [Tailwind]
+- [GraphQL](https://github.com/evoingram/endorsement/tree/master/notes/GraphQL.md)
+- [Emmet]
+- [Bootstrap]
+- [Regex](https://github.com/evoingram/endorsement/tree/master/notes/Regex.md)
 
 ### Theory & Concepts
 
-- [Computer Science](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos)
-- [Calculating Big O](https://github.com/evoingram/endorsement/tree/master/CalculatingBigO.md)
-- [Stack Overflow4 Big O Explanation](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos\general%20info\bigOexplanation.md)
+- [Data Structures & Algorithms](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos)
+- [Calculating Big O](https://github.com/evoingram/endorsement/tree/master/notes/CalculatingBigO.md)
+- [Stack Overflow Big O Explanation](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos\general%20info\bigOexplanation.md)
 - [Stacks v. Heaps](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos\general%20info\stack_v_heap.md)
-- [Bit Manipulation](https://github.com/evoingram/endorsement/tree/master/bit-manipulation.md)
-- [Object-Oriented Analysis & Design]()
-- [Object-Oriented Interview Tips](https://github.com/evoingram/endorsement/tree/master/OODInterviewTips.md)
-- [Scalability]()
-- [System Design & Architecture]() (includes UML & object-oriented design patterns)
-- [System Design Interviews]()
-- [Agile]()
-- [operating system]()
+- [Bit Manipulation](https://github.com/evoingram/endorsement/tree/master/notes/bit-manipulation.md)
+- [Object-Oriented Analysis & Design](https://github.com/evoingram/endorsement/tree/master/notes/OOAD.md)
+- [Object-Oriented Interview Tips](https://github.com/evoingram/endorsement/tree/master/notes/OODInterviewTips.md)
+- [Object-Oriented Design Patterns](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md)
+- [Object-Oriented Design Patterns Glossary](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFourGlossary.md)
+- [Object-Oriented Design Patterns Quick List](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFourQL.md)
+- [Scalability](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md)
+- [System Design & Architecture](https://github.com/evoingram/endorsement/tree/master/notes/SystemDesign.md)
+- [UML](https://github.com/evoingram/endorsement/tree/master/notes/UML.md)
+- [System Design Interviews](https://github.com/evoingram/endorsement/tree/master/notes/SystemSpecific.md)
+- [Agile](https://github.com/evoingram/endorsement/tree/master/notes/Agile.md)
+- [computers](https://github.com/evoingram/endorsement/tree/master/notes/Computers.md)
+- [operating system]
 
 ### Software
 
-- [PowerShell]()
-- [Git & Bash Terminal, VS Code Shortcuts]()
-- [Docker]()
-- [Azure]()
-- [Cortana]()
-- [Postman]()
+- [PowerShell]
+- [Git & Bash Terminal, VS Code Shortcuts](https://github.com/evoingram/endorsement/tree/master/notes/Shortcuts.md)
+- [Docker](https://github.com/evoingram/endorsement/tree/master/notes/Docker.md)
+- [Azure](https://github.com/evoingram/endorsement/tree/master/notes/Azure.md)
+- [Cortana]
+- [Postman]
 
 ### Books
 
-- [Clean Code]()
-- [Clean Coder]()
-- [Clean Architecture]()
+- [Clean Code](https://github.com/evoingram/repo/blob/master/notes/CleanCode.md)
+- [Clean Coder](https://github.com/evoingram/repo/blob/master/notes/CleanCoder.md)
+- [Clean Architecture](https://github.com/evoingram/repo/blob/master/notes/CLeanArch.md)
+- [Gang of Four book](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md)
+- [Web Scalability for Startup Engineers](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md)
 
 ### Miscellaneous
 
-- [problem solving tips](https://github.com/evoingram/repo/blob/master/ProblemSolving.md)
-- [coding challenge tips](https://github.com/evoingram/repo/blob/master/CodingChallengePatterns.md)
-- [interview tips]()
-- [code review tips]()
-- [behavioral questions]()
-- [hot-seat questions]()
+- [problem solving tips](https://github.com/evoingram/repo/blob/master/notes/ProblemSolving.md)
+- [coding challenge tips](https://github.com/evoingram/repo/blob/master/notes/CodingChallengePatterns.md)
+- [interview tips](https://github.com/evoingram/repo/blob/master/notes/InterviewTips.md)
+- [code review tips](https://github.com/evoingram/repo/blob/master/notes/CodeReviewTips.md)
+- [behavioral questions](https://github.com/evoingram/repo/blob/master/notes/BehavioralQuestions.md)
+- [hot-seat questions](https://github.com/evoingram/repo/blob/master/notes/HotSeat.md)
 
 ## Learning Resources
 
@@ -172,6 +178,7 @@ I wanted to share these links because there's some really good info on job-relat
 
 #### Books I've read
 
+I highly recommend every one of these.
 
 - [X] Clean Code, Bob Martin, teaches you how to write clean code
 - [X] The Clean Coder, Bob Martin, teaches you what a professional software engineer looks like in terms of behavior and best practices in the workplace
@@ -203,7 +210,7 @@ I wanted to share these links because there's some really good info on job-relat
 
 There are lots of other ways to figure it out, but my suggestion is to use your previous or current work experience as a muse of sorts to figure out a unique project you can build.  What problems can you solve with your tech AND real-world knowledge that you would use your built app to solve?  If there's an industry you want to work in, research what different tech companies are doing in that space and build a clone of one of those things, preferably NOT in the language of the original.  Try really hard to come up with things like this, where you applied yourself and your skills to generate the idea, because that is how you stand out in a world of to-do lists.  Your interview answers will stand out as well as your projects.
 
-## What do I learn next? 
+## What do I learn next?
 
 If you're having trouble figuring out what to learn next, my suggestion is to figure out what industry you want to work in or what place or type of place you want to work at, and then do research on the various job boards and read a lot of job descriptions to get a feel for what people in those places know and expect their tech employees to know.  Read what job ads for your next career step are requiring.  Then go learn what you find.  This is a place where you could also potentially leverage your previous work experience to figure out what to learn.
 
@@ -211,14 +218,14 @@ If you're having trouble figuring out what to learn next, my suggestion is to fi
 
 ## Other Tips
 
-- Make detailed readmes; don't make hiring people work to have to find out what your app does, how it works, key features, tech stack, who worked on it with you, what you did/your role, etc.  A lot of people don't do this, so it stands out.  This also helps refresh you before going to an interview of the highlights of a particular project so you can talk about it easier at the interview.
-- Also try out Code Climate badges. 
-- Fill out your about-me readme on your GitHub profile.
-- Make sure your GitHub squares are green at least five days a week if at all possible.
-- Start creating your portfolio early so you can give it the time and effort it deserves.
-- Handwriting notes isn't for everyone, but it does force you to think about what you're writing for a longer time than if you're typing the same thing.
-- Don't be afraid to write design docs, UML diagrams, robust general documentation, Postman docs/tests, and the like for even small projects, because it proves you know how to do it and shows leadership, shows that you can keep the big picture in mind.
-- Put general comments throughout your code while you're writing your project so you know why stuff is the way it is and maybe extremely short summaries of what it does, because you aren't going to remember why you did something six months down the road when you need it.  It will be useful to have this info for interviews.
-- If you are terrified of public speaking, there is only one way to get over it, and that's to practice it.  Go on Zoom, answer an interview question, no matter if it's behavioral or technical, draw, go through the motions, and talk out loud, recording it to watch it later.  Then when you watch it, make some general notes about things you didn't like or think can be improved.  Do this over and over and over again until you are comfortable.  There are services out there that you can do this with a buddy or an interviewer, free and paid, but if you are able to self-evaluate, you only need yourself.
-- Contribute to open source; it can be documentation or other things, not necessarily code.
-- If you are intending on interviewing at a place that requires a system design interview, you need a few weeks to a month to properly study everything you need to know.  Giving it only a few days will not be enough!
+* Make detailed readmes; don't make hiring people work to have to find out what your app does, how it works, key features, tech stack, who worked on it with you, what you did/your role, etc.  A lot of people don't do this, so it stands out.  This also helps refresh you before going to an interview of the highlights of a particular project so you can talk about it easier at the interview.
+* Also try out Code Climate badges.
+* Fill out your about-me readme on your GitHub profile.
+* Make sure your GitHub squares are green at least five days a week if at all possible.
+* Start creating your portfolio early so you can give it the time and effort it deserves.
+* Handwriting notes isn't for everyone, but it does force you to think about what you're writing for a longer time than if you're typing the same thing.
+* Don't be afraid to write design docs, UML diagrams, robust general documentation, Postman docs/tests, and the like for even small projects, because it proves you know how to do it and shows leadership, shows that you can keep the big picture in mind.
+* Put general comments throughout your code while you're writing your project so you know why stuff is the way it is and maybe extremely short summaries of what it does, because you aren't going to remember why you did something six months down the road when you need it.  It will be useful to have this info for interviews.
+* If you are terrified of public speaking, there is only one way to get over it, and that's to practice it.  Go on Zoom, answer an interview question, no matter if it's behavioral or technical, draw, go through the motions, and talk out loud, recording it to watch it later.  Then when you watch it, make some general notes about things you didn't like or think can be improved.  Do this over and over and over again until you are comfortable.  There are services out there that you can do this with a buddy or an interviewer, free and paid, but if you are able to self-evaluate, you only need yourself.
+* Contribute to open source; it can be documentation or other things, not necessarily code.
+* If you are intending on interviewing at a place that requires a system design interview, you need a few weeks to a month to properly study everything you need to know.  Giving it only a few days will not be enough!
