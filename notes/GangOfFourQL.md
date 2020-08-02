@@ -109,8 +109,8 @@
   * separates object construction from its representation
 * **Factory Method**:  define an interface for creationg an object, but let subclasses decide which class to instantiate
   * lets a class defer instantiation to subclasses
-  * creates an instance off several derived classes
-* **Prototype**:  specify the kinds off objects to create using a prototypical instance & create new objects by copying this prototype
+  * creates an instance of several derived classes
+* **Prototype**:  specify the kinds of objects to create using a prototypical instance & create new objects by copying this prototype
   * fully initialized instance to be copied or cloned
 * **Singleton**:  ensure a class only has one instance & provide a global point of access to it
   * class in which only single instance can exist
@@ -119,7 +119,7 @@
 
 **structural**:  relationships between those objects
 
-* **Adapter**:  convert interface off class to one clients expect
+* **Adapter**:  convert interface of class to one clients expect
   * lets classes work together that couldn't otherwise due to incompatible interfaces
   * matches interfaces of diffferent classes
 * **Bridge**:  decouple an abstraction from its implementation so the two can vary independently
