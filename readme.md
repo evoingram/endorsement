@@ -176,6 +176,7 @@ I wanted to share these links because there's some really good info on job-relat
 
 #### Books I've read
 
+
 - [X] Clean Code, Bob Martin, teaches you how to write clean code
 - [X] The Clean Coder, Bob Martin, teaches you what a professional software engineer looks like in terms of behavior and best practices in the workplace
 - [X] Clean Architecture, Bob Martin, teaches you how to design clean software architecture
