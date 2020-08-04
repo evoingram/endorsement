@@ -7,3 +7,6 @@
     # Explanation: "aabbabb"
 # Example 2:  Input: "abaaaa"   |   Output: 4
     # Explanation: "abaa"
+
+## time complexity:  O()
+## space complexity:  O()

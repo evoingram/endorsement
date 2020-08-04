@@ -3,6 +3,9 @@
 # Given a string s containing only a and b, find longest substring of s such that 
     # s does not contain more than two contiguous occurrences of a and b.
 
+## time complexity:  O(n)
+## space complexity:  O(1)
+
 '''
 Example 1:  Input: "aabbaaaaabb"   |   Output: "aabbaa"
 Example 2:  Input: "aabbaabbaabbaa"   |   Output: "aabbaabbaabbaa"
@@ -10,8 +13,6 @@ Example 2:  Input: "aabbaabbaabbaa"   |   Output: "aabbaabbaabbaa"
 def longest_substring(s):
     # initialize final string
     final_string = ""
-    # have a substring which tracks current letter pair
-    substring = ""
     length = len(s)
     x = 0
     # loop through s

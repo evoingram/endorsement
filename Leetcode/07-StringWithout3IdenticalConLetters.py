@@ -12,3 +12,7 @@ Given S = “uuuuxaaaaxuuu” , the function should return “uuxaaxuu”.
 # Write an efficient algorithm for the following assumptions:
     # N is an integer within the range [1..200,000]
     # string S consists only of lowercase letters (a-z)
+
+
+## time complexity:  O()
+## space complexity:  O()

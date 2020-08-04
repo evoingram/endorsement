@@ -22,8 +22,8 @@ Input: num = "10", k = 2   |   Output: "0"
 Explanation: Remove all the digits from the number and it is left with nothing which is 0.
 '''
 
-# time complexity:  O()
-# space complexity:  O()
+# time complexity:  O(n^2) (2 nested loops)
+# space complexity:  O(1)
 
 def removeKdigits(num, k):
     res = []

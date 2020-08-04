@@ -11,7 +11,7 @@ Example 4:  Input: "ntiin"  | Output:  1
 '''
 
 # time complexity:  O(n^2)
-# space complexity: O()
+# space complexity: O(1)
 
 def min_swap(string):
     # convert string to list

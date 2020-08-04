@@ -5,6 +5,9 @@
 
 # Example 1:  Input: "abczd"   |   Output: "abcd"
 
+## time complexity:  O(n)
+## space complexity:  O(1)
+
 def lexi_smallest(s):
     length = len(s)
     length_one_short = length - 1

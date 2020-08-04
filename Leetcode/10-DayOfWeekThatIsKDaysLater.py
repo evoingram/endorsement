@@ -11,3 +11,7 @@
     # should return "Fri".
 # Given S = "Sat" and K = 23, the function should return 
     # "Mon".
+
+
+## time complexity:  O()
+## space complexity:  O()
