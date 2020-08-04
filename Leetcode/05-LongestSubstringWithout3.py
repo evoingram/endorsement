@@ -7,3 +7,49 @@
 Example 1:  Input: "aabbaaaaabb"   |   Output: "aabbaa"
 Example 2:  Input: "aabbaabbaabbaa"   |   Output: "aabbaabbaabbaa"
 '''
+def longest_substring(s):
+    print("original = " + s)
+    # initialize final string
+    final_string = ""
+    # have a substring which tracks current letter pair
+    substring = ""
+    length = len(s)
+    x = 0
+    # loop through s
+    while len(s) >= 2:
+        beginning = s[0]
+        middle = s[1]
+        if len(s) > 2:
+            end = s[2]
+        print(beginning, middle, end)
+        # if current index + 1 != value of current index 
+        if beginning != middle:
+            # add value of current index to final string
+            final_string = final_string + beginning
+            print("tier 1")
+        # if current index + 1 == value of current index 
+        elif beginning == middle:
+            # check current index + 2 
+            # if current index + 2 == value of current index
+            if beginning == end:
+                # add value of current & current + 1 to final string
+                final_string = final_string + beginning + middle
+                # return string
+                return final_string
+            # if current index + 2 != value of current index
+            else: 
+                print("tier 2")
+                # add value of current & current + 1 to final string
+                final_string = final_string + beginning + middle
+                # add 1 to index
+                s = s[2:]
+        elif len(s) == 2:
+            final_string = final_string + beginning + middle
+        print("final = " + final_string)
+    # return string
+    return final_string
+
+## aabbaa
+print(longest_substring("aabbaaaaabb"))
+## aabbaabbaabbaa
+print(longest_substring("aabbaabbaabbaa"))
