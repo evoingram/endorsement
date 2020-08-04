@@ -4,3 +4,17 @@
     # one character.
 
 # Example 1:  Input: "abczd"   |   Output: "abcd"
+
+def lexi_smallest(s):
+    length = len(s)
+    length_one_short = length - 1
+
+    for x in range(length_one_short):
+        i_one_short = x - 1
+        x_one_long = x + 1
+        if s[x] > s[x_one_long]:
+            return s[:x] + s[x_one_long:]
+    return s[:-1]
+
+# abcd
+print(lexi_smallest("abczd"))
