@@ -52,7 +52,10 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 * [Stack Overflow Big O Explanation](https://github.com/evoingram/endorsement/tree/master/notes/bigOexplanation.md)
 * [Stacks v. Heaps](https://github.com/evoingram/endorsement/tree/master/notes/stack_v_heap.md)
 * [Bit Manipulation](https://github.com/evoingram/endorsement/tree/master/notes/bit-manipulation.md)
-* [computers](https://github.com/evoingram/endorsement/tree/master/notes/Computers.md)
+* [Graphs](https://github.com/evoingram/endorsement/tree/master/notes/Graphs.md)
+* [Graphs FAQ](https://github.com/evoingram/endorsement/tree/master/notes/GraphsFAQ.md)
+* [Graph Representations](https://github.com/evoingram/endorsement/tree/master/notes/GraphsRepresentations.md)
+* [Computers](https://github.com/evoingram/endorsement/tree/master/notes/Computers.md)
 * [operating system]
 
 #### Object-Oriented Analysis & Design
