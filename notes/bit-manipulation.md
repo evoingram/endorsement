@@ -25,4 +25,4 @@ Values exist regardless of how we write them down.
 **nor**:  not or<br>
 **nand**:  not and<br>
 
-
+![bit manipulation conversion chart](bit-manipulation-conversion.jpg)
