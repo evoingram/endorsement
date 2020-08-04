@@ -106,20 +106,20 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 
 I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a great base or starter place to go for your knowledge.  There are a TON of different languages, frameworks, and fundamental computer science concepts explained there, including object-oriented design, data science and algorithms, how to use various cloud providers, languages, frameworks, operating systems, and more.  Study and take notes on a subject there, and then any videos you go on to watch or other things you do to learn will be very easy to understand and follow through on.  
 
-* [ ] [TutorialsPoint](https://www.tutorialspoint.com)
-* [ ] [System Design Primer](https://github.com/donnemartin/system-design-primer)
-* [ ] [OOAD Tutorial](https://www.tutorialspoint.com/object_oriented_analysis_design/ooad_quick_guide.htm)
-* [ ] [Docker Tutorial](https://www.tutorialspoint.com/docker/index.htm)
-* [ ] [TypeScript docs](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html)
-* [ ] [GSAP](https://greensock.com/learning,"GSAP")  
-* [ ] [Visual Studio](https://visualstudio.microsoft.com/vs/getting-started/, "Visual Studio")  
-* [ ] [Visual Studio](https://channel9.msdn.com/Shows/Visual-Studio-Toolbox, "Visual Studio")  
+* [X] [TutorialsPoint](https://www.tutorialspoint.com)
+* [X] [System Design Primer](https://github.com/donnemartin/system-design-primer)
+* [X] [OOAD Tutorial](https://www.tutorialspoint.com/object_oriented_analysis_design/ooad_quick_guide.htm)
+* [X] [Docker Tutorial](https://www.tutorialspoint.com/docker/index.htm)
+* [X] [TypeScript docs](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html)
+* [X] [GSAP](https://greensock.com/learning,"GSAP")  
+* [X] [Visual Studio](https://visualstudio.microsoft.com/vs/getting-started/, "Visual Studio")  
+* [X] [Visual Studio](https://channel9.msdn.com/Shows/Visual-Studio-Toolbox, "Visual Studio")  
 * [ ] [Operating System Tutorial](https://www.tutorialspoint.com/operating_system/index.htm)
-* [ ] [Azure Tutorial](https://www.tutorialspoint.com/microsoft_azure/index.htm)
+* [X] [Azure Tutorial](https://www.tutorialspoint.com/microsoft_azure/index.htm)
 * [ ] [Microsoft Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/)
 * [ ] [Google Style Guide 1](https://developers.google.com/style/)
 * [ ] [Google Style Guide 2](https://google.github.io/styleguide/cppguide.html)
-* [ ] [HighScalability.com Examples](http://highscalability.com/blog/category/example)
+* [X] [HighScalability.com Examples](http://highscalability.com/blog/category/example)
 
 ### Video
 
