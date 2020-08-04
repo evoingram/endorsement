@@ -31,8 +31,8 @@ Output: 2
 Explanation: Visible nodes are -10 and -1.
 '''
 
-# time complexity: O()
-# space complexity: O()
+# time complexity: O(n^2) ???? because it is calling itself twice for each call of itself
+# space complexity: O(1)
 
 def count_visible_nodes(root):
     # if no root, return 0

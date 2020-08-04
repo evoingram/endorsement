@@ -17,3 +17,6 @@ Explanation:
 
 So final number of steps required is 3.
 '''
+
+## time complexity:  O()
+## space complexity:  O()

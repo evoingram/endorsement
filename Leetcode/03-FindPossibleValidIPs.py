@@ -25,7 +25,7 @@
 
 # Total: 3 * 3 * 3 iterations.
 
-# time complexity:  O(1)
+# time complexity:  O(1) because of the 3^3 iterations
 # space complexity:  O(1)
 
 # checks whether IP digits are valid or not

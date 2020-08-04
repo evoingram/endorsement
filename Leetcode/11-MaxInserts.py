@@ -21,3 +21,6 @@ Examples:
 4. Given S= "baaaa", the function should return -1, 
     because there is a substring "aaa".
 '''
+
+## time complexity:  O()
+## space complexity:  O()
