@@ -13,6 +13,17 @@ Given S = “uuuuxaaaaxuuu” , the function should return “uuxaaxuu”.
     # N is an integer within the range [1..200,000]
     # string S consists only of lowercase letters (a-z)
 
-
 ## time complexity:  O()
 ## space complexity:  O()
+
+def no_three_consecutive(s):
+    pass
+
+# eedaad
+print(no_three_consecutive("“eedaaad”"))
+
+# xxtxx
+print(no_three_consecutive("xxxtxxx"))
+
+# uuxaaxuu
+print(no_three_consecutive("uuuuxaaaaxuuu"))
