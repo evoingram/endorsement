@@ -13,5 +13,24 @@
     # "Mon".
 
 
-## time complexity:  O()
-## space complexity:  O()
+## time complexity:  O(1)
+## space complexity:  O(1)
+
+def k_days_later(s, k):
+    days_of_week = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    remainder = k % 7
+    s_index = days_of_week.index(s)
+    move_forward = remainder + s_index
+    if move_forward < 7:
+        return days_of_week[move_forward]
+    else:
+        correct_day_index = move_forward - 7
+        return days_of_week[correct_day_index]
+
+# 0
+print(k_days_later("Wed", 2))
+print("----")
+# 2
+print(k_days_later("Sat", 23))
+print("----")
+print(k_days_later("Sat", 300))

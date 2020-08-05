@@ -18,5 +18,37 @@ Explanation:
 So final number of steps required is 3.
 '''
 
-## time complexity:  O()
-## space complexity:  O()
+## time complexity:  O(n)
+## space complexity:  O(1)
+
+def min_steps_equal_piles(piles):
+    steps = 0
+    length = len(piles)
+    if piles == []:
+        return 0
+    else:
+        # get sorted list
+        sorted_piles = set(piles)
+        sorted_piles = sorted(sorted_piles)
+        # get min, max and 2nd max
+        minimum = sorted_piles[0]
+        second_largest = sorted_piles[-2]
+        max_pile = sorted_piles[-1]
+        # subtract from max to equal 2nd max
+        # repeat until all equal second max
+        for x in range(length):
+            if piles[x] == max_pile:
+                difference = max_pile - second_largest
+                piles[x] = piles[x] - difference
+                steps += 1
+        # loop again to make second max equal to min
+        for x in range(length):
+            if piles[x] != minimum:
+                difference = piles[x]-minimum
+                piles[x] = piles[x]-difference
+                steps += 1
+        # return # of steps
+        return steps
+
+# 3
+print(min_steps_equal_piles([5, 2, 1]))
