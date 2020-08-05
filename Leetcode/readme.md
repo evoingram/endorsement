@@ -19,7 +19,7 @@ Giving time/space complexities in comments and a 2-3 line explanation is also ex
 
 - [Find Largest BST Subtree in a given Binary Tree](https://www.geeksforgeeks.org/find-the-largest-subtree-in-a-tree-that-is-also-a-bst/)
 - [Return Strings That Do Not Contain Identical Neighbors](https://leetcode.com/discuss/interview-question/525986/Microsoft-or-OA-2020-or-Return-strings-that-donot-contain-identical-neighbors)
-- [Largest M-Aligned Subset](https://leetcode.com/discuss/interview-question/525986/Microsoft-or-OA-2020-or-Return-strings-that-donot-contain-identical-neighbors)
+- [Largest M-Aligned Subset](https://leetcode.com/discuss/interview-question/525894/Microsoft-or-OA-2020-or-m-aligned-subset)
 - [Concatenated String Length with unique Characters](https://leetcode.com/discuss/interview-question/401826/)
 - [Largest K such that both K and -K exist in array](https://leetcode.com/discuss/interview-question/406031/)
 - [Min Swaps to Group Red Balls](https://leetcode.com/discuss/interview-question/414660/)
