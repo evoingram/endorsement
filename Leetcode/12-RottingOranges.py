@@ -118,13 +118,6 @@ def rotten_oranges(list):
 
 
 def oranges_rotting(grid):
-    # create a set of rotten orange locations and a set of fresh orange locations. 
-    # Then in each time interval iteration, loop through the fresh oranges and create a set 
-        # of those turned bad. 
-    # Then remove the newly-turned from the good and place in bad. 
-    # Continue until done. 
-
-    # Don't have to deal with the sides and corners.
     minute_count = 0
 
     def create_set(grid, target_value):
@@ -135,13 +128,16 @@ def oranges_rotting(grid):
                     result.add((x,y))
         return result
 
+    # create a set of rotten & fresh orange locations
     rotten_os = create_set(grid, 2)
     fresh_oranges = create_set(grid, 1)
     
     length_fresh = len(fresh_oranges)
 
+    # For each time interval iteration
     while length_fresh > 0:
         going_bad = set()
+        # loop through fresh oranges and create a set going bad
         for x, y in fresh_oranges:
             up_cell = (x - 1, y)
             down_cell = (x + 1, y)
@@ -155,8 +151,10 @@ def oranges_rotting(grid):
         if length_gb == 0:
             return -1
 
+        # remove oranges going bad from fresh and add to rotten
         fresh_oranges.difference_update(going_bad)
         rotten_os.update(going_bad)
+
         minute_count += 1
         length_fresh = len(fresh_oranges)
 
