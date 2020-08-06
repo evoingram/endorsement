@@ -15,8 +15,22 @@ For the third one I mentioned the approach that too a brute force approach and I
 
 Giving time/space complexities in comments and a 2-3 line explanation is also expected."
 
+## Puzzle
+
+Given an 8-pint jug full of water and two empty jugs of 5- and 3-pint capacity, get exactly 4 pints of water in one of the jugs by completely filling up and/or emptying jugs into others?
+
+* pour from 8 to 5 (3 in 8, 5 in 5, 0 in 3)
+* pour from 5 to 3 (3 in 8, 2 in 5, 3 in 3)
+* pour from 3 to 8 (6 in 8, 2 in 5, 0 in 3)
+* pour from 5 to 3 (6 in 8, 0 in 5, 2 in 3)
+* pour from 8 to 5 (1 in 8, 5 in 5, 2 in 3)
+* pour from 5 to 3 (1 in 8, 4 in 5, 3 in 3)
+* pour from 3 to 8 (4 in 8, 4 in 5, 0 in 3)
+
 ## Left To Add
 
+- [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
+- [Milk Bottles](https://leetcode.com/discuss/interview-question/707939/Microsoft-or-Azure-or-Milk-Bottles)
 - [Find Largest BST Subtree in a given Binary Tree](https://www.geeksforgeeks.org/find-the-largest-subtree-in-a-tree-that-is-also-a-bst/)
 - [Return Strings That Do Not Contain Identical Neighbors](https://leetcode.com/discuss/interview-question/525986/Microsoft-or-OA-2020-or-Return-strings-that-donot-contain-identical-neighbors)
 - [Largest M-Aligned Subset](https://leetcode.com/discuss/interview-question/525894/Microsoft-or-OA-2020-or-m-aligned-subset)
@@ -44,7 +58,8 @@ Giving time/space complexities in comments and a 2-3 line explanation is also ex
 - [Count Of Hours Variations](https://leetcode.com/discuss/interview-question/645626/)
 - [Aladdin Checkers Game](https://leetcode.com/discuss/interview-question/654921/)
 - [Number of fractions that sum up to 1](https://leetcode.com/discuss/interview-question/684355/)
-
+- [Word Machine](https://leetcode.com/discuss/interview-question/760379/Microsoft-or-OA-2020-or-Word-Machine)
+- [Xavier War](https://leetcode.com/discuss/interview-question/551198/Microsoft-or-OA-or-Xavier-War(need-help-with-solution))
 ### More Easy Problems
 
 Title | Acceptance | Frequency | Difficulty
