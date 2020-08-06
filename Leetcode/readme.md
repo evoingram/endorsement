@@ -25,7 +25,7 @@ Given an 8-pint jug full of water and two empty jugs of 5- and 3-pint capacity, 
 ## Left To Add
 
 * [X] [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
-* [ ] [Milk Bottles](https://leetcode.com/discuss/interview-question/707939/Microsoft-or-Azure-or-Milk-Bottles)
+* [X] [Milk Bottles](https://leetcode.com/discuss/interview-question/707939/Microsoft-or-Azure-or-Milk-Bottles)
 * [ ] [Find Largest BST Subtree in a given Binary Tree](https://www.geeksforgeeks.org/find-the-largest-subtree-in-a-tree-that-is-also-a-bst/)
 * [ ] [Return Strings That Do Not Contain Identical Neighbors](https://leetcode.com/discuss/interview-question/525986/Microsoft-or-OA-2020-or-Return-strings-that-donot-contain-identical-neighbors)
 * [ ] [Largest M-Aligned Subset](https://leetcode.com/discuss/interview-question/525894/Microsoft-or-OA-2020-or-m-aligned-subset)
