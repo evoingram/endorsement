@@ -12,7 +12,6 @@ I was able to give solutions to 2 of them.
 I had to use my eclipse to debug and make sure the tests passed.
 
 For the third one I mentioned the approach that too a brute force approach and I got invited to onsite.
-
 Giving time/space complexities in comments and a 2-3 line explanation is also expected."
 
 ## Puzzle
