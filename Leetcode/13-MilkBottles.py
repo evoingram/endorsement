@@ -5,3 +5,9 @@
     # initially, how many milk bottles can i drink?
 
 # Generalize this for 'n' bottles
+
+def bottles(n):
+    bottles_to_drink = int((3*n-1)/2)
+    return bottles_to_drink
+
+print(bottles(18))
