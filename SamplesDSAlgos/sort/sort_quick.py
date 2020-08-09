@@ -10,8 +10,8 @@
     # rearrange everything according to its relationship with pivot
     # sort into 2 lists and resort until done
     # works better when pivot is in middle or random
-# recursive
-# better with runtimes than many iterative solutions
+    # recursive
+    # better with runtimes than many iterative solutions
 
 # time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n^2)
 # space complexity:  O(log(n))
