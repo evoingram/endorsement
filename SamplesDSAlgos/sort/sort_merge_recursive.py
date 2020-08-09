@@ -1,9 +1,23 @@
 
 # MERGE SORT (RECURSIVE):
-    # 
+    # divide in half until you have sub-arrays of single elements
+    # then merge sorted lists together
+    # very useful, easier to understand than others, recursive
+    # effective and stable
+    # use if you have equivalent elements; it will keep their 
+        # original order in array
+
+    # take big list & divide into two half-lists
+    # recursively call merge sort on smaller list, which will 
+        # in turn do the same
+    # base case = list of one
+    # on way up recursive calls, you will merge sorted lists together
+        # using function walking through both simultaneously & inserts
+        # smaller value first, creating bigger sorted list
+    
 
 # time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
-# space complexity:  O(n)
+# space complexity:  O(n) because we create new lists as we go
 
 # complete the helper function below to merge 2 sorted arrays 
 def merge(arrA, arrB):
@@ -17,21 +31,17 @@ def merge(arrA, arrB):
             else
                 add arrA[0] to the end of merged_arr
                 remove arrA[0] from arrA
-    end while
-
-    while ( arrA has elements )
-            add arrA[0] to the end of merged_arr
-            remove arrA[0] from arrA
-    end while  
-
-    while ( arrB has elements )
-            add arrB[0] to the end of merged_arr
-            remove arrB[0] from arrB
-    end while   
-
-    return merged_arr
-
-    end procedure
+        end while
+        while ( arrA has elements )
+                add arrA[0] to the end of merged_arr
+                remove arrA[0] from arrA
+        end while  
+        while ( arrB has elements )
+                add arrB[0] to the end of merged_arr
+                remove arrB[0] from arrB
+        end while   
+        return merged_arr
+        end procedure
     '''
     elements = len(arrA) + len(arrB)
     merged_arr = [] * elements
@@ -88,20 +98,19 @@ def merge_in_place(arr, startpoint, midpoint, endpoint):
             else
                 add arrA[0] to the end of merged_arr
                 remove arrA[0] from arrA
-    end while
+        end while   
 
-    while ( arrA has elements )
-            add arrA[0] to the end of merged_arr
-            remove arrA[0] from arrA
-    end while  
+        while ( arrA has elements )
+                add arrA[0] to the end of merged_arr
+                remove arrA[0] from arrA
+        end while  
 
-    while ( arrB has elements )
-            add arrB[0] to the end of merged_arr
-            remove arrB[0] from arrB
-    end while   
+        while ( arrB has elements )
+                add arrB[0] to the end of merged_arr
+                remove arrB[0] from arrB
+        end while   
 
-    return merged_arr
-
+        return merged_arr
     end procedure
     '''
     midplusone = midpoint + 1
