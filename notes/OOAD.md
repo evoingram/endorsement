@@ -280,16 +280,27 @@ Both initial and final states are pseudo states and may not have the parts of re
 **events**:  some occurrences that can trigger state transition of an object or group of objects; have a location in time and space, but do not have time period associated with it; generally associated with some actions; ones that trigger transitions are written alongside arc of transition in state diagrams
 
 **external events**:  events that pass from user of system to objects within system
+
 **internal events**:  events that pass from one object to another within system
+
 **deferred events**:  those not immediately handled by object in current state, but lined up in a queue to be handled by the object in another state later
+
 **event class**:  group of events with common structure & behavior; may also be organized in hierarchical structure; may have attributes, time implicit
+
 **activity**:  operation upon states of an object that requires some time period; ongoing executions within system that can be interrupted; shown in activity diagrams portraying flow from one activity to another
+
 **action**:  atomic operation executing as a result of certain events; may operate upon object on which an event has been triggered or on other objects visible to this object; set of actions
+
 **atomic**:  uninterruptable
+
 **entry action**:  action executed upon entering a state
+
 **exit action**:  action executed while leaving a state
-**scenario**:  description of specified sequence off actions; depicts behavior of objects undergoing specific action series
+
+**scenario**:  description of specified sequence of actions; depicts behavior of objects undergoing specific action series
+
 **primary scenarios**:  essential sequences
+
 **secondary scenarios**:  alternative sequences
 
 - two primary diagrams used for dynamic modeling:
@@ -304,22 +315,31 @@ Both initial and final states are pseudo states and may not have the parts of re
   - **concurrency within object**:  object can issue concurrent events; object may have states composed of substates & concurrent events may occur in each of substates
 
 **simple state**:  no substructure
+
 **composite state**:  state with simpler states nested inside it; can have sequential or concurrent substates
 
 - substate used generally to reduce complexity of state machine
 
 **sequential substates**:  execution control passes from one substate to another in a sequential manner; at most one initial state and one final state
+
 **concurrent substates**:  execute in parallel; each state has concurrently executing state machines within it; each state machine has its own initial and final states; if one finishes first, it waits at final state; when all reach final, all join back to single flow
+
 **functional modeling**:  gives process perspective of OOA model and overview of what system is supposed to do; defines function of internal processes in system with aid of data flow diagrams (DFDs); depicts functional derivation of data values without indicating how they are derived when computed or why they need to be computed; represented through hierarchy of data flow diagrams
+
 **data flow diagram**:  graphical representation of a system that shows inputs to system, processing upon inputs, system outputs, and internal data stores; illustrate series of transformations or computations performed on objects or system and external controls and objects that affect transformation; four main parts:  processes, data flows, actors, data stores; other parts:  constraints, control flows
 
 ### Data Flow Diagram Features
 
 **processes**:  computational activities that transform data values; whole system can be visualized as high-level process; may be further divided into smaller components; lowest-level process may be simple function; representation in DFD is ellipse with name inside & contains fixed number of input & output data values
+
 **data flows**:  represents flow of data between two processes; denotes value of data item at some point of the computations & value not changed by data flow; representation in DFD is directed arc or arrow & labeled with name of data item it carries; may be forked (aggregate to forked components)
+
 **actors**:  active objects interacting with system by either producing data and inputting them to system or consuming data produced by system; sources and sinks (?) of data; representation in DFD is rectangle & connected to I/Os and lie on DFD boundary
+
 **data stores**:  passive objects that act as a data repository; cannot perform operations; used to store data and retrieve stored data; represent a data structure, disk file, or table in database; representation in DFD is two parallel lines containing data store name; each data store connected to at least one process; input arrows contain info to modify data store contents; output arrows contain info retrieved from data store & labeled when part of info is to be retrieved; two-way arrow implies both retrieval and update
+
 **constraint**:  specify conditions or restrictions that need to be satisfied over time; allow adding new rules or modifying existing ones; can appear in all three models of OOA; in object modeling, constraints define relationship between objects; in dynamic modeling, constraints define relationship between states and events of different objects; in functional modeling, constraints define restrictions on transformations and computations; representation in DFD is string within braces
+
 **control flows**:  process may be associated within a certain Boolean value and is evaluated only if value is true, though is not a direct input to process; these Boolean values = control flows; representation in DFD is dotted arc from process producing Boolean value to process controlled by them
 
 - to develop DFD model of system, DFD's hierarchy constructed:
@@ -361,8 +381,11 @@ Both initial and final states are pseudo states and may not have the parts of re
 ## UML
 
 **UML**:  Unified Modeling Language
+
 **system**:  set off elements organized to achieve certain objectives from a system; systems often divided into subsystems and described by set of models
+
 **model**:  simplified complete and consistent abstraction of system, created for better understanding of system
+
 **view**:  projection of a system's model from a specific perspective
 
 - conceptual model of UML encompasses three major elements:  basic building blocks, rules, common mechanisms
@@ -402,6 +425,7 @@ Both initial and final states are pseudo states and may not have the parts of re
 - UML has four common mechanisms:  specifications, adornments, common divisions, extensibility mechanisms
 
 **specifications**:  behind each graphical notation, there is a textual statement denoting syntax and semantics; provide semantic backplane that contains all parts of system and relationship among different paths
+
 **adornments**:  each UML element has a unique graphical notation; notations to represent important aspects of element like name, scope, visibility, etc.
 
 - OO systems divided in two common ways:
@@ -435,7 +459,9 @@ Both initial and final states are pseudo states and may not have the parts of re
   - **bottom section**:  represents values of attributes; attribute-name = value
 
 **component**:  physical and replaceable part of system that confirms to and provides realization of a set of interfaces; represents physical packaging of elements like classes and interfaces; represented by rectangle with tabs
+
 **interface**:  collection of methods of class or component; specifies set off services that may be provided by class or component; drawn as circle together with its name; almost always attached to class or component that realizes it
+
 **package**:  organized group of elements; may contain structural things like classes, components, other packages; represented by tabbed ffolder; generally only drawn with name, but may have additional package details
 
 |  notations for different types of relationships  |
@@ -457,8 +483,10 @@ Both initial and final states are pseudo states and may not have the parts of re
   - deployment diagram
 
 **class diagram**:  models static view of system; comprised of classes, interfaces, and collaborations of system and relationships between them
+
 **object diagram**:  models a group of objects and their links at a point in time; shows instances off things in a class diagram; static part of an interaction diagram
-**component diagram**:  show orrganization and dependencies among group of components; comprised of components, interfaces, relationships, packages, and subsystems (optional)
+
+**component diagram**:  show organization and dependencies among group of components; comprised of components, interfaces, relationships, packages, and subsystems (optional)
 
 - used for:
   - constructing systems through forward and reverse engineering
@@ -480,6 +508,7 @@ Both initial and final states are pseudo states and may not have the parts of re
   - activity diagrams
 
 **use case**:  describes sequence of actions a system performs yielding visible results; shows interaction of things outside system with system itself; may be applied to whole system as well as part of system
+
 **actor**:  represents roles the use-case users play; may be person, device, or another system
 
 - use case diagrams present outside view of manner the elements in a system behave and how they can be used in the context
@@ -487,10 +516,15 @@ Both initial and final states are pseudo states and may not have the parts of re
   - used to model system requirements from outside point of view and to model system context by enclosing all system activities within a rectangle and focusing on actors outside system by interacting with it
 
 **interaction diagram**:  depict interactions of objects and their relationships; include messages passed between them; two types:  sequence and collaboration; used for modeling, control flow by time ordering using sequence diagrams, control flow of organization using collaboration diagrams
+
 **sequence diagram**:  interaction diagrams illustrating ordering of messages according to time; in form of 2D charts:  objects initiating interaction placed on X axis, messages sent & received by objects placed along Y axis, order of increasing time top to bottom
+
 **collaboration diagram**:  interaction diagrams illustrating structure of objects that send and receive messages; objects participating in interaction shown using vertices; links connecting objects used to send and receive messages; message shown as labeled arrow
+
 **state-chart diagram**:  shows state machine depicting control flow off object from one state to another; state machine portrays sequences of states which an object undergoes due to events and their responses to events; comprised of states (simple of composite), transitions between states, events causing transitions, actions due to events; used for modeling objects which are reactive in nature
+
 **activity diagram**:  depicts flow of activities which are ongoing non-atomic operations in a state machine; activities result in actions which are atomic operations; comprised of objects, transitions, and activity and action states; used for modeling workflows as viewed by actors interacting with system and modeling details of operations or computations using flow charts
+
 
 ****:  
 ****:  
