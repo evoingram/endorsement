@@ -2,12 +2,12 @@
 
 ## Objectives
 
-* [Graph Intro](objectives/graph-intro)
-* [Graph Representations](objectives/graph-representations)
-* [Breadth First Search](objectives/breadth-first-search)
-* [Depth First Search](objectives/depth-first-search)
-* [Randomness](objectives/randomness)
-* [Connected Components](objectives/connected-components)
+* [Graph Intro](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/graphs/objectives/graph-intro)
+* [Graph Representations](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/graphs/objectives/graph-representations)
+* [Breadth First Search](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/graphs/objectives/breadth-first-search)
+* [Depth First Search](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/graphs/objectives/depth-first-search)
+* [Randomness](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/graphs/objectives/randomness)
+* [Connected Components](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/graphs/objectives/connected-components)
 
 ## Projects
 
