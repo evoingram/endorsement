@@ -90,7 +90,7 @@ def radix_sort(original_array):
     # exp is 10^current digit number 
         # 1 = ones place, 10 = tens place, etc.
     digit_place = 1
-    while max1/exp > 0:
+    while max1/digit_place > 0:
         count_sort(original_array, digit_place)
         digit_place *= 10
 
