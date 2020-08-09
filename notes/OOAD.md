@@ -341,7 +341,157 @@ Both initial and final states are pseudo states and may not have the parts of re
 | used as part of system docs | difficult for non-tech person to understand |
 |  | prep method subjective & leaves ample scope to be imprecise |
 
-****:  
+- relationship between object, dynamic, and functional models:
+  - are complimentary to each other for a complete OOA
+  - object modeling develops static structure of software system in terms of objects
+    - slows "doers" of system
+  - dynamic modeling develops temporal behavior of objects in response to certain events
+    - shows sequences of operations performed on objects
+  - functional model gives overview of what system should do
+
+- 4 main parts of functional model in terms of object model:  process, actors, data stores, data flows
+
+- dynamic model states when operations are performed while functional model states how they are performed and which arguments are needed
+  - as actors are active objects, dynamic model has to specify when it acts
+  - data stores are passive objects and only respond to updates and queries; therefore dynamic model need not specify when they act
+
+  - dynamic model shows status of objects and operations performed on ocurrences of events and subsequent changes in states
+    - state of object as result of changes is shown in the object model
+
+## UML
+
+**UML**:  Unified Modeling Language
+**system**:  set off elements organized to achieve certain objectives from a system; systems often divided into subsystems and described by set of models
+**model**:  simplified complete and consistent abstraction of system, created for better understanding of system
+**view**:  projection of a system's model from a specific perspective
+
+- conceptual model of UML encompasses three major elements:  basic building blocks, rules, common mechanisms
+- three building blocks of UML:  things, relationships, diagrams
+- four kinds of things in UML:
+  - **structural**:  nouns of UML models representing static elements that may be either physical or conceptual class, interface, collaboration, use case, active class, components, and nodes
+  - **behavioral**:  verbs of UML models representing dynamic behavior over time and space
+    - two types:  interaction, state machine
+  - **grouping**:  comprise organizational parts of UML model; only one kind of it, package
+  - **annotational**:  explanations in UML models representing comments applied to describe elements
+
+**relationship**:  connection between things
+
+- four types:
+  - **dependency**:  semantic relationship between two things such that a change in one thing brings change in the other
+    - **former**:  independent thing; **latter**:  dependent thing
+  - **association**:  structural relationship representing group of links having common structure and behavior
+  - **generalization**:  generalization/specialization relationship in which subclasses inherit structure and behavior from super classes (parents)
+  - **realization**:  semantic relationship between two+ classifiers such that one classifier lays down a contract that other classifiers ensure to abide by
+
+**diagram**:  graphical representation of system
+
+- 9 types of UML diagrams:
+  - class
+  - object
+  - use case
+  - sequence
+  - collaboration
+  - state chart
+  - activity
+  - component
+  - deployment
+
+**rules**:  UML has number so models are semantically self-consistent and related to other models in system harmoniously
+
+- UML has semantic rules for:  names, scope, visibility, integrity, execution
+- UML has four common mechanisms:  specifications, adornments, common divisions, extensibility mechanisms
+
+**specifications**:  behind each graphical notation, there is a textual statement denoting syntax and semantics; provide semantic backplane that contains all parts of system and relationship among different paths
+**adornments**:  each UML element has a unique graphical notation; notations to represent important aspects of element like name, scope, visibility, etc.
+
+- OO systems divided in two common ways:
+  - division of classes and objects
+  - division of interface and implementation
+
+### extensibility mechanisms
+
+- possible to extend UML capabilities in controlled manner to suit system requirements
+- **stereotypes**:  extends UML vocabulary through which new building blocks can be created out of existing ones
+- **tagged values**:  extends properties of UML building blocks
+- **constraints**:  extends semantics of UML building blocks
+
+- class represented by rectangle with three sections
+  - top section contains class name
+  - middle section containing class attributes
+  - bottom section representing class operations
+
+- visibility of attributes and operations can be represented in following ways:
+  - **public**:  visible from anywhere in system (+)
+  - **private**:  visible only within class (-)
+  - **protected**:  visible from within class and children, but not outside (#)
+
+- abstract classes are in italics
+
+- object represented as rectangle with two sections:
+  - **top section**:  object name with class/package name
+    - object-name -- class-name
+    - object-name -- class-name :: package-name
+    - class-name = anonymous objects
+  - **bottom section**:  represents values of attributes; attribute-name = value
+
+**component**:  physical and replaceable part of system that confirms to and provides realization of a set of interfaces; represents physical packaging of elements like classes and interfaces; represented by rectangle with tabs
+**interface**:  collection of methods of class or component; specifies set off services that may be provided by class or component; drawn as circle together with its name; almost always attached to class or component that realizes it
+**package**:  organized group of elements; may contain structural things like classes, components, other packages; represented by tabbed ffolder; generally only drawn with name, but may have additional package details
+
+|  notations for different types of relationships  |
+|:------------------------------------------------:|
+| dependency  ------------------------dashedarrow  |
+| association       (continuous line)              |
+| direct association  --------> (continuous line)  |
+| inheritance  (continuous line w/ outline arrow)  |
+| realization  --------------------------------->  |
+| aggregation (continuous line w/ outline diamond) |
+
+- usually elements in a relationship play specific roles in relationship
+  - role name signifies behavior of an element participating in certain context
+
+- UML structural diagrams categorized as follows:
+  - class diagram
+  - object diagram
+  - component diagram
+  - deployment diagram
+
+**class diagram**:  models static view of system; comprised of classes, interfaces, and collaborations of system and relationships between them
+**object diagram**:  models a group of objects and their links at a point in time; shows instances off things in a class diagram; static part of an interaction diagram
+**component diagram**:  show orrganization and dependencies among group of components; comprised of components, interfaces, relationships, packages, and subsystems (optional)
+
+- used for:
+  - constructing systems through forward and reverse engineering
+  - modeling config management of source code files while developing system using an OOP language
+  - representing schemas in modeling databases
+  - modeling behaviors of dynamic systems
+
+**deployment diagram**:  puts emphasis on config of runtime processing nodes and their components that live on them; commonly comprised off nodes and dependencies on associations between nodes;
+
+- used to:
+  - model fully distributed systems
+  - represent topologies of client/server systems
+  - model devices in embedded systems that typically comprise of software-intensive collection of hardware
+
+- UML behavioral diagrams categorized as follows:
+  - use case diagrams
+  - interaction diagrams
+  - state-chart diagrams
+  - activity diagrams
+
+**use case**:  describes sequence of actions a system performs yielding visible results; shows interaction of things outside system with system itself; may be applied to whole system as well as part of system
+**actor**:  represents roles the use-case users play; may be person, device, or another system
+
+- use case diagrams present outside view of manner the elements in a system behave and how they can be used in the context
+  - comprised of use cases, actors, relationships like dependency, generalization, and association
+  - used to model system requirements from outside point of view and to model system context by enclosing all system activities within a rectangle and focusing on actors outside system by interacting with it
+
+**interaction diagram**:  depict interactions of objects and their relationships; include messages passed between them; two types:  sequence and collaboration; used for modeling, control flow by time ordering using sequence diagrams, control flow of organization using collaboration diagrams
+**sequence diagram**:  interaction diagrams illustrating ordering of messages according to time; in form of 2D charts:  objects initiating interaction placed on X axis, messages sent & received by objects placed along Y axis, order of increasing time top to bottom
+**collaboration diagram**:  interaction diagrams illustrating structure of objects that send and receive messages; objects participating in interaction shown using vertices; links connecting objects used to send and receive messages; message shown as labeled arrow
+**state-chart diagram**:  shows state machine depicting control flow off object from one state to another; state machine portrays sequences of states which an object undergoes due to events and their responses to events; comprised of states (simple of composite), transitions between states, events causing transitions, actions due to events; used for modeling objects which are reactive in nature
+**activity diagram**:  depicts flow of activities which are ongoing non-atomic operations in a state machine; activities result in actions which are atomic operations; comprised of objects, transitions, and activity and action states; used for modeling workflows as viewed by actors interacting with system and modeling details of operations or computations using flow charts
+
 ****:  
 ****:  
 ****:  
