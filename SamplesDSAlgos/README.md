@@ -7,6 +7,50 @@ Notes about individual data structures and algorithms may be found directly with
 **experimental CS**:  run function with 100k inputs & measure how long it took
 <br>
 
+## Table of Contents
+
+- [Dynamic Programming](#dynamic-programming)
+- [Algorithms](#algorithms)
+  - [Big O](#big-o)
+  - [Search](#search)
+    - [Binary Search](#binary-search)
+    - [Depth-First Search](#depth-first-search)
+    - [Breadth-First Search](#breadth-first-search)
+    - [Linear Search](#linear-search)
+  - [Sort](#sort)
+    - [Quick Sort](#quick-sort)
+    - [Radix Sort](#radix-sort)
+    - [Merge Sort](#merge-sort)
+    - [Min Heaps](#min-heaps)
+    - [Max Heaps](#max-heaps)
+    - [Bucket Sort](#bucket-sort)
+    - [Selection Sort](#selection-sort)
+    - [Insertion Sort](#insertion-sort)
+    - [Counting Sort](#counting-sort)
+    - [Bubble Sort](#bubble-sort)
+- [Data Structures](#data-structures)
+  - [Big O Chart](#big-o-chart)
+  - [Time Definitions](#time-definitions)
+  - [Singly Linked Lists](#singly-linked-lists)
+  - [Doubly Linked Lists](#doubly-linked-lists)
+  - [Reverse Linked Lists](#reverse-linked-lists)
+  - [Binary Search Trees](#binary-search-trees)
+  - [Hash Tables](#hash-tables)
+  - [Queues](#queues)
+  - [Stacks](#stacks)
+  - [Skip Lists](#skip-lists)
+  - [Tries](#tries)
+  - [Bloom Filter](#bloom-filter)
+  - [Heaps](#heaps)
+  - [LRU Cache](#lru-cache)
+  - [Generic Heaps](#generic-heaps)
+  - [AVL Tree](#avl-tree)
+- [Stack vs Heap Memory Allocation](#stack-vs-heap-memory-allocation)
+  - [Stack Allocation](#stack-allocation)
+  - [Heap Allocation](#heap-allocation)
+  - [Key Differences Between Stack & Heap Allocations](#key-differences-between-stack-and-heap-allocations)
+  - [Comparison Chart](#comparison-chart)
+
 ## Dynamic Programming
 
 - way of making algorithm more efficient by storing some of the intermediate results
@@ -43,7 +87,7 @@ time complexity:  Best O(1)   |   Avg O(log(n))   |   Worst O(log(n))
 space complexity:  O(1)
 ```
 
-#### Depth First Search
+#### Depth-First Search
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/search/search_depth_breadth_first.py)
 
@@ -570,33 +614,154 @@ space complexity:  O(n)
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-skip_list.py)
 
-```pseudocode
+- Can we search in a sorted linked list in better than O(n) time?
+  - The worst case search time for a sorted linked list is O(n) as we can only linearly traverse the list and cannot skip nodes while searching.
+  - For a Balanced Binary Search Tree, we skip almost half of the nodes after one comparison with root.
+  - For a sorted array, we have random access and we can apply binary search on arrays.
 
+- Can we augment sorted linked lists to make the search faster?
+  - The answer is skip list.
+  - The idea is simple, we create multiple layers so that we can skip some nodes.
+  - See the following example list with 16 nodes and two layers.
+  - The upper layer works as an “express lane” which connects only main outer stations.
+  - The lower layer works as a “normal lane” which connects every station.
+  - Suppose we want to search for 50, we start from first node of “express lane” and keep moving on “express lane” till we find a node whose next is greater than 50.
+  - Once we find such a node (30 is the node in following example) on “express lane”, we move to “normal lane” using pointer from this node, and linearly search for 50 on “normal lane”.
+  - In following example, we start from 30 on “normal lane” and with linear search, we find 50.
+
+- What is the time complexity with two layers?
+  - The worst case time complexity is number of nodes on “express lane” plus number of nodes in a segment (A segment is number of “normal lane” nodes between two “express lane” nodes) of “normal lane”.
+  - So if we have n nodes on “normal lane”, √n (square root of n) nodes on “express lane” and we equally divide the “normal lane”, then there will be √n nodes in every segment of “normal lane” .
+  - √n is actually optimal division with two layers. With this arrangement, the number of nodes traversed for a search will be O(√n).
+  - Therefore, with O(√n) extra space, we are able to reduce the time complexity to O(√n).
+
+- Can we do better?
+  - The time complexity of skip lists can be reduced further by adding more layers.
+  - In fact, the time complexity of search, insert and delete can become O(Logn) in average case with O(n) extra space.
+
+Deciding nodes level
+
+- Each element in the list is represented by a node, the level of the node is chosen randomly while insertion in the list.
+- Level does not depend on the number of elements in the node.
+
+- The level for node is decided by the following algorithm –
+
+```pseudocode
+  randomLevel()
+  lvl := 1
+  //random() that returns a random value in [0...1)
+  while random() < p and lvl < MaxLevel do
+  lvl := lvl + 1
+  return lvl
+```
+
+- Max level is the upper bound on number of levels in the skip list.
+- It can be determined as – L(N) = log_{p/2}{N}.
+- Above algorithm assure that random level will never be greater than MaxLevel.
+- Here p is the fraction of the nodes with level i pointers also having level i+1 pointers and N is the number of nodes in the list.
+
+Node Structure
+<br>
+Each node carries a key and a forward array carrying pointers to nodes of a different level.
+<br>
+A level i node carries i forward pointers indexed through 0 to i.
+<br>
+Skip Node
+<br>
+- We will start from highest level in the list and compare key of next node of the current node with the key to be inserted.
+- Basic idea is if:
+  - key of next node is less than key to be inserted, then we keep on moving forward on the same level
+  - key of next node is greater than the key to be inserted, then we store the pointer to current node i at update[i], move one level down, and continue our search.
+- At the level 0, we will definitely find a position to insert given key.
+
+- create multiple layers in a sorted list so we can skip some nodes
+- has express lane, use express lane to find 'bucket' or 'chunk which your result is found in
+
+
+```pseudocode
+time complexity:    Avg     |  Worst
+  Access:       O(log(n))   |   O(n)
+  Search:       O(log(n))   |   O(n)
+  Insertion:    O(log(n))   |   O(n)
+  Deletion:     O(log(n))   |   O(n)
+space complexity:  O(n log(n))
 ```
 
 ### Tries
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-tries.py)
 
-```pseudocode
+- tree optimized for searching by prefix
+- auto-complete really useful ffor this
+- starts wth root node that doesn't represent anything
+- has bunch of child nodes representing 1 letter
+  - each of those has child nodes representing next letter
+- can add weights to certain edges/children so they are suggested first
+- space is its own node
 
+```pseudocode
+time complexity:   Avg        |  Worst
+  Access:       O(n)          |   O(n)
+  Search:       O(key_length) |   O(n)
+  Insertion:    O(key_length) |   O(n)
+  Deletion:     O(key_length) |   O(n)
+
+space complexity:  O(ALPHABET_SIZE * key_length * N)
 ```
 
 ### Bloom Filter
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/bloom_filter.py)
 
-```pseudocode
+- designed to tell you quickly & efficiently if item is in set
+- trade-off is it can't tell you definitely if item is in set
+  - can only tell you definitely not
+- has false-positive rate, but not false-negatives
+- useful for filtering articles NOT to show in recommendations
+- more items = higher false-positive rate, which you can mitigate
+  - by having larger array
+  - trade-off = larger memory footprint
+- m & n = length of two strings
 
+```pseudocode
+time complexity:   Avg
+  Access:          ---
+  Search:          O(1)
+  Insertion:       O(1)
+  Deletion:        ---
+space complexity:  almost always less than hash (O(n))
 ```
 
 ### Heaps
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-heap_max.py)
 
+- data structure optimized for retrieving either maximal or minimal values of a dataset
+- all about maximizing priority
+- binary tree data structure centered around the heap property
+  - always satisfies the heap property
+- root element of heap is max value of all heap elements
+- array representing the data structure
+- has to be sorted in particular way to represent that tree priority queues often 
+  - represented as heaps
+  - often these terms used interchangeably
+- priority queues are often heaps; easy to tell largest number
+  - none of other guaranteed, but once you dequeue, easy to find next item in queue
+- combining of tree & array based approaches doesn't make heap a particularly intuitive data structure to understand & grasp
+- maximally efficient at what they do
+- very flexible since we can generalize idea of priority to many different contexts
+- arrays well-suited to storing heaps not just because off constant-time access to any element, but also we can more easily swap elements in different positions throughout heap easily, again due to array indexing
+- can use queue
+
+- to fetch a node's parent, floor((x-1)/2)
+- emulates a binary tree structure of a heap using an array, with added benefit of now-constant-time access to any element in heap that comes with array indexing
+
+- when using BST, problem is we only have direct access to node
+- to construct max heap, run heapify starting @ array middle and work backwards to root.
 
 ```pseudocode
-
+time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
+space complexity:  O(1)
 ```
 
 ![Image of a Heap in Tree form](https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Max-Heap.svg/501px-Max-Heap.svg.png)
@@ -607,7 +772,22 @@ space complexity:  O(n)
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-lru_cache.py)
 
-An LRU (Least Recently Used) cache is an in-memory storage structure that adheres to the [Least Recently Used](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)) caching strategy. 
+- Use two data structures to implement an LRU Cache:
+  - Queue which is implemented using a doubly linked list.
+    - The maximum size of the queue will be equal to the total number of frames available (cache size).
+    - The most recently used pages will be near front endpygame.examples.aliens.main()
+    - The least recently pages will be near the rear end.
+  - A Hash with page number as key and address of the corresponding queue node as value.
+
+- When a page is referenced, the required page may be in the memory.
+- If it is in the memory, we need to detach the node of the list and bring it to the front of the queue.
+- If the required page is not in memory, we bring that in memory.
+- In simple words, we add a new node to the front of the queue and update the corresponding node address in the hash.
+- If the queue is full, i.e. all the frames are full, we remove a node from the rear of the queue, and add the new node to the front of the queue.
+
+----
+
+An LRU (Least Recently Used) cache is an in-memory storage structure that adheres to the [Least Recently Used](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)) caching strategy.
 
 In essence, you can think of an LRU cache as a data structure that keeps track of the order in which elements (which take the form of key-value pairs) it holds are added and updated. The cache also has a max number of entries it can hold. This is important because once the cache is holding the max number of entries, if a new entry is to be inserted, another pre-existing entry needs to be evicted from the cache. Because the cache is using a least-recently used strategy, the oldest entry (the one that was added/updated the longest time ago) is removed to make space for the new entry.
 
@@ -626,7 +806,21 @@ Once you've gotten the tests passing, it's time to analyze the runtime complexit
 Here are you some things to think about with regards to optimizing your implementation: If you opted to use a dictionary to work with key-value pairs, we know that dictionaries give us constant access time, which is great. It's cheap and efficient to fetch pairs. A problem arises though from the fact that dictionaries don't have any way of remembering the order in which key-value pairs are added. But we definitely need something to remember the order in which pairs are added. Can you think of some ways to get around this constraint?
 
 ```pseudocode
+QUEUE PORTION:
+  time complexity: Avg   |   Worst
+    Access:       O(n)   |   O(n)
+    Search:       O(n)   |   O(n)
+    Insertion:    O(1)   |   O(1)
+    Deletion:     O(1)   |   O(1)
+  space complexity:  O(n)
 
+HASH TABLE PORTION:
+  time complexity: Avg   |  Worst
+    Access:       N/A    |   N/A
+    Search:       O(1)   |   O(n)
+    Insertion:    O(1)   |   O(n)
+    Deletion:     O(1)   |   O(n)
+  space complexity:  O(n)
 ```
 
 ### Generic Heaps
@@ -635,16 +829,25 @@ Here are you some things to think about with regards to optimizing your implemen
 
 A max heap is pretty useful, but what's even more useful is to have our heap be generic such that the user can define their own priority function and pass it to the heap to use.
 
-Augment your heap implementation so that it exhibits this behavior. If no comparator function is passed in to the heap constructor, it should default to being a max heap. Also change the name of the `get_max` function to `get_priority`.
-
+Augment your heap implementation so that it exhibits this behavior. If no comparator function is passed in to the heap constructor, it should default to being a max heap.
 
 ```pseudocode
-
+time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
+space complexity:  O(1)
 ```
 
 ### AVL Tree
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-.py)
+
+- trees stay as flat as possible
+- initials of authors, specialized BSTs
+- valid AVL always valid BST, not vice versa
+- add value same as BST
+- difference is, on way up your recursive calls, you check if node is balanced after adding new node
+- tree out of balance if subtree's height differences > 1
+- benefit is, we can guarantee no worst cases (O(n))
+  - worst case = O(log(n))
 
 An AVL tree (Georgy Adelson-Velsky and Landis' tree, named after the inventors) is a self-balancing binary search tree. In an AVL tree, the heights of the two child subtrees of any node differ by at most one; if at any time they differ by more than one, rebalancing is done to restore this property.
 
@@ -658,13 +861,22 @@ The balance factor of any node of an AVL tree is in the integer range [-1,+1]. I
 
 ![AVL tree rebalancing](https://s3.amazonaws.com/hr-challenge-images/0/1436854305-b167cc766c-AVL_Tree_Rebalancing.svg.png)
 
-Implement an AVL Tree class that exhibits the aforementioned behavior. The tree's `insert` method should perform the same logic as what was implemented for the binary search tree, with the caveat that upon inserting a new element into the tree, it will then check to see if the tree needs to be rebalanced.
-
-How does the time complexity of the AVL Tree's insertion method differ from the binary search tree's?
+The tree's `insert` method should perform the same logic as what was implemented for the binary search tree, with the caveat that upon inserting a new element into the tree, it will then check to see if the tree needs to be rebalanced.
 
 ```pseudocode
-
+time complexity:    Avg     |     Worst
+  Access:       O(log(n))   |   O(log(n))
+  Search:       O(log(n))   |   O(log(n))
+  Insertion:    O(log(n))   |   O(log(n))
+  Deletion:     O(log(n))   |   O(log(n))
+space complexity:  O(n)
 ```
+
+#### AVL-Tree Related Terms
+
+- **rebalance**:  if one side of tree gets too heavy, then we need to perform a rotation to get the tree back in balance
+- **"too heavy"**:  max height of 1 child = 2+ than max height of other child
+- **double rotation**:  when opposite child is heavy during rotation
 
 ## Stack vs Heap Memory Allocation
 
