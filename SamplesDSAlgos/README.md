@@ -45,6 +45,8 @@ Notes about individual data structures and algorithms may be found directly with
   - [LRU Cache](#lru-cache)
   - [Generic Heaps](#generic-heaps)
   - [AVL Tree](#avl-tree)
+  - [Graphs](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/graphs)
+  - [Dijsktra's Greedy](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/graphs/DijsktraGreedy.py)
 - [Stack vs Heap Memory Allocation](#stack-vs-heap-memory-allocation)
   - [Stack Allocation](#stack-allocation)
   - [Heap Allocation](#heap-allocation)
