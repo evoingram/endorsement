@@ -279,8 +279,68 @@ Both initial and final states are pseudo states and may not have the parts of re
 
 **events**:  some occurrences that can trigger state transition of an object or group of objects; have a location in time and space, but do not have time period associated with it; generally associated with some actions; ones that trigger transitions are written alongside arc of transition in state diagrams
 
-****:  
-****:  
+**external events**:  events that pass from user of system to objects within system
+**internal events**:  events that pass from one object to another within system
+**deferred events**:  those not immediately handled by object in current state, but lined up in a queue to be handled by the object in another state later
+**event class**:  group of events with common structure & behavior; may also be organized in hierarchical structure; may have attributes, time implicit
+**activity**:  operation upon states of an object that requires some time period; ongoing executions within system that can be interrupted; shown in activity diagrams portraying flow from one activity to another
+**action**:  atomic operation executing as a result of certain events; may operate upon object on which an event has been triggered or on other objects visible to this object; set of actions
+**atomic**:  uninterruptable
+**entry action**:  action executed upon entering a state
+**exit action**:  action executed while leaving a state
+**scenario**:  description of specified sequence off actions; depicts behavior of objects undergoing specific action series
+**primary scenarios**:  essential sequences
+**secondary scenarios**:  alternative sequences
+
+- two primary diagrams used for dynamic modeling:
+  1. **interaction diagrams**:  describe dynamic behavior among different objects; comprises set of objects, their relationships, and message that objects send and receive; models behavior of group of interrelated objects
+    - two types:
+      - **sequence**:  temporal ordering of messages in tabular manner
+      - **collaboration**:  structural organization of objects that send and receive messages through vertices and arcs
+  2. **state transition diagrams**:  describe dynamic behavior of single object; illustrates sequences off states an object goes through in its lifetime, transition of states, events, and conditions causing transition and responses to events
+
+- two types of concurrency:
+  - **system**:  concurrency modeled in system level; overall system modeled as aggregation of state machines where each state machine executes concurrently with others
+  - **concurrency within object**:  object can issue concurrent events; object may have states composed of substates & concurrent events may occur in each of substates
+
+**simple state**:  no substructure
+**composite state**:  state with simpler states nested inside it; can have sequential or concurrent substates
+
+- substate used generally to reduce complexity of state machine
+
+**sequential substates**:  execution control passes from one substate to another in a sequential manner; at most one initial state and one final state
+**concurrent substates**:  execute in parallel; each state has concurrently executing state machines within it; each state machine has its own initial and final states; if one finishes first, it waits at final state; when all reach final, all join back to single flow
+**functional modeling**:  gives process perspective of OOA model and overview of what system is supposed to do; defines function of internal processes in system with aid of data flow diagrams (DFDs); depicts functional derivation of data values without indicating how they are derived when computed or why they need to be computed; represented through hierarchy of data flow diagrams
+**data flow diagram**:  graphical representation of a system that shows inputs to system, processing upon inputs, system outputs, and internal data stores; illustrate series of transformations or computations performed on objects or system and external controls and objects that affect transformation; four main parts:  processes, data flows, actors, data stores; other parts:  constraints, control flows
+
+### Data Flow Diagram Features
+
+**processes**:  computational activities that transform data values; whole system can be visualized as high-level process; may be further divided into smaller components; lowest-level process may be simple function; representation in DFD is ellipse with name inside & contains fixed number of input & output data values
+**data flows**:  represents flow of data between two processes; denotes value of data item at some point of the computations & value not changed by data flow; representation in DFD is directed arc or arrow & labeled with name of data item it carries; may be forked (aggregate to forked components)
+**actors**:  active objects interacting with system by either producing data and inputting them to system or consuming data produced by system; sources and sinks (?) of data; representation in DFD is rectangle & connected to I/Os and lie on DFD boundary
+**data stores**:  passive objects that act as a data repository; cannot perform operations; used to store data and retrieve stored data; represent a data structure, disk file, or table in database; representation in DFD is two parallel lines containing data store name; each data store connected to at least one process; input arrows contain info to modify data store contents; output arrows contain info retrieved from data store & labeled when part of info is to be retrieved; two-way arrow implies both retrieval and update
+**constraint**:  specify conditions or restrictions that need to be satisfied over time; allow adding new rules or modifying existing ones; can appear in all three models of OOA; in object modeling, constraints define relationship between objects; in dynamic modeling, constraints define relationship between states and events of different objects; in functional modeling, constraints define restrictions on transformations and computations; representation in DFD is string within braces
+**control flows**:  process may be associated within a certain Boolean value and is evaluated only if value is true, though is not a direct input to process; these Boolean values = control flows; representation in DFD is dotted arc from process producing Boolean value to process controlled by them
+
+- to develop DFD model of system, DFD's hierarchy constructed:
+  - **top level**:  single process and actors interacting with it; at each successive lower level, further details gradually induced (?)
+  - process decomposed into subprocesses
+  - data flows among subprocesses ID'd
+  - control flows determined
+  - data stores defined
+  - while decomposing a process, data flow into or out of process should match data flow at next level of DFD
+
+### Advantages & Disadvantages
+
+| Advantages | Disadvantages |
+|:----------:|:-------------:|
+| DFDs depict system boundaries & are helpful in portraying relationship between external objects & processes within system | take a long time to create |
+| help users have knowledge about system | don't provide info about time-dependent behavior like when transformations are done |
+| serves as blueprint to develop the system | don't shed any light on computation frequency or reasons for computations |
+| provides detailed info about system processes | complex prep that needs considerable expertise |
+| used as part of system docs | difficult for non-tech person to understand |
+|  | prep method subjective & leaves ample scope to be imprecise |
+
 ****:  
 ****:  
 ****:  
