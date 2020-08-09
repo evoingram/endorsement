@@ -16,6 +16,7 @@ Counting sort can’t be used if a range of key value is large (suppose range is
     # sort numbers from least to most significant digit
         # sort by ones place, then tens place, then hundreds place, etc.
     # use count sort as sorting subroutine
+    # k = number of elements
         
     # linear sorting algorithm.
     # not an in-place sorting algorithm as it requires extra additional space
@@ -86,11 +87,12 @@ def radix_sort(original_array):
 
     # do count sort for every digit
     # instead of passing digit number, exp is passed
-    # exp is 10^current digit number
-    exp = 1
+    # exp is 10^current digit number 
+        # 1 = ones place, 10 = tens place, etc.
+    digit_place = 1
     while max1/exp > 0:
-        count_sort(original_array, exp)
-        exp *= 10
+        count_sort(original_array, digit_place)
+        digit_place *= 10
 
 
 arr = [170, 45, 75, 90, 802, 24, 2, 66]
