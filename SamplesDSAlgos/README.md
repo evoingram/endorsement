@@ -38,6 +38,7 @@
 |      AVL Tree      |    O(log(n))   | O(log(n))    |    O(log(n))   | O(log(n))    |     O(log(n))     | O(log(n))       |     O(log(n))    | O(log(n))      | O(n)        |
 
 ## Time Definitions
+
 - **constant**:  does not scale with input, will take same amount of time
   - for any input size n, constant time performs same number of operations every time
 - **logarithmic**:  increases number of operations it performs as logarithmic function of input size n
@@ -63,6 +64,7 @@
 | O(c^n) | exponential | Worst |
 
 ## Doubly Linked Lists
+
  * The `ListNode` class, which represents a single node in the doubly-linked list, has already been implemented for you. Inspect this code and try to understand what it is doing to the best of your ability.
  * The `DoublyLinkedList` class itself should have the methods: `add_to_head`, `add_to_tail`, `remove_from_head`, `remove_from_tail`, `move_to_front`, `move_to_end`, `delete`, and `get_max`.
    * `add_to_head` replaces the head of the list with a new value that is passed in.
@@ -78,6 +80,7 @@
 ![Image of Doubly Linked List](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png)
 
 ## Binary Search Trees
+
 * Should have the methods `insert`, `contains`, `get_max`.
   * `insert` adds the input value to the binary search tree, adhering to the rules of the ordering of elements in a binary search tree.
   * `contains` searches the binary search tree for the input value, returning a boolean indicating whether the value exists in the tree or not.
@@ -87,6 +90,7 @@
 ![Image of Binary Search Tree](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png)
 
 ## Heaps
+
 * Should have the methods `insert`, `delete`, `get_max`, `_bubble_up`, and `_sift_down`.
   * `insert` adds the input value into the heap; this method should ensure that the inserted value is in the correct spot in the heap
   * `delete` removes and returns the 'topmost' value from the heap; this method needs to ensure that the heap property is maintained after the topmost element has been removed. 
@@ -100,6 +104,7 @@
 ![Image of a Heap in Array form](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Heap-as-array.svg/603px-Heap-as-array.svg.png)
 
 ## LRU Cache
+
 An LRU (Least Recently Used) cache is an in-memory storage structure that adheres to the [Least Recently Used](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)) caching strategy. 
 
 In essence, you can think of an LRU cache as a data structure that keeps track of the order in which elements (which take the form of key-value pairs) it holds are added and updated. The cache also has a max number of entries it can hold. This is important because once the cache is holding the max number of entries, if a new entry is to be inserted, another pre-existing entry needs to be evicted from the cache. Because the cache is using a least-recently used strategy, the oldest entry (the one that was added/updated the longest time ago) is removed to make space for the new entry. 
@@ -119,6 +124,7 @@ Once you've gotten the tests passing, it's time to analyze the runtime complexit
 Here are you some things to think about with regards to optimizing your implementation: If you opted to use a dictionary to work with key-value pairs, we know that dictionaries give us constant access time, which is great. It's cheap and efficient to fetch pairs. A problem arises though from the fact that dictionaries don't have any way of remembering the order in which key-value pairs are added. But we definitely need something to remember the order in which pairs are added. Can you think of some ways to get around this constraint?
 
 ## Generic Heaps
+
 A max heap is pretty useful, but what's even more useful is to have our heap be generic such that the user can define their own priority function and pass it to the heap to use.
 
 Augment your heap implementation so that it exhibits this behavior. If no comparator function is passed in to the heap constructor, it should default to being a max heap. Also change the name of the `get_max` function to `get_priority`.
@@ -126,10 +132,12 @@ Augment your heap implementation so that it exhibits this behavior. If no compar
 You can test your implementation against the tests in `test_generic_heap.py`. The test expects your augmented heap implementation lives in a file called `generic_heap.py`. Feel free to change the import statement to work with your file structure or copy/paste your implementation into a file with the expected name. 
 
 ## AVL Tree
+
 An AVL tree (Georgy Adelson-Velsky and Landis' tree, named after the inventors) is a self-balancing binary search tree. In an AVL tree, the heights of the two child subtrees of any node differ by at most one; if at any time they differ by more than one, rebalancing is done to restore this property.
 
-We define balance factor for each node as :
-```
+We define balance factor for each node as:
+
+```pseudocode
 balanceFactor = height(left subtree) - height(right subtree)
 ```
 
@@ -151,7 +159,7 @@ Memory in a C/C++ program can either be allocated on stack or heap.
 
 The allocation happens on contiguous blocks of memory. We call it stack memory allocation because the allocation happens in function call stack. The size of memory to be allocated is known to compiler and whenever a function is called, its variables get memory allocated on the stack. And whenever the function call is over, the memory for the variables is deallocated. This all happens using some predefined routines in compiler. Programmer does not have to worry about memory allocation and deallocation of stack variables.
 
-```
+```Java
 int main() {
    // All these variables get memory
    // allocated on stack
@@ -166,7 +174,7 @@ int main() {
 
 The memory is allocated during execution of instructions written by programmers. Note that the name heap has nothing to do with heap data structure. It is called heap because it is a pile of memory space available to programmers to allocated and de-allocate. If a programmer does not handle this memory well, memory leak can happen in the program.
 
-```
+```Java
 int main() {
    // This memory for 10 integers
    // is allocated on heap.

@@ -57,6 +57,7 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 * [Graph Representations](https://github.com/evoingram/endorsement/tree/master/notes/GraphsRepresentations.md)
 * [Computers](https://github.com/evoingram/endorsement/tree/master/notes/Computers.md)
 * [operating system]
+* [Am I Ready for the DS&A interview?](https://github.com/evoingram/endorsement/tree/master/notes/DSAReady.md)
 
 #### Object-Oriented Analysis & Design
 
