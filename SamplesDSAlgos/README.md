@@ -355,55 +355,245 @@ space complexity:  O(1)
 | O(n^c) | quadratic |  |
 | O(c^n) | exponential | Worst |
 
-### 
+### Singly Linked Lists
+
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-linkedlist_singly.py)
+
+- made of bunch of nodes that point to next one in list
+- every node has two properties:
+  - value of whatever is being stored
+  - pointer to next node in list
+- adding and removing is easy; change next pointer on previous node (O(n))
+  - similar to arrays
+- commonly used for holding lists of data
+  - certain cases when better than array
 
 ```pseudocode
-
+time complexity:   Avg   |  Worst
+    Access:       O(n)   |   O(n)
+    Search:       O(n)   |   O(n)
+    Insertion:    O(1)   |   O(1)
+    Deletion:     O(1)   |   O(1)
+space complexity:  O(n)
 ```
+
+#### Difference between singly and doubly linked lists
+
+- A singly linked list is a set of nodes where each node has two fields ‘data’ and ‘link’.
+  - The ‘data’ field stores actual piece of information and ‘link’ field is used to point to next node.
+  - Basically ‘link’ field is nothing but address only.
+-A doubly linked list contains an extra pointer, typically called previous pointer, together with next pointer and data which are there in singly linked list.
 
 ### Doubly Linked Lists
 
-- The `ListNode` class, which represents a single node in the doubly-linked list, has already been implemented for you. Inspect this code and try to understand what it is doing to the best of your ability.
-- The `DoublyLinkedList` class itself should have the methods: `add_to_head`, `add_to_tail`, `remove_from_head`, `remove_from_tail`, `move_to_front`, `move_to_end`, `delete`, and `get_max`.
-  - `add_to_head` replaces the head of the list with a new value that is passed in.
-  - `add_to_tail` replaces the tail of the list with a new value that is passed in.
-  - `remove_from_head` removes the head node and returns the value stored in it.
-  - `remove_from_tail` removes the tail node and returns the value stored in it.
-  - `move_to_front` takes a reference to a node in the list and moves it to the front of the list, shifting all other list nodes down.
-  - `move_to_end` takes a reference to a node in the list and moves it to the end of the list, shifting all other list nodes up.
-  - `delete` takes a reference to a node in the list and removes it from the list. The deleted node's `previous` and `next` pointers should point to each afterwards.
-  - `get_max` returns the maximum value in the list.
-- The `head` property is a reference to the first node and the `tail` property is a reference to the last node.
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-linkedlist_doubly.py)
+
+- made of bunch of nodes that point to next one in list
+- every node has three properties:
+  - value of whatever is being stored
+  - pointer to next node in list
+  - pointer to previous node in list
+- adding and removing is easy; change next pointer on previous node (O(n))
+  - similar to arrays
+- commonly used for holding lists of data
+  - certain cases when better than array
 
 ```pseudocode
-
+time complexity:   Avg   | Worst
+    Access:       O(n)   |   O(n)
+    Search:       O(n)   |   O(n)
+    Insertion:    O(1)   |   O(1)
+    Deletion:     O(1)   |   O(1)
+space complexity:  O(n)
 ```
 
 ![Image of Doubly Linked List](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png)
 
+#### Difference between singly & doubly linked lists
+
+- A singly linked list is a set of nodes where each node has two fields ‘data’ and ‘link’.
+  - The ‘data’ field stores actual piece of information and ‘link’ field is used to point to next node.
+  - Basically ‘link’ field is nothing but address only.
+-A doubly linked list contains an extra pointer, typically called previous pointer, together with next pointer and data which are there in singly linked list.
+
+### Reverse Linked List
+
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-linkedlist_reverse.py)
+
+```pseudocode
+time complexity:   Avg   | Worst
+    Access:       O(n)   |   O(n)
+    Search:       O(n)   |   O(n)
+    Insertion:    O(1)   |   O(1)
+    Deletion:     O(1)   |   O(1)
+space complexity:  O(n)
+```
+
 ### Binary Search Trees
 
-- Should have the methods `insert`, `contains`, `get_max`.
-  - `insert` adds the input value to the binary search tree, adhering to the rules of the ordering of elements in a binary search tree.
-  - `contains` searches the binary search tree for the input value, returning a boolean indicating whether the value exists in the tree or not.
-  - `get_max` returns the maximum value in the binary search tree.
-  - `for_each` performs a traversal of _every_ node in the tree, executing the passed-in callback function on each tree node value. There is a myriad of ways to perform tree traversal; in this case any of them should work.
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-binary_search_tree.py)
+
+- Binary search trees are a data structure that enforce an ordering over the data they store.
+- That ordering in turn makes it a lot more efficient at searching for a particular piece of data in the tree.
+- extremely efficient data structure with searching
+- consists entirely of nodes holding values, with each node referencing other nodes
+- in trees in general, each node is not constrained to just referencing a single other node
+- tree data structures where each node can reference 0-2 other nodes, left & right maintain invariant/rule that if a node has a left child node it points to, that left node's value is strictly less than parent node value and, respectively, right child is greater
+- trees can be thought of as linked lists, but without constraint that each node only points to one other node; can point to multiple nodes in tree
+- linked lists themselves count as trees
+- a common trees classification is to talk about them in terms of the max number of nodes that a single node can point to
+- more efficient than array or linked list
+- inefficient to insert into a BST
+- performance of BST depends quite a lot on whether tree is balanced or not
+- useful structure for middle ground between linked lists and arraylists
+- bst makes it very easy and simple to add & find new elements
+  - just change pointer to add new elements like linked lists
+- performs well if you stay away from edge cases
+
+```pseudocode
+time complexity:     Avg      |   Worst
+    Access:       O(log(n))   |   O(n)
+    Search:       O(log(n))   |   O(n)
+    Insertion:    O(log(n))   |   O(n)
+    Deletion:     O(log(n))   |   O(n)
+space complexity:  O(n)
+```
+
+#### RELATED TERMS
+
+- **root**:      topmost node in tree
+- **child**:     node directly connected to another node when moving away from root node
+- **parent**:    node directly connected to another node when moving towards root node
+- **siblings**:  nodes sharing same parent
+- **leaf**:      node with no children
+
+![Image of Binary Search Tree](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png)
+
+### Hash Tables
+
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-hashtable.py)
+
+- array with elements indexed by hashed key
+- associative arrays and dictionaries
+- objects
+- caches (memcached)
+- dynamic programming, memoization
+- send key through hashing function (MD5, SHA1, etc.), which converts to addressable space (index)
+- powerful for maps because now our key points to where our object is being stored
+- powerful for sets because we can check where if anything exists at that memory address and, if so, then it exists; if not, then key is not in set
+- no look-up cost when deleting or adding
+- not useful for something with an order
+- need sufficiently large amount of memory to store all objects without collisions
+  - can balloon quickly
+- need good hashing algorithm that spits out viable table address
+- needs several qualities:
+  - idempotent (critical), good distribution of values, performant
+
+- key/value data storage & retrieval
+  - data stored as array
+  - key converted to integer via hash functino
+  - hashed key converted to array index via modulo function
+
+```pseudocode
+time complexity:   Avg   |   Worst
+    Access:       N/A    |   N/A
+    Search:       O(1)   |   O(n)
+    Insertion:    O(1)   |   O(n)
+    Deletion:     O(1)   |   O(n)
+space complexity:  O(n)
+```
+
+#### HT RELATED TERMS
+
+- **hash function**:  one-way mapping from arbitrary data to fixed data size & type
+  - different hash functions with different attributes:
+    - deterministic
+    - uniform distribution
+    - non-invertible
+    - continuous versus non-continuous
+- **hash-table collision**:  when two keys hash to same index
+  - collisions are unavoidable
+  - open addressing & linked-list chaining to avoid collisions
+- **linked-list chaining**:  elements in hash table are stored as linked lists
+  - when retrieving a value, traverse down linked list until you find matching key
+- **hash-table resizing**:  can occur when load factor passes certain threshhold
+  - create new hash table with double capacity
+  - copy elements from old to new one at a time
+  - resizing = O(n) & occurs at O(log (n)) frequency
+- **load factor**:  number of entries / hash-table capacity
+
+### Queues
+
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-queue.py)
+
+- A queue is a data structure whose primary purpose is to store and return elements in First In First Out order.
+
+```pseudocode
+time complexity:   Avg   |  Worst
+    Access:       O(n)   |   O(n)
+    Search:       O(n)   |   O(n)
+    Insertion:    O(1)   |   O(1)
+    Deletion:     O(1)   |   O(1)
+space complexity:  O(n)
+```
+
+#### difference between using an array vs. a linked list when implementing a Queue
+
+- Major difference is, arrays are index-based data structure and each element of the array is associated with an index.  
+- With a linked list, it relies on pointers; each node has the data and then pointers to both previous and next elements.  
+- You use binary or linear searches to traverse arrays; linear to traverse linked lists.  
+- Arrays are directly or randomly accessed and you can access any element in them; queues are accessed via first pointer only.
+
+### Stacks
+
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-stack.py)
+
+- A stack is a data structure whose primary purpose is to store and return elements in (Last In First Out)/FIFO order.
+
+```pseudocode
+time complexity:   Avg   |  Worst
+    Access:       O(n)   |   O(n)
+    Search:       O(n)   |   O(n)
+    Insertion:    O(1)   |   O(1)
+    Deletion:     O(1)   |   O(1)
+space complexity:  O(n)
+```
+
+#### difference between using an array vs. a linked list when implementing a Stack
+
+- Major difference is, arrays are index-based data structure and each element of the array is associated with an index.  
+- With a linked list, it relies on pointers; each node has the data and then pointers to both previous and next elements.  
+- You use binary or linear searches to traverse arrays; linear to traverse linked lists.  
+- Arrays are directly or randomly accessed and you can access any element in them; stacks are accessed via last or first pointer only.
+
+### Skip List
+
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-skip_list.py)
 
 ```pseudocode
 
 ```
 
-![Image of Binary Search Tree](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png)
+### Tries
+
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-tries.py)
+
+```pseudocode
+
+```
+
+### Bloom Filter
+
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/bloom_filter.py)
+
+```pseudocode
+
+```
 
 ### Heaps
 
-- Should have the methods `insert`, `delete`, `get_max`, `_bubble_up`, and `_sift_down`.
-  - `insert` adds the input value into the heap; this method should ensure that the inserted value is in the correct spot in the heap
-  - `delete` removes and returns the 'topmost' value from the heap; this method needs to ensure that the heap property is maintained after the topmost element has been removed. 
-  - `get_max` returns the maximum value in the heap _in constant time_.
-  - `get_size` returns the number of elements stored in the heap.
-  - `_bubble_up` moves the element at the specified index "up" the heap by swapping it with its parent if the parent's value is less than the value at the specified index.
-  - `_sift_down` grabs the indices of this element's children and determines which child has a larger value. If the larger child's value is larger than the parent's value, the child element is swapped with the parent.
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-heap_max.py)
+
 
 ```pseudocode
 
@@ -414,6 +604,8 @@ space complexity:  O(1)
 ![Image of a Heap in Array form](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Heap-as-array.svg/603px-Heap-as-array.svg.png)
 
 ### LRU Cache
+
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-lru_cache.py)
 
 An LRU (Least Recently Used) cache is an in-memory storage structure that adheres to the [Least Recently Used](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)) caching strategy. 
 
@@ -439,17 +631,20 @@ Here are you some things to think about with regards to optimizing your implemen
 
 ### Generic Heaps
 
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-heap_generic.py)
+
 A max heap is pretty useful, but what's even more useful is to have our heap be generic such that the user can define their own priority function and pass it to the heap to use.
 
 Augment your heap implementation so that it exhibits this behavior. If no comparator function is passed in to the heap constructor, it should default to being a max heap. Also change the name of the `get_max` function to `get_priority`.
 
-You can test your implementation against the tests in `test_generic_heap.py`. The test expects your augmented heap implementation lives in a file called `generic_heap.py`. Feel free to change the import statement to work with your file structure or copy/paste your implementation into a file with the expected name.
 
 ```pseudocode
 
 ```
 
 ### AVL Tree
+
+[Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-.py)
 
 An AVL tree (Georgy Adelson-Velsky and Landis' tree, named after the inventors) is a self-balancing binary search tree. In an AVL tree, the heights of the two child subtrees of any node differ by at most one; if at any time they differ by more than one, rebalancing is done to restore this property.
 
