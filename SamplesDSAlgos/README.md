@@ -33,6 +33,8 @@ Notes about individual data structures and algorithms may be found directly with
 
 #### Binary Search
 
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/search/search_binary.py)
+
 - Only works if array is sorted
 - break into halves several times, being able to eliminate halves quickly to find what you're looking for
 
@@ -43,12 +45,13 @@ space complexity:  O(1)
 
 #### Depth First Search
 
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/search/search_depth_breadth_first.py)
+
 - Algorithm explores as far as possible along each branch before backtracking
   - for each node, process node, process left subtree, then right subtree, then add, copy, etc.
 
   - one that continues traveling forward on each branch until a dead end is reached
-  - search then retreats to first unexplored path and follows next unexplored path until that 
-    - one, too, reaches a dead end
+  - search then retreats to first unexplored path and follows next unexplored path until that one, too, reaches a dead end
   - continues until all nodes have been visited
   - recursive or iterative --> makes use of stack
 
@@ -69,6 +72,8 @@ space complexity:  O(1)
 ```
 
 #### Breadth-First Search
+
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/search/search_depth_breadth_first.py)
 
 - Algorithm explores all neighbor nodes at present depth prior to moving on to next level
   - can be resolved iteratively (preferred) or recursively
@@ -92,6 +97,8 @@ space complexity:  O(1)
 
 #### Linear Search
 
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/search/search_linear.py)
+
 - go line by line, one item by one item & check value at that index
 - when found, stop
 - simplest; only useful if list you're searching is unsorted
@@ -104,6 +111,8 @@ space complexity:  O(1)
 ### Sort
 
 #### Quick Sort
+
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_quick.py)
 
 - choose pivot
 - rearrange everything according to its relationship with pivot
@@ -119,21 +128,190 @@ space complexity:  O(log(n))
 
 #### Radix Sort
 
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_radix.py)
+
+- only used to sort numbers
+- sort numbers from least to most significant digit
+  - sort by ones place, then tens place, then hundreds place, etc.
+- use count sort as sorting subroutine
+- k = number of elements
+
+- linear sorting algorithm
+- not an in-place sorting algorithm as it requires extra additional space
+- stable sort as relative order of elements with equal values is maintained
+- can be slower than other sorting algorithms like merge and quick sort if operations are not efficient enough
+  - These operations include insert and delete functions of the sub-list & the process of isolating the digits we want.
+- less flexible than other sorts as it depends on the digits or letter
+- needs to be rewritten if the type of data is changed
+
+```pseudocode
+time complexity:  Best O(nk)   |   Avg O(nk)   |   Worst O(nk)
+space complexity:  O(n+k)
+```
+
 #### Merge Sort
+
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_merge_recursive.py)
+
+- divide in half until you have sub-arrays of single elements
+- then merge sorted lists together
+- very useful, easier to understand than others, recursive
+- effective and stable
+- use if you have equivalent elements; will keep their original order in array
+
+- take big list & divide into two half-lists
+- recursively call merge sort on smaller list, which will in turn do the same
+- base case = list of one
+- on way up recursive calls, you will merge sorted lists together
+  - using function walking through both simultaneously & inserts
+  - smaller value first, creating bigger sorted list
+
+```pseudocode
+time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
+space complexity:  O(n) because we create new lists as we go
+```
 
 #### Min Heaps
 
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_heap_min.py)
+
+- data structure optimized for retrieving either maximal or minimal values of a dataset
+- all about maximizing priority
+- binary tree data structure centered around the heap property
+  - always satisfies the heap property
+- root element of heap is max value of all heap elements
+- array representing the data structure
+- has to be sorted in particular way to represent that tree priority queues often 
+  - represented as heaps
+  - often these terms used interchangeably
+- priority queues are often heaps; easy to tell largest number
+  - none of other guaranteed, but once you dequeue, easy to find next item in queue
+- combining of tree & array based approaches doesn't make heap a particularly intuitive data structure to understand & grasp
+- maximally efficient at what they do
+- very flexible since we can generalize idea of priority to many different contexts
+- arrays well-suited to storing heaps not just because off constant-time access to any element, but also we can more easily swap elements in different positions throughout heap easily, again due to array indexing
+- can use queue
+
+- to fetch a node's parent, floor((x-1)/2)
+- emulates a binary tree structure of a heap using an array, with added benefit of now-constant-time access to any element in heap that comes with array indexing
+
+- when using BST, problem is we only have direct access to node
+- to construct max heap, run heapify starting @ array middle and work backwards to root.
+
+```pseudocode
+time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
+space complexity:  O(1)
+```
+
 #### Max Heaps
+
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_heap_max.py)
+
+- data structure optimized for retrieving either maximal or minimal values of a dataset
+- all about maximizing priority
+- binary tree data structure centered around the heap property
+  - always satisfies the heap property
+- root element of heap is max value of all heap elements
+- array representing the data structure
+- has to be sorted in particular way to represent that tree priority queues often 
+  - represented as heaps
+  - often these terms used interchangeably
+- priority queues are often heaps; easy to tell largest number
+  - none of other guaranteed, but once you dequeue, easy to find next item in queue
+- combining of tree & array based approaches doesn't make heap a particularly intuitive data structure to understand & grasp
+- maximally efficient at what they do
+- very flexible since we can generalize idea of priority to many different contexts
+- arrays well-suited to storing heaps not just because off constant-time access to any element, but also we can more easily swap elements in different positions throughout heap easily, again due to array indexing
+- can use queue
+
+- to fetch a node's parent, floor((x-1)/2)
+- emulates a binary tree structure of a heap using an array, with added benefit of now-constant-time access to any element in heap that comes with array indexing
+
+- when using BST, problem is we only have direct access to node
+- to construct max heap, run heapify starting @ array middle and work backwards to root.
+
+```pseudocode
+time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
+space complexity:  O(1)
+```
 
 #### Bucket Sort
 
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_bucket.py)
+
+- mainly useful when input is uniformly distributed over a range.
+- buckets created to put elements into
+  - number of elements = number of buckets
+- apply insertion sort to each bucket
+- concatenate buckets to get sorted array
+
+```pseudocode
+time complexity:  Best O(n+k)   |   Avg O(n+k)   |   Worst O(n^2)
+space complexity:  O(n)
+```
+
 #### Selection Sort
+
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_selection.py)
+
+- Always select and move smallest element until all are in order.
+
+```pseudocode
+time complexity:  Best O(n^2)   |   Avg O(n^2)   |   Worst O(n^2)
+space complexity:  O(1)
+```
 
 #### Insertion Sort
 
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_insertion.py)
+
+- Start at beginning of list.
+- Assume sorted list of length 1 where first element is only sorted element.
+- Grab second element and insert into correct spot in list.
+- Now sorted list length = 2.
+- Continue until unsorted is complete.
+
+```pseudocode
+time complexity:  Best O(n)   |   Avg O(n^2)   |   Worst O(n^2)
+space complexity:  O(1)
+```
+
 #### Counting Sort
 
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_count.py)
+
+- get maximum element from array
+- define count array of size `[max+1]`
+- set all elements in the count array to 0
+- increase count of each number which are found in the array
+- find cumulative frequency
+- store the number in the output array
+- decrease count for same numbers `(count[i])`
+- return the output array
+
+- not an in-place sorting algorithm
+- stable sort
+- inefficient if range of key value `k` is very large
+- can only sort discrete values like integer
+
+```pseudocode
+time complexity:  Best O(n+k)   |   Avg O(n+k)   |   Worst O(n+k)
+  O(Maximum key value – Minimum key value), linear
+space complexity:  O(k)
+```
+
 #### Bubble Sort
+
+[Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_bubble.py)
+
+- loop through array and compare each index with index next to it
+- if out of order, swap them
+- loop over array until everything in place AND nothing swapped during last iteration
+
+```pseudocode
+time complexity:  Best O(n)   |   Avg O(n^2)   |   Worst O(n^2)
+space complexity:  O(1)
+```
 
 ## Data Structures
 
@@ -179,6 +357,10 @@ space complexity:  O(log(n))
 
 ### 
 
+```pseudocode
+
+```
+
 ### Doubly Linked Lists
 
 - The `ListNode` class, which represents a single node in the doubly-linked list, has already been implemented for you. Inspect this code and try to understand what it is doing to the best of your ability.
@@ -190,8 +372,12 @@ space complexity:  O(log(n))
   - `move_to_front` takes a reference to a node in the list and moves it to the front of the list, shifting all other list nodes down.
   - `move_to_end` takes a reference to a node in the list and moves it to the end of the list, shifting all other list nodes up.
   - `delete` takes a reference to a node in the list and removes it from the list. The deleted node's `previous` and `next` pointers should point to each afterwards.
-  - `get_max` returns the maximum value in the list. 
+  - `get_max` returns the maximum value in the list.
 - The `head` property is a reference to the first node and the `tail` property is a reference to the last node.
+
+```pseudocode
+
+```
 
 ![Image of Doubly Linked List](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png)
 
@@ -201,7 +387,11 @@ space complexity:  O(log(n))
   - `insert` adds the input value to the binary search tree, adhering to the rules of the ordering of elements in a binary search tree.
   - `contains` searches the binary search tree for the input value, returning a boolean indicating whether the value exists in the tree or not.
   - `get_max` returns the maximum value in the binary search tree.
-  - `for_each` performs a traversal of _every_ node in the tree, executing the passed-in callback function on each tree node value. There is a myriad of ways to perform tree traversal; in this case any of them should work. 
+  - `for_each` performs a traversal of _every_ node in the tree, executing the passed-in callback function on each tree node value. There is a myriad of ways to perform tree traversal; in this case any of them should work.
+
+```pseudocode
+
+```
 
 ![Image of Binary Search Tree](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png)
 
@@ -214,6 +404,10 @@ space complexity:  O(log(n))
   - `get_size` returns the number of elements stored in the heap.
   - `_bubble_up` moves the element at the specified index "up" the heap by swapping it with its parent if the parent's value is less than the value at the specified index.
   - `_sift_down` grabs the indices of this element's children and determines which child has a larger value. If the larger child's value is larger than the parent's value, the child element is swapped with the parent.
+
+```pseudocode
+
+```
 
 ![Image of a Heap in Tree form](https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Max-Heap.svg/501px-Max-Heap.svg.png)
 
@@ -239,13 +433,21 @@ Once you've gotten the tests passing, it's time to analyze the runtime complexit
 
 Here are you some things to think about with regards to optimizing your implementation: If you opted to use a dictionary to work with key-value pairs, we know that dictionaries give us constant access time, which is great. It's cheap and efficient to fetch pairs. A problem arises though from the fact that dictionaries don't have any way of remembering the order in which key-value pairs are added. But we definitely need something to remember the order in which pairs are added. Can you think of some ways to get around this constraint?
 
+```pseudocode
+
+```
+
 ### Generic Heaps
 
 A max heap is pretty useful, but what's even more useful is to have our heap be generic such that the user can define their own priority function and pass it to the heap to use.
 
 Augment your heap implementation so that it exhibits this behavior. If no comparator function is passed in to the heap constructor, it should default to being a max heap. Also change the name of the `get_max` function to `get_priority`.
 
-You can test your implementation against the tests in `test_generic_heap.py`. The test expects your augmented heap implementation lives in a file called `generic_heap.py`. Feel free to change the import statement to work with your file structure or copy/paste your implementation into a file with the expected name. 
+You can test your implementation against the tests in `test_generic_heap.py`. The test expects your augmented heap implementation lives in a file called `generic_heap.py`. Feel free to change the import statement to work with your file structure or copy/paste your implementation into a file with the expected name.
+
+```pseudocode
+
+```
 
 ### AVL Tree
 
@@ -264,6 +466,10 @@ The balance factor of any node of an AVL tree is in the integer range [-1,+1]. I
 Implement an AVL Tree class that exhibits the aforementioned behavior. The tree's `insert` method should perform the same logic as what was implemented for the binary search tree, with the caveat that upon inserting a new element into the tree, it will then check to see if the tree needs to be rebalanced.
 
 How does the time complexity of the AVL Tree's insertion method differ from the binary search tree's?
+
+```pseudocode
+
+```
 
 ## Stack vs Heap Memory Allocation
 
