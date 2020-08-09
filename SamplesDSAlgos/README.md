@@ -81,13 +81,13 @@ Notes about individual data structures and algorithms may be found directly with
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/search/search_binary.py)
 
-- Only works if array is sorted
-- break into halves several times, being able to eliminate halves quickly to find what you're looking for
-
 ```pseudocode
 time complexity:  Best O(1)   |   Avg O(log(n))   |   Worst O(log(n))
 space complexity:  O(1)
 ```
+
+- Only works if array is sorted
+- break into halves several times, being able to eliminate halves quickly to find what you're looking for
 
 #### Depth-First Search
 
@@ -105,6 +105,11 @@ space complexity:  O(1)
 
 for depth-first traversals only
 
+```pseudocode
+time complexity:   O(n)
+space complexity:  O(1)
+```
+
 - **In-Order**:  recursively call method on left tree, process node, call method on right tree
   - use for sorted list out of BST
 - **Pre-Order**:  process node, recursively call method on left tree, call method on right tree
@@ -112,14 +117,14 @@ for depth-first traversals only
 - **Post-Order**: recursively call method on left tree, call method on right tree, process node
   - use for deleting tree
 
-```pseudocode
-time complexity:   O(n)
-space complexity:  O(1)
-```
-
 #### Breadth-First Search
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/search/search_depth_breadth_first.py)
+
+```pseudocode
+- time complexity:   O(Vertices + Edges) (Worst)
+- space complexity:  O(Vertices) (Worst)
+```
 
 - Algorithm explores all neighbor nodes at present depth prior to moving on to next level
   - can be resolved iteratively (preferred) or recursively
@@ -136,29 +141,29 @@ space complexity:  O(1)
     - use queue for this
   - will jump around a bit because next node we visit might not be connected to current
 
-```pseudocode
-- time complexity:   O(Vertices + Edges) (Worst)
-- space complexity:  O(Vertices) (Worst)
-```
-
 #### Linear Search
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/search/search_linear.py)
-
-- go line by line, one item by one item & check value at that index
-- when found, stop
-- simplest; only useful if list you're searching is unsorted
 
 ```pseudocode
 time complexity:  Best O(1)   |   Avg O(log(n))   |   Worst O(log(n))
 space complexity:  O(1)
 ```
 
+- go line by line, one item by one item & check value at that index
+- when found, stop
+- simplest; only useful if list you're searching is unsorted
+
 ### Sort
 
 #### Quick Sort
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_quick.py)
+
+```pseudocode
+time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n^2)
+space complexity:  O(log(n))
+```
 
 - choose pivot
 - rearrange everything according to its relationship with pivot
@@ -167,14 +172,14 @@ space complexity:  O(1)
 - recursive
 - better with runtimes than many iterative solutions
 
-```pseudocode
-time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n^2)
-space complexity:  O(log(n))
-```
-
 #### Radix Sort
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_radix.py)
+
+```pseudocode
+time complexity:  Best O(nk)   |   Avg O(nk)   |   Worst O(nk)
+space complexity:  O(n+k)
+```
 
 - only used to sort numbers
 - sort numbers from least to most significant digit
@@ -190,14 +195,14 @@ space complexity:  O(log(n))
 - less flexible than other sorts as it depends on the digits or letter
 - needs to be rewritten if the type of data is changed
 
-```pseudocode
-time complexity:  Best O(nk)   |   Avg O(nk)   |   Worst O(nk)
-space complexity:  O(n+k)
-```
-
 #### Merge Sort
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_merge_recursive.py)
+
+```pseudocode
+time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
+space complexity:  O(n) because we create new lists as we go
+```
 
 - divide in half until you have sub-arrays of single elements
 - then merge sorted lists together
@@ -212,14 +217,14 @@ space complexity:  O(n+k)
   - using function walking through both simultaneously & inserts
   - smaller value first, creating bigger sorted list
 
-```pseudocode
-time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
-space complexity:  O(n) because we create new lists as we go
-```
-
 #### Min Heaps
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_heap_min.py)
+
+```pseudocode
+time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
+space complexity:  O(1)
+```
 
 - data structure optimized for retrieving either maximal or minimal values of a dataset
 - all about maximizing priority
@@ -243,16 +248,16 @@ space complexity:  O(n) because we create new lists as we go
 
 - when using BST, problem is we only have direct access to node
 - to construct max heap, run heapify starting @ array middle and work backwards to root.
-
-```pseudocode
-time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
-space complexity:  O(1)
-```
 
 #### Max Heaps
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_heap_max.py)
 
+```pseudocode
+time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
+space complexity:  O(1)
+```
+
 - data structure optimized for retrieving either maximal or minimal values of a dataset
 - all about maximizing priority
 - binary tree data structure centered around the heap property
@@ -276,14 +281,14 @@ space complexity:  O(1)
 - when using BST, problem is we only have direct access to node
 - to construct max heap, run heapify starting @ array middle and work backwards to root.
 
-```pseudocode
-time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
-space complexity:  O(1)
-```
-
 #### Bucket Sort
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_bucket.py)
+
+```pseudocode
+time complexity:  Best O(n+k)   |   Avg O(n+k)   |   Worst O(n^2)
+space complexity:  O(n)
+```
 
 - mainly useful when input is uniformly distributed over a range.
 - buckets created to put elements into
@@ -291,25 +296,25 @@ space complexity:  O(1)
 - apply insertion sort to each bucket
 - concatenate buckets to get sorted array
 
-```pseudocode
-time complexity:  Best O(n+k)   |   Avg O(n+k)   |   Worst O(n^2)
-space complexity:  O(n)
-```
-
 #### Selection Sort
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_selection.py)
-
-- Always select and move smallest element until all are in order.
 
 ```pseudocode
 time complexity:  Best O(n^2)   |   Avg O(n^2)   |   Worst O(n^2)
 space complexity:  O(1)
 ```
 
+- Always select and move smallest element until all are in order.
+
 #### Insertion Sort
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_insertion.py)
+
+```pseudocode
+time complexity:  Best O(n)   |   Avg O(n^2)   |   Worst O(n^2)
+space complexity:  O(1)
+```
 
 - Start at beginning of list.
 - Assume sorted list of length 1 where first element is only sorted element.
@@ -317,14 +322,15 @@ space complexity:  O(1)
 - Now sorted list length = 2.
 - Continue until unsorted is complete.
 
-```pseudocode
-time complexity:  Best O(n)   |   Avg O(n^2)   |   Worst O(n^2)
-space complexity:  O(1)
-```
-
 #### Counting Sort
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_count.py)
+
+```pseudocode
+time complexity:  Best O(n+k)   |   Avg O(n+k)   |   Worst O(n+k)
+  O(Maximum key value – Minimum key value), linear
+space complexity:  O(k)
+```
 
 - get maximum element from array
 - define count array of size `[max+1]`
@@ -340,24 +346,18 @@ space complexity:  O(1)
 - inefficient if range of key value `k` is very large
 - can only sort discrete values like integer
 
-```pseudocode
-time complexity:  Best O(n+k)   |   Avg O(n+k)   |   Worst O(n+k)
-  O(Maximum key value – Minimum key value), linear
-space complexity:  O(k)
-```
-
 #### Bubble Sort
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/sort/sort_bubble.py)
-
-- loop through array and compare each index with index next to it
-- if out of order, swap them
-- loop over array until everything in place AND nothing swapped during last iteration
 
 ```pseudocode
 time complexity:  Best O(n)   |   Avg O(n^2)   |   Worst O(n^2)
 space complexity:  O(1)
 ```
+
+- loop through array and compare each index with index next to it
+- if out of order, swap them
+- loop over array until everything in place AND nothing swapped during last iteration
 
 ## Data Structures
 
@@ -405,15 +405,6 @@ space complexity:  O(1)
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-linkedlist_singly.py)
 
-- made of bunch of nodes that point to next one in list
-- every node has two properties:
-  - value of whatever is being stored
-  - pointer to next node in list
-- adding and removing is easy; change next pointer on previous node (O(n))
-  - similar to arrays
-- commonly used for holding lists of data
-  - certain cases when better than array
-
 ```pseudocode
 time complexity:   Avg   |  Worst
     Access:       O(n)   |   O(n)
@@ -422,6 +413,15 @@ time complexity:   Avg   |  Worst
     Deletion:     O(1)   |   O(1)
 space complexity:  O(n)
 ```
+
+- made of bunch of nodes that point to next one in list
+- every node has two properties:
+  - value of whatever is being stored
+  - pointer to next node in list
+- adding and removing is easy; change next pointer on previous node (O(n))
+  - similar to arrays
+- commonly used for holding lists of data
+  - certain cases when better than array
 
 #### Difference between singly and doubly linked lists
 
@@ -434,6 +434,15 @@ space complexity:  O(n)
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-linkedlist_doubly.py)
 
+```pseudocode
+time complexity:   Avg   | Worst
+    Access:       O(n)   |   O(n)
+    Search:       O(n)   |   O(n)
+    Insertion:    O(1)   |   O(1)
+    Deletion:     O(1)   |   O(1)
+space complexity:  O(n)
+```
+
 - made of bunch of nodes that point to next one in list
 - every node has three properties:
   - value of whatever is being stored
@@ -443,15 +452,6 @@ space complexity:  O(n)
   - similar to arrays
 - commonly used for holding lists of data
   - certain cases when better than array
-
-```pseudocode
-time complexity:   Avg   | Worst
-    Access:       O(n)   |   O(n)
-    Search:       O(n)   |   O(n)
-    Insertion:    O(1)   |   O(1)
-    Deletion:     O(1)   |   O(1)
-space complexity:  O(n)
-```
 
 ![Image of Doubly Linked List](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png)
 
@@ -479,6 +479,15 @@ space complexity:  O(n)
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-binary_search_tree.py)
 
+```pseudocode
+time complexity:     Avg      |   Worst
+    Access:       O(log(n))   |   O(n)
+    Search:       O(log(n))   |   O(n)
+    Insertion:    O(log(n))   |   O(n)
+    Deletion:     O(log(n))   |   O(n)
+space complexity:  O(n)
+```
+
 - Binary search trees are a data structure that enforce an ordering over the data they store.
 - That ordering in turn makes it a lot more efficient at searching for a particular piece of data in the tree.
 - extremely efficient data structure with searching
@@ -496,15 +505,6 @@ space complexity:  O(n)
   - just change pointer to add new elements like linked lists
 - performs well if you stay away from edge cases
 
-```pseudocode
-time complexity:     Avg      |   Worst
-    Access:       O(log(n))   |   O(n)
-    Search:       O(log(n))   |   O(n)
-    Insertion:    O(log(n))   |   O(n)
-    Deletion:     O(log(n))   |   O(n)
-space complexity:  O(n)
-```
-
 #### RELATED TERMS
 
 - **root**:      topmost node in tree
@@ -518,6 +518,15 @@ space complexity:  O(n)
 ### Hash Tables
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-hashtable.py)
+
+```pseudocode
+time complexity:   Avg   |   Worst
+    Access:       N/A    |   N/A
+    Search:       O(1)   |   O(n)
+    Insertion:    O(1)   |   O(n)
+    Deletion:     O(1)   |   O(n)
+space complexity:  O(n)
+```
 
 - array with elements indexed by hashed key
 - associative arrays and dictionaries
@@ -539,15 +548,6 @@ space complexity:  O(n)
   - data stored as array
   - key converted to integer via hash functino
   - hashed key converted to array index via modulo function
-
-```pseudocode
-time complexity:   Avg   |   Worst
-    Access:       N/A    |   N/A
-    Search:       O(1)   |   O(n)
-    Insertion:    O(1)   |   O(n)
-    Deletion:     O(1)   |   O(n)
-space complexity:  O(n)
-```
 
 #### HT RELATED TERMS
 
@@ -572,8 +572,6 @@ space complexity:  O(n)
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-queue.py)
 
-- A queue is a data structure whose primary purpose is to store and return elements in First In First Out order.
-
 ```pseudocode
 time complexity:   Avg   |  Worst
     Access:       O(n)   |   O(n)
@@ -582,6 +580,8 @@ time complexity:   Avg   |  Worst
     Deletion:     O(1)   |   O(1)
 space complexity:  O(n)
 ```
+
+- A queue is a data structure whose primary purpose is to store and return elements in First In First Out order.
 
 #### difference between using an array vs. a linked list when implementing a Queue
 
@@ -594,8 +594,6 @@ space complexity:  O(n)
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-stack.py)
 
-- A stack is a data structure whose primary purpose is to store and return elements in (Last In First Out)/FIFO order.
-
 ```pseudocode
 time complexity:   Avg   |  Worst
     Access:       O(n)   |   O(n)
@@ -604,6 +602,8 @@ time complexity:   Avg   |  Worst
     Deletion:     O(1)   |   O(1)
 space complexity:  O(n)
 ```
+
+- A stack is a data structure whose primary purpose is to store and return elements in (Last In First Out)/FIFO order.
 
 #### difference between using an array vs. a linked list when implementing a Stack
 
@@ -615,6 +615,15 @@ space complexity:  O(n)
 ### Skip List
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-skip_list.py)
+
+```pseudocode
+time complexity:    Avg     |  Worst
+  Access:       O(log(n))   |   O(n)
+  Search:       O(log(n))   |   O(n)
+  Insertion:    O(log(n))   |   O(n)
+  Deletion:     O(log(n))   |   O(n)
+space complexity:  O(n log(n))
+```
 
 - Can we search in a sorted linked list in better than O(n) time?
   - The worst case search time for a sorted linked list is O(n) as we can only linearly traverse the list and cannot skip nodes while searching.
@@ -679,27 +688,9 @@ Skip Node
 - create multiple layers in a sorted list so we can skip some nodes
 - has express lane, use express lane to find 'bucket' or 'chunk which your result is found in
 
-
-```pseudocode
-time complexity:    Avg     |  Worst
-  Access:       O(log(n))   |   O(n)
-  Search:       O(log(n))   |   O(n)
-  Insertion:    O(log(n))   |   O(n)
-  Deletion:     O(log(n))   |   O(n)
-space complexity:  O(n log(n))
-```
-
 ### Tries
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-tries.py)
-
-- tree optimized for searching by prefix
-- auto-complete really useful ffor this
-- starts wth root node that doesn't represent anything
-- has bunch of child nodes representing 1 letter
-  - each of those has child nodes representing next letter
-- can add weights to certain edges/children so they are suggested first
-- space is its own node
 
 ```pseudocode
 time complexity:   Avg        |  Worst
@@ -711,9 +702,26 @@ time complexity:   Avg        |  Worst
 space complexity:  O(ALPHABET_SIZE * key_length * N)
 ```
 
+- tree optimized for searching by prefix
+- auto-complete really useful ffor this
+- starts wth root node that doesn't represent anything
+- has bunch of child nodes representing 1 letter
+  - each of those has child nodes representing next letter
+- can add weights to certain edges/children so they are suggested first
+- space is its own node
+
 ### Bloom Filter
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/bloom_filter.py)
+
+```pseudocode
+time complexity:   Avg
+  Access:          ---
+  Search:          O(1)
+  Insertion:       O(1)
+  Deletion:        ---
+space complexity:  almost always less than hash (O(n))
+```
 
 - designed to tell you quickly & efficiently if item is in set
 - trade-off is it can't tell you definitely if item is in set
@@ -725,18 +733,14 @@ space complexity:  O(ALPHABET_SIZE * key_length * N)
   - trade-off = larger memory footprint
 - m & n = length of two strings
 
-```pseudocode
-time complexity:   Avg
-  Access:          ---
-  Search:          O(1)
-  Insertion:       O(1)
-  Deletion:        ---
-space complexity:  almost always less than hash (O(n))
-```
-
 ### Heaps
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-heap_max.py)
+
+```pseudocode
+time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
+space complexity:  O(1)
+```
 
 - data structure optimized for retrieving either maximal or minimal values of a dataset
 - all about maximizing priority
@@ -761,11 +765,6 @@ space complexity:  almost always less than hash (O(n))
 - when using BST, problem is we only have direct access to node
 - to construct max heap, run heapify starting @ array middle and work backwards to root.
 
-```pseudocode
-time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
-space complexity:  O(1)
-```
-
 ![Image of a Heap in Tree form](https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Max-Heap.svg/501px-Max-Heap.svg.png)
 
 ![Image of a Heap in Array form](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Heap-as-array.svg/603px-Heap-as-array.svg.png)
@@ -773,6 +772,24 @@ space complexity:  O(1)
 ### LRU Cache
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-lru_cache.py)
+
+```pseudocode
+QUEUE PORTION:
+  time complexity: Avg   |   Worst
+    Access:       O(n)   |   O(n)
+    Search:       O(n)   |   O(n)
+    Insertion:    O(1)   |   O(1)
+    Deletion:     O(1)   |   O(1)
+  space complexity:  O(n)
+
+HASH TABLE PORTION:
+  time complexity: Avg   |  Worst
+    Access:       N/A    |   N/A
+    Search:       O(1)   |   O(n)
+    Insertion:    O(1)   |   O(n)
+    Deletion:     O(1)   |   O(n)
+  space complexity:  O(n)
+```
 
 - Use two data structures to implement an LRU Cache:
   - Queue which is implemented using a doubly linked list.
@@ -807,40 +824,32 @@ Once you've gotten the tests passing, it's time to analyze the runtime complexit
 
 Here are you some things to think about with regards to optimizing your implementation: If you opted to use a dictionary to work with key-value pairs, we know that dictionaries give us constant access time, which is great. It's cheap and efficient to fetch pairs. A problem arises though from the fact that dictionaries don't have any way of remembering the order in which key-value pairs are added. But we definitely need something to remember the order in which pairs are added. Can you think of some ways to get around this constraint?
 
-```pseudocode
-QUEUE PORTION:
-  time complexity: Avg   |   Worst
-    Access:       O(n)   |   O(n)
-    Search:       O(n)   |   O(n)
-    Insertion:    O(1)   |   O(1)
-    Deletion:     O(1)   |   O(1)
-  space complexity:  O(n)
-
-HASH TABLE PORTION:
-  time complexity: Avg   |  Worst
-    Access:       N/A    |   N/A
-    Search:       O(1)   |   O(n)
-    Insertion:    O(1)   |   O(n)
-    Deletion:     O(1)   |   O(n)
-  space complexity:  O(n)
-```
-
 ### Generic Heaps
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-heap_generic.py)
-
-A max heap is pretty useful, but what's even more useful is to have our heap be generic such that the user can define their own priority function and pass it to the heap to use.
-
-Augment your heap implementation so that it exhibits this behavior. If no comparator function is passed in to the heap constructor, it should default to being a max heap.
 
 ```pseudocode
 time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
 space complexity:  O(1)
 ```
 
+A max heap is pretty useful, but what's even more useful is to have our heap be generic such that the user can define their own priority function and pass it to the heap to use.
+
+Augment your heap implementation so that it exhibits this behavior. If no comparator function is passed in to the heap constructor, it should default to being a max heap.
+
+
 ### AVL Tree
 
 [Sample](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos/data%20structures/datastructures-.py)
+
+```pseudocode
+time complexity:    Avg     |     Worst
+  Access:       O(log(n))   |   O(log(n))
+  Search:       O(log(n))   |   O(log(n))
+  Insertion:    O(log(n))   |   O(log(n))
+  Deletion:     O(log(n))   |   O(log(n))
+space complexity:  O(n)
+```
 
 - trees stay as flat as possible
 - initials of authors, specialized BSTs
@@ -864,15 +873,6 @@ The balance factor of any node of an AVL tree is in the integer range [-1,+1]. I
 ![AVL tree rebalancing](https://s3.amazonaws.com/hr-challenge-images/0/1436854305-b167cc766c-AVL_Tree_Rebalancing.svg.png)
 
 The tree's `insert` method should perform the same logic as what was implemented for the binary search tree, with the caveat that upon inserting a new element into the tree, it will then check to see if the tree needs to be rebalanced.
-
-```pseudocode
-time complexity:    Avg     |     Worst
-  Access:       O(log(n))   |   O(log(n))
-  Search:       O(log(n))   |   O(log(n))
-  Insertion:    O(log(n))   |   O(log(n))
-  Deletion:     O(log(n))   |   O(log(n))
-space complexity:  O(n)
-```
 
 #### AVL-Tree Related Terms
 
