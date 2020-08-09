@@ -1,11 +1,12 @@
+
 # Endorsement Repo
+
 <br>
-<br> 
 This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful.
 <br>
-<br>
 
-## Table of Contents:
+## Table of Contents
+
 * [Daily Grind](https://gist.github.com/evoingram/8b0f2c49954907c67b684ce3cd0c1fd3)
 * [Notes](#notes)
   * [Languages & Frameworks](#languages-&-frameworks)
@@ -27,21 +28,22 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 ## Notes
 
 ### TBD on completion of this section
+
 ### Languages & Frameworks
 
-* [HTML & CSS](https://github.com/evoingram/endorsement/tree/master/notes/HTML-CSS.md)
-* [JavaScript](https://github.com/evoingram/endorsement/tree/master/notes/JavaScript.md)
-* [React & Redux](https://github.com/evoingram/endorsement/tree/master/notes/ReactRedux.md)
-* [Node, Knex, Express](https://github.com/evoingram/endorsement/tree/master/notes/Node.md)
-* [SQL](https://github.com/evoingram/endorsement/tree/master/notes/SQL.md)
-* [Java](https://github.com/evoingram/endorsement/tree/master/notes/Java.md)
-* [TypeScript](https://github.com/evoingram/endorsement/tree/master/notes/TypeScript.md)
+* [HTML & CSS](https://github.com/evoingram/endorsement/tree/master/notes/HTML-CSS.md) (needs update)
+* [JavaScript](https://github.com/evoingram/endorsement/tree/master/notes/JavaScript.md) (needs update)
+* [React & Redux](https://github.com/evoingram/endorsement/tree/master/notes/ReactRedux.md) (needs update)
+* [Node, Knex, Express](https://github.com/evoingram/endorsement/tree/master/notes/Node.md) (needs update)
+* [SQL](https://github.com/evoingram/endorsement/tree/master/notes/SQL.md) (needs update)
+* [Java](https://github.com/evoingram/endorsement/tree/master/notes/Java.md) (needs update)
+* [TypeScript](https://github.com/evoingram/endorsement/tree/master/notes/TypeScript.md) (needs update)
 * [Visual Basic]
 * [Tailwind]
-* [GraphQL](https://github.com/evoingram/endorsement/tree/master/notes/GraphQL.md)
+* [GraphQL](https://github.com/evoingram/endorsement/tree/master/notes/GraphQL.md) (needs update)
 * [Emmet]
 * [Bootstrap]
-* [Regex](https://github.com/evoingram/endorsement/tree/master/notes/Regex.md)
+* [Regex](https://github.com/evoingram/endorsement/tree/master/notes/Regex.md) (needs update)
 
 ### Theory & Concepts
 
@@ -52,10 +54,9 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 * [Stack Overflow Big O Explanation](https://github.com/evoingram/endorsement/tree/master/notes/bigOexplanation.md)
 * [Stacks v. Heaps](https://github.com/evoingram/endorsement/tree/master/notes/stack_v_heap.md)
 * [Bit Manipulation](https://github.com/evoingram/endorsement/tree/master/notes/bit-manipulation.md)
-* [Graphs](https://github.com/evoingram/endorsement/tree/master/notes/Graphs.md)
-* [Graphs FAQ](https://github.com/evoingram/endorsement/tree/master/notes/GraphsFAQ.md)
-* [Graph Representations](https://github.com/evoingram/endorsement/tree/master/notes/GraphsRepresentations.md)
-* [Computers](https://github.com/evoingram/endorsement/tree/master/notes/Computers.md)
+* [Graphs 1](https://github.com/evoingram/endorsement/tree/master/notes/Graphs.md)
+* [Graphs 2](https://github.com/evoingram/endorsement/tree/master/notes/Graphs2.md)
+* [Computers](https://github.com/evoingram/endorsement/tree/master/notes/Computers.md) (needs update)
 * [operating system]
 * [Am I Ready for the DS&A interview?](https://github.com/evoingram/endorsement/tree/master/notes/DSAReady.md)
 
@@ -63,43 +64,43 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 
 * [Object-Oriented Analysis & Design](https://github.com/evoingram/endorsement/tree/master/notes/OOAD.md)
 * [Object-Oriented Interview Tips](https://github.com/evoingram/endorsement/tree/master/notes/OODInterviewTips.md)
-* [Object-Oriented Design Patterns](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md)
-* [Object-Oriented Design Patterns Glossary](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFourGlossary.md)
+* [Object-Oriented Design Patterns](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md) (needs update)
+* [Object-Oriented Design Patterns Glossary](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFourGlossary.md) (needs update)
 * [Object-Oriented Design Patterns Quick List](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFourQL.md)
 
 #### System Design
 
-* [Scalability](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md)
+* [Scalability](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md) (needs update)
 * [System Design & Architecture](https://github.com/evoingram/endorsement/tree/master/notes/SystemDesign.md)
-* [UML](https://github.com/evoingram/endorsement/tree/master/notes/UML.md)
-* [System Design Interviews](https://github.com/evoingram/endorsement/tree/master/notes/SystemSpecific.md)
-* [Agile](https://github.com/evoingram/endorsement/tree/master/notes/Agile.md)
+* [UML](https://github.com/evoingram/endorsement/tree/master/notes/UML.md) (needs update)
+* [System Design Interviews](https://github.com/evoingram/endorsement/tree/master/notes/SystemSpecific.md) (needs update)
+* [Agile](https://github.com/evoingram/endorsement/tree/master/notes/Agile.md) (needs update)
 
 ### Software
 
 * [PowerShell]
-* [Git & Bash Terminal, VS Code Shortcuts](https://github.com/evoingram/endorsement/tree/master/notes/Shortcuts.md)
-* [Docker](https://github.com/evoingram/endorsement/tree/master/notes/Docker.md)
-* [Azure](https://github.com/evoingram/endorsement/tree/master/notes/Azure.md)
+* [Git & Bash Terminal, VS Code Shortcuts](https://github.com/evoingram/endorsement/tree/master/notes/Shortcuts.md) (needs update)
+* [Docker](https://github.com/evoingram/endorsement/tree/master/notes/Docker.md) (needs update)
+* [Azure](https://github.com/evoingram/endorsement/tree/master/notes/Azure.md) (needs update)
 * [Cortana]
 * [Postman]
 
 ### Books
 
-* [Clean Code](https://github.com/evoingram/endorsement/blob/master/notes/CleanCode.md)
-* [Clean Coder](https://github.com/evoingram/endorsement/blob/master/notes/CleanCoder.md)
-* [Clean Architecture](https://github.com/evoingram/endorsement/blob/master/notes/CleanArch.md)
-* [Gang of Four book](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md)
-* [Web Scalability for Startup Engineers](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md)
+* [Clean Code](https://github.com/evoingram/endorsement/blob/master/notes/CleanCode.md) (needs update)
+* [Clean Coder](https://github.com/evoingram/endorsement/blob/master/notes/CleanCoder.md) (needs update)
+* [Clean Architecture](https://github.com/evoingram/endorsement/blob/master/notes/CleanArch.md) (needs update)
+* [Gang of Four book](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md) (needs update)
+* [Web Scalability for Startup Engineers](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md) (needs update)
 
 ### Miscellaneous
 
 * [problem solving tips](https://github.com/evoingram/endorsement/blob/master/notes/ProblemSolving.md)
 * [coding challenge patterns](https://github.com/evoingram/endorsement/blob/master/notes/CodingChallengePatterns.md)
-* [interview tips](https://github.com/evoingram/endorsement/blob/master/notes/InterviewTips.md)
-* [code review tips](https://github.com/evoingram/endorsement/blob/master/notes/CodeReviewTips.md)
-* [behavioral questions](https://github.com/evoingram/endorsement/blob/master/notes/BehavioralQuestions.md)
-* [hot-seat questions](https://github.com/evoingram/endorsement/blob/master/notes/HotSeat.md)
+* [interview tips](https://github.com/evoingram/endorsement/blob/master/notes/InterviewTips.md) (needs update)
+* [code review tips](https://github.com/evoingram/endorsement/blob/master/notes/CodeReviewTips.md) (needs update)
+* [behavioral questions](https://github.com/evoingram/endorsement/blob/master/notes/BehavioralQuestions.md) (needs update)
+* [hot-seat questions](https://github.com/evoingram/endorsement/blob/master/notes/HotSeat.md) (needs update)
 
 ## Learning Resources
 
