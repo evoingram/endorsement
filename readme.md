@@ -45,9 +45,9 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 * [Emmet Readme]
 * [Bootstrap Readme]
 * [Regex Readme](https://github.com/evoingram/endorsement/tree/master/notes/Regex.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/regex.pdf)
-* [Cypress Readme] (needs update)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Cypress.apkg)
-* [LESS Readme] (needs update)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/LESS.apkg)
-* [Python Readme] (needs updates)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Python.apkg)
+* [Cypress Readme]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Cypress.apkg)
+* [LESS Readme]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/LESS.apkg)
+* [Python Readme]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Python.apkg)
 
 ### Theory & Concepts
 
