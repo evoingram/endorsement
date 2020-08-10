@@ -31,26 +31,29 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 
 ### Languages & Frameworks
 
-* [HTML & CSS Readme](https://github.com/evoingram/endorsement/tree/master/notes/HTML-CSS.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-html.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-html-character-entities.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/css.pdf)
-* [JavaScript Readme](https://github.com/evoingram/endorsement/tree/master/notes/JavaScript.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript3.pdf)
-* [React & Redux Readme](https://github.com/evoingram/endorsement/tree/master/notes/ReactRedux.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-react.pdf)
+* [HTML & CSS Readme](https://github.com/evoingram/endorsement/tree/master/notes/HTML-CSS.md) (needs update)   |   [HTML Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/HTML.apkg)   |   [CSS Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/CSS.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-html.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-html-character-entities.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/css.pdf)
+* [JavaScript Readme](https://github.com/evoingram/endorsement/tree/master/notes/JavaScript.md) (needs update)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/JavaScript.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript3.pdf)
+* [React & Redux Readme](https://github.com/evoingram/endorsement/tree/master/notes/ReactRedux.md) (needs update)   |   [React Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/React.apkg)   |   [Redux Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Redux.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-react.pdf)
 * [Node, Knex, Express Readme](https://github.com/evoingram/endorsement/tree/master/notes/Node.md) (needs update)   |   [Node Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-node.pdf)  |   [Knex Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-knex.png)  |   [Knex Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-express.pdf)
 * [Quick Node/Express Set-Up Guide](https://github.com/thisbenrogers/node-express-review)
-* [SQL Readme](https://github.com/evoingram/endorsement/tree/master/notes/SQL.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-sql.pdf)
-* [Java Readme](https://github.com/evoingram/endorsement/tree/master/notes/Java.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java3.pdf)
-* [TypeScript Readme](https://github.com/evoingram/endorsement/tree/master/notes/TypeScript.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-typescript.pdf)
+* [SQL Readme](https://github.com/evoingram/endorsement/tree/master/notes/SQL.md) (needs update)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/SQL2.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-sql.pdf)
+* [Java Readme](https://github.com/evoingram/endorsement/tree/master/notes/Java.md) (needs update)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Java.apkg)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/JavaBackend.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java3.pdf)
+* [TypeScript Readme](https://github.com/evoingram/endorsement/tree/master/notes/TypeScript.md) (needs update)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Typescript.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-typescript.pdf)
 * [Visual Basic Readme]   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-visualbasic.pdf)
 * [Tailwind Readme]
 * [GraphQL Readme](https://github.com/evoingram/endorsement/tree/master/notes/GraphQL.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-graphql.pdf)
-* [Emmet Readme] 
+* [Emmet Readme]
 * [Bootstrap Readme]
 * [Regex Readme](https://github.com/evoingram/endorsement/tree/master/notes/Regex.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/regex.pdf)
+* [Cypress Readme]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Cypress.apkg)
+* [LESS Readme]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/LESS.apkg)
+* [Python Readme]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Python.apkg)
 
 ### Theory & Concepts
 
 #### Computer Science
 
-* [Data Structures & Algorithms Readme](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos)   |   [Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/dsalgos.pdf)
+* [Data Structures & Algorithms Readme](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/CompSci.apkg)   |   [Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/dsalgos.pdf)
 * [Calculating Big O](https://github.com/evoingram/endorsement/tree/master/notes/CalculatingBigO.md)
 * [Stack Overflow Big O Explanation](https://github.com/evoingram/endorsement/tree/master/notes/bigOexplanation.md)
 * [Stacks v. Heaps](https://github.com/evoingram/endorsement/tree/master/notes/stack_v_heap.md)
@@ -75,12 +78,12 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 * [System Design & Architecture Readme](https://github.com/evoingram/endorsement/tree/master/notes/SystemDesign.md)   |   [Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/systemdesign.pdf)   |   [Available Tech Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/techstacks.pdf)
 * [UML Readme](https://github.com/evoingram/endorsement/tree/master/notes/UML.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-uml.jpg)
 * [System Design Interviews Readme](https://github.com/evoingram/endorsement/tree/master/notes/SystemSpecific.md) (needs update)   |   [Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/sdinterviews.pdf)
-* [Agile Readme](https://github.com/evoingram/endorsement/tree/master/notes/Agile.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile3.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile4.pdf)
+* [Agile Readme](https://github.com/evoingram/endorsement/tree/master/notes/Agile.md) (needs update)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Agile.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile3.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile4.pdf)
 
 ### Software
 
-* [PowerShell Readme]   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/powershell.pdf)
-* [Git & Bash Terminal, VS Code Shortcuts Readme](https://github.com/evoingram/endorsement/tree/master/notes/Shortcuts.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/Git.pdf)
+* [PowerShell Readme]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Powershell.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/powershell.pdf)
+* [Git & Bash Terminal, VS Code Shortcuts Readme](https://github.com/evoingram/endorsement/tree/master/notes/Shortcuts.md) (needs update)   |   [Git Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Git.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/Git.pdf)
 * [Docker Readme](https://github.com/evoingram/endorsement/tree/master/notes/Docker.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/Docker1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/Docker2.pdf)
 * [Azure Readme](https://github.com/evoingram/endorsement/tree/master/notes/Azure.md) (needs update)
 * [Cortana]
@@ -93,6 +96,7 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 * [Clean Architecture Readme](https://github.com/evoingram/endorsement/blob/master/notes/CleanArch.md) (needs update)
 * [Gang of Four book Readme](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md) (needs update)
 * [Web Scalability for Startup Engineers Readme](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md) (needs update)
+* [Cracking the Coding Interview Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/CrackingCodingInterview.apkg)
 
 ### Miscellaneous
 
@@ -102,6 +106,7 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 * [code review tips](https://github.com/evoingram/endorsement/blob/master/notes/CodeReviewTips.md) (needs update)
 * [behavioral questions](https://github.com/evoingram/endorsement/blob/master/notes/BehavioralQuestions.md) (needs update)
 * [hot-seat questions](https://github.com/evoingram/endorsement/blob/master/notes/HotSeat.md) (needs update)
+* [Self Study Questions:  Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/SelfStudyQs.apkg)
 
 ## Learning Resources
 
@@ -199,6 +204,7 @@ I highly recommend every one of these.
 * [X] Clean Architecture, Bob Martin, teaches you how to design clean software architecture
 * [X] Design Patterns:  Elements of Reusable Object-Oriented Software, Gang of Four, teaches you 23 main object-oriented design patterns
 * [X] Web Scalability for Startup Engineers, Artur Ejsmont, teaches you everything you need to know about scalability and then some
+* [X] Cracking the Coding Interview, Gayle Laakmann McDowell, great book full of exercises, solutions, and outlines of everything you need to know for coding interviews
 
 #### On my list to read, after my interview studying dies down a bit
 
