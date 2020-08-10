@@ -32,25 +32,25 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 ### Languages & Frameworks
 
 * [HTML & CSS Readme](https://github.com/evoingram/endorsement/tree/master/notes/HTML-CSS.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-html.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-html-character-entities.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/css.pdf)
-* [JavaScript](https://github.com/evoingram/endorsement/tree/master/notes/JavaScript.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript3.pdf)
-* [React & Redux](https://github.com/evoingram/endorsement/tree/master/notes/ReactRedux.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-react.pdf)
-* [Node, Knex, Express](https://github.com/evoingram/endorsement/tree/master/notes/Node.md) (needs update)   |   [Node Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-node.pdf)  |   [Knex Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-knex.png)  |   [Knex Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-express.pdf)
+* [JavaScript Readme](https://github.com/evoingram/endorsement/tree/master/notes/JavaScript.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript3.pdf)
+* [React & Redux Readme](https://github.com/evoingram/endorsement/tree/master/notes/ReactRedux.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-react.pdf)
+* [Node, Knex, Express Readme](https://github.com/evoingram/endorsement/tree/master/notes/Node.md) (needs update)   |   [Node Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-node.pdf)  |   [Knex Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-knex.png)  |   [Knex Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-express.pdf)
 * [Quick Node/Express Set-Up Guide](https://github.com/thisbenrogers/node-express-review)
-* [SQL](https://github.com/evoingram/endorsement/tree/master/notes/SQL.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-sql.pdf)
-* [Java](https://github.com/evoingram/endorsement/tree/master/notes/Java.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java3.pdf)
+* [SQL Readme](https://github.com/evoingram/endorsement/tree/master/notes/SQL.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-sql.pdf)
+* [Java Readme](https://github.com/evoingram/endorsement/tree/master/notes/Java.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java3.pdf)
 * [TypeScript Readme](https://github.com/evoingram/endorsement/tree/master/notes/TypeScript.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-typescript.pdf)
 * [Visual Basic Readme]   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-visualbasic.pdf)
 * [Tailwind Readme]
 * [GraphQL Readme](https://github.com/evoingram/endorsement/tree/master/notes/GraphQL.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-graphql.pdf)
 * [Emmet Readme] 
 * [Bootstrap Readme]
-* [Regex](https://github.com/evoingram/endorsement/tree/master/notes/Regex.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/regex.pdf)
+* [Regex Readme](https://github.com/evoingram/endorsement/tree/master/notes/Regex.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/regex.pdf)
 
 ### Theory & Concepts
 
 #### Computer Science
 
-* [Data Structures & Algorithms](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos)   |   [Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/dsalgos.pdf)
+* [Data Structures & Algorithms Readme](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos)   |   [Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/dsalgos.pdf)
 * [Calculating Big O](https://github.com/evoingram/endorsement/tree/master/notes/CalculatingBigO.md)
 * [Stack Overflow Big O Explanation](https://github.com/evoingram/endorsement/tree/master/notes/bigOexplanation.md)
 * [Stacks v. Heaps](https://github.com/evoingram/endorsement/tree/master/notes/stack_v_heap.md)
@@ -63,7 +63,7 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 
 #### Object-Oriented Analysis & Design
 
-* [Object-Oriented Analysis & Design](https://github.com/evoingram/endorsement/tree/master/notes/OOAD.md)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/OOAD.pdf)
+* [Object-Oriented Analysis & Design Readme](https://github.com/evoingram/endorsement/tree/master/notes/OOAD.md)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/OOAD.pdf)
 * [Object-Oriented Interview Tips](https://github.com/evoingram/endorsement/tree/master/notes/OODInterviewTips.md)
 * [Object-Oriented Design Patterns](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md) (needs update)
 * [Object-Oriented Design Patterns Glossary](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFourGlossary.md) (needs update)
@@ -71,28 +71,28 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 
 #### System Design
 
-* [Scalability](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md) (needs update)   |   [Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/scalability.pdf)
-* [System Design & Architecture](https://github.com/evoingram/endorsement/tree/master/notes/SystemDesign.md)   |   [Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/systemdesign.pdf)   |   [Available Tech Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/techstacks.pdf)
-* [UML](https://github.com/evoingram/endorsement/tree/master/notes/UML.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-uml.jpg)
-* [System Design Interviews](https://github.com/evoingram/endorsement/tree/master/notes/SystemSpecific.md) (needs update)   |   [Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/sdinterviews.pdf)
-* [Agile](https://github.com/evoingram/endorsement/tree/master/notes/Agile.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile3.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile4.pdf)
+* [Scalability Readme](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md) (needs update)   |   [Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/scalability.pdf)
+* [System Design & Architecture Readme](https://github.com/evoingram/endorsement/tree/master/notes/SystemDesign.md)   |   [Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/systemdesign.pdf)   |   [Available Tech Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/techstacks.pdf)
+* [UML Readme](https://github.com/evoingram/endorsement/tree/master/notes/UML.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-uml.jpg)
+* [System Design Interviews Readme](https://github.com/evoingram/endorsement/tree/master/notes/SystemSpecific.md) (needs update)   |   [Cheat Sheet TBD](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/sdinterviews.pdf)
+* [Agile Readme](https://github.com/evoingram/endorsement/tree/master/notes/Agile.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile3.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/agile4.pdf)
 
 ### Software
 
-* [PowerShell]   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/powershell.pdf)
-* [Git & Bash Terminal, VS Code Shortcuts](https://github.com/evoingram/endorsement/tree/master/notes/Shortcuts.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/Git.pdf)
-* [Docker](https://github.com/evoingram/endorsement/tree/master/notes/Docker.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/Docker1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/Docker2.pdf)
-* [Azure](https://github.com/evoingram/endorsement/tree/master/notes/Azure.md) (needs update)
+* [PowerShell Readme]   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/powershell.pdf)
+* [Git & Bash Terminal, VS Code Shortcuts Readme](https://github.com/evoingram/endorsement/tree/master/notes/Shortcuts.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/Git.pdf)
+* [Docker Readme](https://github.com/evoingram/endorsement/tree/master/notes/Docker.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/Docker1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/Docker2.pdf)
+* [Azure Readme](https://github.com/evoingram/endorsement/tree/master/notes/Azure.md) (needs update)
 * [Cortana]
 * [Postman]
 
 ### Books
 
-* [Clean Code](https://github.com/evoingram/endorsement/blob/master/notes/CleanCode.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/CleanCode.pdf)
-* [Clean Coder](https://github.com/evoingram/endorsement/blob/master/notes/CleanCoder.md) (needs update)
-* [Clean Architecture](https://github.com/evoingram/endorsement/blob/master/notes/CleanArch.md) (needs update)
-* [Gang of Four book](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md) (needs update)
-* [Web Scalability for Startup Engineers](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md) (needs update)
+* [Clean Code Readme](https://github.com/evoingram/endorsement/blob/master/notes/CleanCode.md) (needs update)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/CleanCode.pdf)
+* [Clean Coder Readme](https://github.com/evoingram/endorsement/blob/master/notes/CleanCoder.md) (needs update)
+* [Clean Architecture Readme](https://github.com/evoingram/endorsement/blob/master/notes/CleanArch.md) (needs update)
+* [Gang of Four book Readme](https://github.com/evoingram/endorsement/tree/master/notes/GangOfFour.md) (needs update)
+* [Web Scalability for Startup Engineers Readme](https://github.com/evoingram/endorsement/tree/master/notes/Scalability.md) (needs update)
 
 ### Miscellaneous
 
