@@ -35,6 +35,7 @@ This is my working through the Cracking the Coding Interview challenges, copies 
 * [JavaScript](https://github.com/evoingram/endorsement/tree/master/notes/JavaScript.md) (needs update)
 * [React & Redux](https://github.com/evoingram/endorsement/tree/master/notes/ReactRedux.md) (needs update)
 * [Node, Knex, Express](https://github.com/evoingram/endorsement/tree/master/notes/Node.md) (needs update)
+* [Quick Node/Express Set-Up Guide](https://github.com/thisbenrogers/node-express-review)
 * [SQL](https://github.com/evoingram/endorsement/tree/master/notes/SQL.md) (needs update)
 * [Java](https://github.com/evoingram/endorsement/tree/master/notes/Java.md) (needs update)
 * [TypeScript](https://github.com/evoingram/endorsement/tree/master/notes/TypeScript.md) (needs update)

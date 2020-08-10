@@ -5,3 +5,14 @@
     # is also a Binary Search Tree (BST). 
 
 # If the complete Binary Tree is BST, then return the size of whole tree.
+
+class BinarySearchTree:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+    def largest_BST(self):
+        pass
+        # left is < parent
+        # right is > parent
