@@ -10,6 +10,7 @@ Notes about individual data structures and algorithms may be found directly with
 ## Table of Contents
 
 - [Dynamic Programming](#dynamic-programming)
+- [Backtracking](#backtracking)
 - [Algorithms](#algorithms)
   - [Big O](#big-o)
   - [Search](#search)
