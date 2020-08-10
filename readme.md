@@ -150,7 +150,7 @@ I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).  Lam
 * [ ] [C++](https://www.youtube.com/playlist?list=PLlxurZn3gw7oreqz4S1Ys4Nkg1-EdwL5v, "C++")  
 * [ ] [HTML/CSS/GSAP/SVG](https://www.youtube.com/playlist?list=PLlxurZn3gw7rNOv6MMSK0tpkfAMANUPLj, "HTML/CSS/GSAP/SVG")  
 * [ ] [Linux](https://www.youtube.com/watch?v=wBp0Rb-ZJak&list=PLlxurZn3gw7pbBOiw_FFZIpgvo07xCNDi, "Linux")  
-* [ ] [30 Days of React](https://www.youtube.com/watch?v=100pKUE3OPI&list=PLlxurZn3gw7oc5ebo1EvnuBO8u532X9zn, "30 Days of React")  
+* [ ] [30 Days of React](https://www.youtube.com/playlist?list=PLCCRzPrPbnO0Tp5HXKfMihlfhhX7q_tZ5, "30 Days of React")  
 * [ ] [Mobile](https://www.youtube.com/playlist?list=PLlxurZn3gw7rkriBgH6KvCkEUF8uc1FNJ, "mobile")  
 * [ ] [UML](https://www.youtube.com/playlist?list=PLlxurZn3gw7qJCVtGcAQ_ikonlIkklE-t)
 * [ ] [Excellent Interview-Related Tips from Dan Croitor](https://www.youtube.com/c/DanCroitor/videos)
