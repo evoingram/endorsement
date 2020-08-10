@@ -3,8 +3,8 @@
 
 <br>
 This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful.  The reference material contained herein is still in progress.
-<br>
-A (*) in this readme indicates that the link leads to a live file that is still incomplete.
+<br><br>
+A (*) in this readme indicates that the link leads to a live file that is still incomplete.  If there is a [sample] designation, that means it's coming, but not live yet.
 
 ## Table of Contents
 
@@ -32,37 +32,36 @@ A (*) in this readme indicates that the link leads to a live file that is still 
 
 ### Languages & Frameworks
 
-
+* **Bootstrap**:  [Notes]   |   [Anki Flash Cards]   |   [Cheat Sheet]
+* **Cypress**:  [Notes]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Cypress.apkg)   |   [Cheat Sheet]
+* **Emmet**:  [Notes]   |   [Anki Flash Cards]   |   [Cheat Sheet]
+* **GraphQL**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/GraphQL.md) (*)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-graphql.pdf)
 * **HTML & CSS**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/HTML-CSS.md) (*)   |   [HTML Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/HTML.apkg)   |   [CSS Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/CSS.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-html.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-html-character-entities.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/css.pdf)
-* **JavaScript**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/JavaScript.md) (*)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/JavaScript.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript3.pdf)
-* **React & Redux**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/ReactRedux.md) (*)   |   [React Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/React.apkg)   |   [Redux Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Redux.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-react.pdf)
-* **Node, Knex, Express**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/Node.md) (*)   |   [Node Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-node.pdf)  |   [Knex Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-knex.png)  |   [Express Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-express.pdf)   |   [Quick Set-Up Guide](https://github.com/thisbenrogers/node-express-review)
-* **SQL**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/SQL.md) (*)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/SQL2.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-sql.pdf)
 * **Java**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/Java.md) (*)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Java.apkg)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/JavaBackend.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-java3.pdf)
+* **JavaScript**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/JavaScript.md) (*)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/JavaScript.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript2.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-javascript3.pdf)
+* **LESS**:  [Notes]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/LESS.apkg)   |   [Cheat Sheet]
+* **Node, Knex, Express**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/Node.md) (*)   |   [Node Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-node.pdf)  |   [Knex Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-knex.png)  |   [Express Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-express.pdf)   |   [Quick Set-Up Guide](https://github.com/thisbenrogers/node-express-review)
+* **Python**:  [Notes]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Python.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/anki/language-python1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/anki/language-python1.pdf)
+* **React & Redux**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/ReactRedux.md) (*)   |   [React Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/React.apkg)   |   [Redux Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Redux.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-react.pdf)
+* **Regex**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/Regex.md) (*)   |   [Anki Flash Cards]   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/regex.pdf)
+* **SQL**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/SQL.md) (*)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/SQL2.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-sql.pdf)
+* **Tailwind CSS**:  [Notes]   |   [Anki Flash Cards]   |   [Cheat Sheet]
 * **TypeScript**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/TypeScript.md) (*)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Typescript.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-typescript.pdf)
 * **Visual Basic**:  [Notes]   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-visualbasic.pdf)
-* **Tailwind**:  [Notes]   |   [Anki Flash Cards]   |   [Cheat Sheet]
-* **GraphQL**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/GraphQL.md) (*)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-graphql.pdf)
-* **Emmet**:  [Notes]   |   [Anki Flash Cards]   |   [Cheat Sheet]
-* **Bootstrap**:  [Notes]   |   [Anki Flash Cards]   |   [Cheat Sheet]
-* **Regex**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/Regex.md) (*)   |   [Anki Flash Cards]   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/regex.pdf)
-* **Cypress**:  [Notes]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Cypress.apkg)   |   [Cheat Sheet]
-* **LESS**:  [Notes]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/LESS.apkg)   |   [Cheat Sheet]
-* **Python**:  [Notes]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Python.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/anki/language-python1.pdf)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/anki/language-python1.pdf)
 
 ### Theory & Concepts
 
 #### Computer Science
 
 * **Data Structures & Algorithms**:  [Notes](https://github.com/evoingram/endorsement/tree/master/SamplesDSAlgos)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/CompSci.apkg)   |   [Cheat Sheet]
-* [Calculating Big O](https://github.com/evoingram/endorsement/tree/master/notes/CalculatingBigO.md)
-* [Stack Overflow Big O Explanation](https://github.com/evoingram/endorsement/tree/master/notes/bigOexplanation.md)
-* [Stacks v. Heaps](https://github.com/evoingram/endorsement/tree/master/notes/stack_v_heap.md)
+  * **Graphs**:  [Notes 1](https://github.com/evoingram/endorsement/tree/master/notes/Graphs.md)   |   [Notes 2](https://github.com/evoingram/endorsement/tree/master/notes/Graphs2.md)   |   [Anki Flash Cards]   |   [Cheat Sheet]
+  * [Calculating Big O](https://github.com/evoingram/endorsement/tree/master/notes/CalculatingBigO.md)
+  * [Stack Overflow Big O Explanation](https://github.com/evoingram/endorsement/tree/master/notes/bigOexplanation.md)
+  * [Stacks v. Heaps](https://github.com/evoingram/endorsement/tree/master/notes/stack_v_heap.md)
+  * [Am I Ready for the DS&A interview?](https://github.com/evoingram/endorsement/tree/master/notes/DSAReady.md)
 * **Bit Manipulation**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/bit-manipulation.md)   |   [Anki Flash Cards]   |   [Cheat Sheet]
-* **Graphs**:  [Notes 1](https://github.com/evoingram/endorsement/tree/master/notes/Graphs.md)   |   [Notes 2](https://github.com/evoingram/endorsement/tree/master/notes/Graphs2.md)   |   [Anki Flash Cards]   |   [Cheat Sheet]
 * **Computers**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/Computers.md) (*)   |   [Anki Flash Cards]   |   [Cheat Sheet]
-* **Operating System**:  [Notes]   |   [Anki Flash Cards]   |   [Cheat Sheet]
-* [Am I Ready for the DS&A interview?](https://github.com/evoingram/endorsement/tree/master/notes/DSAReady.md)
+  * **Operating System**:  [Notes]   |   [Anki Flash Cards]   |   [Cheat Sheet]
 
 #### Object-Oriented Analysis & Design
 
