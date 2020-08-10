@@ -103,15 +103,15 @@ A (*) in this readme indicates that the link leads to a live file that is still 
 * [coding challenge patterns](https://github.com/evoingram/endorsement/blob/master/notes/CodingChallengePatterns.md)
 * [interview tips](https://github.com/evoingram/endorsement/blob/master/notes/InterviewTips.md) (*)
 * [code review tips](https://github.com/evoingram/endorsement/blob/master/notes/CodeReviewTips.md) (*)
-* [behavioral questions](https://github.com/evoingram/endorsement/blob/master/notes/BehavioralQuestions.md) (*)
-* [hot-seat questions](https://github.com/evoingram/endorsement/blob/master/notes/HotSeat.md) (*)
-* **Self Study Questions**:  [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/SelfStudyQs.apkg)
+* **behavioral questions**:  [Readme](https://github.com/evoingram/endorsement/blob/master/notes/BehavioralQuestions.md) (*)   |   [Anki Flash Cards]
+* **hot-seat questions**:  [readme](https://github.com/evoingram/endorsement/blob/master/notes/HotSeat.md) (*)   |   [Anki Flash Cards]
+* **Self Study Questions**:  [Readme]   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/SelfStudyQs.apkg)
 
 ## Learning Resources
 
 ### Written
 
-I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a great base or starter place to go for your knowledge.  There are a TON of different languages, frameworks, and fundamental computer science concepts explained there, including object-oriented design, data science and algorithms, how to use various cloud providers, languages, frameworks, operating systems, and more.  Study and take notes on a subject there, and then any videos you go on to watch or other things you do to learn will be very easy to understand and follow through on.  
+I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a great base or starter place to go for your knowledge.  There are a TON of different languages, frameworks, and fundamental computer science concepts explained there, including object-oriented design, data science and algorithms, how to use various cloud providers, languages, frameworks, operating systems, and more.  Study and take notes on a subject there, and then any videos you go on to watch or other things you do to learn will be very easy to understand and follow through on.
 
 * [X] [TutorialsPoint](https://www.tutorialspoint.com)
 * [X] [System Design Primer](https://github.com/donnemartin/system-design-primer)
@@ -124,9 +124,9 @@ I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a g
 * [X] [Operating System Tutorial](https://www.tutorialspoint.com/operating_system/index.htm)
 * [X] [Azure Tutorial](https://www.tutorialspoint.com/microsoft_azure/index.htm)
 * [X] [Microsoft Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/)
+* [X] [HighScalability.com Examples](http://highscalability.com/blog/category/example)
 * [ ] [Google Style Guide 1](https://developers.google.com/style/)
 * [ ] [Google Style Guide 2](https://google.github.io/styleguide/cppguide.html)
-* [X] [HighScalability.com Examples](http://highscalability.com/blog/category/example)
 
 ### Video
 

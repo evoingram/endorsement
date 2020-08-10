@@ -138,6 +138,8 @@ space complexity:  O(1)
 - Only works if array is sorted
 - break into halves several times, being able to eliminate halves quickly to find what you're looking for
 
+![Image of Binary Search](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/gifs/binary_search.gif) [credit to Brilliant](https://brilliant.org/wiki/binary-search/)
+
 #### Depth-First Search
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/search/search_depth_breadth_first.py)
@@ -150,7 +152,9 @@ space complexity:  O(1)
   - continues until all nodes have been visited
   - recursive or iterative --> makes use of stack
 
-##### IN-ORDER, PRE-ORDER, AND POST-ORDER TRAVERSALS
+![Image of Depth-First Search](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/gifs/dfs.gif) [credit to Ray Wenderlich](https://www.raywenderlich.com/661-swift-algorithm-club-swift-depth-first-search)
+
+##### In-Order, Pre-Order, & Post-Order Traversals
 
 for depth-first traversals only
 
@@ -190,6 +194,8 @@ space complexity:  O(1)
     - use queue for this
   - will jump around a bit because next node we visit might not be connected to current
 
+![Image of Breadth-First Search](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/gifs/bfs.gif) [credit to Brendan Higgins](https://github.com/bah87/maze-runner)
+
 #### Linear Search
 
 [Sample](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/search/search_linear.py)
@@ -202,6 +208,8 @@ space complexity:  O(1)
 - go line by line, one item by one item & check value at that index
 - when found, stop
 - simplest; only useful if list you're searching is unsorted
+
+![Image of Linear Search](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/gifs/linear-search.gif) [credit to The Algorithms](https://recordnotfound.com/Python-TheAlgorithms-134853)
 
 ### Sort
 
