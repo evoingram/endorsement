@@ -105,7 +105,7 @@ A (*) in this readme indicates that the link leads to a live file that is still 
 * [code review tips](https://github.com/evoingram/endorsement/blob/master/notes/CodeReviewTips.md) (*)
 * [behavioral questions](https://github.com/evoingram/endorsement/blob/master/notes/BehavioralQuestions.md) (*)
 * [hot-seat questions](https://github.com/evoingram/endorsement/blob/master/notes/HotSeat.md) (*)
-* [Self Study Questions:  Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/SelfStudyQs.apkg)
+* **Self Study Questions**:  [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/SelfStudyQs.apkg)
 
 ## Learning Resources
 
@@ -121,9 +121,9 @@ I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a g
 * [X] [GSAP](https://greensock.com/learning,"GSAP")  
 * [X] [Visual Studio](https://visualstudio.microsoft.com/vs/getting-started/, "Visual Studio")  
 * [X] [Visual Studio](https://channel9.msdn.com/Shows/Visual-Studio-Toolbox, "Visual Studio")  
-* [ ] [Operating System Tutorial](https://www.tutorialspoint.com/operating_system/index.htm)
+* [X] [Operating System Tutorial](https://www.tutorialspoint.com/operating_system/index.htm)
 * [X] [Azure Tutorial](https://www.tutorialspoint.com/microsoft_azure/index.htm)
-* [ ] [Microsoft Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/)
+* [X] [Microsoft Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/)
 * [ ] [Google Style Guide 1](https://developers.google.com/style/)
 * [ ] [Google Style Guide 2](https://google.github.io/styleguide/cppguide.html)
 * [X] [HighScalability.com Examples](http://highscalability.com/blog/category/example)
