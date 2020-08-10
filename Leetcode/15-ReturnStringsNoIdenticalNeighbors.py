@@ -12,7 +12,7 @@
 
 # Find and fix bug(s) in a given implementation of a function:
     
-    class Solution { public Stringg[] solution(int N, int K) }
+    # class Solution { public String[] solution(int N, int K) }
 
     # that, given integers N and K, retums an array of strings: the first 
         # K words of the alphabetically sorted sequence of words of length 
@@ -39,6 +39,4 @@
     # N is an integer within the range [1..101;
     # K is an integer within the range [1..100].
 
-# In your solution, focus on correctness. 
-# The performance of your solution will not be the focus of the assessment.
-
+# In your solution, focus on correctness.
