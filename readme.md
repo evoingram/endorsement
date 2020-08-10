@@ -130,8 +130,10 @@ I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a g
 
 ### Video
 
-Also I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).  Lambda students receive a free six-month sub as part of the GitHub Student Pack.
+I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).  Lambda students receive a free six-month sub as part of the GitHub Student Pack.
 
+* [ ] Wes Bos's free [JavaScript 30](https://javascript30.com/) course
+* [ ] Wes Bos's free [Command Line Power User](https://wesbos.com/command-line-video-tutorials) course
 * [ ] [System Design Playlist](https://www.youtube.com/playlist?list=PLlxurZn3gw7o3pZIf7V9FH2BPOJUQLJtv)
 * [ ] [Design Patterns Playlist](https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)
 * [ ] [Front End Masters LPs](https://frontendmasters.com/learn/, "FEM")
