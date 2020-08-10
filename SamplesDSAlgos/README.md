@@ -138,7 +138,7 @@ space complexity:  O(1)
 - Only works if array is sorted
 - break into halves several times, being able to eliminate halves quickly to find what you're looking for
 
-![Image of Binary Search](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/gifs/binary_search.gif)
+![Image of Binary Search](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/gifs/binary_search.gif)<br>
 [credit to Brilliant](https://brilliant.org/wiki/binary-search/)
 
 #### Depth-First Search
@@ -153,7 +153,7 @@ space complexity:  O(1)
   - continues until all nodes have been visited
   - recursive or iterative --> makes use of stack
 
-![Image of Depth-First Search](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/gifs/dfs.gif)
+![Image of Depth-First Search](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/gifs/dfs.gif)<br>
 [credit to Ray Wenderlich](https://www.raywenderlich.com/661-swift-algorithm-club-swift-depth-first-search)
 
 ##### In-Order, Pre-Order, & Post-Order Traversals
@@ -196,7 +196,7 @@ space complexity:  O(1)
     - use queue for this
   - will jump around a bit because next node we visit might not be connected to current
 
-![Image of Breadth-First Search](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/gifs/bfs.gif)
+![Image of Breadth-First Search](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/gifs/bfs.gif)<br>
 [credit to Brendan Higgins](https://github.com/bah87/maze-runner)
 
 #### Linear Search
@@ -212,7 +212,7 @@ space complexity:  O(1)
 - when found, stop
 - simplest; only useful if list you're searching is unsorted
 
-![Image of Linear Search](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/gifs/linear-search.gif)
+![Image of Linear Search](https://github.com/evoingram/endorsement/blob/master/SamplesDSAlgos/gifs/linear-search.gif)<br>
 [credit to The Algorithms](https://recordnotfound.com/Python-TheAlgorithms-134853)
 
 ### Sort
