@@ -58,6 +58,54 @@ Notes about individual data structures and algorithms may be found directly with
 - way of making algorithm more efficient by storing some of the intermediate results
 - works really well when your algorithm has a lot of repetitive computations
 
+## Backtracking
+
+[Backtracking by Geeks for Geeks](https://www.geeksforgeeks.org/backtracking-introduction/)
+
+**backtracking**:  a general algorithmic technique that considers searching every possible combination in order to solve a computational problem; an algorithmic-technique for solving problems recursively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem at any point of time (by time, here, is referred to the time elapsed till reaching any level of the search tree).
+
+- three types of problems in backtracking:
+  - **decision**:  search for a feasible solution
+  - **optimization**:  search for the best solution
+  - **enumeration**:  find all feasible solutions
+
+- generally exponential in both time and space complexity
+
+### Recursive Backtracking Solution
+
+```pseudocode
+def findSolutions(n, other params):
+  if (found a solution):
+    solutionsFound = solutionsFound + 1
+    displaySolution()
+    if (solutionsFound >= solutionTarget):
+        System.exit(0)
+    return
+
+  for (val = first to last):
+    if (isValid(val, n)):
+      applyValue(val, n)
+      findSolutions(n+1, other params)
+      removeValue(val, n)
+```
+
+### Finding Whether Solution Exists Or Not
+
+```pseudocode
+boolean findSolutions(n, other params):
+  if (found a solution):
+    displaySolution()
+    return true;
+
+  for (val = first to last):
+    if (isValid(val, n)):
+      applyValue(val, n)
+      if (findSolutions(n+1, other params)):
+        return true
+      removeValue(val, n)
+    return false
+```
+
 ## Algorithms
 
 ### Big O
