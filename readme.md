@@ -2,7 +2,7 @@
 # Endorsement Repo
 
 <br>
-This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful.  The reference material contained herein is still in progress.
+This is my working through the Cracking the Coding Interview & Leetcode challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful.  The reference material contained herein is still in progress.
 <br><br>
 A (*) in this readme indicates that the link leads to a live file that is still incomplete.  If there is a [sample] designation, that means it's coming, but not live yet.
 
@@ -132,7 +132,7 @@ I can't recommend [TutorialsPoint](https://www.tutorialspoint.com) enough as a g
 
 I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).  Lambda students receive a free six-month sub as part of the GitHub Student Pack.
 
-* [ ] Wes Bos's free [JavaScript 30](https://javascript30.com/) course
+* [ ] Wes Bos's free [JavaScript 30](https://javascript30.com/) course; this course really helped me a ton and has some great flashy little projects to learn
 * [ ] Wes Bos's free [Command Line Power User](https://wesbos.com/command-line-video-tutorials) course
 * [ ] [System Design Playlist](https://www.youtube.com/playlist?list=PLlxurZn3gw7o3pZIf7V9FH2BPOJUQLJtv)
 * [ ] [Design Patterns Playlist](https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)
@@ -161,7 +161,7 @@ I am a huge fan of [Front End Masters](https://frontendmasters.com/learn/).  Lam
 
 ### Note Taking
 
-YMMV, but I highly recommend [Cornell note-taking](http://lawyerist.com/75163/cornell-method-note-taking/?utm_source=lawyerist_sidebar) style for note taking with a weekly review (answering the questions) to stay refreshed on what you learned.
+YMMV, but I highly recommend [Cornell note-taking](http://lawyerist.com/75163/cornell-method-note-taking/?utm_source=lawyerist_sidebar) style for note taking with a weekly review (answering the questions) to stay refreshed on what you learned.  This style of note-taking is how it was a fairly easy task to create so many Anki flash cards; I already had the questions all written out by the time I went to make the flash cards.
 
 ### Insightful Employment-Related Reddit Posts
 
