@@ -2,7 +2,7 @@
 # Endorsement Repo
 
 <br>
-This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful.
+This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful.  The reference material contained herein is still in progress.
 <br>
 
 ## Table of Contents
