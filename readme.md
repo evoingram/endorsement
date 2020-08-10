@@ -2,7 +2,7 @@
 # Endorsement Repo
 
 <br>
-This is my working through the Cracking the Coding Interview challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful.  The reference material contained herein is still in progress.
+This is my working through the Cracking the Coding Interview & Leetcode challenges, copies of my notes from my time at Lambda, and various education/job-related things I think are useful.  The reference material contained herein is still in progress.
 <br><br>
 A (*) in this readme indicates that the link leads to a live file that is still incomplete.  If there is a [sample] designation, that means it's coming, but not live yet.
 
