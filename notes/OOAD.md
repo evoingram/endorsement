@@ -167,7 +167,7 @@ features of message passing:
 
 ## inheritance
 
-**inheritance**:  mechanism permitting new classes to be created out off existing classes by extending and refining capabilities
+**inheritance**:  mechanism permitting new classes to be created out of existing classes by extending and refining capabilities
 
 - existing classes = base/parent/super
 - new classes = derived/child/sub
