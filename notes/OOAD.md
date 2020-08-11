@@ -525,9 +525,249 @@ Both initial and final states are pseudo states and may not have the parts of re
 
 **activity diagram**:  depicts flow of activities which are ongoing non-atomic operations in a state machine; activities result in actions which are atomic operations; comprised of objects, transitions, and activity and action states; used for modeling workflows as viewed by actors interacting with system and modeling details of operations or computations using flow charts
 
+3 levels of testing:
+
+**unit testing**:  individual classes tested; responsibility of app engineer who implements structure
+**subsystem testing**:  testing a particular module on subsystem; responsibility of subsystem lead; involves testing associations within subsystem as well as interaction of subsystem with outside; can be used as regression tests for each newly released version
+**system testing**:  testing whole system; responsibility of QA team; often used as regression tests when assembling new releases
+
+OO testing techniques
+
+**gray box**:  different types off test cases that can be designed for testing OO programs
+
+- types:
+  - **state model-based testing**:  encompasses state coverage, state transition coverage, and state transition path coverage
+  - **use case-based testing**:  each scenario in use case
+  - **class diagram-based testing**:  each class, derived class, associations, and aggregations tested
+  - **sequence diagram-based testing**:  methods in messages in sequence diagrams tested
+
+- techniques for subsystem testing:
+  - **thread-based testing**:  all classes needed to realize a single use case in subsystem integrated and tested
+  - **use-based testing**:  interfaces and services of modules at each level of hierarchy are tested
+    - starts from individual classes to small modules comprising of classes, gradually to larger modules, and finally all major subsystems
+
+- categories of system testing:
+  - **alpha testing**:       carried out by testing team
+  - **beta testing**:        carried out by select group of customers
+  - **acceptance testing**:  carried out by customer before accepting deliverables
+
+- **software QA**:  methodology that determines extent to which a software product is fit for use
+  - activities included for determining software quality:
+    - auditing
+    - development of standards and guidelines
+    - production of reports
+    - review of quality system
+
+- Quality Factors:
+  - **correctness**:  whether software requirements met
+  - **useability**:  whether software can be used by different user categories
+  - **portability**:  whether software can operate in different platforms with different hardware devices
+  - **maintainability**:  ease at which errors can be connected and modules updated
+  - **reusability**:  whether modules and classes can be reused for developing other software products
+
+- Three categories of OO metrics:
+  - project
+  - product
+  - process
+
+- **project metrics**:  enable PM to assess status and performance of an ongoing project
+  - number of scenario scripts
+  - number of key classes
+  - number of support classes
+  - number of subsystems
+
+- **product metrics**:  measure characteristics of software developed
+  - methods per class
+  - inheritance structure
+  - coupling and cohesion
+  - response for class
+
+- **process metrics**:  measure how a process is performing; collected over all projects over long periods off time; used as indicators for long-term software process improvements
+  - examples:
+    - number of kilo lines of code (KLOC)
+    - defect removal efficiency
+    - average number of failures detected during testing
+    - number of latent defects per KLOC
+
+- after analysis phase, conceptual model developed further into OO model using OOD
+- in OOD, tech-independent concepts in analysis model are mapped onto implementing classes, constraints are ID'd, interfaces designed, resulting in model for solution design
+- detailed description constructed specifying how system to be built on concrete techs
+
+- stages of OOD:
+  - definition of system context
+  - designing system architecture
+  - ID of objects in system
+  - construction of design models
+  - specification of object interface
+
+**system context**:  has static and dynamic parts; static context designed usingg simple block diagram off whole system which is expanded into a subsystem hierarchy; subsystem model represented by UML packages; dynamic context describes how system interacts with its environment, which is modeled using use-case diagrams
+
+**system architecture**:  designed on basis of context of the system in accordance with principles of architecture design as well as domain knowledge; typically system partitioned into layers; each layer decomposed to form subsystems
+
+**decomposition**:  dividing large complex system into hierarchy of smaller components with lesser complexitties on principles of divide-and-conquer
+
+**subsystem**:  each major component of a system
+
+- OO decomposition identifies individual autonomous objects in a system and communication among these objects
+  - advantages:
+    - individual components of lesser complexity, more understandable and manageable
+    - enables workforce division having specialized skills
+    - allows subsystems to be replaced or modiffied without affecting other subsystems
+
+- concurrency allows two+ objects to receive events at same time and two+ activities executed simultaneously
+  - ID'd and represented in dynamic model
+  - to enable each concurrent element assigned thread of control
+    - if concurrency at object level, two concurrent objects are assigned two different threads of control
+    - if two operations of single object are concurrent in nature, that object split among different threads
+  - associated with problems of data integrity, deadlock, and starvation
+  - clear strategy made whenever concurrency required
+  - requires to be ID'd at design stage itself, can't be left for implementation stage
+
+- **design patterns**:  commonly accepted solutions adopted for some categories of problems
+  - documented set of building blocks used in certain types of app development patterns
+
+- **event**:  specification of significant occurrence that has a location in time and space
+  - 4 types:
+    - **signal**:  named object thrown by one object and caught by another object
+    - **call**:  sync event representing dispatch of an operation
+    - **time**:  event representing passage of time
+    - **change**:  event representing change in state
+
+- handling boundary conditions:
+  - system design phase needs to address intialization and termination of a system as a whole as well as each subsystem
+    - different documented aspects:
+      - start-up of system
+      - termination of system
+      - initial config of system and reconffig of system when necessary
+      - foreseeing failures or undesired termination of system
+
+- boundary conditions modeled using **boundary use cases**
+
+object design
+
+- after subsystem hierarchy developed, system objects ID'd and details designed
+- emphasis shifts from app domain concepts toward computer concepts
+- objects ID'd during analysis are etched out for implementation with an aim to minimize execution time, memory consumption, and overall cost
+
+- includes following phases:
+  - objectID
+  - object representation
+    - construction of design models
+  - classification of operations
+  - algo design
+  - relationships design
+  - control implementation for external interactions
+  - package classes and associations into modules
+
+- object ID = 1st step of object design
+  - grouped into classes and refined so they are suitable for actual implementation
+  - functions of this stage:
+    - identifying and refining classes in each subsystem or package
+    - defining links and associations between classes
+    - designing hierarchical associations between classes, i.e. generalization/specialization and inheritances
+    - designing aggregations
+
+object representation
+
+- once classes are ID'd, need to be represented usingg object modeling techniques
+- this stage essentially involves constructing UML diagrams
+- two types of design models that need to be produced:
+  - **static**:  static structure of system using class and object diagram
+  - **dynamic**:  dynamic system structure and show interaction between classes using interaction and state-chart diagrams
+
+operation classification
+
+- operation to be performed on objects defined by combining three models developed in OOA phase, namely object, dynamic, and functional models
+- operation specifies what is to be done, not how
+- following tasks performed regarding operations
+  - state transition diagram of each object in system developed
+  - operations defined for events received by objects
+  - cases in which one event triggers other events in same or different objects are ID'd
+  - suboperations within actions are ID'd
+  - main actions expanded to data flow diagrams
+
+algorithm design
+
+- operations in objects are defined using algorithms
+- **algorithm**:  stepwise procedure that solves problem laid down in operation; focus on how it's to be done
+- metrics for choosing optimal algorithm:  computational complexity, flexibility, understandability
+
+relationships design
+
+- strategory to implement relationships chalked out during OD phase
+- main relationships addressed comprised of aggregations, associations, and inheritances
+- designer should do the following regarding associations:
+  - ID whether association is uni- or bidirectional
+  - analyze associations path and update if necessary
+  - implement them as distinct objects in many-to-many or as link to other object in one-to-one or one-to-many
+
+- regarding inheritances:
+  - adjust classes and their associations
+  - ID abstract classes
+  - make provisions so behaviors shared when needed
+
+implementation of control
+
+- object designer may incorporate refinements in strategy of state-chart model
+- in system design, basic strategy for realizing dynamic model is made
+- during OD, this strategy aptly embellished for appropriate implementation
+- approaches:
+  - represent state as location within program
+  - state machine engine
+  - control as concurrent tasks
+
+- packaging classes aspects:
+  - hiding internal info from outside view
+  - elements coherence
+  - construction of physical modules
+    - classes in module should represent similar things or components in same composite object
+    - closely connected classes, same module
+    - unconnected/weakly connected, different modules
+    - **modules**:  good cohesion, high component cooperation
+    - module low coupling with other modules
+
+- design optimization:
+  - add redundant associations
+  - omit nonusable associations
+  - algorithm optimization
+    - obtained by:
+      - rearrangement of order of computational tasks
+      - reversal of execution order of loops from that laid down in function model
+      - removal of dead paths from algorithm
+  - save derived attributes to avoid recomputation of complex expressions
+
+- design documentation
+  - usage areas:
+    - software developed by a number of developers
+    - iterative software development strategies
+    - developing subsequent versions of software project
+    - evaluating software
+    - finding conditions and areas of testing
+    - software maintenance
+
+  - contents:
+    - high-level system architecture
+    - key abstractions and mechanisms
+    - scenarios that illustrate behavior of main aspects
+  - features:
+    - concise
+    - well-structured
+    - unambiguous
+    - consistent
+    - complete
+    - traceable to system's requirement specs
+    - diagrammatic instead of descriptive
+
+- most programming languages don't provide constructs to implement associations directly
+- constraints in classes restrict range and type of values attributes may take
+  - valid default value assigned to attribute at object instantiation
+  - when value changed at runtime, checked whether valid value
 
 ****:  
 ****:  
 ****:  
 ****:  
 ****:  
+****:  
+
+

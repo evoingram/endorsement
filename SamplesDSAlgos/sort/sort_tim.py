@@ -15,6 +15,10 @@ We consider size of run as 32.
 We one by one sort pieces of size equal to run
 After sorting individual pieces, we merge them one by one. We double the size of merged subarrays after every iteration.
 '''
+
+# time complexity:  O()
+# space complexity:  O()
+
 # Python3 program to perform TimSort.  
 RUN = 32 
     
