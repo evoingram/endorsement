@@ -11,7 +11,7 @@ A (*) in this readme indicates that the link leads to a live file that is still 
 * [Daily Grind](https://gist.github.com/evoingram/8b0f2c49954907c67b684ce3cd0c1fd3)
 * [Notes](#notes)
   * [Languages & Frameworks](#languages-&-frameworks)
-  * [Theory & Concepts](#theory-&-concepts)
+  * [Theory & Concepts](#theory-and-concepts)
   * [Software](#software)
   * [Books](#books)
   * [Miscellaneous](#miscellaneous)
@@ -49,7 +49,7 @@ A (*) in this readme indicates that the link leads to a live file that is still 
 * **TypeScript**:  [Notes](https://github.com/evoingram/endorsement/tree/master/notes/TypeScript.md) (*)   |   [Anki Flash Cards](https://github.com/evoingram/endorsement/tree/master/anki/Typescript.apkg)   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-typescript.pdf)
 * **Visual Basic**:  [Notes]   |   [Cheat Sheet](https://github.com/evoingram/endorsement/tree/master/cheat%20sheets/language-visualbasic.pdf)
 
-### Theory & Concepts
+### Theory And Concepts
 
 #### Computer Science
 
@@ -102,6 +102,7 @@ A (*) in this readme indicates that the link leads to a live file that is still 
 * [problem solving tips](https://github.com/evoingram/endorsement/blob/master/notes/ProblemSolving.md)
 * [coding challenge patterns](https://github.com/evoingram/endorsement/blob/master/notes/CodingChallengePatterns.md)
 * [interview tips](https://github.com/evoingram/endorsement/blob/master/notes/InterviewTips.md) (*)
+* [good interview questions to ask](https://github.com/evoingram/endorsement/blob/master/notes/InterviewQuestionsToAsk.md) 
 * [code review tips](https://github.com/evoingram/endorsement/blob/master/notes/CodeReviewTips.md) (*)
 * **behavioral questions**:  [Readme](https://github.com/evoingram/endorsement/blob/master/notes/BehavioralQuestions.md) (*)   |   [Anki Flash Cards]
 * **hot-seat questions**:  [readme](https://github.com/evoingram/endorsement/blob/master/notes/HotSeat.md) (*)   |   [Anki Flash Cards]
