@@ -4,6 +4,8 @@
   * A	
 * Q	Why are you the best person for this job?
   * A	
+* Q	Tell me about a time you failed.
+  * A	
 * Q	What is your greatest professional achievement?
   * A	
 * Q	Tell me a little bit about yourself.
@@ -45,15 +47,14 @@
   * A	 
 * Q	Why Do You Want to Work Here?
   * A	
-
 * Q	Why Should We Hire You?
   * A	
-* Q	What are the company’s mission/values/services, and how to you personally relate to them?
-  * A	
-* Q	What is it about their product or the projects you would be working on that excite you?
-  * A	
-* Q	What similar skills and experience do you have that has prepared you with the knowledge to do this work?
-  * A	
+  * Q	What are the company’s mission/values/services, and how to you personally relate to them?
+    * A	
+  * Q	What is it about their product or the projects you would be working on that excite you?
+    * A	
+  * Q	What similar skills and experience do you have that has prepared you with the knowledge to do this work?
+    * A	
 * Q	Why are you applying for this position?
   * A	  
 * Q	What motivates you?
@@ -112,16 +113,16 @@
   * A	[See dedicated readme for answer](InterviewQuestionsToAsk.md)
 * Q	What do you know about our company?
   * A	
-* Q	Overview of company products/services/mission (and specific project you’re working on, if applicable):
-  * A	
-* Q	When/how/why was it founded:
-  * A	
-* Q	What is the company’s business model?
-  * A	
-* Q	Major company milestones:
-  * A	
-* Q	What sets this company apart from its competitors?
-  * A	
+  * Q	Overview of company products/services/mission (and specific project you’re working on, if applicable):
+    * A	
+  * Q	When/how/why was it founded:
+    * A	
+  * Q	What is the company’s business model?
+    * A	
+  * Q	Major company milestones:
+    * A	
+  * Q	What sets this company apart from its competitors?
+    * A	
 * Q	Really dig deep and fully explain your "Why?" of starting Lambda School?Imagine what your future will look like? This can take any format that will be useful to you in the future:
   * A	
 * Q   Do you prefer to work alone or as a team?
