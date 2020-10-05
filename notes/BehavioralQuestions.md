@@ -29,10 +29,10 @@
 * Q	How to Describe Your Current Job Responsibilities?
   * A	
 * Q	Tell Me About Yourself.
-Name: 
-What Lambda School is:
-Your track, and what skills you've built as part of that track and how you applied them in projects (focus especially on those that mirror the language of the job description):
-What you did before Lambda School (if professional & relevant):
+  * Name: 
+  * What Lambda School is:
+  * Your track, and what skills you've built as part of that track and how you applied them in projects (focus especially on those that mirror the language of the job description):
+  * What you did before Lambda School (if professional & relevant):
 * Q	What Are Your Strengths?
   * A	
 * Q	What Is Your Greatest Weakness?
