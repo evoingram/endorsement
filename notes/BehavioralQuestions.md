@@ -62,12 +62,12 @@
   * A	
 * Q	What are your weaknesses?
   * A	
-* Q	Name the weakness/growth area:
-  * A	
-* Q	What specific steps are you taking to overcome this growth area?  
-  * A	
-* Q	What positive results have you seen because of your effort?
-  * A	
+  * Q	Name the weakness/growth area:
+    * A	
+  * Q	What specific steps are you taking to overcome this growth area?  
+    * A	
+  * Q	What positive results have you seen because of your effort?
+    * A	
 * Q	What interests you about this position?
   * A	
 * Q	Tell me about how you dealt with a tough challenge.
