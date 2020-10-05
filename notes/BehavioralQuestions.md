@@ -111,6 +111,7 @@ What you did before Lambda School (if professional & relevant):
 * Q	Do you have any questions for me?
   * A	[See dedicated readme for answer](InterviewQuestionsToAsk.md)
 * Q	What do you know about our company?
+  * A	
 * Q	Overview of company products/services/mission (and specific project you’re working on, if applicable):
   * A	
 * Q	When/how/why was it founded:
@@ -121,7 +122,7 @@ What you did before Lambda School (if professional & relevant):
   * A	
 * Q	What sets this company apart from its competitors?
   * A	
-Q	Really dig deep and fully explain your "Why?" of starting Lambda School?Imagine what your future will look like? This can take any format that will be useful to you in the future:
+* Q	Really dig deep and fully explain your "Why?" of starting Lambda School?Imagine what your future will look like? This can take any format that will be useful to you in the future:
   * A	
-Q   Do you prefer to work alone or as a team?
+* Q   Do you prefer to work alone or as a team?
   * A	
