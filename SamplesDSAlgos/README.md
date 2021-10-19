@@ -809,7 +809,7 @@ space complexity:  O(1)
   - always satisfies the heap property
 - root element of heap is max value of all heap elements
 - array representing the data structure
-- has to be sorted in particular way to represent that tree priority queues often 
+- has to be sorted in particular way to represent that tree priority queues often
   - represented as heaps
   - often these terms used interchangeably
 - priority queues are often heaps; easy to tell largest number

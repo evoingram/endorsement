@@ -19,7 +19,7 @@ Try it!
     doubly linked list?
 """
 
-from singly_linked_list import LinkedList
+from datastructures_linkedlist_singly import LinkedList
 
 
 # QUEUE
