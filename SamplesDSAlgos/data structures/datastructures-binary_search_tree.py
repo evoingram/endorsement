@@ -65,7 +65,6 @@ class BinarySearchTree:
             else:
                 self.right.insert(value)
 
-
     # Return True if the tree contains the value
     # False if it does not
     def contains(self, target):
@@ -82,7 +81,6 @@ class BinarySearchTree:
         elif target > self.value and self.right:
             return self.right.contains(target)
 
-
     # Return the maximum value found in the tree
     def get_max(self):
         # if right exists, check right 
@@ -91,7 +89,6 @@ class BinarySearchTree:
         # else it's in left and return node value
         else:
             return self.value
-
 
     # Call the function `cb` on the value of each node
     # You may use a recursive or iterative approach
@@ -107,7 +104,6 @@ class BinarySearchTree:
         if self.right:
             self.right.for_each(cb)
 
-
     # Print all the values in order from low to high
     # recursive, depth first traversal
     def in_order_print(self, node):
@@ -118,7 +114,6 @@ class BinarySearchTree:
         # if right tree exists, recursively run this function to print its node values
         if self.right:
             self.right.in_order_print(node)
-
 
     # Print the value of every node, starting with the given node 
     # iterative breadth first traversal
@@ -145,7 +140,6 @@ class BinarySearchTree:
             # set next queue as current queue
             current_queue = next_queue
 
-
     # Print the value of every node, starting with the given node 
     # iterative depth first traversal
     def dft_print(self, node):
@@ -166,7 +160,6 @@ class BinarySearchTree:
             if current_node.right:
                 current_stack.push(current_node.right)
 
-
     # Print Pre-order recursive DFT
     def pre_order_dft(self, node):
         # print node value 
@@ -177,7 +170,6 @@ class BinarySearchTree:
         # if right tree of node exists, run again on it
         if node.right:
             self.pre_order_dft(node.right)
-
 
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
