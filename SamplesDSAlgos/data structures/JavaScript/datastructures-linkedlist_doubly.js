@@ -1,5 +1,7 @@
-/*Each ListNode holds a reference to its previous node
-as well as its next node in the List.*/
+/*
+    Each ListNode holds a reference to its previous node
+        as well as its next node in the List.
+*/
 
 /*
 What is the difference between an array and a linked list?
