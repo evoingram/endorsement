@@ -48,7 +48,7 @@ class AVLTree {
     // Display the whole tree. Uses recursive def.
     display = (level = 0, pref = '') => {
         // Update height before balancing
-        this.update_height()
+        this.updateHeight()
         this.updateBalance()
 
         if (this.node != null) {
@@ -65,19 +65,19 @@ class AVLTree {
     }
 
     // Computes the maximum number of levels there are in the tree
-    update_height = () => {
+    updateHeight = () => {
         nodeLeft, nodeRight = this.node.left, this.node.right
         heightLeft, heightRight = 0, 0
 
         // recursive run if left node exists
         if (nodeLeft) {
-            nodeLeft.update_height()
+            nodeLeft.updateHeight()
             heightLeft = nodeLeft.height
         }
 
         // recursive run if right node exists
         if (nodeRight) {
-            nodeRight.update_height()
+            nodeRight.updateHeight()
             heightRight = nodeRight.height
         }
 
@@ -93,6 +93,8 @@ class AVLTree {
 
     // Updates the balance factor on the AVLTree class
     updateBalance = () => {
+        let nodeLeft, nodeRight
+        let heightLeft, heightRight
         if (this.node != null) {
             nodeLeft, nodeRight = this.node.left, this.node.right
             heightLeft, heightRight = 0, 0
@@ -164,46 +166,102 @@ class AVLTree {
                 this.rebalance()
             }
         }
-        // Uses the same insertion logic as a binary search tree:
-        // after the value is inserted, we need to check to see if we need to rebalance
-        insert = (key) => {
-            // if node isn't empty
-            if (this.node != null) {
-                // if current key > current node key
-                if (key < this.node.key) {
-                    // AND if left node exists, insert:
-                    if (this.node.left) this.node.left.insert(key)
+    }
+    // Uses the same insertion logic as a binary search tree:
+    // after the value is inserted, we need to check to see if we need to rebalance
+    insert = (key) => {
+        // if node isn't empty
+        if (this.node != null) {
+            // if current key > current node key
+            if (key < this.node.key) {
+                // AND if left node exists, insert:
+                if (this.node.left) this.node.left.insert(key)
 
-                    // AND if left node does NOT exist:
-                    else {
-                        // set key node as left node
-                        this.node.left = AVLTree(Node(key))
-                    }
-                }
-                // if current key < current node key
+                // AND if left node does NOT exist:
                 else {
-                    // AND if right node exists, insert:
-                    if (this.node.right) this.node.right.insert(key)
-                    // AND if right node does NOT exist:
-                    else {
-                        // set key node as right node
-                        this.node.right = AVLTree(Node(key))
-                    }
+                    // set key node as left node
+                    this.node.left = new AVLTree(new Node(key))
                 }
             }
-            // if node is empty, set key node as node
-            else this.node = Node(key)
-
-            // update balance
-            this.updateBalance()
-
-            // check for rebalancing if absolute value of balance > 1:
-            if (abs(this.balance) > 1) this.rebalance()
+            // if current key < current node key
+            else {
+                // AND if right node exists, insert:
+                if (this.node.right) this.node.right.insert(key)
+                // AND if right node does NOT exist:
+                else {
+                    // set key node as right node
+                    this.node.right = new AVLTree(new Node(key))
+                }
+            }
         }
+        // if node is empty, set key node as node
+        else this.node = new Node(key)
 
-        check_height = (rootNode) => {
-            if (!rootNode) return 0
-            return rootNode.height
+        // update balance
+        this.updateBalance()
+
+        // check for rebalancing if absolute value of balance > 1:
+        if (Math.abs(this.balance) > 1) this.rebalance()
+    }
+
+    checkHeight = (rootNode) => {
+        if (!rootNode) return 0
+        return rootNode.height
+    }
+
+    // print the tree
+    printHelper = (currPtr, indent, last) => {
+        if (currPtr != null) {
+            console.log(indent)
+            if (last) {
+                console.log("R----")
+                indent += "     "
+            } else {
+                console.log("L----")
+                indent += "|    "
+            }
+            console.log(currPtr.key)
+            this.printHelper(currPtr.left, indent, false)
+            this.printHelper(currPtr.right, indent, true)
         }
     }
+    // function to delete a node
+    delete = (root, key) => {
+
+        // find the node to be deleted and remove it
+        if (!root) return root
+        else if (key < root.key) root.left = self.delete(root.left, key)
+        else if (key > root.key) root.right = self.delete(root.right, key)
+        else {
+            if (root.left == null) {
+                temp = root.right
+                root = None
+                return temp
+            }
+            else if (root.right == null) {
+                temp = root.left
+                root = None
+                return temp
+            }
+            temp = this.get_min_value_node(root.right)
+            root.key = temp.key
+            root.right = this.delete(root.right, temp.key)
+        }
+        if (root == null) return root
+    }
 }
+
+myTree = new AVLTree()
+let root = null
+nums = [33, 13, 52, 9, 21, 61, 8, 11]
+
+for (num in nums) root = myTree.insert(root, num)
+
+myTree.printHelper(root, "", true)
+
+key = 13
+root = myTree.delete(root, key)
+
+console.log("After Deletion: ")
+
+myTree.printHelper(root, "", true)
