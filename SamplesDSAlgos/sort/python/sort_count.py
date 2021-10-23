@@ -74,3 +74,7 @@ def count_sort(arr, maximum=-1):
         arr_output.insert(0, 0)
 
     return arr_output
+
+x = [0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434]
+print('Original Array is ' + str(x))
+print('Sorted Array is ' + str(count_sort(x)))
