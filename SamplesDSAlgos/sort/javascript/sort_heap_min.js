@@ -1,7 +1,4 @@
-
-import sys
-
-'''
+/*
 binary heap:    binary tree, similar to BSTs
 heap property:  states that, for any node in the heap, value of node = larger than values 
     of its children if they exist
@@ -55,38 +52,38 @@ binary tree represented as array
     root node's left child always @ 1
     root node's right child always @ 2
     1's left @ 3, right @ 4
-'''
+*/
 
-# HEAP SORT:
-    # data structure optimized for retrieving either maximal or minimal values of a dataset
-    # all about maximizing priority
-    # binary tree data structure centered around the heap property
-        # always satisfies the heap property
-    # root element of heap is max value of all heap elements
-    # array representing the data structure
-    # has to be sorted in particular way to represent that tree priority queues often 
-        # represented as heaps
-        # often these terms used interchangeably
-    # priority queues are often heaps; easy to tell largest number
-        # none of other guaranteed, but once you dequeue, easy to find next item in queue
-    # combining of tree & array based approaches doesn't make heap a particularly intuitive
-        # data structure to understand & grasp
-    # maximally efficient at what they do
-    # very flexible since we can generalize idea of priority to many different contexts
-    # arrays well-suited to storing heaps not just because off constant-time access to any element,
-        # but also we can more easily swap elements in different positions throughout heap easily, 
-            # again due to array indexing
-    # can use queue 
+// HEAP SORT:
+    // data structure optimized for retrieving either maximal or minimal values of a dataset
+    // all about maximizing priority
+    // binary tree data structure centered around the heap property
+        // always satisfies the heap property
+    // root element of heap is max value of all heap elements
+    // array representing the data structure
+    // has to be sorted in particular way to represent that tree priority queues often 
+        // represented as heaps
+        // often these terms used interchangeably
+    // priority queues are often heaps; easy to tell largest number
+        // none of other guaranteed, but once you dequeue, easy to find next item in queue
+    // combining of tree & array based approaches doesn't make heap a particularly intuitive
+        // data structure to understand & grasp
+    // maximally efficient at what they do
+    // very flexible since we can generalize idea of priority to many different contexts
+    // arrays well-suited to storing heaps not just because off constant-time access to any element,
+        // but also we can more easily swap elements in different positions throughout heap easily, 
+            // again due to array indexing
+    // can use queue 
 
-# to fetch a node's parent, floor((x-1)/2)
-    # emulates a binary tree structure of a heap using an array, with added benefit of 
-        # now-constant-time access to any element in heap that comes with array indexing
+// to fetch a node's parent, floor((x-1)/2)
+    // emulates a binary tree structure of a heap using an array, with added benefit of 
+        // now-constant-time access to any element in heap that comes with array indexing
 
-# when using BST, problem is we only have direct access to node
-# to construct max heap, run heapify starting @ array middle and work backwards to root.
+// when using BST, problem is we only have direct access to node
+// to construct max heap, run heapify starting @ array middle and work backwards to root.
 
-# time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
-# space complexity:  O(1)
+// time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
+// space complexity:  O(1)
 
 class MinHeap:
     def __init__(self, max_size):
@@ -96,69 +93,69 @@ class MinHeap:
         self.heap[0] = -1 * sys.maxsize
         self.FRONT = 1
 
-    # function to return the position of parent for the node currently at pos
+    // function to return the position of parent for the node currently at pos
     def parent(self, pos):
         parent_floor = pos//2
         return parent_floor
 
-    # function to return the position of the left child for the node currently at pos
+    // function to return the position of the left child for the node currently at pos
     def left_child(self, pos):
         left_child_position = 2 * pos
         return left_child_position
 
-    # function to return the position of the right child for the node currently at pos
+    // function to return the position of the right child for the node currently at pos
     def right_child(self, pos):
         right_child_position = (2 * pos) + 1
         return right_child_position
 
-    # function that returns true if the passed node is a leaf node
+    // function that returns true if the passed node is a leaf node
     def is_leaf(self, node):
         if node >= (self.heap_size//2) and node <= self.heap_size:
             return True
         return False
 
-    # function to swap two nodes of the heap
+    // function to swap two nodes of the heap
     def swap(self, first_node, second_node):
         self.heap[first_node], self.heap[second_node] = self.heap[second_node], self.heap[first_node]
 
-    # function to heapify the node at pos
+    // function to heapify the node at pos
     def min_heapify(self, node):
 
-        # if the node is a non-leaf node and greater than any of its child
+        // if the node is a non-leaf node and greater than any of its child
         if not self.is_leaf(node):
             if (self.heap[node] > self.heap[self.left_child(node)] or
                     self.heap[node] > self.heap[self.right_child(node)]):
 
-                # swap with and heapify left child
+                // swap with and heapify left child
                 if self.heap[self.left_child(node)] < self.heap[self.right_child(node)]:
                     self.swap(node, self.left_child(node))
                     self.min_heapify(self.left_child(node))
 
-                # swap with and heapify right child
+                // swap with and heapify right child
                 else:
                     self.swap(node, self.right_child(node))
                     self.min_heapify(self.right_child(node))
 
-    # function to insert a node into the heap
+    // function to insert a node into the heap
     def insert(self, element):
-        # if heap size >= max size, return nothing
+        // if heap size >= max size, return nothing
         if self.heap_size >= self.max_size:
             return
-        # else add one to heap size
+        // else add one to heap size
         self.heap_size += 1
-        # set newly added heap element as current element
+        // set newly added heap element as current element
         self.heap[self.heap_size] = element
-        # set current item index as new heap size
+        // set current item index as new heap size
         current_index = self.heap_size
 
-        # while value @ current index < current index's parent
+        // while value @ current index < current index's parent
         while self.heap[current_index] < self.heap[self.parent(current_index)]:
-            # swap value @ current index with value @ parent
+            // swap value @ current index with value @ parent
             self.swap(current_index, self.parent(current_index))
-            # set current index as parent
+            // set current index as parent
             current_index = self.parent(current_index)
 
-    # function to print the contents of the heap
+    // function to print the contents of the heap
     def print_heap(self):
         for i in range(1, (self.heap_size//2)+1):
             parent_value = self.heap[i]
@@ -169,13 +166,13 @@ class MinHeap:
             right_child_text = " RIGHT CHILD : " + str(right_child_value)
             print(parent_text + left_child_text + right_child_text)
 
-    # function to build the min heap using the min_heapify function
+    // function to build the min heap using the min_heapify function
     def min_heap(self):
         floor_heap_size = self.heap_size//2
         for node in range(floor_heap_size, 0, -1):
             self.min_heapify(node)
 
-    # function to remove and return the minimum element from the heap
+    // function to remove and return the minimum element from the heap
     def remove(self):
         popped = self.heap[self.FRONT]
         self.heap[self.FRONT] = self.heap[self.heap_size]

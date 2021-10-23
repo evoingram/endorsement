@@ -160,16 +160,7 @@ def merge_sort_in_place(arr, leftpoint, rightpoint):
 
     return arr
 
-
-# STRETCH: implement the Timsort function below
-# hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
-def timsort(arr):
-    # Your code here
-
-    return arr
-
-'''
-We consider size of run as 32.
-We one by one sort pieces of size equal to run using Insertion Sort.
-After sorting individual pieces, we merge them one by one using merge sort. We double the size of merged subarrays after every iteration.
-'''
+array = [4, 22, 41, 40, 27, 30, 36, 16, 42, 37, 14, 39, 3, 6, 34, 9, 21, 2, 29, 47]
+print("original array:  " + str(array))
+sortedArray = merge_sort(array)
+print("sorted array:  " + str(sortedArray))
