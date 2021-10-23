@@ -195,29 +195,63 @@ I wanted to share these links because there's some really good info on job-relat
 
 #### Books I've read
 
-I highly recommend every one of these.
+I have read and highly recommend every one of these.
 
-* [X] Clean Code, Bob Martin, teaches you how to write clean code
-* [X] The Clean Coder, Bob Martin, teaches you what a professional software engineer looks like in terms of behavior and best practices in the workplace
-* [X] Clean Architecture, Bob Martin, teaches you how to design clean software architecture
-* [X] Design Patterns:  Elements of Reusable Object-Oriented Software, Gang of Four, teaches you 23 main object-oriented design patterns
-* [X] Web Scalability for Startup Engineers, Artur Ejsmont, teaches you everything you need to know about scalability and then some
-* [X] Cracking the Coding Interview, Gayle Laakmann McDowell, great book full of exercises, solutions, and outlines of everything you need to know for coding interviews
+* [X] Clean Code, Bob Martin
+* [X] The Clean Coder, Bob Martin
+* [X] Clean Architecture, Bob Martin
+* [X] Design Patterns:  Elements of Reusable Object-Oriented Software, Gang of Four
+* [X] Web Scalability for Startup Engineers, Artur Ejsmont
+* [X] Cracking the Coding Interview, Gayle Laakmann McDowell
+* [X] First 90 Days, Michael Watkins
+* [X] Debugging, David Agans
+* [X] Think Like a Programmer, Anton Spraul
+* [X] Kotlin in Action, Dmitry Jemerov
+* [X] Intro to Algorithms, Cormen, Leiserson, Rivest, Stein
+* [X] Patterns of Enterprise Application Architecture, Martin Fowler
+* [X] Agile Estimating and Planning, Mike Cohn
+* [X] Test Driven Development By Example, Kent Beck
+* [X] Shell Scripting:  How to Automate Command Line Tasks Using Bash Scripting & Shell Programming, Jason Cannon
+* [X] Applying UML & Patterns, Third Edition
+* [X] Testing Computer Software, Kaner, Falk, Nguyen, Hung, Wiley
+* [X] Essential TypeScript:  From Beginner to Pro, Adam Freeman
+* [X] Effective TypeScript:  62 Specific Ways to Improve Your TypeScript
+* [X] TypeScript 4 Design Patterns & Best Practices, Theo Despoudis
+* [X] Spring Boot in Action, Craig Walls
+* [X] Effective Kafka, Emil Koutanov
+* [X] Domain-Driven Design, Eric Evans
+* [X] Software Requirements, Karl Wiegers & Joy Beatty
+* [X] Rapid Development, Steve McConnell
+* [X] Code Complete, Steve McConnell
+* [X] Enterprise Integration Patterns, Gregor, Hohpe, Woolf
+* [X] Atomic Habits, James Clear
 
-#### On my list to read, after my interview studying dies down a bit
+#### On my shelf to read
 
-* [ ] Agile Estimating and Planning
-* [ ] TDD:  Extensive Tutorial
-* [ ] Test Driven
-* [ ] Pragmatic Programmer
-* [ ] Patterns of Enterprise App Architecture
+* [ ] Implementing Domain-Driven Design, Vernon Vaughn
+* [ ] Domain-Driven Design Distilled
 * [ ] Building Secure and Reliable Systems
-* [ ] Art of Agile Development
-* [ ] Continuous Delivery
-* [ ] Intro to Algorithms
-* [ ] DevOps Toolkit
-* [ ] DevOps Web Development
+* [ ] Coders at Work, Peter Seibel
+* [ ] Continuous Delivery, Humble & Farley
+* [ ] Continuous Integration, Duvall & Matyas
+* [ ] Practical Monitoring, Mike Julian
+* [ ] Designing Data-Intensive Applications, Martin Kleppmann
 * [ ] The Lean Startup
+* [ ] Service Design Patterns, Robert Daigneau
+* [ ] Mythical Man Month, Frederick Brooks, Jr.
+* [ ] Beyond Software Architecture, Luke Hohmann
+* [ ] Refactoring to Patterns, Joshua Kerievsky
+* [ ] Building Event-Driven Microservices, Adam Bellemare
+* [ ] Refactoring, Martin Fowler
+* [ ] Working Effectively with Legacy Code, Michael Feathers
+* [ ] Docker Bootcamp, McKendrick, Raj, Chelladhurai, Singh
+* [ ] Hands-On Design Patterns with Kotlin, Alexey Soshin
+* [ ] RabbitMQ Essentials, Johansson, Dossot
+* [ ] SQL For Data Analytics, Malik, Goldwasser
+* [ ] SQL Antipatterns, Bill Karwin
+* [ ] Node.js Design Patterns, Casciaro, Mammino
+* [ ] Natural Language Processing in Action, Lane, Hapke
+* [ ] Beautiful Code
 * [ ] Beej's TCPIP Guide
 * [ ] Assembly Language for x86 Processors
 * [ ] Pro Git
