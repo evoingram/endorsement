@@ -83,6 +83,10 @@ def ip_quicksort(data, start=0, end=None):
         # partitions the data around the pivot
     index = ip_partition(data, start, end)
     
+data = [5,3,7,6,2,9];
+start = 0
+end = len(data)
+index = 3
 # qs call for everything to the left of the pivot
 ip_quicksort(data, start, index - 1)
 # qs call for everything to the right of the pivot
