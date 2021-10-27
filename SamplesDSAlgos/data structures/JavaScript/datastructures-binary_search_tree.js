@@ -87,9 +87,9 @@ class BinarySearchTree {
     // Print all the values in order from low to high
     // recursive, depth first traversal
     inOrderPrint = (node) => {
-        if (this.left) this.left.inOrderconsole.log(node)
+        if (this.left) this.left.inOrderPrint(node)
         console.log(this.value)
-        if (this.right) this.right.inOrderconsole.log(node)
+        if (this.right) this.right.inOrderPrint(node)
     }
 
     // Print the value of every node, starting with the given node 

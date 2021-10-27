@@ -1,3 +1,4 @@
+import LinkedList from './datastructures-linkedlist_doubly'
 /*
 
 What is the difference between using an array vs. a linked list when 
@@ -36,7 +37,7 @@ Try it!
 class Queue {
     constructor() {
         this.size = 0
-        this.storage = []
+        this.storage = new LinkedList()
     }
 
     // get stack length/size
