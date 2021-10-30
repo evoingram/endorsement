@@ -11,12 +11,12 @@ binarySearch = (arr, target) => {
       // arr ← sorted array
       // arrLength ← size of array
       // target ← value to be searched
-      let arrLength = len(arr)
+      let arrLength = arr.length
       let lowerBound = 1
       let upperBound = arrLength
       while (true) {
          if (upperBound < lowerBound) return -1
-         let midPoint = int(lowerBound + (upperBound - lowerBound) / 2)
+         let midPoint = Number(lowerBound + (upperBound - lowerBound) / 2)
          if (arr[midPoint] < target) lowerBound = midPoint + 1
          if (arr[midPoint] > target) upperBound = midPoint - 1
          if (arr[midPoint] == target) return midPoint
