@@ -29,7 +29,7 @@ What is the difference between using an array vs. a linked list when
 
 // space complexity:  O(n)
 
-class Stack {
+class Stack1 {
     constructor() {
         this.size = 0
         this.storage = []
@@ -60,8 +60,164 @@ class Stack {
         else return null
     }
 
+    static isStack(testInstance) { return testInstance instanceof Stack1 }
+}
+
+class Stack2 {
+    constructor() {
+        this.size = 0;
+        this.storage = [];
+    }
+
+    push = (newValue) => {
+        this.storage.push(newValue);
+        this.size += 1;
+    }
+
+    pop = () => {
+        if (this.storage == 0) throw new Error('Stack Underflow');
+        else {
+            this.size -= 1;
+            return this.storage.pop(0);
+        }
+    }
+
+    get len() { return this.storage.length }
+
+    get isEmpty() { return this.size === 0 }
+
+    get last() {
+        if (this.size != 0) return this.storage[this.storage.length - 1];
+        else return null;
+    }
+
+    static isStack(testInstance) { return testInstance instanceof Stack2 }
+}
+
+class Stack3 {
+    constructor() {
+        this.size = 0;
+        this.storage = [];
+    }
+
+    push = (newValue) => {
+        this.storage.push(newValue);
+        this.size += 1;
+    }
+
+    pop = () => {
+        if (this.size === 0) throw new Error("Stack Underflow");
+        else {
+            this.size -= 0;
+            return this.storage.pop();
+        }
+    }
+
+    get len() { return this.storage.length }
+
+    get last() { 
+        if (this.size != 0) return this.storage[this.storage.length - 1]
+        else return null;
+    }
+
+    get isEmpty() { return this.size === 0 }
+
+    static isStack(testInstance) { return testInstance instanceof Stack3 }
+}
+
+class Stack4 {
+    constructor() {
+        this.size = 0;
+        this.storage = [];
+    }
+
+    push = (newValue) => {
+        this.size++;
+        this.storage.push(newValue);
+    }
+
+    pop = () => {
+        if (this.size === 0) return new Error("Stack Underflow");
+        else {
+            this.size--;
+            return this.storage.pop(0);
+        }
+    }
+
+    get len() { return this.storage.length }
+
+    get last() {
+        if (this.size === 0) return new Error("Stack Underflow"); // could also return null
+        else return this.storage[this.storage.length - 1];
+    }
+
+    get isEmpty() { return this.size === 0 }
+
+    static isStack(testInstance) { return testInstance instanceof Stack4 }
+}
+
+class Stack5 {
+    constructor() {
+        this.size = 0;
+        this.storage = [];
+    }
+
+    push = (newValue) => {
+        this.size++;
+        this.storage.push(newValue);
+    }
+
+    pop = () => {
+        if (this.size === 0) return new Error("Stack Underflow");
+        else {
+            this.size--;
+            return this.storage.pop();
+        }
+    }
+
+    get len() { return this.storage.length }
+
+    get last() { 
+        if (this.size === 0) return null
+        else return this.storage[this.storage.length - 1];
+    }
+
+    get isEmpty() { return this.size === 0 }
+
+    static isStack(testInstance) { return testInstance instanceof Stack5 }
+}
+
+class Stack {
+    constructor() {
+        this.size = 0;
+        this.storage = [];
+    }
+
+    push = (newValue) => {
+        this.size++;
+        this.storage.push(newValue);
+    }
+
+    pop = () => {
+        if (this.size === 0) return new Error("Stack Underflow");
+        else {
+            this.size--;
+            return this.storage.pop();
+        }
+    }
+
+    get len() { return this.storage.length }
+
+    get last() { 
+        if (this.size === 0) return null;
+        else return this.storage[this.storage.length - 1] 
+    }
+
+    get isEmpty() { return this.size === 0 }
+
     static isStack(testInstance) { return testInstance instanceof Stack }
 }
+
 const newStack = new Stack()
 console.log(`Is it a Stack?  ${Stack.isStack(newStack)}`)
 console.log(`Is stack empty?  ${newStack.isEmpty}`)
@@ -74,4 +230,4 @@ console.log(`Give me the last one:  ${newStack.last}`)
 console.log(`Pop the latest:  ${newStack.pop()}`)
 console.log(`Pop the latest:  ${newStack.pop()}`)
 console.log(`Pop the latest:  ${newStack.pop()}`)
-console.log(`Is stack empty?  ${newStack.isEmpty}`)
+console.log(`Is stack empty?  ${newStack.isEmpty} = ${JSON.stringify(newStack)}`);
