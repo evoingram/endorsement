@@ -187,7 +187,7 @@ class Stack5 {
     static isStack(testInstance) { return testInstance instanceof Stack5 }
 }
 
-class Stack {
+class Stack6 {
     constructor() {
         this.size = 0;
         this.storage = [];
@@ -215,19 +215,47 @@ class Stack {
 
     get isEmpty() { return this.size === 0 }
 
-    static isStack(testInstance) { return testInstance instanceof Stack }
+    static isStack(testInstance) { return testInstance instanceof Stack6 }
+}
+
+class Stack {
+    constructor() {
+        this.size = 0;
+        this.storage = [];
+    }
+
+    push = (newValue) => {
+        this.size++;
+        this.storage.push(newValue);
+    }
+
+    pop = () => {
+        if (this.size === 0) throw new Error("Stack Underflow")
+        else {
+            this.size--;
+            return this.storage.pop();
+        }
+    }
+
+    len = () => { return this.size }
+
+    last = () => { return this.storage[this.storage.length - 1]}
+
+    isEmpty = () => { return this.size === 0 }
+
+    static isStack = (testInstance) => { return testInstance instanceof Stack }
 }
 
 const newStack = new Stack()
 console.log(`Is it a Stack?  ${Stack.isStack(newStack)}`)
-console.log(`Is stack empty?  ${newStack.isEmpty}`)
+console.log(`Is stack empty?  ${newStack.isEmpty()}`)
 newStack.push('Hello world')
 newStack.push(42)
 newStack.push({ a: 6, b: 7 })
-console.log(`The length of stack is ${newStack.len}`)
-console.log(`Is stack empty?  ${newStack.isEmpty}`)
-console.log(`Give me the last one:  ${newStack.last}`)
+console.log(`The length of stack is ${newStack.len()}`)
+console.log(`Is stack empty?  ${newStack.isEmpty()}`)
+console.log(`Give me the last one:  ${newStack.last()}`)
 console.log(`Pop the latest:  ${newStack.pop()}`)
 console.log(`Pop the latest:  ${newStack.pop()}`)
 console.log(`Pop the latest:  ${newStack.pop()}`)
-console.log(`Is stack empty?  ${newStack.isEmpty} = ${JSON.stringify(newStack)}`);
+console.log(`Is stack empty?  ${newStack.isEmpty()} = ${JSON.stringify(newStack)}`);

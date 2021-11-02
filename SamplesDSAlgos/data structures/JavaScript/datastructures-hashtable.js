@@ -47,44 +47,123 @@
 
 // space complexity:  O(n)
 
+/*
 class HashTable {
+    constructor() {}
+    getNumSlots = () => {}
+    getLoadFactor = () => {}
+    adjustLoadFactor = () => {}
+    calculateHash = () => {}
+    add = () => {}
+    search = () => {}
+    delete = () => {}
+    resize = () => {}
+    get = () => {}
+}
+*/
+class HashTable {
+    constructor() {
+        this.values = {};
+        this.length = 0;
+        this.capacity = 0;
+    }
+    hashIndex = (key) => this.calculateHash(key) % this.capacity;
+
+    getNumSlots = () => {
+        this.length = this.values.length;
+        return this.length;
+    }
+    getLoadFactor = () => {
+        this.getNumSlots();
+        return this.length / this.capacity;
+    }
+    adjustLoadFactor = () => {
+        let loadFactor = this.getLoadFactor();
+        // automatically rehash the table to double its previous size.
+        if (loadFactor > 0.7) this.resize(this.capacity * 2);
+        // automatically rehash the table to half its previous size, down to a minimum of 8 slots.
+        else if (loadFactor < 0.2) this.resize(this.capacity/2);
+    }
+    calculateHash = (key) => { return key.toString().length % this.capacity };
+    add = (key, value) => {
+        // Store the value with the given key.
+        // Hash collisions should be handled with Linked List Chaining.
+        const hash = this.calculateHash(key);
+        if (!this.values.hasOwnProperty(hash)) this.values[hash] = {};
+        if (!this.values[hash].hasOwnProperty(key)) this.length++;
+        this.values[hash][key] = value;
+    }
+    search = (key) => {
+        const hash = this.calculateHash(key);
+        if (this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)) return this.values[hash][key]
+        else return null;
+    }
+    delete = (key) => {
+        let currentNode = this.head;
+        if (currentNode) {
+            while (currentNode) {
+                if (currentNode.key == key) currentNode.key = null
+                else currentNode = currentNode.next
+            }
+        }
+        else console.log('No keys found for that value.')
+        return null
+    }
+    resize = (newCapacity) => {
+        // set next storage capacity 
+        let nextStorage = [null] * newCapacity;
+        let currentNode;
+        // for each node in storage right now
+        for (let x = 0; x < this.values.length; x++)  {
+            currentNode = this.values[x];
+            // get hashed index of current node[0]
+            keyHashed = this.hashIndex(currentNode[0]);
+            // use hashed key as index in next storage & set as current node
+            nextStorage[keyHashed] = currentNode;
+        }
+        // set current storage to next storage  
+        this.values = nextStorage;
+    }
+    get = (key) => {
+        let currentNode = this.head;
+        if (currentNode) {
+            while (currentNode) {
+                if (currentNode.key == key) return currentNode.value
+                else currentNode = currentNode.next;
+            }
+        }
+        else console.log('No keys found for that value.');
+        return null
+    }
+}
+class HashTable1 {
     constructor() {
       this.values = {};
       this.length =  0;
-      this.size =  0;
+      this.capacity =  0;
     }
-
-    hashIndex = (key) => this.calculateHash(key) % this.size;
-    
+    hashIndex = (key) => this.calculateHash(key) % this.capacity;
     // return number of slots in hash table 
     getNumSlots = () => {
-
         this.length = this.values.length
         return this.length
     }
-
     // return the load factor for this hash table.
     getLoadFactor = () => {
-        this.getNumSlots()
-        return this.length / this.size
+        this.getNumSlots();
+        return this.length / this.capacity;
     }
-
     // adjust this hash table's load factor
     adjustLoadFactor = () => {
-
         loadFactor = this.getLoadFactor()
-
         // automatically rehash the table to double its previous size.
-        if (loadFactor > 0.7) this.resize(this.size * 2)
-        
+        if (loadFactor > 0.7) this.resize(this.capacity * 2)        
         // automatically rehash the table to half its previous size, down to a minimum of 8 slots.
-        else if (loadFactor < 0.2) this.resize(this.size/2)
+        else if (loadFactor < 0.2) this.resize(this.capacity/2)
     }
-  
     calculateHash(key) {
-      return key.toString().length % this.size;
+      return key.toString().length % this.capacity;
     }
-  
     // add value w/ key to hash table
     add(key, value) {
         /*
@@ -96,20 +175,16 @@ class HashTable {
       if (!this.values[hash].hasOwnProperty(key)) this.length++;
       this.values[hash][key] = value;
     }
-  
     search(key) {
        const hash = this.calculateHash(key);
        if (this.values.hasOwnProperty(hash) && this.values[hash].hasOwnProperty(key)) {
          return this.values[hash][key];
        } else return null;
     }
-
     // delete value w/ key from hash table
     delete = (key) => {
-        /*
-        Remove the value stored with the given key.
-        Print a warning if the key is not found.
-        */
+        // Remove the value stored with the given key.
+        // Print a warning if the key is not found.
 
         // get tree head
         let currentNode = this.head
@@ -129,35 +204,26 @@ class HashTable {
 
         return null
     }
-
     // resize hash table 
     resize = (newCapacity) => {
         // set next storage capacity 
-        let nextStorage = [null] * newCapacity
+        let nextStorage = [null] * newCapacity;
         let currentNode;
         // for each node in storage right now
         for (let x = 0; x < this.values.length; x++)  {
-            if (currentNode == values[x]) {
-                // if the current one exists 
-                if (currentNode) {
-                    // get hashed index of current node[0]
-                    keyHashed = this.hashIndex(currentNode[0])
-                    // use hashed key as index in next storage & set as current node
-                    nextStorage[keyHashed] = currentNode
-                }
-            }
+            currentNode = this.values[x];
+            // get hashed index of current node[0]
+            keyHashed = this.hashIndex(currentNode[0]);
+            // use hashed key as index in next storage & set as current node
+            nextStorage[keyHashed] = currentNode;
         }
         // set current storage to next storage  
-        this.values = nextStorage
+        this.values = nextStorage;
     }
     
     // get value w/ key to hash table
     get = (key) => {
-        // Retrieve the value stored with the given key.
-        // Returns None if the key is not found.
-
-        // get tree head 
-        currentNode = this.head
+        currentNode = this.head;
 
         // if it exists 
         if (currentNode) {
@@ -186,7 +252,6 @@ class HashTable {
   console.log(ht.search("Italy"));
 
 ht = new HashTable();
-
 ht.add("line_1", "'Twas brillig, and the slithy toves")
 ht.add("line_2", "Did gyre and gimble in the wabe:")
 ht.add("line_3", "All mimsy were the borogoves,")
@@ -200,15 +265,16 @@ ht.add("line_10", "Long time the manxome foe he sought--")
 ht.add("line_11", "So rested he by the Tumtum tree")
 ht.add("line_12", "And stood awhile in thought.")
 
-console.log("")
+console.log("-------------------------")
 
 // Test storing beyond capacity
-for (let x = 0; x < 13; x++) console.log(ht.search(`line_${x}`))
+for (let x = 0; x < 13; x++) console.log(`searching for ` + ht.search(`line_${x}`))
 
 // Test resizing
-let oldCapacity = ht.getNumSlots()
+let oldCapacity = ht.getNumSlots();
+console.log(`${ht.size} * 2 = ${ht.size * 2}`);
 ht.resize(ht.size * 2)
-let newCapacity = ht.getNumSlots()
+let newCapacity = ht.getNumSlots();
 
 console.log(`Resized from ${oldCapacity} to ${newCapacity}.\n`)
 

@@ -35,7 +35,41 @@ Try it!
 
 // space complexity:  O(n)
 
+
+
+
+
 class Queue {
+    constructor() {
+        this.size = 0;
+        this.storage = new DoublyLinkedList();
+    }
+
+    enqueue = (newValue) => {
+        this.size++;
+        this.storage.addToTail(newValue);
+    }
+
+    dequeue = () => {
+        if (this.size === 0) return new Error("Queue Underflow")
+        else {
+            this.size--;
+            return this.storage.removeFromHead();
+    }
+    }
+    get len() { return this.storage.length; }
+
+    get last() { 
+        if (this.size === 0) return null
+        else return this.storage.tail;
+     }
+    get isEmpty() { return this.size === 0; }
+    
+    static isQueue(testInstance) { return testInstance instanceof Queue }
+}
+
+
+class Queue5 {
     constructor() {
         this.size = 0;
         this.storage = new DoublyLinkedList();
@@ -61,13 +95,9 @@ class Queue {
         else return this.storage.tail;
     }
 
-    static isQueue(testInstance) { return testInstance instanceof Queue }
+    static isQueue(testInstance) { return testInstance instanceof Queue5 }
 
 }
-
-
-
-
 
 
 class Queue4 {
@@ -121,14 +151,14 @@ class Queue3 {
         }
     }
 
-    get len() { return this.storage.length } // return this.size also works
+    get len() { return this.storage.length; } // return this.size also works
     get last() {
         if (this.size === 0) return null
         else return this.storage.tail;
     }
-    get isEmpty() { return this.size === 0 }
+    get isEmpty() { return this.size === 0; }
 
-    static isQueue(testInstance) { return testInstance instanceof Queue3 }
+    static isQueue(testInstance) { return testInstance instanceof Queue3; }
 }
 
 class Queue2 {

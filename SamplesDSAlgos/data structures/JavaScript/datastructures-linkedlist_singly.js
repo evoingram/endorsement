@@ -41,6 +41,233 @@ What is the difference between singly and doubly linked lists?
     // Deletion:     O(1)   |   O(1)
 // space complexity:  O(n)
 
+
+class Node {
+    constructor(value = null, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+
+    setNext = (nodeToAdd) => this.next = nodeToAdd;
+
+    get getNext() { return this.next; }
+    get getValue() { return this.value; }
+}
+class LinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+    }
+
+    addToHead = (nodeToAdd) => {
+        let newNode = new Node(nodeToAdd);
+        if (!this.head && !this.tail) {
+            this.head = newNode;
+            this.tail = newNode;
+        } 
+        else {
+            newNode.setNext(this.head);
+            this.head = newNode;
+        }
+    }
+    addToTail = (nodeToAdd) => {
+        let newNode = new Node(nodeToAdd);
+        if (!this.head && !this.tail) {
+            this.head = newNode;
+            this.tail = newNode;
+        } 
+        else {
+            this.tail.setNext(newNode);
+            this.tail = newNode;
+        }
+
+    }
+    removeFromHead = () => {
+        if (!this.head) return null
+        else {
+            let value = this.head;
+            this.head = this.head.getValue;
+            return value;
+        }
+    }
+    printNodes = () => {
+        let current = this.head;
+        while (current) {
+            console.log(`current value = ${current.value}`);
+            current = current.getNext;
+        }
+    }
+}
+
+class Node10 {
+    constructor(value = null, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+
+    setNext = (nodeToAdd) => this.next = nodeToAdd;
+
+    get getNext() { return this.next; }
+    get getValue() { return this.value; }
+}
+class LinkedList10 {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+    }
+
+    addToHead = (nodeToAdd) => {
+        let newNode = new Node(nodeToAdd);
+        if (!this.head && !this.tail) {
+            this.head = newNode;
+            this.tail = newNode;
+        } 
+        else {
+            newNode.setNext(this.head)
+            this.head = newNode;
+        }
+    }
+
+    addToTail = (nodeToAdd) => {
+        let newNode = new Node(nodeToAdd);
+        if (!this.head && !this.tail) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            this.tail.setNext(newNode);
+            this.tail = newNode;
+        }
+    }
+
+    removeFromHead = () => {
+        if (!this.head) return null
+        else {
+            let value = this.head;
+            this.head = this.head.getValue;
+            return value;
+        }
+    }
+    printNodes = () => {
+        let current = this.head;
+        while (current) {
+            console.log(`current value = ${current.value}`);
+            current = current.getNext;
+        }
+    }
+}
+class Node9 {
+    constructor(value = null, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+
+    setNext = (nodeToAdd) => this.next = nodeToAdd;
+
+    get getNext() { return this.next; }
+    get getValue() { return this.value; }
+}
+
+class LinkedList9 {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+    }
+
+    addToHead = (nodeToAdd) => {
+        let newNode = new Node(nodeToAdd);
+        if (!this.head && !this.tail) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            newNode.setNext(this.head)
+            this.head = newNode;
+        }
+    }
+    addToTail = (nodeToAdd) => {
+        let newNode = new Node(nodeToAdd);
+        if (!this.head && !this.tail) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            this.tail.setNext(newNode);
+            this.tail = newNode;
+        }
+    }
+    removeFromHead = () => {
+        if (!this.head) return null
+        else {
+            let value = this.head.getNext;
+            this.head = this.head.getValue;
+            return value;
+        }
+    }
+    printNodes = () => {
+        let current = this.head;
+        while (current) {
+            console.log(`current value = ${current.value}`);
+            current = current.getNext;
+        }
+    }
+}
+class Node8 {
+    constructor(value = null, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+
+    setNext = (nodeToAdd) => this.next = nodeToAdd;
+
+    get getNext() { return this.next; }
+    get getValue() { return this.value; }
+}
+
+class LinkedList8 {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+    }
+
+    addToHead = (nodeToAdd) => {
+        let newNode = new Node(nodeToAdd);
+        if (!this.head && !this.tail) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            newNode.setNext(this.head)
+            this.head = newNode
+        }
+    }
+    addToTail = (nodeToAdd) => {
+        let newNode = newNode(nodeToAdd);
+        if (!this.head && !this.tail) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            this.tail.setNext(newNode);
+            this.tail = newNode;
+        }
+    }
+    removeFromHead = () => {
+        if (!this.head) return null
+        else {
+            let value = this.head.getNext;
+            this.head = this.head.getValue;
+            return value;
+        }
+    }
+    printNodes = () => {
+        let current = this.head;
+        while (current) {
+            console.log(`current value = ${current.value}`);
+            current = current.getNext
+        }
+    }
+}
 class Node7 {
     constructor(value = null, next = null) {
         this.value = value;
