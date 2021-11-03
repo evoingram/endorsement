@@ -47,30 +47,28 @@ What is the difference between singly and doubly linked lists?
 
 // space complexity:  O(n)
 
-function Node2(nodeData) {
+function Node(nodeData) {
   this.data = nodeData;
   this.previous = null;
   this.next = null;
 }
-
-class DoublyLinkedList2 {
+class DoublyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
-    this.llLength = 0;
+    this.size = 0;
   }
   addToHead = (newValue) => {
-    console.log('addToHead');
     let nodeNew = new Node(newValue);
-    this.llLength++;
+    this.size++;
     if (!this.head && !this.tail) {
-        this.head = nodeNew;
-        this.tail = nodeNew;
+      this.head = nodeNew;
+      this.tail = nodeNew;
     }
     else {
-        nodeNew.next = this.head;
-        this.head.previous = nodeNew;
-        this.head = nodeNew;
+      nodeNew.next = this.head;
+      this.head.previous = nodeNew;
+      this.head = nodeNew;
     }
     this.printNodes();
   }
@@ -85,7 +83,7 @@ class DoublyLinkedList2 {
       this.tail.next = newNode;
       this.tail = newNode;
     }
-    this.llLength++;
+    this.size++;
   }
   remove = (nodeData) => {
     let current = this.head;
@@ -107,112 +105,23 @@ class DoublyLinkedList2 {
           current.previous.next = current.next;
           current.next.previous = current.previous;
         }
-        this.llLength--;
+        this.size--;
       }
       current = current.next;
     }
   }
-  insertAfter = (nodeData, toNodeData) => { 
+  insertAfter = (nodeData, toNodeData) => {
     let current = this.head;
     while (current) {
       if (current.data === toNodeData) {
         const newNode = new Node(nodeData);
-        if (current === this.tail)this.addToTail(nodeData);
+        if (current === this.tail) this.addToTail(nodeData);
         else {
           current.next.previous = newNode;
           newNode.previous = current;
           newNode.next = current.next;
           current.next = newNode;
-          this.llLength++;
-        }
-      }
-      current = current.next;
-    }
-  }
-  traverse = (fn) => { 
-    let current = this.head;
-    while (current) {
-      if (fn) fn(current);
-      current = current.next;
-    }
-  }
-  traverseReverse = (fn) => { 
-    let current = this.tail;
-    while (current) {
-      if (fn) fn(current);
-      current = current.previous;
-    }
-  }
-  getLength = () => this.llLength;
-  printNodes = () => { 
-    let string = '';
-    let current = this.head;
-    while (current) {
-      string += `${current.data} `;
-      current = current.next;
-    }
-    console.log(string.trim());
-  }
-}
-
-
-function Node1(data) {
-  this.data = data;
-  this.previous = null;
-  this.next = null;
-}
-class DoublyLinkedList1 {
-  constructor() {
-    this.head = null;
-    this.tail = null;
-    this.numberOfValues = 0;
-  }
-  add = (data) => {
-    const node = new Node1(data);
-    if (!this.head) {
-      this.head = node;
-      this.tail = node;
-    } else {
-      node.previous = this.tail;
-      this.tail.next = node;
-      this.tail = node;
-    }
-    this.numberOfValues++;
-  }
-  remove = (data) => {
-    let current = this.head;
-    while (current) {
-      if (current.data === data) {
-        if (current === this.head && current === this.tail) {
-          this.head = null;
-          this.tail = null;
-        } else if (current === this.head) {
-          this.head = this.head.next;
-          this.head.previous = null;
-        } else if (current === this.tail) {
-          this.tail = this.tail.previous;
-          this.tail.next = null;
-        } else {
-          current.previous.next = current.next;
-          current.next.previous = current.previous;
-        }
-        this.numberOfValues--;
-      }
-      current = current.next;
-    }
-  }
-  insertAfter = (data, toNodeData) => {
-    let current = this.head;
-    while (current) {
-      if (current.data === toNodeData) {
-        const node = new Node1(data);
-        if (current === this.tail) this.addToTail(data);
-        else {
-          current.next.previous = node;
-          node.previous = current;
-          node.next = current.next;
-          current.next = node;
-          this.numberOfValues++;
+          this.size++;
         }
       }
       current = current.next;
@@ -232,8 +141,116 @@ class DoublyLinkedList1 {
       current = current.previous;
     }
   }
-  llLength = () => this.numberOfValues;
-  print = () => {
+  getLength = () => this.size;
+  printNodes = () => {
+    let string = '';
+    let current = this.head;
+    while (current) {
+      string += `${current.data} `;
+      current = current.next;
+    }
+    console.log(string.trim());
+  }
+}
+class Node2 {
+  constructor(nodeData) {
+    this.data = nodeData;
+    this.previous = null;
+    this.next = null;
+  }
+}
+class DoublyLinkedList2 {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
+  }
+  addToHead = (newValue) => {
+    let nodeNew = new Node(newValue);
+    this.size++;
+    if (!this.head && !this.tail) {
+      this.head = nodeNew;
+      this.tail = nodeNew;
+    }
+    else {
+      nodeNew.next = this.head;
+      this.head.previous = nodeNew;
+      this.head = nodeNew;
+    }
+    this.printNodes();
+  }
+  addToTail = (nodeData) => {
+    const newNode = new Node(nodeData);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    }
+    else {
+      newNode.previous = this.tail;
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.size++;
+  }
+  remove = (nodeToDelete) => {
+    let current = this.head;
+    while (current) {
+      if (current.data = nodeToDelete) {
+        if (current === this.head && current === this.tail) {
+          this.head = null;
+          this.tail = null;
+        }
+        else if (current === this.head) {
+          this.head = this.head.next;
+          this.head.previous = null;
+        }
+        else if (current === this.tail) {
+          this.tail = this.tail.previous;
+          this.tail.next = null;
+        }
+        else {
+          current.previous.next = current.next;
+          current.next.previous = current.previous;
+        }
+        this.size--;
+      }
+      current = current.next;
+    }
+  }
+  insertAfter = (nodeData, toNodeData) => {
+    let current = this.head;
+    while (current) {
+      if (current.data === toNodeData) {
+        const newNode = new Node(nodeData);
+        if (current === this.tail) this.addToTail(nodeData);
+        else {
+          current.next.previous = newNode;
+          newNode.previous = current;
+          newNode.next = current.next;
+          current.next = newNode;
+          this.size++;
+        }
+      }
+      current = current.next;
+    }
+  }
+  traverse = (fn) => {
+    let current = this.head;
+    while (current) {
+      if (fn) fn(current);
+      current = current.next;
+    }
+  }
+  traverseReverse = (fn) => {
+    let current = this.tail;
+    while (current) {
+      if (fn) fn(current);
+      current = current.previous;
+    }
+  }
+  getLength = () => this.size;
+
+  printNodes = () => {
     let string = '';
     let current = this.head;
     while (current) {
@@ -244,6 +261,130 @@ class DoublyLinkedList1 {
   }
 }
 
+class Node3 {
+  constructor(nodeData) {
+    this.data = nodeData;
+    this.previous = null;
+    this.next = null;
+  }
+}
+class DoublyLinkedList3 {
+  constructor() {
+    this.size = 0;
+    this.head = null;
+    this.tail = null;
+  }
+  addToHead = (newValue) => {
+    let newNode = new Node(newValue);
+    this.size++;
+    if (!this.head && this.tail) {
+      this.head = newNode;
+      this.tail = newNode;
+    }
+    else {
+      newNode.next = this.head;
+      this.head.previous = newNode;
+      this.head = newNode;
+    }
+  }
+  addToTail = (newValue) => {
+    let newNode = new Node(newValue);
+    this.size++;
+    if (!this.head && this.tail) {
+      this.head = newNode;
+      this.tail = newNode;
+    }
+    else {
+      newNode.previous = this.tail;
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+  }
+  remove = (nodeToDelete) => {
+    let current = this.head;
+    while (current) {
+      if (current === nodeToDelete) {
+        if (current === this.head && current === this.tail) {
+          this.head = null;
+          this.tail = null;
+        }
+        else if (current === this.head) {
+          this.head = this.head.next;
+          this.head.previous = null;
+        }
+        else if (current === this.tail) {
+          this.tail = this.tail.previous;
+          this.tail.next = null;
+        }
+        else {
+          current.previous.next = current.next;
+          current.next.previous = current.previous;
+        }
+        this.size--;
+      }
+      current = current.next;
+    }
+  }
+  insertAfter = (nodeToAdd, toNodeToAdd) => {
+    let current = this.head;
+    while (current) {
+      if (current.data === toNodeToAdd) {
+        const newNode = new Node(nodeToAdd);
+        if (current === this.tail) this.addToTail(newNode)
+        else {
+          current.next.previous = newNode;
+          newNode.previous = current;
+          newNode.next = current.next;
+          current.next = newNode;
+          this.size++;
+        }
+      }
+      current = current.next;
+    }
+  }
+  traverse = () => {
+    let current = this.head;
+    while (current) {
+      if (fn) fn(current)
+      current = current.next;
+    }
+  }
+  traverseReverse = () => {
+    let current = this.tail;
+    while (current) {
+      if (fn) fn(current)
+      current = current.previous;
+    }
+  }
+  getLength = () => this.size;
+  printNodes = () => {
+    let string = '';
+    let current = this.head;
+    while (current) {
+      string += `${current.data}`;
+      current = current.next;
+    }
+    console.log(string.trim());
+  }
+}
+
+/*
+class Node {
+  constructor() {}
+}
+ 
+class DoublyLinkedList {
+  constructor() {}
+  addToHead = () => {}
+  addToTail = () => {}
+  remove = () => {}
+  insertAfter = () => {}
+  traverse = () => {}
+  traverseReverse = () => {}
+  getLength = () => {}
+  printNodes = () => {}
+}
+*/
 const doublyLinkedList = new DoublyLinkedList();
 doublyLinkedList.printNodes(); // => ''
 doublyLinkedList.addToTail(1);
@@ -260,7 +401,6 @@ doublyLinkedList.remove(1); // remove head
 doublyLinkedList.printNodes(); // => 2 4
 doublyLinkedList.remove(4); // remove tail
 doublyLinkedList.printNodes(); // => 2
-console.log('length is 1:', doublyLinkedList.getLength()); // => 1
 doublyLinkedList.remove(2); // remove tail, the list should be empty
 doublyLinkedList.printNodes(); // => ''
 console.log('length is 0:', doublyLinkedList.getLength()); // => 0

@@ -35,188 +35,32 @@ Try it!
 
 // space complexity:  O(n)
 
-
-
-
-
 class Queue {
     constructor() {
         this.size = 0;
         this.storage = new DoublyLinkedList();
     }
-
     enqueue = (newValue) => {
         this.size++;
         this.storage.addToTail(newValue);
     }
-
     dequeue = () => {
         if (this.size === 0) return new Error("Queue Underflow")
         else {
             this.size--;
             return this.storage.removeFromHead();
-    }
-    }
-    get len() { return this.storage.length; }
-
-    get last() { 
-        if (this.size === 0) return null
-        else return this.storage.tail;
-     }
-    get isEmpty() { return this.size === 0; }
-    
-    static isQueue(testInstance) { return testInstance instanceof Queue }
-}
-
-
-class Queue5 {
-    constructor() {
-        this.size = 0;
-        this.storage = new DoublyLinkedList();
+        };
     }
 
-    enqueue = (newValue) => {
-        this.size++;
-        this.storage.addToTail(newValue);
-    }
-
-    dequeue = () => {
-        if (this.size === 0) return new Error("Queue Underflow");
-        else {
-            this.size--;
-            return this.storage.removeFromHead();
-        }
-    }
-
-    get len() { return this.storage.length; }
-    get isEmpty() { return this.size === 0; }
+    get len() { return this.size };
     get last() {
         if (this.size === 0) return null
-        else return this.storage.tail;
-    }
+        else return this.storage[this.size-1];
+    };
+    get isEmpty() { return this.size === 0 };
 
-    static isQueue(testInstance) { return testInstance instanceof Queue5 }
-
+    static isQueue(testInstance) { return testInstance instanceof Queue };
 }
-
-
-class Queue4 {
-    constructor() {
-        this.size = 0
-        this.storage = new LinkedList()
-    }
-
-    // get stack length/size
-    get len() { return this.storage.length }
-
-    enqueue (newValue) {
-        // add one to queue size/length
-        this.size += 1;
-        // add item to end of queue
-        this.storage.addToEnd(newValue);
-    }
-
-    dequeue (newValue) {
-        // if queue empty, can't remove
-        if (this.size == 0) return null
-        else {
-            // remove one from queue size/length
-            this.size -= 1
-            // remove one item from top of queue
-            return this.storage.removeFromHead()
-        }
-    }
-
-    static isQueue(testInstance) { return testInstance instanceof Queue4 }
-
-}
-
-class Queue3 {
-    constructor() {
-        this.size = 0;
-        this.storage = new DoublyLinkedList();
-    }
-
-    enqueue = (newValue) => {
-        this.size++;
-        return this.storage.addToTail(newValue);
-
-    }
-
-    dequeue = () => {
-        if (this.size === 0) return new Error("Queue Underflow");
-        else {
-            this.size--;
-            return this.storage.removeFromHead();
-        }
-    }
-
-    get len() { return this.storage.length; } // return this.size also works
-    get last() {
-        if (this.size === 0) return null
-        else return this.storage.tail;
-    }
-    get isEmpty() { return this.size === 0; }
-
-    static isQueue(testInstance) { return testInstance instanceof Queue3; }
-}
-
-class Queue2 {
-    constructor() {
-        this.size = 0;
-        this.storage = new DoublyLinkedList();
-    }
-
-    enqueue = (newValue) => {
-        this.size++;
-        this.storage.addToTail(newValue);
-    }
-
-    dequeue = () => {
-        if (this.size === 0) return new Error("Queue Underflow")
-        else {
-            this.size--;
-            return this.storage.removeFromHead();
-        }
-    }
-
-    get len() { return this.storage.length }
-    get last() {
-        if (this.size === 0) return null;
-        else return this.storage.tail
-    }
-    get isEmpty() { return this.size === 0 }
-    
-    static isQueue(testInstance) { return testInstance instanceof Queue }
-}
-
-class Queue1 {
-    constructor() {
-        this.size = 0;
-        this.storage = new DoublyLinkedList();
-    }
-
-    enqueue = (newValue) => {
-        this.size++;
-        this.storage.addToTail(newValue);
-    }
-
-    dequeue = () => {
-        if (this.size == 0) return null
-        else {
-            this.size--;
-            return this.storage.removeFromHead();
-        }
-    }
-
-    get isEmpty() { return this.size === 0 }
-    get len() { return this.storage.length }
-    get last() { return this.storage.tail }
-
-    static isQueue(testInstance) { return testInstance instanceof Queue1 }
-}
-
-
 class ListNode {
     constructor(value, prev=null, next=null) {
         this.value = value

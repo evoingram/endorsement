@@ -47,28 +47,13 @@
 
 // space complexity:  O(n)
 
-/*
-class HashTable {
-    constructor() {}
-    getNumSlots = () => {}
-    getLoadFactor = () => {}
-    adjustLoadFactor = () => {}
-    calculateHash = () => {}
-    add = () => {}
-    search = () => {}
-    delete = () => {}
-    resize = () => {}
-    get = () => {}
-}
-*/
 class HashTable {
     constructor(size) {
         this.values = {};
         this.numberOfValues = 0;
         this.size = size;
     }
-
-    add(key, value) {
+    add = (key, value) => {
         const hash = this.calculateHash(key);
         if (!this.values.hasOwnProperty(hash)) {
             this.values[hash] = {};
@@ -78,82 +63,72 @@ class HashTable {
         }
         this.values[hash][key] = value;
     }
-
-    remove(key) {
+    remove = (key) => {
         const hash = this.calculateHash(key);
         if (
-            this.values.hasOwnProperty(hash) &&
+            this.values.hasOwnProperty(hash) && 
             this.values[hash].hasOwnProperty(key)
         ) {
             delete this.values[hash][key];
             this.numberOfValues--;
         }
     }
-
-    calculateHash(key) {
+    calculateHash = (key) => {
         if (!key) return 17 % this.size;
-        else return key.toString().length % this.size;
+        return key.toString().length % this.size;
     }
-
-    search(key) {
+    search = (key) => {
         const hash = this.calculateHash(key);
         if (
             this.values.hasOwnProperty(hash) &&
             this.values[hash].hasOwnProperty(key)
-        ) {
-            return this.values[hash][key];
-        } else {
-            return null;
-        }
+        ) return this.values[hash][key];
+        return null;
     }
-
     getValues = () => {
         let values = [];
-        console.log('-----getValues-----');
-        let string = '';
         for (const value in this.values) {
             for (const key in this.values[value]) {
-                console.log(this.values[value][key]);
-                string += `${this.values[value][key]} `;
                 values.push(this.values[value][key]);
             }
         }
-        console.log('----------');
         return values;
     }
-
     keys = () => {
-        console.log('-----keys-----');
         let keys = [];
         for (const value in this.values) {
             for (const key in this.values[value]) {
-                console.log(key);
                 keys.push(key);
             }
         }
-        console.log('----------');
         return keys;
     }
-
-    length() {
-        return this.numberOfValues;
-    }
-
-    print() {
-        console.log('-----print-----');
-
+    length = () => this.numberOfValues;
+    print = () => {
         let string = '{ ';
         for (const value in this.values) {
             for (const key in this.values[value]) {
-                console.log(this.values[value][key]);
-                string += ` ${key}: ${this.values[value][key]},`;
+                string += `${key}: ${this.values[value][key]}, `;
             }
         }
-        string = string.trim() + ' }';
-        console.log(string);
-        console.log('----------');
+        string = `${string.trim()} }`;
+        return string;
     }
 }
+
+/*
+class HashTable {
+    constructor() {}
+    add = () => {}
+    remove = () => {}
+    calculateHash = () => {}
+    search = () => {}
+    getValues = () => {}
+    keys = () => {}
+    length = () => {}
+    print = () => {}
+}
+*/
 
 const hashTable1 = new HashTable(3);
 hashTable1.add('first', "hi");
@@ -161,15 +136,15 @@ hashTable1.add('second', 2);
 hashTable1.add('third', 3);
 hashTable1.add('fourth', 4);
 hashTable1.add('fifth', 5);
-hashTable1.print(); // => 2 4 1 3 5
+console.log(`print = ${hashTable1.print()}`); // => 2 4 1 3 5
 console.log('length gives 5:', hashTable1.length()); // => 5
 console.log('search second gives 2:', hashTable1.search('second')); // => 2
 hashTable1.remove('fourth');
 hashTable1.remove('first');
-hashTable1.print(); // => 2 3 5
+console.log(`print = ${hashTable1.print()}`); // => 2 3 5
 console.log('length gives 3:', hashTable1.length()); // => 3
-console.log(hashTable1.keys());
-console.log(hashTable1.getValues());
+console.log(`keys = ${hashTable1.keys()}`);
+console.log(`getValues = ${hashTable1.getValues()}`);
 /*
 class HashTable3 {
     constructor(size = 17) { // Default: 17, prime number
@@ -459,8 +434,8 @@ ht.add("Italy", 50);
 
 //search
 console.log(ht.search("Italy"));
-console.log(ht.keys());
-console.log(ht.getValues());
+console.log(`keys = ${ht.keys()}`);
+console.log(`getValues = ${ht.getValues()}`);
 
 ht = new HashTable(17);
 ht.add("line_1", "'Twas brillig, and the slithy toves")
@@ -480,9 +455,9 @@ console.log("-------------------------")
 
 // Test storing beyond capacity
 for (let x = 0; x < ht.size; x++) console.log(`searching for ` + ht.search(`line_${x}`))
-console.log(ht.keys());
-console.log(ht.getValues());
-console.log(ht.print());
+console.log(`keys = ${ht.keys()}`);
+console.log(`getValues = ${ht.getValues()}`);
+console.log(`print = ${ht.print()}`);
 
 // Test resizing
 // let oldCapacity = ht.capacity;
@@ -506,5 +481,5 @@ hashTable.add("Apple", null);
 hashTable.add("Date", 5);
 // console.log(hashTable);
 console.log(`Searching for ${hashTable.search("Carrot")}`);
-console.log(hashTable.keys());
-console.log(hashTable.getValues());
+console.log(`keys = ${hashTable.keys()}`);
+console.log(`getValues = ${hashTable.getValues()}`);
