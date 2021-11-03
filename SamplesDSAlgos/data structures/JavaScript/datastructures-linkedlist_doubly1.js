@@ -47,13 +47,13 @@ What is the difference between singly and doubly linked lists?
 
 // space complexity:  O(n)
 
-function Node(nodeData) {
+function Node2(nodeData) {
   this.data = nodeData;
   this.previous = null;
   this.next = null;
 }
 
-class DoublyLinkedList {
+class DoublyLinkedList2 {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -160,7 +160,8 @@ function Node1(data) {
   this.data = data;
   this.previous = null;
   this.next = null;
-}class DoublyLinkedList1 {
+}
+class DoublyLinkedList1 {
   constructor() {
     this.head = null;
     this.tail = null;
