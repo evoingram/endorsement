@@ -39,10 +39,10 @@ What is the difference between singly and doubly linked lists?
     // Search:       O(n)   |   O(n)
     // Insertion:    O(1)   |   O(1)
     // Deletion:     O(1)   |   O(1)
-
 // space complexity:  O(n)
 
-class Node {
+
+class Node1 {
     constructor(value = null, nextNode = null) {
         // the value at this linked list node
         this.value = value
@@ -59,28 +59,27 @@ class Node {
     // return next node
     get getNext() { return this.nextNode }
 }
-
-class LinkedList {
+class LinkedList1 {
     constructor() {
         this.head = null
         this.tail = null
     }
     // O(1)
     addToHead = (value) => {
-        let newNode = new Node(value)
+        let newNode = new Node1(value)
         if(!this.head && !this.tail) {
-            this.head = newNode
-            this.tail = newNode 
+            this.head = newNode;
+            this.tail = newNode;
         } else {
-            newNode.setNext(this.head)
-            this.head = newNode
+            newNode.setNext(this.head);
+            this.head = newNode;
         }
     }
     // we have access to the end of the list, so we can directly add new nodes to it 
     // O(1)
-    addToEnd = (value) => {
+    addToTail = (value) => {
         // regardless of if the list is empty or not, we need to wrap the value in a Node 
-        let newNode = Node(value)
+        let newNode = Node1(value)
         // what if the list is empty? 
         if(!this.head && !this.tail) {
             // set both head and tail to the new node 
@@ -94,7 +93,6 @@ class LinkedList {
             this.tail = newNode
             }
     }
-
     // we already have access to the head of the linked list, 
         // so we can directly remove from it 
     // O(1)
@@ -111,9 +109,8 @@ class LinkedList {
             return value
         }
     }
-
     // iterate over our linked list and print out each value in it 
-    printLLElements = () => {
+    printNodes = () => {
         let current = this.head;
         while (current != null) {
             console.log(current.value);
@@ -121,10 +118,64 @@ class LinkedList {
         }
     }
 }
-            
+
+class Node {
+    constructor(value = null, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+
+    setNext = (newNext) => this.next = newNext;
+
+    get getValue() { return this.value }
+    get getNext() { return this.next }
+}
+
+class LinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+    }
+    addToHead = (newValue) => {
+        let newNode = new Node(newValue);
+        if (!this.head && !this.tail) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            newNode.setNext(this.head);
+            this.head = newNode;
+        }
+    }
+    addToTail = (newValue) => {
+        let newNode = new Node(newValue);
+        if (!this.head && !this.tail) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            this.tail.setNext(newNode);
+            this.tail = newNode;
+        }
+    }
+    removeFromHead = () => {
+        if (!this.head) return null;
+        let value = this.head.getValue;
+        this.head = this.head.getNext;
+        return value;
+    }
+    printNodes = () => {
+        let current = this.head;
+        while (current) {
+            console.log(`current's value = ${current.value}`);
+            current = current.getNext;
+        }
+    }
+}
+
 const linkedList = new LinkedList();
 linkedList.addToHead(3);
 linkedList.addToHead(5);
 linkedList.addToHead(9);
 linkedList.addToHead(11);
-linkedList.printLLElements();
+linkedList.printNodes();
