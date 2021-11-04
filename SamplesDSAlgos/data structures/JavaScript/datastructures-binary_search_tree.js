@@ -299,10 +299,7 @@ class DoublyLinkedList {
     }
     get len() { return this.length }
 }
-
-
-
-class BinarySearchTree {
+class BinarySearchTree2 {
     constructor(value) {
         this.value = value;
         this.left = null;
@@ -310,7 +307,7 @@ class BinarySearchTree {
     }
     insert = (value) => {
         if (value < this.value) {
-            if (!thisleft) this.left = new BinarySearchTree(value);
+            if (!this.left) this.left = new BinarySearchTree(value);
             else this.left.insert(value);
         } else {
             if (!this.right) this.right = new BinarySearchTree(value);
@@ -372,8 +369,8 @@ class BinarySearchTree {
     }
     postOrderDFT = (node) => {
         // if left tree of node exists, run again on it
-        if (node.left) this.post_order_dft(node.left);
-        if (node.right) this.post_order_dft(node.right);
+        if (node.left) this.postOrderDFT(node.left);
+        if (node.right) this.postOrderDFT(node.right);
         console.log(node.value)
         
     }
@@ -381,10 +378,99 @@ class BinarySearchTree {
         return this.right ? this.right.getMax : this.value
     }
 }
+class BinarySearchTree {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+    insert = (value) => {
+        if (value < this.value) {
+            if (!this.left) this.left = new BinarySearchTree(value);
+            else this.left.insert(value);
+        } else {
+            if (!this.right) this.right = new BinarySearchTree(value);
+            else this.right.insert(value);
 
+        }
+    }
+    contains = (target) => {
+        if (this.value === target) return true;
+        else if (!this.left && !this.right) return false;
+        else if (this.left && target < this.value) return this.left.contains(target);
+        else if (this.right && target > this.value) return this.right.contains(target);
+    }
+    forEachCB = (cb) => {
+        cb(this.value);
+        if (this.left) this.left.forEachCB(cb);
+        if (this.right) this.right.forEachCB(cb);
+    }
+    inOrderPrint = (node) => {
+        if (this.left) this.left.inOrderPrint(node);
+        console.log(this.value);
+        if (this.right) this.right.inOrderPrint(node);
+    }
+    bftPrint = (node) => {
+        let currentQueue = new Queue();
+        currentQueue.enqueue(node);
+        while (currentQueue.length > 0) {
+            let nextQueue = new Queue();
+            while (currentQueue.length > 0) {
+                // dequeue current node and save it 
+                let currentNode = currentQueue.dequeue();
+                // if left tree exists on current node, add to left 
+                if (currentQueue.left) nextQueue.enqueue(currentNode.left);
+                if (currentQueue.right) nextQueue.enqueue(currentNode.right);
+                console.log(currentNode.value);
+            }
+            // set next queue as current queue
+            currentQueue = nextQueue;
+        }
+
+    }
+    dftPrint = (node) => {
+        let currentStack = new Stack();
+        currentStack.push(node);
+        // while current stack is NOT empty
+        while (currentStack.length > 0) {
+            // remove entry from stack and save in currentNode
+            let currentNode = currentStack.pop();
+            console.log(currentNode.value);
+            // if current node's left tree exists, add to it
+            if (currentNode.left) currentStack.push(currentNode.left);
+            if (currentNode.right) currentStack.push(currentNode.right);
+        }
+    }
+    preOrderDFT = (node) => {
+        // let newNode = new BinarySearchTree(node);
+        console.log(node.value);
+        if (node.left) this.preOrderDFT(node.left);
+        if (node.right) this.preOrderDFT(node.right);
+    }
+    postOrderDFT = (node) => {
+        if (node.left) this.postOrderDFT(node.left);
+        if (node.right) this.postOrderDFT(node.right);
+        console.log(node.value);
+    }
+    get getMax() { return this.right ? this.right.getMax : this.value }
+}
+/*
+class BinarySearchTree {
+    constructor() {}
+    insert = () => {}
+    contains = () => {}
+    forEachCB = () => {}
+    inOrderPrint = () => {}
+    bftPrint = () => {}
+    dftPrint = () => {}
+    preOrderDFT = () => {}
+    postOrderDFT = () => {}
+    get getMax() {}
+}
+*/
 let newBST = new BinarySearchTree();
 newBST.insert(1);
-newBST.insert(2);8
+newBST.insert(2);
 newBST.insert(3);
 console.log(`-----------BST bft print 3-------------`);
 newBST.bftPrint(3);

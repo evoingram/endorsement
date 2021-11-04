@@ -35,7 +35,7 @@ Try it!
 
 // space complexity:  O(n)
 
-class Queue {
+class Queue1 {
     constructor() {
         this.size = 0;
         this.storage = new DoublyLinkedList();
@@ -51,17 +51,15 @@ class Queue {
             return this.storage.removeFromHead();
         };
     }
-
     get len() { return this.size };
     get last() {
         if (this.size === 0) return null
         else return this.storage[this.size-1];
     };
     get isEmpty() { return this.size === 0 };
-
     static isQueue(testInstance) { return testInstance instanceof Queue };
 }
-class ListNode {
+class ListNode1 {
     constructor(value, prev=null, next=null) {
         this.value = value
         this.prev = prev
@@ -71,21 +69,19 @@ class ListNode {
     /*Wrap the given value in a ListNode and insert it
     after this node. Note that this node could already
     have a next node it is point to.*/
-    insertAfter = (self, value) => {
+    insertAfter = (value) => {
         let currentNext = this.next
-        this.next = new ListNode(value, self, currentNext)
+        this.next = new ListNode(value, currentNext)
         if (currentNext) currentNext.prev = this.next
     }
-
     /*Wrap the given value in a ListNode and insert it
     before this node. Note that this node could already
     have a previous node it is point to.*/
-    insertBefore(self, value) {
+    insertBefore(value) {
         let currentPrev = this.prev
-        this.prev = new ListNode(value, currentPrev, self)
+        this.prev = new ListNode(value, currentPrev)
         if (currentPrev) currentPrev.next = this.prev
     }
-    
     /*Rearranges this ListNode's previous and next pointers
     accordingly, effectively deleting this ListNode.*/
     delete = () => {
@@ -93,7 +89,51 @@ class ListNode {
         if (this.next) this.next.prev = this.prev
     }
 }
+class ListNode {
+    constructor(value, previous = null, next = null) {
+        this.value = value;
+        this.previous = previous;
+        this.next = next;
+    }
 
+    insertAfter = (value) => {
+        let currentNext = this.next;
+        this.next = new ListNode(value, currentNext)
+        if (currentNext) currentNext.previous = this.next;
+    }
+    insertBefore = (value) => {
+        let currentPrevious = this.previous;
+        this.previous = new ListNode(value, currentPrevious);
+        if (currentPrevious) currentPrevious.next = this.previous;
+    }
+    delete = () => {
+        if (this.previous) this.previous.next = this.next;
+        if (this.next) this.next.previous = this.previous;
+    }
+}
+class Queue {
+    constructor() {
+        this.size = 0;
+        this.storage = new DoublyLinkedList();
+    }
+    enqueue = (value) => {
+        this.size++;
+        this.storage.addToTail(value);
+    }
+    dequeue = () => {
+        if (this.size === 0) return new Error("Queue Underflow");
+        this.size--;
+        return this.storage.removeFromHead();
+    }
+    get len() { return this.size }
+    get last() {
+        if (this.size === 0) return null;
+        return this.storage[this.storage.getLength-1];
+    }
+    get isEmpty() { return this.size === 0 }
+
+    static isQueue(testInstance) { return testInstance instanceof Queue }
+}
 // Our doubly-linked list class
 class DoublyLinkedList {
     constructor(node=null) {
@@ -124,7 +164,6 @@ class DoublyLinkedList {
             this.head = dllNodeNew
         }
 }
-
     removeFromHead = () => {
         let headValue = this.head.value
         // Removes the List's current head node, 
@@ -133,7 +172,6 @@ class DoublyLinkedList {
         // Returns the value of the removed Node
         return headValue
     }
-
     addToTail = (value) => {
         // Wraps the given value in a ListNode
         let dllNodeNew = new ListNode(value)
@@ -153,7 +191,6 @@ class DoublyLinkedList {
             this.tail = dllNodeNew
         }
 }
-
     removeFromTail = () => {
         currentTail = this.tail.value
         // Removes the List's current tail node, 
@@ -163,7 +200,6 @@ class DoublyLinkedList {
         // Returns the value of the removed Node
         return currentTail
 }
-
     moveToFront = (node) => {
         // if already head do nothing 
         if (node == this.head) { return null }            
@@ -180,8 +216,6 @@ class DoublyLinkedList {
         // inserts it as the new head node of the List
         this.addToHead(nodeValue)
 }
-
-
     moveToEnd = (node) => {
         // if node is tail do nothing 
         if (node == this.tail) return null            
@@ -198,7 +232,6 @@ class DoublyLinkedList {
         // inserts it as the new tail node of the List
         this.addToTail(nodeValue)
 }
-
     delete = (node) => {
         this.length -= 1
 
@@ -221,8 +254,6 @@ class DoublyLinkedList {
             node.delete()
         } else node.delete()
 }
-        
-
     get getMax() {
         // if no head  
         if (!this.head) return null
@@ -241,22 +272,20 @@ class DoublyLinkedList {
         }
         return headValue
 }
-
         isPresent = (value) => this.indexOf(value) !== -1
-
         get len() { return this.length }
 }
 
 const newQueue = new Queue()
-console.log(`Is it a Queue?  ${Queue.isQueue(newQueue)}`)
-console.log(`Is queue empty?  ${newQueue.isEmpty}`)
+console.log(`Is it a Queue?  YES:  ${Queue.isQueue(newQueue)}`)
+console.log(`Is queue empty?  YES:  ${newQueue.isEmpty}`)
 newQueue.enqueue('Hello world')
 newQueue.enqueue(42)
 newQueue.enqueue({ a: 6, b: 7 })
-console.log(`The length of queue is ${newQueue.len}`)
-console.log(`Is queue empty?  ${newQueue.isEmpty}`)
+console.log(`The length of queue is 3:  ${newQueue.len}`)
+console.log(`Is queue empty?  NO:  ${newQueue.isEmpty}`)
 console.log(`Give me the last one:  ${newQueue.last}`)
-console.log(`Pop the latest:  ${newQueue.dequeue()}`)
-console.log(`Pop the latest:  ${newQueue.dequeue()}`)
-console.log(`Pop the latest:  ${newQueue.dequeue()}`)
-console.log(`Is queue empty?  ${newQueue.isEmpty} = ${JSON.stringify(newQueue)}`);
+console.log(`Pop the latest - Hello world:  ${newQueue.dequeue()}`)
+console.log(`Pop the latest - 42:  ${newQueue.dequeue()}`)
+console.log(`Pop the latest - { a: 6, b: 7 }:  ${newQueue.dequeue()}`)
+console.log(`Is queue empty?  YES:  ${newQueue.isEmpty} = ${JSON.stringify(newQueue)}`);

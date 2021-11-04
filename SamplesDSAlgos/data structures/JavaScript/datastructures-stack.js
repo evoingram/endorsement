@@ -29,7 +29,7 @@ What is the difference between using an array vs. a linked list when
 
 // space complexity:  O(n)
 
-class Stack {
+class Stack1 {
     constructor() {
         this.size = 0;
         this.storage = [];
@@ -56,16 +56,43 @@ class Stack {
 
     static isStack(testInstance) { return testInstance instanceof Stack }
 }
+class Stack {
+    constructor() {
+        this.size = 0;
+        this.storage = [];
+    }
+    push = (newValue) => {
+        this.size++;
+        this.storage.push(newValue);
+    }
+
+    pop = () => {
+        if (this.size === 0) return null;
+        this.size--;
+        return this.storage.pop();
+    }
+
+    len = () => this.size;
+
+    isEmpty = () => this.size === 0;
+
+    last = () => {
+        if (this.size === 0) return null;
+        return this.storage[this.size-1]
+    }
+
+    static isStack(testInstance) { return testInstance instanceof Stack }
+}
 const newStack = new Stack()
-console.log(`Is it a Stack?  ${Stack.isStack(newStack)}`)
-console.log(`Is stack empty?  ${newStack.isEmpty()}`)
+console.log(`Is it a Stack?  TRUE:  ${Stack.isStack(newStack)}`)
+console.log(`Is stack empty?  TRUE:  ${newStack.isEmpty()}`)
 newStack.push('Hello world')
 newStack.push(42)
 newStack.push({ a: 6, b: 7 })
-console.log(`The length of stack is ${newStack.len()}`)
-console.log(`Is stack empty?  ${newStack.isEmpty()}`)
+console.log(`The length of stack is 3:  ${newStack.len()}`)
+console.log(`Is stack empty?  FALSE:  ${newStack.isEmpty()}`)
 console.log(`Give me the last one:  ${newStack.last()}`)
-console.log(`Pop the latest:  ${newStack.pop()}`)
-console.log(`Pop the latest:  ${newStack.pop()}`)
-console.log(`Pop the latest:  ${newStack.pop()}`)
-console.log(`Is stack empty?  ${newStack.isEmpty()} = ${JSON.stringify(newStack)}`);
+console.log(`Pop the latest - { a: 6, b: 7 }:  ${newStack.pop()}`)
+console.log(`Pop the latest - 42:  ${newStack.pop()}`)
+console.log(`Pop the latest - Hello World:  ${newStack.pop()}`)
+console.log(`Is stack empty?  TRUE:  ${newStack.isEmpty()} = ${JSON.stringify(newStack)}`);

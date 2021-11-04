@@ -47,7 +47,7 @@
 
 // space complexity:  O(n)
 
-class HashTable {
+class HashTable1 {
     constructor(size) {
         this.values = {};
         this.numberOfValues = 0;
@@ -78,9 +78,146 @@ class HashTable {
         return key.toString().length % this.size;
     }
     search = (key) => {
+        console.log(`search function is searching for ${key}`);
         const hash = this.calculateHash(key);
         if (
             this.values.hasOwnProperty(hash) &&
+            this.values[hash].hasOwnProperty(key)
+        ) return this.values[hash][key];
+        return null;
+    }
+    getValues = () => {
+        let values = [];
+        for (const value in this.values) {
+            for (const key in this.values[value]) {
+                values.push(this.values[value][key]);
+            }
+        }
+        return values;
+    }
+    keys = () => {
+        let keys = [];
+        for (const value in this.values) {
+            for (const key in this.values[value]) {
+                keys.push(key);
+            }
+        }
+        return keys;
+    }
+    length = () => this.numberOfValues;
+    print = () => {
+        let string = '{ ';
+        for (const value in this.values) {
+            for (const key in this.values[value]) {
+                string += `${key}: ${this.values[value][key]}, `;
+            }
+        }
+        string = `${string.trim()} }`;
+        return string;
+    }
+}
+class HashTable2 {
+    constructor(size) {
+        this.size = size;
+        this.numberOfValues = 0;
+        this.values = {};
+    }
+    add = (key, value) => {
+        const hash = this.calculateHash(key);
+        if (!this.values.hasOwnProperty(hash)) {
+            this.values[hash] = {};
+        }
+        if (!this.values[hash].hasOwnProperty(key)) {
+            this.numberOfValues++;
+        }
+        this.values[hash][key] = value;
+    }
+    remove = (key) => {
+        const hash = this.calculateHash(key);
+        if (
+            this.values.hasOwnProperty[hash] && 
+            this.values[hash].hasOwnProperty(key)
+        ) {
+            delete this.values[hash][key];
+            this.numberOfValues--;
+        }
+    }
+    calculateHash = (key) => {
+        if (!key) return 17 % this.size;
+        return key.toString().length % this.size;
+    }
+    search = (key) => {
+        const hash = this.calculateHash(key);
+        if (
+            this.values.hasOwnProperty(hash) && 
+            this.values[hash].hasOwnProperty(key)
+        ) return this.values[hash][key];
+        return null;
+    }
+    getValues = () => {
+        let values = [];
+        for (const value in this.values){
+            for (const key in this.values[value]) {
+                values.push(this.values[value][key]);
+            }
+        }
+        return values;
+    }
+    keys = () => {
+        let keys = [];
+        for (const value in this.values) {
+            for (const key in this.values[value]) {
+                keys.push(key);
+            }
+        }
+        return keys;
+    }
+    length = () => this.numberOfValues;
+    print = () => {
+        let string = '{ ';
+        for (const value in this.values) {
+            for (const key in this.values[value]) {
+                string += `${key}: ${this.values[value][key]}, `;
+            }
+        }
+        string = `${string.trim()} }`;
+        return string;
+    }
+}
+class HashTable {
+    constructor(size) {
+        this.values = {};
+        this.size = size;
+        this.numberOfValues = 0;
+    }
+    add = (key, value) => {
+        let hash = this.calculateHash(key);
+        if (!this.values.hasOwnProperty(hash)) {
+            this.values[hash] = {};
+        } 
+        if (!this.values[hash].hasOwnProperty(key)) {
+            this.numberOfValues++;
+        }
+        this.values[hash][key] = value;
+    }
+    remove = (key) => {
+        let hash = this.calculateHash(key);
+        if (
+            this.values.hasOwnProperty(hash) && 
+            this.values[hash].hasOwnProperty(key)
+        ) {
+            delete this.values[hash][key];
+            this.numberOfValues--;
+        }
+    }
+    calculateHash = (key) => {
+        if (!key) return 17 % this.size;
+        return key.toString().length % this.size;
+    }
+    search = (key) => {
+        const hash = this.calculateHash(key);
+        if (
+            this.values.hasOwnProperty[hash] && 
             this.values[hash].hasOwnProperty(key)
         ) return this.values[hash][key];
         return null;
@@ -454,7 +591,7 @@ ht.add("line_12", "And stood awhile in thought.")
 console.log("-------------------------")
 
 // Test storing beyond capacity
-for (let x = 0; x < ht.size; x++) console.log(`searching for ` + ht.search(`line_${x}`))
+for (let x = 0; x < ht.size; x++) console.log(`searching for line_${x}:  ${ht.search(`line_${x}`)}`)
 console.log(`keys = ${ht.keys()}`);
 console.log(`getValues = ${ht.getValues()}`);
 console.log(`print = ${ht.print()}`);
