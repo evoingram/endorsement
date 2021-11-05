@@ -25,17 +25,17 @@ Try it!
 
 // QUEUE
 // A queue is a data structure whose primary purpose is to store and
-    // return elements in First In First Out order. 
+// return elements in First In First Out order. 
 
 // time complexity:   Avg   | Worst
-    // Access:       O(n)   |   O(n)
-    // Search:       O(n)   |   O(n)
-    // Insertion:    O(1)   |   O(1)
-    // Deletion:     O(1)   |   O(1)
+// Access:       O(n)   |   O(n)
+// Search:       O(n)   |   O(n)
+// Insertion:    O(1)   |   O(1)
+// Deletion:     O(1)   |   O(1)
 
 // space complexity:  O(n)
 
-class Queue1 {
+class QueueLL {
     constructor() {
         this.size = 0;
         this.storage = new DoublyLinkedList();
@@ -54,238 +54,85 @@ class Queue1 {
     get len() { return this.size };
     get last() {
         if (this.size === 0) return null
-        else return this.storage[this.size-1];
+        else return this.storage[this.size - 1];
     };
     get isEmpty() { return this.size === 0 };
     static isQueue(testInstance) { return testInstance instanceof Queue };
 }
-class ListNode1 {
-    constructor(value, prev=null, next=null) {
-        this.value = value
-        this.prev = prev
-        this.next = next
+
+class Queue1 {
+    constructor() {
+        this.items = [];
     }
 
-    /*Wrap the given value in a ListNode and insert it
-    after this node. Note that this node could already
-    have a next node it is point to.*/
-    insertAfter = (value) => {
-        let currentNext = this.next
-        this.next = new ListNode(value, currentNext)
-        if (currentNext) currentNext.prev = this.next
+    enqueue = (element) => this.items.push(element);
+    dequeue = () => {
+        if (this.isEmpty()) return new Error("Stack Underflow");
+        return this.items.shift();
     }
-    /*Wrap the given value in a ListNode and insert it
-    before this node. Note that this node could already
-    have a previous node it is point to.*/
-    insertBefore(value) {
-        let currentPrev = this.prev
-        this.prev = new ListNode(value, currentPrev)
-        if (currentPrev) currentPrev.next = this.prev
+    front = () => {
+        if (this.isEmpty()) return "No elements in Queue";
+        return this.items[0];
     }
-    /*Rearranges this ListNode's previous and next pointers
-    accordingly, effectively deleting this ListNode.*/
-    delete = () => {
-        if (this.prev) this.prev.next = this.next
-        if (this.next) this.next.prev = this.prev
+    last = () => {
+        if (this.isEmpty()) return "No elements in Queue";
+        return this.items[this.items.length-1];
     }
-}
-class ListNode {
-    constructor(value, previous = null, next = null) {
-        this.value = value;
-        this.previous = previous;
-        this.next = next;
+    printQueue() {
+        var str = "";
+        for (var i = 0; i < this.items.length; i++)
+            str += `${this.items[i]} `;
+        return str;
     }
 
-    insertAfter = (value) => {
-        let currentNext = this.next;
-        this.next = new ListNode(value, currentNext)
-        if (currentNext) currentNext.previous = this.next;
-    }
-    insertBefore = (value) => {
-        let currentPrevious = this.previous;
-        this.previous = new ListNode(value, currentPrevious);
-        if (currentPrevious) currentPrevious.next = this.previous;
-    }
-    delete = () => {
-        if (this.previous) this.previous.next = this.next;
-        if (this.next) this.next.previous = this.previous;
-    }
+    isEmpty = () => this.items.length == 0;
+    get len() { return this.items.length };
+    static isQueue(testInstance) { return testInstance instanceof Queue };
 }
+
 class Queue {
     constructor() {
-        this.size = 0;
-        this.storage = new DoublyLinkedList();
+        this.items = [];
     }
-    enqueue = (value) => {
-        this.size++;
-        this.storage.addToTail(value);
-    }
+
+    enqueue = (element) => this.items.push(element);
     dequeue = () => {
-        if (this.size === 0) return new Error("Queue Underflow");
-        this.size--;
-        return this.storage.removeFromHead();
+        if (this.isEmpty()) return new Error("Stack Underflow");
+        return this.items.shift();
     }
-    get len() { return this.size }
-    get last() {
-        if (this.size === 0) return null;
-        return this.storage[this.storage.getLength-1];
+    front = () => {
+        if (this.isEmpty()) return new Error("Stack Underflow");
+        return this.items[0];
     }
-    get isEmpty() { return this.size === 0 }
-
-    static isQueue(testInstance) { return testInstance instanceof Queue }
-}
-// Our doubly-linked list class
-class DoublyLinkedList {
-    constructor(node=null) {
-        // holds references to the list's head and tail nodes
-        this.head = node
-        this.tail = node
-        this.length = node != null ? 1 : 0
+    last = () => {
+        if (this.isEmpty()) return new Error("Stack Underflow");
+        this.items[this.items.length-1];
     }
-
-
-    addToHead = (value) => {
-        // Wraps the given value in a ListNode
-        let dllNodeNew = new ListNode(value)
-        this.length += 1
-
-        // inserts it as the new head of the list
-        if (!this.head && !this.tail) {
-            // make it head and tail
-            this.head = dllNodeNew
-            this.tail = dllNodeNew
-        } else {
-        // handle the old head node's previous pointer accordingly
-            // assign head to new next variable
-            dllNodeNew.next = this.head
-            // make prev head new next var
-            this.head.prev = dllNodeNew
-            // make head new next var
-            this.head = dllNodeNew
+    printQueue = () => {
+        if (this.isEmpty()) return new Error("Stack Underflow");
+        let string = `{ `;
+        for (let x = 0; x < this.items.length; x++) {
+            string += `${x}: ${this.items[x]}, `
         }
-}
-    removeFromHead = () => {
-        let headValue = this.head.value
-        // Removes the List's current head node, 
-            // making the current head's next node the new head of the List
-        this.delete(this.head)
-        // Returns the value of the removed Node
-        return headValue
+        string = `${string.trim()} }`;
+        return string;
     }
-    addToTail = (value) => {
-        // Wraps the given value in a ListNode
-        let dllNodeNew = new ListNode(value)
-        this.length += 1
-        // inserts it as the new tail of the list
-        if (!this.head && !this.tail){
-            // make it head and tail
-            this.head = dllNodeNew
-            this.tail = dllNodeNew
-        } else {
-        // handle the old tail node's next pointer accordingly
-            // assign tail to new next variable
-            dllNodeNew.prev = this.tail
-            // make next tail new next var
-            this.tail.next = dllNodeNew
-            // make tail new next var
-            this.tail = dllNodeNew
-        }
-}
-    removeFromTail = () => {
-        currentTail = this.tail.value
-        // Removes the List's current tail node, 
-            // making the current tail's previous node the new tail of the List
-        this.delete(this.tail)
-
-        // Returns the value of the removed Node
-        return currentTail
-}
-    moveToFront = (node) => {
-        // if already head do nothing 
-        if (node == this.head) { return null }            
-        nodeValue = node.value
-
-        // Removes the input node from its current spot in the List
-        // if node is tail
-        if (node == this.tail) this.removeFromTail()
-        else {
-            node.delete()
-            this.length -= 1
-        }
-
-        // inserts it as the new head node of the List
-        this.addToHead(nodeValue)
-}
-    moveToEnd = (node) => {
-        // if node is tail do nothing 
-        if (node == this.tail) return null            
-        nodeValue = node.value
-
-        // Removes the input node from its current spot in the List
-        // if node is head 
-        if (node == this.head) this.removeFromHead()
-        else {
-            node.delete()
-            this.length -= 1
-        }
-
-        // inserts it as the new tail node of the List
-        this.addToTail(nodeValue)
-}
-    delete = (node) => {
-        this.length -= 1
-
-        // if neither head nor tail do nothing 
-        if (!this.head && !this.tail) return null
-
-        // Removes a node from the list
-        // handles cases where the node was the head or the tail
-        // if node = tail set to nothing (empty)
-        if (this.head == this.tail) {
-            this.head = null
-            this.tail = null
-        } else if (this.head == node) {
-        // if head = node, set head to next node, then delete node
-            this.head = node.next
-            node.delete()
-        } else if (this.tail == node) {
-        // if tail = node, set tail to previous node, then delete node
-            this.tail = node.prev
-            node.delete()
-        } else node.delete()
-}
-    get getMax() {
-        // if no head  
-        if (!this.head) return null
-        
-        // save value of head and current head into a variable
-        headValue = this.head.value
-        currentHead = this.head
-
-        // Returns the highest value currently in the list
-        while (currentHead) {
-            // if current head value > saved head value 
-                // save current head value as head value
-            if (currentHead.value > headValue) headValue = currentHead.value
-            // save next head as current head and loop 
-            currentHead = currentHead.next
-        }
-        return headValue
-}
-        isPresent = (value) => this.indexOf(value) !== -1
-        get len() { return this.length }
+    isEmpty = () => this.items.length === 0;
+    len = () => this.items.length;
+    static isQueue(testInstance) { testInstance instanceof Queue }
 }
 
 const newQueue = new Queue()
-console.log(`Is it a Queue?  YES:  ${Queue.isQueue(newQueue)}`)
-console.log(`Is queue empty?  YES:  ${newQueue.isEmpty}`)
+console.log(`Is queue empty?  YES:  ${newQueue.isEmpty()}`)
 newQueue.enqueue('Hello world')
 newQueue.enqueue(42)
 newQueue.enqueue({ a: 6, b: 7 })
 console.log(`The length of queue is 3:  ${newQueue.len}`)
-console.log(`Is queue empty?  NO:  ${newQueue.isEmpty}`)
-console.log(`Give me the last one:  ${newQueue.last}`)
+console.log(`Is queue empty?  NO:  ${newQueue.isEmpty()}`)
+console.log(`Print Queue:  ${newQueue.printQueue()}`)
+console.log(`front = ${newQueue.front()}`);
+console.log(`back = ${newQueue.last()}`);
 console.log(`Pop the latest - Hello world:  ${newQueue.dequeue()}`)
 console.log(`Pop the latest - 42:  ${newQueue.dequeue()}`)
 console.log(`Pop the latest - { a: 6, b: 7 }:  ${newQueue.dequeue()}`)
-console.log(`Is queue empty?  YES:  ${newQueue.isEmpty} = ${JSON.stringify(newQueue)}`);
+console.log(`Is queue empty?  YES:  ${newQueue.isEmpty()}`);

@@ -261,7 +261,6 @@ class DoublyLinkedList2 {
     console.log(string.trim());
   }
 }
-
 class Node3 {
   constructor(nodeData) {
     this.data = nodeData;
@@ -386,14 +385,14 @@ class DoublyLinkedList {
 }
 */
 
-class Node {
+class Node4 {
   constructor(nodeData) {
     this.data = nodeData;
     this.previous = null;
     this.next = null;
   }
 }
-class DoublyLinkedList {
+class DoublyLinkedList4 {
   constructor() {
     this.size = 0;
     this.head = null;
@@ -487,46 +486,303 @@ class DoublyLinkedList {
     return string.trim();
   }
 }
+class Node5 {
+  constructor(nodeData) {
+    this.data = nodeData;
+    this.previous = null;
+    this.next = null;
+  }
 
+}
+class DoublyLinkedList5 {
+  constructor() {
+    this.size = 0;
+    this.head = null;
+    this.tail = null;
+  }
+  addToHead = (valueToAdd) => {
+    let nodeNew = new Node(valueToAdd);
+    this.size++;
+    if (!this.head && !this.tail) {
+      this.head = nodeNew;
+      this.tail = nodeNew;
+    } else {
+      nodeNew.next = this.head;
+      this.head.previous = nodeNew;
+      this.head = nodeNew;
+    }
+  }
+  addToTail = (valueToAdd) => {
+    let nodeNew = new Node(valueToAdd);
+    this.size++;
+    if (!this.head && !this.tail) {
+      this.head = nodeNew;
+      this.tail = nodeNew;
+    } else {
+      nodeNew.previous = this.tail;
+      this.tail.next = nodeNew;
+      this.tail = nodeNew;
+    }
+  }
+  insertAfter = (valueToAdd, toValueToAdd) => {
+    let current = this.head;
+    while (current) {
+      if (current.data === toValueToAdd) {
+        const newNode = new Node(valueToAdd);
+        if (current === this.tail) this.addToTail(newNode)
+        else {
+          current.next.previous = newNode;
+          newNode.previous = current;
+          newNode.next = current.next;
+          current.next = newNode;
+          this.size++;
+        }
+      }
+      current = current.next;
+    }
+  }
+  remove = (deletedNode) => {
+    let current = this.head;
+    while (current) {
+      if (current === deletedNode) {
+        if (current === this.head && current === this.tail) {
+          this.head = null;
+          this.tail = null;
+        } else if (current === this.head) {
+          this.head = this.head.next;
+          this.head.previous = null;
+        } else if (current === this.tail) {
+          this.tail = this.tail.previous;
+          this.tail.next = null;
+        } else {
+          current.previous.next = current.next;
+          current.next.previous = current.previous;
+        }
+        this.size--;
+      }
+      current = current.next;
+    }
+  }
+  traverse = (fn) => {
+    let current = this.head;
+    if (fn) fn(current)
+    current = current.next;
+  }
+  traverseReverse = (fn) => {
+    let current = this.tail;
+    if (fn) fn(current)
+    current = current.previous;
+  }
+  getLength = () => this.size;
+  printNodes = () => {
+    let string = '[';
+    let current = this.head;
+    while (current) {
+      string += `${current.data}, `
+      current = current.next;
+    }
+    string = `${string.trim()}]`;
+    return string;
+  }
+}
+class Node {
+  constructor(element) {
+    this.element = element;
+    this.next = null
+  }
+}
+class DoublyLinkedList {
+  constructor() {
+    this.head = null;
+    this.size = 0;
+  }
+
+  add = (element) => {
+    let node = new Node(element);
+    let current;
+    if (this.head == null) this.head = node;
+    else {
+      current = this.head;
+      while (current.next) current = current.next;
+      current.next = node;
+    }
+    this.size++;
+  }
+  insertAt = (element, index) => {
+    if (index < 0 || index > this.size)
+      return console.log("Please enter a valid index.");
+    else {
+      let node = new Node(element);
+      let current, previous;
+      current = this.head;
+      if (index == 0) {
+        node.next = this.head;
+        this.head = node;
+      } else {
+        current = this.head;
+        let counter = 0;
+        while (counter < index) {
+          counter++;
+          previous = current;
+          current = current.next;
+        }
+        node.next = current;
+        previous.next = node;
+      }
+      this.size++;
+    }
+  }
+  removeFrom = (index) => {
+    if (index < 0 || index >= this.size)
+      return console.log("Please Enter a valid index");
+    else {
+      let current, previous, counter = 0;
+      current = this.head;
+      previous = current;
+      if (index === 0) {
+        this.head = current.next;
+      } else {
+        while (counter < index) {
+          counter++;
+          previous = current;
+          current = current.next;
+        }
+        previous.next = current.next;
+      }
+      this.size--;
+      return current.element;
+    }
+  }
+  removeElement = (element) => {
+    let current = this.head;
+    let previous = null;
+    while (current != null) {
+      if (current.element === element) {
+        if (previous == null) {
+          this.head = current.next;
+        } else {
+          previous.next = current.next;
+        }
+        this.size--;
+        return current.element;
+      }
+      previous = current;
+      current = current.next;
+    }
+    return -1;
+  }
+  indexOf = (element) => {
+    let count = 0;
+    let current = this.head;
+    while (current != null) {
+      if (current.element === element) return count;
+      count++;
+      current = current.next;
+    }
+    return -1;
+  }
+  isEmpty = () => this.size === 0;
+  getLength = () => this.size;
+  printNodes = () => {
+    let current = this.head;
+    let string = ``;
+    while (current) {
+      string += `${current.element} `;
+      current = current.next;
+    }
+    return string;
+  }
+  traverse = (fn) => {
+    let current = this.head;
+    while (current) {
+      if (fn) fn(current);
+      current = current.next;
+    }
+  }
+  traverseReverse = (fn) => {
+    let count = Number(this.size - 1);
+    let loopCount = 0;
+    let current = this.head;
+    console.log(`this.size-1:  ${this.size - 1}   |   starting count:  ${count}`);
+    while (count > -1) {
+      loopCount++;
+      console.log(`loop count = ${loopCount}`);
+      console.log(`count:  ${count}`);
+      console.log(`current element:  ${current.element}  |  index:  ${this.indexOf(current.element)}`);
+      if (this.indexOf(current.element) === count) {
+        if (fn) fn(current);
+        count = Number(this.size - 1);
+        console.log(`setting current to current.previous`);
+      }
+      else count--;
+      current = current.next;
+      console.log(`count after:  ${count}`);
+    }
+  }
+  reverseList = (headRef) => {
+    if (headRef == null || headRef.next == null) return null;
+
+    let newHead = null;
+    let current = headRef, next;
+
+    while (current) {
+      next = current.next;
+      newHead = push(newHead, current);
+      current = next;
+    }
+    headRef = newHead;
+
+    return headRef;
+  }
+}
 const doublyLinkedList = new DoublyLinkedList();
 console.log(`printNodes = ${doublyLinkedList.printNodes()}`); // => ''
-doublyLinkedList.addToTail(1);
-doublyLinkedList.addToTail(2);
-doublyLinkedList.addToTail(3);
-doublyLinkedList.addToTail(4);
+doublyLinkedList.add(1);
+doublyLinkedList.add(2);
+doublyLinkedList.add(3);
+doublyLinkedList.add(4);
 console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => 1 2 3 4
 console.log('length is 4:', doublyLinkedList.getLength()); // => 4
-doublyLinkedList.remove(3); // remove value
+doublyLinkedList.removeElement(3); // remove value
 console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => 1 2 4
-doublyLinkedList.remove(9); // remove non existing value
+doublyLinkedList.removeElement(9); // remove non existing value
 console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => 1 2 4
-doublyLinkedList.remove(1); // remove head
+doublyLinkedList.removeElement(1); // remove head
 console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => 2 4
-doublyLinkedList.remove(4); // remove tail
+doublyLinkedList.removeElement(4); // remove tail
 console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => 2
-doublyLinkedList.remove(2); // remove tail, the list should be empty
-console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => ''
+doublyLinkedList.removeElement(2); // remove tail, the list should be empty
+console.log(`printNodes empty = ${doublyLinkedList.printNodes()}`);// => ''
 console.log('length is 0:', doublyLinkedList.getLength()); // => 0
-doublyLinkedList.addToTail(2);
-doublyLinkedList.addToHead(6);
+doublyLinkedList.add(2);
+console.log('added');
+doublyLinkedList.insertAt(6, 0);
+console.log('inserted 6 at 0');
 console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => 2 6
-doublyLinkedList.insertAfter(3, 2);
+doublyLinkedList.insertAt(3, 2);
+console.log(`printNodes; next traverse = ${doublyLinkedList.printNodes()}`);// => 
+doublyLinkedList.traverse(node => console.log(node.element)); // => 
 console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => 2 3 6
-doublyLinkedList.traverseReverse(node => console.log(node.data));
-doublyLinkedList.insertAfter(4, 3);
+doublyLinkedList.reverseList(2);
+doublyLinkedList.insertAt(4, 3);
+console.log(`printNodes just reversed & inserted = ${doublyLinkedList.printNodes()}`);// => 2 3 4 6
+doublyLinkedList.insertAt(5, 1); // insertAfter a non existing node
 console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => 2 3 4 6
-doublyLinkedList.insertAfter(5, 9); // insertAfter a non existing node
+doublyLinkedList.insertAt(5, 4);
+console.log('inserted 5 at 4');
 console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => 2 3 4 6
-doublyLinkedList.insertAfter(5, 4);
-doublyLinkedList.insertAfter(7, 6); // insertAfter the tail
-console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => 2 3 4 5 6 7
-doublyLinkedList.addToHead(8); // add node with normal method
+doublyLinkedList.insertAt(7, doublyLinkedList.size - 1); // insertAfter the tail
+console.log(`printNodes just inserted after tail = ${doublyLinkedList.printNodes()}`);// => 2 3 4 5 6 7
+doublyLinkedList.insertAt(8, 0); // add node with normal method
 console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => 2 3 4 5 6 7 8
-console.log('length is 7:', doublyLinkedList.getLength()); // => 7
-doublyLinkedList.traverse(node => node.data = node.data + 10);
-console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => 12 13 14 15 16 17 18
-doublyLinkedList.traverse(node => console.log(node.data)); // => 12 13 14 15 16 17 18
-console.log('length is 7:', doublyLinkedList.getLength()); // => 7
-doublyLinkedList.traverseReverse(node => console.log(node.data)); // => 18 17 16 15 14 13 12
+console.log('length is 8:', doublyLinkedList.getLength()); // => 7
+doublyLinkedList.traverse(node => node.element = node.element + 10);
+console.log(`printNodes; next traverse = ${doublyLinkedList.printNodes()}`);// => 12 13 14 15 16 17 18
+doublyLinkedList.traverse(node => console.log(node.element)); // => 12 13 14 15 16 17 18
+console.log('length is 8:', doublyLinkedList.getLength()); // => 7
+console.log(`printNodes = ${doublyLinkedList.printNodes()}`);// => 2
+console.log(`next traverseReverse:`);
+doublyLinkedList.traverseReverse(node => console.log(node.element)); // => 18 17 16 15 14 13 12
+console.log(`---------------`);
 console.log(`printNodes = ${doublyLinkedList.printNodes()}`); // => 12 13 14 15 16 17 18
-console.log('length is 7:', doublyLinkedList.getLength()); // => 7
+console.log('length is 8:', doublyLinkedList.getLength()); // => 7

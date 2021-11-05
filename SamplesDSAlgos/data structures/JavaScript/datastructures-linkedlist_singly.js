@@ -172,7 +172,7 @@ class LinkedList2 {
     }
 }
 
-class Node {
+class Node3 {
     constructor(value = null, next = null) {
         this.value = value;
         this.next = next;
@@ -182,7 +182,7 @@ class Node {
     get getNext() { return this.next }
 }
 
-class LinkedList {
+class LinkedList3 {
     constructor() {
         this.head = null;
         this.tail = null;
@@ -221,6 +221,59 @@ class LinkedList {
         }
     }
 }
+
+class Node {
+    constructor(value = null, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+    setNext = (valueNext) => this.next = valueNext;
+    get getNext() { return this.next }
+    get getValue() { return this.value }
+}
+
+class LinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+    }
+
+    addToHead = (valueToAdd) => {
+        let nodeToAdd = new Node(valueToAdd);
+        if (!this.head && !this.tail) {
+            this.head = nodeToAdd;
+            this.tail = nodeToAdd;
+        } else {
+            nodeToAdd.setNext(this.head);
+            this.head = nodeToAdd;
+        }
+    }
+    addToTail = (valueToAdd) => {
+        let nodeToAdd = new Node(valueToAdd);
+        if (!this.head && !this.tail) {
+            this.head = nodeToAdd;
+            this.tail = nodeToAdd;
+        } else {
+            this.tail.setNext(nodeToAdd);
+            this.tail = nodeToAdd;
+        }
+    }
+    removeFromHead = () => {
+        if (!this.head) return null;
+        let value = this.head.getValue;
+        this.head = this.head.getNext;
+        return value;
+    }
+    printNodes = () => {
+        let current = this.head;
+        while (current) {
+            console.log(`current value = ${current.value}`);
+            current = current.next;
+        }
+    }
+}
+
+
 
 const linkedList = new LinkedList();
 linkedList.addToHead(3);
