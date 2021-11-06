@@ -67,49 +67,19 @@ class Queue1 {
 
     enqueue = (element) => this.items.push(element);
     dequeue = () => {
-        if (this.isEmpty()) return new Error("Stack Underflow");
+        if (this.isEmpty()) return new Error("Queue Underflow");
         return this.items.shift();
     }
     front = () => {
-        if (this.isEmpty()) return "No elements in Queue";
+        if (this.isEmpty()) return new Error("Queue Underflow");
         return this.items[0];
     }
     last = () => {
-        if (this.isEmpty()) return "No elements in Queue";
-        return this.items[this.items.length-1];
-    }
-    printQueue() {
-        var str = "";
-        for (var i = 0; i < this.items.length; i++)
-            str += `${this.items[i]} `;
-        return str;
-    }
-
-    isEmpty = () => this.items.length == 0;
-    get len() { return this.items.length };
-    static isQueue(testInstance) { return testInstance instanceof Queue };
-}
-
-class Queue {
-    constructor() {
-        this.items = [];
-    }
-
-    enqueue = (element) => this.items.push(element);
-    dequeue = () => {
-        if (this.isEmpty()) return new Error("Stack Underflow");
-        return this.items.shift();
-    }
-    front = () => {
-        if (this.isEmpty()) return new Error("Stack Underflow");
-        return this.items[0];
-    }
-    last = () => {
-        if (this.isEmpty()) return new Error("Stack Underflow");
+        if (this.isEmpty()) return new Error("Queue Underflow");
         this.items[this.items.length-1];
     }
     printQueue = () => {
-        if (this.isEmpty()) return new Error("Stack Underflow");
+        if (this.isEmpty()) return new Error("Queue Underflow");
         let string = `{ `;
         for (let x = 0; x < this.items.length; x++) {
             string += `${x}: ${this.items[x]}, `
@@ -122,6 +92,37 @@ class Queue {
     static isQueue(testInstance) { testInstance instanceof Queue }
 }
 
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+
+    enqueue = (valueToAdd) => this.items.push(valueToAdd);
+    dequeue = () => {
+        if (this.isEmpty()) return new Error("Queue Underflow");
+        return this.items.shift();
+    }
+    front = () => {
+        if (this.isEmpty()) return new Error("Queue Underflow");
+        return this.items[0];
+    }
+    back = () => {
+        if (this.isEmpty()) return new Error("Queue Underflow");
+        return this.items[this.items.length-1];
+    }
+    printQueue = () => {
+        let string = `{ }`;
+        for (let x = 0; x < this.items.length; x++) {
+            string += `${x}:  ${this.items[x]}, `;
+        }
+        string = `${string.trim()} }`;
+        return string;
+    }
+    isEmpty = () => this.items.length === 0;
+    len = () => this.items.length;
+    static isQueue(testInstance) { return testInstance instanceof Queue }
+}
+
 const newQueue = new Queue()
 console.log(`Is queue empty?  YES:  ${newQueue.isEmpty()}`)
 newQueue.enqueue('Hello world')
@@ -131,7 +132,7 @@ console.log(`The length of queue is 3:  ${newQueue.len}`)
 console.log(`Is queue empty?  NO:  ${newQueue.isEmpty()}`)
 console.log(`Print Queue:  ${newQueue.printQueue()}`)
 console.log(`front = ${newQueue.front()}`);
-console.log(`back = ${newQueue.last()}`);
+console.log(`back = ${newQueue.back()}`);
 console.log(`Pop the latest - Hello world:  ${newQueue.dequeue()}`)
 console.log(`Pop the latest - 42:  ${newQueue.dequeue()}`)
 console.log(`Pop the latest - { a: 6, b: 7 }:  ${newQueue.dequeue()}`)

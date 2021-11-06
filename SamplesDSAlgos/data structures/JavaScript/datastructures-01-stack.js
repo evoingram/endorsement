@@ -35,61 +35,6 @@ class Stack1 {
         this.storage = [];
     }
 
-    push = (newValue) => {
-        this.size++;
-        this.storage.push(newValue);
-    }
-    
-    pop = () => {
-        if (this.size === 0) return null;
-        else {
-            this.size--;
-            return this.storage.pop();
-        }
-    }
-
-    len = () => this.size;
-
-    isEmpty = () => this.size === 0;
-
-    last = () => this.storage[this.size-1];
-
-    static isStack(testInstance) { return testInstance instanceof Stack }
-}
-class Stack2 {
-    constructor() {
-        this.size = 0;
-        this.storage = [];
-    }
-    push = (newValue) => {
-        this.size++;
-        this.storage.push(newValue);
-    }
-
-    pop = () => {
-        if (this.size === 0) return null;
-        this.size--;
-        return this.storage.pop();
-    }
-
-    len = () => this.size;
-
-    isEmpty = () => this.size === 0;
-
-    last = () => {
-        if (this.size === 0) return null;
-        return this.storage[this.size-1]
-    }
-
-    static isStack(testInstance) { return testInstance instanceof Stack }
-}
-
-class Stack {
-    constructor() {
-        this.size = 0;
-        this.storage = [];
-    }
-
     push = (valueToAdd) => {
         this.size++;
         this.storage.push(valueToAdd);
@@ -110,6 +55,33 @@ class Stack {
 
     static isStack(testInstance) { return testInstance instanceof Stack }
 }
+
+class Stack {
+    constructor() {
+        this.size = 0;
+        this.storage = [];
+    }
+    push = (valueToAdd) => {
+        this.size++;
+        this.storage.push(valueToAdd);
+    };
+    pop = () => {
+        if (this.size === 0) return new Error("Stack Underflow");
+        this.size--;
+        return this.storage.pop();
+    };
+    len = () => this.size;
+    isEmpty = () => this.size === 0;
+    get last() {
+        if (this.size === 0) return null;
+        return this.storage[this.size-1];
+    }
+
+    static isStack(testInstance) { return testInstance instanceof Stack };
+}
+
+
+
 const newStack = new Stack()
 console.log(`Is it a Stack?  TRUE:  ${Stack.isStack(newStack)}`)
 console.log(`Is stack empty?  TRUE:  ${newStack.isEmpty()}`)
