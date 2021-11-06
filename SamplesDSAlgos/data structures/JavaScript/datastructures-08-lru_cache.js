@@ -116,6 +116,16 @@ class DoublyLinkedList {
         }
         return -1;
     }
+    find = (value) => {
+        let current = this.head;
+        if (current === null) return null;
+        if (current.element == value) return current;
+        while (this.tail !== current) {
+            current = current.next;
+            if (current.value == value) return current;
+        };
+        return null;
+    }
     getLength = () => this.size;
     getLast = () => {
         let current = this.head;
@@ -153,100 +163,95 @@ class DoublyLinkedList {
             count--;
         }
     }
+    delete = () => {
+        if (this.previous) {
+            this.previous.next = this.next;
+            this.size -= 1;
+        }
+        if (this.next) {
+            this.next.previous = this.previous;
+            this.size -= 1;
+        }
+    }
+    moveToFront = (node) => {
+        if (node == this.head) return;
+        let nodeValue = node.element;
+        if (node == this.tail) this.pop();
+        else node.delete();
+        this.unshift(nodeValue);
+    }
 }
-
 class LRUCache1 {
-    constructor(limit = 10) {
-        // Our LRUCache class keeps track of:
-
-        // the max number of nodes it can hold
+    constructor(limit) {
         this.max = limit;
-        // a doubly-linked list that holds the key-value entries in the correct order
-        this.nodeList = new DoublyLinkedList()
-        // a storage dict that provides fast access to every node stored in the cache
         this.storage = {};
+        this.nodeList = new DoublyLinkedList();
     }
     get = (key) => {
-        if (!key in this.storage) return null
-        let listValue = this.storage[key]
-        if (listValue != null) {
-            let lrucNode = this.nodeList.find(key)
-            this.nodeList.moveToFront(lrucNode)
-            return listValue
-        }
-
-        // needs to move the key-value pair to the end of the order such that 
-        // the pair is considered most-recently used
-        if (key in this.keys) {
-            // Retrieves the value associated with the given key
-            index = this.keys.index(key)
-            this.keys.pop(index)
-            this.keys.push(key)
-            // Returns the value associated with the key
-            return this.storage[key]
-        }
-        // Returns null if the key-value pair doesn't exist in the cache.
-        else return null
+        if (!key in this.storage) return null;
+        let listValue = this.storage[key];
+        let lrucNode = this.nodeList.find(key);
+        this.nodeList.moveToFront(lrucNode);
+        return listValue;
     }
     set = (key, value) => {
-        // Adds the given key-value pair to the cache. 
-        // The newly- added pair should be considered the most-recently used entry in the cache.
-        if (!key in this.storage) {
-            this.storage[key] = value;
-            this.node_list.add_to_head(key);
-        }
-        // Additionally, in the case that the key already exists in the cache, we simply want to overwrite the old value associated with the key with the newly-specified value.
-        else {
-            this.storage[key] = value;
-            lruc_node = this.node_list.find(key)
-            this.node_list.move_to_front(lruc_node)
-        }
-        // If the cache is already at max capacity before this entry is added, then the oldest entry in the cache needs to be removed to make room.
-        if (this.node_list.length > this.max) {
-            delete this.storage[this.node_list.tail.value]
-            this.node_list.remove_from_tail()
+        this.storage[key] = value;
+        let lrucNode = this.nodeList.find(key);
+        this.nodeList.moveToFront(lrucNode);
+        if (this.nodeList.length > this.max) {
+            delete this.storage[this.nodeList.tail.element];
+            this.nodeList.pop();
         }
     }
 }
-
+class LRUCache2 {
+    constructor(limit = 10) {
+        this.max = limit;
+        this.storage = {};
+        this.list = new DoublyLinkedList();
+    }
+    get = (key) => {
+        if (!key in this.storage === null) return null;
+        let listValue = this.storage[key];
+        let lrucNode = this.list.find(key);
+        this.list.moveToFront(lrucNode);
+        return listValue;
+    }
+    set = (key, value) => {
+        this.storage[key] = value;
+        let lrucNode = this.list.find(key);
+        this.list.moveToFront(lrucNode);
+        if (this.list.length > this.max) {
+            delete this.storage[this.list.tail.element];
+            this.list.pop();
+        }
+    }
+}
 class LRUCache {
     constructor(limit = 10) {
         this.max = limit;
-        this.nodeList = new DoublyLinkedList(); // holds the key-value entries in the correct order
         this.storage = {};
+        this.list = new DoublyLinkedList();
     }
     get = (key) => {
-        if (!key in this.storage) return null
-        let listValue = this.storage[key]
-        if (listValue != null) {
-            let lrucNode = this.nodeList.find(key)
-            this.nodeList.moveToFront(lrucNode)
-            return listValue
-        }
-        if (key in this.keys) {
-            index = this.keys.index(key)
-            this.keys.pop(index)
-            this.keys.push(key)
-            return this.storage[key]
-        }
-        else return null
+        if (!key in this.storage === null) return null;
+        let listValue = this.storage[key];
+        let lrucNode = this.list.find(key);
+        this.list.moveToFront(lrucNode);
+        return listValue;
     }
     set = (key, value) => {
-        if (!key in this.storage) {
-            this.storage[key] = value;
-            this.node_list.addToHead(key);
+        this.storage[key] = value;
+        let lrucNode = this.list.find(key);
+        this.list.moveToFront(lrucNode);
+        if (this.list.length > this.max) {
+            delete this.storage[this.list.tail.element];
+            this.list.pop();
         }
-        else {
-            this.storage[key] = value;
-            lruc_node = this.node_list.find(key)
-            this.node_list.move_to_front(lruc_node)
-        }
-        if (this.node_list.length > this.max) {
-            delete this.storage[this.node_list.tail.value]
-            this.node_list.remove_from_tail()
-        }
+
     }
 }
+
 
 /*
 class LRUCache {
@@ -259,10 +264,13 @@ let lruc = new LRUCache();
 lruc.set(1, "Erica");
 lruc.set(2, "Adam");
 lruc.set(3, "Muffin Man");
-console.log(`${lruc.get(1)}`);
-console.log(`${lruc.get(2)}`);
-console.log(`${lruc.get(3)}`);
+console.log(`Erica = ${lruc.get(1)}`);
+console.log(`Adam = ${lruc.get(2)}`);
+console.log(`Muffin Man = ${lruc.get(3)}`);
 lruc.set(4, "Huburbs");
-console.log(`${lruc.get(4)}`);
-console.log(`${lruc.get(3)}`);
+console.log(`Huburbs = ${lruc.get(4)}`);
+lruc.set(3, "Hubbymon");
+console.log(`Hubbymon = ${lruc.get(3)}`);
+console.log(`${JSON.stringify(lruc.storage)}`);
+console.log(`undefined = ${lruc.get(5)}`);
 // console.log(`${}`);

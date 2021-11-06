@@ -17,7 +17,7 @@
     // O(Maximum key value – Minimum key value), linear
 // space complexity:  O(k)
 
-const countingSort = (
+let countingSort2 = (
     originalArray,
     minValue = Math.min(...originalArray),
     maxValue = Math.max(...originalArray)
@@ -39,6 +39,42 @@ const countingSort = (
     }
     return sortedArray;
 };
+let countingSort1 = (
+    originalArray,
+    minValue = Math.min(...originalArray),
+    maxValue = Math.max(...originalArray)
+) => {
+    const count = {};
+    for (let x = minValue; x <= maxValue; x++) count[x] = 0;    
+    for (let x = 0; x < originalArray.length; x++) count[originalArray[x]] += 1;
+    const sortedArray = [];
+    for (let x = minValue; x <= maxValue; x++) {
+        while (count[x] > 0) {
+            sortedArray.push(x);
+            count[x]--;
+        }
+    }
+    return sortedArray;
+};
+
+countingSort = (
+    oArray,
+    minVal = Math.min(...oArray),
+    maxVal = Math.max(...oArray)
+) => {
+    const count = {};
+    for (let x = minVal; x <= maxVal; x++) count[x] = 0;
+    for (let x = 0; x < oArray.length; x++) count[oArray[x]] += 1;
+    const sArray = [];
+    for (let x = minVal; x <= maxVal; x++) {
+        while (count[x] > 0) {
+            sArray.push(x);
+            count[x]--;
+        }
+    }
+    return sArray;
+}
+
 
 x = [3, 6, 5, 7, 5, 9];
 console.log(`Original Array is ${x.toString()}`);
