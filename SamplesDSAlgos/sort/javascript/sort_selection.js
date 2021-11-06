@@ -8,7 +8,7 @@
 // time complexity:  Best O(n^2)   |   Avg O(n^2)   |   Worst O(n^2)
 // space complexity:  O(1)
 
-selectionSort = (originalArray) => {
+selectionSort1 = (originalArray) => {
     // get array length and array length - 1
     let arrayLength = originalArray.length;
     let nextToLast = arrayLength-1
@@ -51,7 +51,53 @@ selectionSort = (originalArray) => {
     // return sorted array
     return originalArray
 }
+
+selectionSort2 = (oArray) => {
+    let nextToLast = oArray.length-1
+    let curIndex, smallestIndex, nextIndex, curItemX, curItemY, smallestItem;
+    for (let x = 0; x < nextToLast; x++) {
+        curIndex = x;
+        smallestIndex = curIndex;
+        nextIndex = x + 1;
+        for (let y = nextIndex; y < oArray.length; y++) {
+            curItemY = oArray[y];
+            smallestItem = oArray[smallestIndex];
+            if (curItemY < smallestItem) smallestIndex = y;
+        };
+        if (smallestIndex != x) {
+            smallestItem = oArray[smallestIndex];
+            curItemX = oArray[x];
+            oArray[smallestIndex] = curItemX;
+            oArray[x] = smallestItem;
+        }
+    }
+    return oArray;
+}
+
+selectionSort = (oArray) => {
+    let nextToLast = oArray.length - 1;
+    let curIndex, smallestIndex, nextIndex, curItemX, curItemY, smallestItem;
+    for (let x = 0; x < nextToLast; x++) {
+        curIndex = x;
+        smallestIndex = curIndex;
+        nextIndex = x + 1;
+        for (let y = nextIndex; y < oArray.length; y++) {
+            curItemY = oArray[y];
+            smallestItem = oArray[smallestIndex];
+            if (curItemY < smallestItem) smallestIndex = y;
+        };
+        if (smallestIndex !== x) {
+            smallestItem = oArray[smallestIndex];
+            curItemX = oArray[x];
+            oArray[smallestIndex] = curItemX;
+            oArray[x] = smallestItem;
+        }
+    }
+    return oArray;
+}
+
+
 var inputArr = [2, 7, 9, 1, 8, 0, 6, 5, 3, 4];
-console.log(`Here is the input array:  ${inputArr}`);
+console.log(`Here is the input array:   ${inputArr}`);
 selectionSort(inputArr);
 console.log(`Here is the sorted array:  ${inputArr}`);

@@ -35,54 +35,53 @@ class Stack1 {
         this.storage = [];
     }
 
-    push = (newValue) => {
+    push = (valueToAdd) => {
         this.size++;
-        this.storage.push(newValue);
+        this.storage.push(valueToAdd);
     }
-    
     pop = () => {
-        if (this.size === 0) return null;
+        if (this.size === 0) return new Error("Stack Underflow");
         else {
             this.size--;
             return this.storage.pop();
         }
     }
-
     len = () => this.size;
-
-    isEmpty = () => this.size === 0;
-
-    last = () => this.storage[this.size-1];
+    isEmpty = () => { return this.size === 0 }
+    get last() {
+        if (this.size === 0) return null;
+        return this.storage[this.size-1];
+    }
 
     static isStack(testInstance) { return testInstance instanceof Stack }
 }
+
 class Stack {
     constructor() {
         this.size = 0;
         this.storage = [];
     }
-    push = (newValue) => {
+    push = (valueToAdd) => {
         this.size++;
-        this.storage.push(newValue);
-    }
-
+        this.storage.push(valueToAdd);
+    };
     pop = () => {
-        if (this.size === 0) return null;
+        if (this.size === 0) return new Error("Stack Underflow");
         this.size--;
         return this.storage.pop();
-    }
-
+    };
     len = () => this.size;
-
     isEmpty = () => this.size === 0;
-
-    last = () => {
+    get last() {
         if (this.size === 0) return null;
-        return this.storage[this.size-1]
+        return this.storage[this.size-1];
     }
 
-    static isStack(testInstance) { return testInstance instanceof Stack }
+    static isStack(testInstance) { return testInstance instanceof Stack };
 }
+
+
+
 const newStack = new Stack()
 console.log(`Is it a Stack?  TRUE:  ${Stack.isStack(newStack)}`)
 console.log(`Is stack empty?  TRUE:  ${newStack.isEmpty()}`)
@@ -91,7 +90,7 @@ newStack.push(42)
 newStack.push({ a: 6, b: 7 })
 console.log(`The length of stack is 3:  ${newStack.len()}`)
 console.log(`Is stack empty?  FALSE:  ${newStack.isEmpty()}`)
-console.log(`Give me the last one:  ${newStack.last()}`)
+console.log(`Give me the last one:  ${newStack.last}`)
 console.log(`Pop the latest - { a: 6, b: 7 }:  ${newStack.pop()}`)
 console.log(`Pop the latest - 42:  ${newStack.pop()}`)
 console.log(`Pop the latest - Hello World:  ${newStack.pop()}`)

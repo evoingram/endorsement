@@ -16,16 +16,14 @@
 // time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n^2)
 // space complexity:  O(log(n))
 
-var items = [5, 3, 7, 6, 2, 9];
-quickSort = (originalArray) => {
+
+quickSort1 = (originalArray) => {
     if (originalArray.length < 2) return originalArray;
     const floorParam = Math.random() * originalArray.length;
     const originalArrayFloor = Math.floor(floorParam);
     const pivot = originalArray[originalArrayFloor];
 
-    let left = [];
-    let right = [];
-    let equal = [];
+    let left = []; right = []; equal = [];
 
     for (let currentValue of originalArray) {
         if (currentValue < pivot) left.push(currentValue);
@@ -39,6 +37,44 @@ quickSort = (originalArray) => {
     ];
 }
 
-// first call to quick sort
-var sortedArray = quickSort(items);
-console.log(`sortedArray = ${sortedArray}`); //prints [2,3,5,6,7,9]
+quickSort2 = (oArray) => {
+    if (oArray.length < 2) return oArray;
+    const floorParam = Math.random() * oArray.length;
+    let oArrayFloor = Math.floor(floorParam);
+    const pivot = oArray[oArrayFloor];
+    let left = [], right = [], equal = [];
+
+    for (let curVal of oArray) {
+        if (curVal < pivot) left.push(curVal)
+        else if (curVal > pivot) right.push(curVal)
+        else equal.push(curVal)
+    }
+    return [
+        ...quickSort(left),
+        equal,
+        ...quickSort(right)
+    ]
+}
+
+quickSort = (oArray) => {
+    if (oArray.length < 2) return oArray;
+    const floorParam = Math.random() * oArray.length;
+    let oArrayFloor = Math.floor(floorParam);
+    const pivot = oArray[oArrayFloor];
+    let left = [], right = [], equal = [];
+    for (let curVal of oArray) {
+        if (curVal < pivot) left.push(curVal)
+        else if (curVal > pivot) right.push(curVal)
+        else equal.push(curVal);
+    }
+    return [
+        ...quickSort(left),
+        equal,
+        ...quickSort(right)
+    ]
+}
+
+let items = [5, 3, 7, 6, 2, 9];
+console.log(`Original Array is ${items}`);
+let sortedArray = quickSort(items);
+console.log(`sorted array =    ${sortedArray}`); //prints [2,3,5,6,7,9]

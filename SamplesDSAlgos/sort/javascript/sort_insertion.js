@@ -9,7 +9,7 @@
 // time complexity:  Best O(n)   |   Avg O(n^2)   |   Worst O(n^2)
 // space complexity:  O(1)
 
-insertionSort = (originalArray) => {
+insertionSort1 = (originalArray) => {
     // get array length
     let arrayLength = originalArray.length;
     let currentPosition, currentItem;
@@ -37,6 +37,20 @@ insertionSort = (originalArray) => {
     return originalArray
 }
 
+insertionSort = (oArray) => {
+    let cPosition, cItem;
+    for (let index = 1; index < oArray.length; index++) {
+        cItem = oArray[index];
+        cPosition = index;
+        while (cPosition > 0 && oArray[cPosition - 1] > cItem) { 
+            oArray[cPosition] = oArray[cPosition - 1];
+            cPosition = cPosition - 1;
+        }
+        oArray[cPosition] = cItem;
+    }
+    return oArray;
+}
 array = [4, 22, 41, 40, 27, 30, 36, 16, 42, 37, 14, 39, 3, 6, 34, 9, 21, 2, 29, 47]
-insertionSort(array)
-console.log(`sorted array:  ${array}`)
+console.log(`original array:  ${array}`);
+insertionSort(array);
+console.log(`sorted array:  ${array}`) ;

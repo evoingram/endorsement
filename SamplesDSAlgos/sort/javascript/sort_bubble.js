@@ -11,7 +11,7 @@
 // time complexity:  Best O(n)   |   Avg O(n^2)   |   Worst O(n^2)
 // space complexity:  O(1)
 
-bubbleSort = (arr) => {
+bubbleSort1 = (arr) => {
     // get number of items in array
     let arrLength = arr.count;
     // get index of next to last item
@@ -40,6 +40,44 @@ bubbleSort = (arr) => {
     }
     // return sorted array
     return arr
+}
+
+bubbleSort2 = (arrayToSort) => {
+    let nextToLast = arrayToSort.length - 2;
+    let swapped, yValue, nextYValue;
+    for (let x = 0; x < nextToLast; x ++) {
+        swapped = false;
+        for (let y = 0; y < nextToLast; y ++) {
+            if (arrayToSort[y] > arrayToSort[y+1]) {
+                yValue = arrayToSort[y];
+                nextYValue = arrayToSort[y+1];
+                arrayToSort[y] = nextYValue;
+                arrayToSort[y+1] = yValue;
+                swapped = true;
+            }
+        }
+        if (swapped == false) break;
+    }
+    return arrayToSort;
+}
+
+bubbleSort = (arrayToSort) => {
+    let nextToLast = arrayToSort.length - 2;
+    let swapped, yValue, nextYValue;
+    for (let x = 0; x < nextToLast; x++) {
+        swapped = false;
+        for (let y = 0; y < nextToLast; y++) {
+            if (arrayToSort[y] > arrayToSort[y+1]) {
+                yValue = arrayToSort[y];
+                nextYValue = arrayToSort[y+1];
+                arrayToSort[y] = nextYValue;
+                arrayToSort[y+1] = yValue;
+                swapped = true;
+            }
+        }
+        if (swapped === false) break;
+    }
+    return arrayToSort;
 }
 
 let testArray = bubbleSort([0,2,4,6,100,8,7,9,3,5,1]);
