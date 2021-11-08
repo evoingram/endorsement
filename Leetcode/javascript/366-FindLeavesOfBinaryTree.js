@@ -1,5 +1,4 @@
 /*
-
 Given the root of a binary tree, collect a tree's nodes as if you were doing this:
     Collect all the leaf nodes.
     Remove all the leaf nodes.
@@ -21,3 +20,22 @@ Constraints:
     -100 <= Node.val <= 100
 
 */
+
+let findLeaves = (root) => {
+    let leaves = [], leavesList = [];
+    while (root !== null) {
+        if (isLeaf(root, leaves)) root = null;
+        leavesList.push(leaves);
+        leaves = [];
+    }
+    isLeaf = (root, leaves) => {
+        if (root.left === null && root.right === null) {
+            leaves.push(root.val);
+            return true;
+        }
+        if (root.left) if (isLeaf(root.left, leaves)) root.left = null;
+        if (root.right) if (isLeaf(root.right, leaves)) root.right = null;
+        return false;
+    }
+    return leavesList;
+};
