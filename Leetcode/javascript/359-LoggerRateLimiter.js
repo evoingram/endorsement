@@ -33,7 +33,32 @@ Constraints:
     1 <= message.length <= 30
     At most 104 calls will be made to shouldPrintMessage.
 */
+
 class Logger {
+    constructor() {
+        this.messageBucket = {};
+    }
+    shouldPrintMessage = (timestamp, message) => {
+        if (this.messageBucket.hasOwnProperty(message)) {
+            let latestTimestamp = this.messageBucket[message];
+            if (latestTimestamp - timestamp >= 10 || timestamp - latestTimestamp >= 10) {
+                this.messageBucket[message] = timestamp;
+                console.log(`YES:  Message does exist as property to bucket`);
+                return true;
+            }
+            else {
+                console.log(`message not qualified to put into bucket.`);
+                return false;
+            }
+        }
+        else {
+            console.log(`YES:  Message does exist as property to bucket`);
+            this.messageBucket[message] = timestamp;
+            return true;
+        }
+    }
+}
+class Logger1 {
     constructor(currentTimestamp) {
         // hashset { phrase: timestamp, phrase2: timestamp}
         this.messageBucket = {};
@@ -61,25 +86,6 @@ class Logger {
             console.log(`YES:  Message does exist as property to bucket`);
             this.messageBucket[message] = timestamp;
             return true;
-        }
-    }
-
-    shouldPrintMessage1 = (timestamp, message) => {
-        console.log(`timestamp == ${timestamp} | this.currentTimestamp == ${this.currentTimestamp}`);
-        if (this.currentTimestamp == undefined || this.currentTimestamp == null) {
-            this.currentTimestamp = timestamp;
-            this.nextTimestamp = timestamp + 10;
-            console.log(`this.nextTimestamp == ${this.nextTimestamp}`);
-            return true;
-        }
-        else {
-            if (timestamp < this.nextTimestamp) return false;
-            else {
-                this.currentTimestamp = timestamp;
-                this.nextTimestamp = timestamp + 10;
-                console.log(`this.nextTimestamp == ${this.nextTimestamp}`);
-                return true;
-            }
         }
     }
 }
