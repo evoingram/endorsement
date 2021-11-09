@@ -1,3 +1,5 @@
+// https://initjs.org/bucket-sort-in-javascript-dc040b8f0058 for bucketSort portion
+
 /*
 How do we sort the numbers efficiently?
 
@@ -168,7 +170,7 @@ bucketSort3 = (originalArray, bucketSize) => {
         return originalArray;
 }
 
-insertionSort = (bucket) => {
+insertionSort4 = (bucket) => {
     let currX, currItem, prevX;
     for (let x = 1; x < bucket.length; x++) {
         currItem = bucket[x];
@@ -184,13 +186,13 @@ insertionSort = (bucket) => {
     return bucket;
 }
 
-bucketSort = (oArray, bSize) => {
+bucketSort4 = (oArray, bSize) => {
     if (oArray.length === 0) return oArray;
     let minVal = oArray[0];
     let maxVal = oArray[0];
     bSize = bSize || oArray.length || 5;
     oArray.forEach(currVal => {
-        if (currVal < minVal) minVal = currVal;
+        if (currVal < minVal) minVal = currVal
         else if (currVal > maxVal) maxVal = currVal;
     })
     let bCount = Math.floor((maxVal-minVal) / bSize) + 1;
@@ -210,8 +212,47 @@ bucketSort = (oArray, bSize) => {
     return oArray;
 }
 
+insertionSort = (bucket) => {
+    let curX, curItem, prevX;
+    for (let x = 1; x < bucket.length; x++) {
+        curItem = bucket[x];
+        prevX = x - 1;
+        while (prevX >= 0 && bucket[prevX] > curItem) {
+            curX = prevX + 1;
+            bucket[curX] = bucket[prevX];
+            prevX -= 1;
+            curX = prevX + 1;
+        }
+        bucket[curX] = curItem;
+    }
+}
+bucketSort = (oArray, bSize) => {
+    if (oArray.length === 0) return oArray;
+    let minVal = oArray[0];
+    let maxVal = oArray[0];
+    bSize = bSize || oArray.length || 5;
+    oArray.forEach(curVal => {
+        if (curVal < minVal) minVal = curVal
+        else if (curVal > maxVal) maxVal = curVal;
+    })
+    let bCount = Math.floor((maxVal - minVal) / bSize) + 1;
+    let bHolder = new Array(bCount);
+    for(let x = 0; x < bHolder.length; x++) bHolder[x] = [];
+    let curMinDif, floorIndex;
+    oArray.forEach(curVal => {
+        curMinDif = curVal - minVal;
+        floorIndex = Math.floor(curMinDif / bSize);
+        bHolder[floorIndex].push(curVal);
+    })
+    oArray.length = 0;
+    bHolder.forEach(bucket => {
+        insertionSort(bucket);
+        bucket.forEach(element => oArray.push(element));
+    })
+    return oArray;
+}
+
 x = [0.897, 0.565, 0.656, 0.1234, 0.665, 0.3434]
 console.log(`Original Array is ${x.toString()}`)
 console.log(`Sorted Array is ${bucketSort(x).toString()}`)
 
-// https://initjs.org/bucket-sort-in-javascript-dc040b8f0058 for bucketSort portion

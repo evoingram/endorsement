@@ -74,12 +74,11 @@ selectionSort2 = (oArray) => {
     return oArray;
 }
 
-selectionSort = (oArray) => {
-    let nextToLast = oArray.length - 1;
-    let curIndex, smallestIndex, nextIndex, curItemX, curItemY, smallestItem;
-    for (let x = 0; x < nextToLast; x++) {
-        curIndex = x;
-        smallestIndex = curIndex;
+selectionSort3 = (oArray) => {
+    let cIndex, smallestIndex, nextIndex, xcItem, curItemY, smallestItem;
+    for (let x = 0; x < oArray.length - 1; x++) {
+        cIndex = x;
+        smallestIndex = cIndex;
         nextIndex = x + 1;
         for (let y = nextIndex; y < oArray.length; y++) {
             curItemY = oArray[y];
@@ -88,14 +87,34 @@ selectionSort = (oArray) => {
         };
         if (smallestIndex !== x) {
             smallestItem = oArray[smallestIndex];
-            curItemX = oArray[x];
-            oArray[smallestIndex] = curItemX;
+            xcItem = oArray[x];
+            oArray[smallestIndex] = xcItem;
             oArray[x] = smallestItem;
         }
     }
     return oArray;
 }
 
+selectionSort = (toSort) => {
+    let cIndex, smallestIndex, nextIndex, xcItem, ycItem, smallestItem;
+    for (let x = 0; x < toSort.length - 1; x++) {
+        cIndex = x; 
+        smallestIndex = cIndex;
+        nextIndex = x + 1;
+        for (let y = nextIndex; y < toSort.length; y++) {
+            ycItem = toSort[y];
+            smallestItem = toSort[smallestIndex];
+            if (ycItem < smallestItem) smallestIndex = y;
+        };
+        if (smallestIndex !== x) {
+            smallestItem = toSort[smallestIndex];
+            xcItem = toSort[x];
+            toSort[smallestIndex] = xcItem;
+            toSort[x] = smallestItem;
+        }
+    }
+    return toSort;
+}
 
 var inputArr = [2, 7, 9, 1, 8, 0, 6, 5, 3, 4];
 console.log(`Here is the input array:   ${inputArr}`);

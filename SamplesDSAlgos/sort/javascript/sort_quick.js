@@ -56,13 +56,49 @@ quickSort2 = (oArray) => {
     ]
 }
 
-quickSort = (oArray) => {
+quickSort3 = (oArray) => {
     if (oArray.length < 2) return oArray;
     const floorParam = Math.random() * oArray.length;
     let oArrayFloor = Math.floor(floorParam);
     const pivot = oArray[oArrayFloor];
     let left = [], right = [], equal = [];
     for (let curVal of oArray) {
+        if (curVal < pivot) left.push(curVal)
+        else if (curVal > pivot) right.push(curVal)
+        else equal.push(curVal);
+    }
+    return [
+        ...quickSort(left),
+        equal,
+        ...quickSort(right)
+    ]
+}
+
+quickSort4 = (oArr) => {
+    if (oArr.length < 2) return oArr;
+    const floorParam = Math.random() * oArr.length;
+    let oArrFl = Math.floor(floorParam);
+    const pivot = oArr[oArrFl];
+    let left = [], right = [], equal = [];
+    for (let curVal of oArr) {
+        if (curVal < pivot) left.push(curVal)
+        else if (curVal > pivot) right.push(curVal)
+        else equal.push(curVal);
+    }
+    return [
+        ...quickSort(left),
+        equal,
+        ...quickSort(right)
+    ];
+}
+
+quickSort = (oArr) => {
+    if (oArr.length < 2) return oArr;
+    const flParam = Math.random() * oArr.length;
+    let oArrFl = Math.floor(flParam);
+    const pivot = oArr[oArrFl];
+    let left = [], right = [], equal = [];
+    for (let curVal of oArr) {
         if (curVal < pivot) left.push(curVal)
         else if (curVal > pivot) right.push(curVal)
         else equal.push(curVal);

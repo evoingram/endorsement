@@ -177,24 +177,24 @@ class BinarySearchTree1 {
     }
 }
 
-class Node {
+class Node2 {
     constructor(data) {
         this.data = data;
         this.left = null;
         this.right = null;
     }
 }
-class BinarySearchTree {
+class BinarySearchTree2 {
     constructor() {
         this.root = null;
         this.traverseMethod = 'preorder';
     }
-    insert = (data) => { 
+    insert = (data) => {
         let nodeToAdd = new Node(data);
         if (this.root === null) this.root = nodeToAdd;
         else this.insertNode(this.root, nodeToAdd);
     }
-    insertNode = (node, newNode) => { 
+    insertNode = (node, newNode) => {
         if (newNode.data < node.data) {
             if (node.left === null) node.left = newNode
             else this.insertNode(node.left, newNode);
@@ -204,26 +204,26 @@ class BinarySearchTree {
             else this.insertNode(node.right, newNode);
         }
     }
-    contains = (valueToSearch) => { 
+    contains = (valueToSearch) => {
         let current = this.root;
         while (current) {
-            if (current.value = value) return true
-            else if (current.value > value) current = current.left;
+            if (current.value = valueToSearch) return true
+            else if (current.value > valueToSearch) current = current.left;
             else current = current.right;
         }
         return false;
     }
-    getMin = (node) => { 
+    getMin = (node) => {
         if (node.left === null) return node;
         return this.getMin(node.left);
     }
-    getMax = (node) => { 
+    getMax = (node) => {
         if (node.right === null) return node;
         return this.getMax(node.right);
     }
     getRoot = () => this.root;
     remove = (data) => this.root = this.removeNode(this.root, data);
-    removeNode = (node, key) => { 
+    removeNode = (node, key) => {
         if (node === null) return null
         else if (key < node.data) {
             node.left = this.removeNode(node.left, key);
@@ -253,14 +253,14 @@ class BinarySearchTree {
         }
     }
     setTraverseMethod = (traverseMethod) => {
-        if (traverseMethod !== 'preorder' || traverseMethod !== 'postorder' || traverseMethod !== 'inorder' ) {
+        if (traverseMethod !== 'preorder' || traverseMethod !== 'postorder' || traverseMethod !== 'inorder') {
             this.traverseMethod = traverseMethod;
         }
         else return new Error('Not a valid search method, must be "preorder", "inorder", or "postorder".');
     }
     getTraverseMethod = () => this.traverseMethod;
-    traverse = (value) => { 
-        switch(this.traverseMethod) {
+    traverse = (value) => {
+        switch (this.traverseMethod) {
             case 'preorder':
                 this.preOrderDFT(value);
                 break;
@@ -288,6 +288,120 @@ class BinarySearchTree {
             console.log(node.data);
             this.postOrderDFT(node.left);
             this.postOrderDFT(node.right);
+        }
+    }
+    postOrderDFT = (node) => {
+        if (node !== null) {
+            this.postOrderDFT(node.left);
+            this.postOrderDFT(node.right);
+            console.log(node.data);
+        }
+    }
+}
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+class BinarySearchTree {
+    constructor() {
+        this.root = null;
+        this.traverseMethod = 'preorder';
+    }
+    insert = (data) => {
+        let addThisNode = new Node(data);
+        if (this.root === null) this.root = addThisNode;
+        else this.insertNode(this.root, addThisNode);
+    }
+    insertNode = (node, newNode) => {
+        if (newNode.data < node.data) {
+            if (node.left === null) node.left = newNode
+            else this.insertNode(node.left, newNode);
+        } else {
+            if (node.right === null) node.right = newNode
+            else this.insertNode(node.right, newNode);
+        }
+    }
+    contains = (valueToSearch) => {
+        let current = this.root;
+        while (current) {
+            if (current.value === valueToSearch) return true;
+            else if (current.value > valueToSearch) current = current.left
+            else current = current.right;
+        }
+        return false;
+    }
+    getMin = (node) => {
+        if (node.left === null) return node;
+        return this.getMin(node.left);
+    }
+    getMax = (node) => {
+        if (node.right === null) return node;
+        return this.getMax(node.right);
+    }
+    getRoot = () => this.root;
+    remove = (data) => this.root = this.removeNode(this.root, data);
+    removeNode = (node, key) => {
+        if (node === null) return null
+        else if (key < node.data) {
+            node.left = this.removeNode(node.left, key);
+            return node;
+        }
+        else if (key > node.data) {
+            node.right = this.removeNode(node.right, key);
+            return node;
+        }
+        else {
+            if (node.left === null && node.right === null) {
+                node = null;
+                return node;
+            }
+            if (node.left === null) {
+                node = node.right;
+                return node;
+            }
+            else if (node.right === null) {
+                node = node.left;
+                return node;
+            }
+            let minNode = this.getMin(node.right);
+            node.data = minNode.data;
+            node.right = this.removeNode(node.right, minNode.data);
+            return node;
+        }
+    }
+    setTraverseMethod = (traverseMethod) => this.traverseMethod = traverseMethod;
+    getTraverseMethod = () => this.traverseMethod;
+    traverse = (value) => {
+        switch (this.traverseMethod) {
+            case 'preorder':
+                this.preOrderDFT(value);
+                break;
+            case 'inorder':
+                this.inOrderPrint(value);
+                break;
+            case 'postorder':
+                this.postOrderDFT(value);
+                break;
+            default:
+                console.error('invalid traverse method');
+
+        }
+    }
+    inOrderPrint = (node) => {
+        if (node !== null) {
+            this.inOrderPrint(node.left);
+            console.log(node.data);
+            this.inOrderPrint(node.right);
+        }
+    }
+    preOrderDFT = (node) => {
+        if (node !== null) {
+            console.log(node.data);
+            this.preOrderDFT(node.left);
+            this.preOrderDFT(node.right);
         }
     }
     postOrderDFT = (node) => {

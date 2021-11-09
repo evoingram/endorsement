@@ -37,7 +37,7 @@ insertionSort1 = (originalArray) => {
     return originalArray
 }
 
-insertionSort = (oArray) => {
+insertionSort2 = (oArray) => {
     let cPosition, cItem;
     for (let index = 1; index < oArray.length; index++) {
         cItem = oArray[index];
@@ -50,6 +50,35 @@ insertionSort = (oArray) => {
     }
     return oArray;
 }
+
+insertionSort3 = (oArr) => {
+    let cPosition, cItem;
+    for (let index = 1; index < oArr.length; index++) {
+        cItem = oArr[index];
+        cPosition = index;
+        while (cPosition > 0 && oArr[cPosition - 1] > cItem) {
+            oArr[cPosition] = oArr[cPosition - 1];
+            cPosition = cPosition - 1;
+        }
+        oArr[cPosition] = cItem;
+    }
+    return oArr;
+}
+
+insertionSort = (oArr) => {
+    let cPos, cItem;
+    for (let index = 1; index < oArr.length; index++) {
+        cItem = oArr[index];
+        cPos = index;
+        while(cPos > 0 && oArr[cPos - 1] > cItem) {
+            oArr[cPos] = oArr[cPos - 1];
+            cPos = cPos - 1;
+        }
+        oArr[cPos] = cItem;
+    }
+    return oArr;
+}
+
 array = [4, 22, 41, 40, 27, 30, 36, 16, 42, 37, 14, 39, 3, 6, 34, 9, 21, 2, 29, 47]
 console.log(`original array:  ${array}`);
 insertionSort(array);

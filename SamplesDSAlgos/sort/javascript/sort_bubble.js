@@ -61,7 +61,7 @@ bubbleSort2 = (arrayToSort) => {
     return arrayToSort;
 }
 
-bubbleSort = (arrayToSort) => {
+bubbleSort3 = (arrayToSort) => {
     let nextToLast = arrayToSort.length - 2;
     let swapped, yValue, nextYValue;
     for (let x = 0; x < nextToLast; x++) {
@@ -78,6 +78,42 @@ bubbleSort = (arrayToSort) => {
         if (swapped === false) break;
     }
     return arrayToSort;
+}
+bubbleSort4 = (toSort) => {
+    let nextToLast = toSort.length - 2;
+    let swapped, yVal, nextYVal;
+    for (let x = 0; x < nextToLast; x++) {
+        swapped = false;
+        for (let y = 0; y < nextToLast; y++) {
+            if (toSort[y] > toSort[y+1]) {
+                yVal = toSort[y];
+                nextYVal = toSort[y+1];
+                toSort[y] = nextYVal;
+                toSort[y+1] = yVal;
+                swapped = true;
+            }
+        }
+        if (swapped === false) break;
+    }
+    return toSort;
+}
+bubbleSort = (toSort) => {
+    let n2last = toSort.length - 2;
+    let swapped, yVal, nextYVal;
+    for (let x = 0; x < n2last; x++) {
+        swapped = false;
+        for (let y = 0; y < n2last; y++) {
+            if (toSort[y] > toSort[y+1]) {
+                yVal = toSort[y];
+                nextYVal = toSort[y+1];
+                toSort[y] = nextYVal;
+                toSort[y+1] = yVal;
+                swapped = true;
+            }
+        }
+        if (swapped === false) break;
+    }
+    return toSort;
 }
 
 let testArray = bubbleSort([0,2,4,6,100,8,7,9,3,5,1]);
