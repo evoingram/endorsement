@@ -20,7 +20,6 @@ How many Stacks would you need?
     Two
 Try it!
     doubly linked list?
-
 */
 
 // QUEUE
@@ -92,7 +91,7 @@ class Queue1 {
     static isQueue(testInstance) { testInstance instanceof Queue }
 }
 
-class Queue {
+class Queue2 {
     constructor() {
         this.items = [];
     }
@@ -111,7 +110,7 @@ class Queue {
         return this.items[this.items.length-1];
     }
     printQueue = () => {
-        let string = `{ }`;
+        let string = `{ `;
         for (let x = 0; x < this.items.length; x++) {
             string += `${x}:  ${this.items[x]}, `;
         }
@@ -121,6 +120,37 @@ class Queue {
     isEmpty = () => this.items.length === 0;
     len = () => this.items.length;
     static isQueue(testInstance) { return testInstance instanceof Queue }
+}
+
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+
+    enqueue = (valueToAdd) => this.items.push(valueToAdd);
+    dequeue = () => {
+        if (this.isEmpty()) return new Error("Queue Underflow");
+        return this.items.shift();
+    };
+    isEmpty = () => this.items.length === 0;
+    len = () => this.items.length;
+    front = () => {
+        if (this.isEmpty()) return new Error("Queue Underflow");
+        this.items[0];
+    }
+    back = () => {
+        if (this.isEmpty()) return new Error("Queue Underflow");
+        this.items[this.items.length - 1];
+    }
+    printQueue = () => {
+        let string = `{ `;
+        for (let x = 0; x < this.items.length; x++) {
+            string += `${x}:  ${this.items[x]}, `;
+        }
+        string = `${string.trim()} }`;
+        return string;
+    };
+    static isQueue(testInstance) { return testInstance instanceof Queue };
 }
 
 const newQueue = new Queue()
@@ -133,7 +163,7 @@ console.log(`Is queue empty?  NO:  ${newQueue.isEmpty()}`)
 console.log(`Print Queue:  ${newQueue.printQueue()}`)
 console.log(`front = ${newQueue.front()}`);
 console.log(`back = ${newQueue.back()}`);
-console.log(`Pop the latest - Hello world:  ${newQueue.dequeue()}`)
-console.log(`Pop the latest - 42:  ${newQueue.dequeue()}`)
-console.log(`Pop the latest - { a: 6, b: 7 }:  ${newQueue.dequeue()}`)
+console.log(`Pop the first - Hello world:  ${newQueue.dequeue()}`)
+console.log(`Pop the first - 42:  ${newQueue.dequeue()}`)
+console.log(`Pop the first - { a: 6, b: 7 }:  ${newQueue.dequeue()}`)
 console.log(`Is queue empty?  YES:  ${newQueue.isEmpty()}`);

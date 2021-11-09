@@ -72,7 +72,7 @@ class Trie1 {
         return true
     }
 }
-class Trie {
+class Trie2 {
     constructor() {
         this.child = {}
     }
@@ -83,6 +83,28 @@ class Trie {
         let currentChild = this.child;
         let letter;
         for (let x = 0; x < word.length; x++) {
+            if (!(letter in currentChild)) {
+                if (command === 'insert') currentChild[letter] = {};
+                else return false;
+            }
+            currentChild = currentChild[letter];
+        }
+        if (command === 'insert') currentChild['//'] = 1
+        else if (command === 'search') return '//' in currentChild
+        else if (command === 'startsWith') return true;
+    }
+}
+class Trie {
+    constructor() {
+        this.child = {};
+    }
+    selectProcess = (word, command) => {
+        if (command !== 'insert' && command !== 'search' && command !== 'startsWith') {
+            console.error(`Please select a proper command:  insert, search, or startsWith.`);
+            return new Error(`Invalid command`);
+        }
+        let currentChild = this.child, letter;
+        for (let x = 0; x < word.length; x++)  {
             if (!(letter in currentChild)) {
                 if (command === 'insert') currentChild[letter] = {};
                 else return false;

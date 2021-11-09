@@ -92,7 +92,7 @@ class LinkedList1 {
     }
 }
 
-class Node {
+class Node2 {
     constructor(value = null, next = null) {
         this.value = value;
         this.next = next;
@@ -102,7 +102,7 @@ class Node {
     get getValue() { return this.value }
 }
 
-class LinkedList {
+class LinkedList2 {
     constructor() {
         this.head = null;
         this.tail = null;
@@ -146,12 +146,64 @@ class LinkedList {
     }
 }
 
+class Node {
+    constructor(value = null, next = null) {
+        this.value = value;
+        this.next = next;
+    }
+    setNext = (valueNext) => this.next = valueNext;
+
+    get getNext() { return this.next }
+    get getValue() { return this.value }
+}
+
+class LinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+    }
+
+    addHead = (valueToAdd) => {
+        let convertedNode = new Node(valueToAdd);
+        if (!this.head && !this.tail) {
+            this.head = convertedNode;
+            this.tail = convertedNode;
+        } else {
+            convertedNode.setNext(this.head);
+            this.head = convertedNode;
+        }
+    };
+    addTail = (valueToAdd) => {
+        let convertedNode = new Node(valueToAdd);
+        if (!this.head && !this.tail) {
+            this.head = convertedNode;
+            this.tail = convertedNode;
+        } else {
+            this.tail.setNext(convertedNode);
+            this.tail = convertedNode;
+        }
+    };
+    removeHead = () => {
+        if (!this.head) return null;
+        let value = this.head.getValue;
+        this.head = this.head.getNext;
+        return value;
+    };
+    printNodes = () => {
+        let cHead = this.head;
+        while (cHead) {
+            console.log(`current head's value = ${cHead.value}`);
+            cHead = cHead.next;
+        }
+    };
+}
+
 const linkedList = new LinkedList();
-linkedList.addToHead(3);
-linkedList.addToHead(5);
-linkedList.addToHead(9);
-linkedList.addToHead(11);
-linkedList.addToHead(13);
-linkedList.addToTail(13);
-linkedList.removeFromHead();
+linkedList.addHead(3);
+linkedList.addHead(5);
+linkedList.addHead(9);
+linkedList.addHead(11);
+linkedList.addHead(13);
+linkedList.addTail(13);
+linkedList.removeHead();
 linkedList.printNodes();

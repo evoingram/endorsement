@@ -55,25 +55,25 @@ binary tree represented as array
 */
 
 // HEAP SORT:
-    // data structure optimized for retrieving either maximal or minimal values of a dataset
-    // all about maximizing priority
-    // binary tree data structure centered around the heap property
-        // always satisfies the heap property
-    // root element of heap is max value of all heap elements
-    // array representing the data structure
-    // has to be sorted in particular way to represent that tree priority queues often 
-        // represented as heaps
-        // often these terms used interchangeably
-    // priority queues are often heaps; easy to tell largest number
-        // none of other guaranteed, but once you dequeue, easy to find next item in queue
-    // combining of tree & array based approaches doesn't make heap a particularly intuitive
-        // data structure to understand & grasp
-    // maximally efficient at what they do
-    // very flexible since we can generalize idea of priority to many different contexts
-    // arrays well-suited to storing heaps not just because off constant-time access to any element,
-        // but also we can more easily swap elements in different positions throughout heap easily, 
-            // again due to array indexing
-    // can use queue 
+// data structure optimized for retrieving either maximal or minimal values of a dataset
+// all about maximizing priority
+// binary tree data structure centered around the heap property
+    // always satisfies the heap property
+// root element of heap is max value of all heap elements
+// array representing the data structure
+// has to be sorted in particular way to represent that tree priority queues often 
+    // represented as heaps
+    // often these terms used interchangeably
+// priority queues are often heaps; easy to tell largest number
+    // none of other guaranteed, but once you dequeue, easy to find next item in queue
+// combining of tree & array based approaches doesn't make heap a particularly intuitive
+    // data structure to understand & grasp
+// maximally efficient at what they do
+// very flexible since we can generalize idea of priority to many different contexts
+// arrays well-suited to storing heaps not just because off constant-time access to any element,
+    // but also we can more easily swap elements in different positions throughout heap easily, 
+        // again due to array indexing
+// can use queue 
 
 // to fetch a node's parent, floor((x-1)/2)
     // emulates a binary tree structure of a heap using an array, with added benefit of 
@@ -85,115 +85,120 @@ binary tree represented as array
 // time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
 // space complexity:  O(1)
 
-class MinHeap:
-    def __init__(self, max_size):
-        self.max_size = max_size
-        self.heap_size = 0
-        self.heap = [0]*(self.max_size + 1)
-        self.heap[0] = -1 * sys.maxsize
-        self.FRONT = 1
+class MinHeap {
+    constructor(maxSize) {
+        this.maxSize = maxSize;
+        this.heapSize = 0;
+        this.heap = [];
+        this.FRONT = 1;
+        this.heap[0] = -1 * maxSize;
+    }
+    // return position of parent for node currently at pos
+    parent = (pos) => Math.floor(pos / 2);
 
-    // function to return the position of parent for the node currently at pos
-    def parent(self, pos):
-        parent_floor = pos//2
-        return parent_floor
+    // return position of left child for node currently at pos
+    leftC = (pos) => 2 * pos;
 
-    // function to return the position of the left child for the node currently at pos
-    def left_child(self, pos):
-        left_child_position = 2 * pos
-        return left_child_position
+    // return position of right child for node currently at pos
+    rightC = (pos) => (2 * pos) + 1;
 
-    // function to return the position of the right child for the node currently at pos
-    def right_child(self, pos):
-        right_child_position = (2 * pos) + 1
-        return right_child_position
-
-    // function that returns true if the passed node is a leaf node
-    def is_leaf(self, node):
-        if node >= (self.heap_size//2) and node <= self.heap_size:
-            return True
-        return False
+    // returns true if the passed node is a leaf node
+    isLeaf = (node) => {
+        if (node >= (Math.floor(this.heapSize / 2)) && node <= this.heapSize) return true;
+        return false
+    }
 
     // function to swap two nodes of the heap
-    def swap(self, first_node, second_node):
-        self.heap[first_node], self.heap[second_node] = self.heap[second_node], self.heap[first_node]
+    swap = (firstN, secondN) => {
+        let temp = this.heap[firstN];
+        this.heap[firstN] = this.heap[secondN];
+        this.heap[secondN] = temp;
+    }
 
     // function to heapify the node at pos
-    def min_heapify(self, node):
+    minHeapify = (node) => {
 
         // if the node is a non-leaf node and greater than any of its child
-        if not self.is_leaf(node):
-            if (self.heap[node] > self.heap[self.left_child(node)] or
-                    self.heap[node] > self.heap[self.right_child(node)]):
-
+        if (!this.isLeaf(node)) {
+            if (this.heap[node] > this.heap[this.leftC(node)] ||
+                this.heap[node] > this.heap[this.rightC(node)]) {
                 // swap with and heapify left child
-                if self.heap[self.left_child(node)] < self.heap[self.right_child(node)]:
-                    self.swap(node, self.left_child(node))
-                    self.min_heapify(self.left_child(node))
-
+                if (this.heap[this.leftC(node)] < this.heap[this.rightC(node)]) {
+                    this.swap(node, this.leftC(node));
+                    this.minHeapify(this.leftC(node));
+                }
                 // swap with and heapify right child
-                else:
-                    self.swap(node, self.right_child(node))
-                    self.min_heapify(self.right_child(node))
-
+                else {
+                    this.swap(node, this.rightC(node));
+                    this.minHeapify(this.rightC(node));
+                }
+            }
+        }
+    }
     // function to insert a node into the heap
-    def insert(self, element):
+    insert = (element) => {
         // if heap size >= max size, return nothing
-        if self.heap_size >= self.max_size:
-            return
+        if (this.heapSize >= this.maxSize) return;
         // else add one to heap size
-        self.heap_size += 1
+        this.heapSize += 1;
         // set newly added heap element as current element
-        self.heap[self.heap_size] = element
+        this.heap[this.heapSize] = element;
         // set current item index as new heap size
-        current_index = self.heap_size
+        let cIndex = this.heapSize;
 
         // while value @ current index < current index's parent
-        while self.heap[current_index] < self.heap[self.parent(current_index)]:
+        while (this.heap[cIndex] < this.heap[this.parent(cIndex)]) {
             // swap value @ current index with value @ parent
-            self.swap(current_index, self.parent(current_index))
+            this.swap(cIndex, this.parent(cIndex))
             // set current index as parent
-            current_index = self.parent(current_index)
+            cIndex = this.parent(cIndex)
+        }
+    }
 
     // function to print the contents of the heap
-    def print_heap(self):
-        for i in range(1, (self.heap_size//2)+1):
-            parent_value = self.heap[i]
-            parent_text = " PARENT : " + str(parent_value)
-            left_child_value = self.heap[2 * i]
-            left_child_text = " LEFT CHILD : " + str(left_child_value)
-            right_child_value = self.heap[2 * i + 1]
-            right_child_text = " RIGHT CHILD : " + str(right_child_value)
-            print(parent_text + left_child_text + right_child_text)
+    printHeap = () => {
+        let floor = (Math.floor(this.heapSize / 2)) + 1;
+        let parentVal, parentText, leftCVal, leftCText, rightCVal, rightCText;
+        for (let x = 1; x < floor; x++) {
+            parentVal = this.heap[x];
+            parentText = ` PARENT : ${parentVal}`;
+            leftCVal = this.heap[2 * x];
+            leftCText = ` LEFT CHILD : ${leftCVal}`;
+            rightCVal = this.heap[2 * x + 1];
+            rightCText = ` RIGHT CHILD : ${rightCVal}`;
+            console.log(parentText + leftCText + rightCText);
+        }
+    }
 
     // function to build the min heap using the min_heapify function
-    def min_heap(self):
-        floor_heap_size = self.heap_size//2
-        for node in range(floor_heap_size, 0, -1):
-            self.min_heapify(node)
+    minHeap = () => {
+        let floorHeapSize = Math.floor(this.heapSize / 2)
+        for (let x = floorHeapSize; x > -1; x--) {
+            this.minHeapify(x);
+        }
+    }
 
     // function to remove and return the minimum element from the heap
-    def remove(self):
-        popped = self.heap[self.FRONT]
-        self.heap[self.FRONT] = self.heap[self.heap_size]
-        self.heap_size -= 1
-        self.min_heapify(self.FRONT)
-        return popped
+    remove = () => {
+        let popped = this.heap[this.FRONT];
+        this.heap[this.FRONT] = this.heap[this.heapSize];
+        this.heapSize -= 1;
+        this.minHeapify(this.FRONT);
+        return popped;
+    }
+}
 
-if __name__ == "__main__":
-
-    print('The min heap is ')
-    minHeap = MinHeap(15) 
-    minHeap.insert(5) 
-    minHeap.insert(3) 
-    minHeap.insert(17) 
-    minHeap.insert(10) 
-    minHeap.insert(84) 
-    minHeap.insert(19) 
-    minHeap.insert(6) 
-    minHeap.insert(22) 
-    minHeap.insert(9) 
-    minHeap.min_heap() 
-
-    minHeap.print_heap() 
-    print("The Min val is " + str(minHeap.remove())) 
+console.log(`The min heap is;`);
+minHeap = new MinHeap(15)
+minHeap.insert(5)
+minHeap.insert(3)
+minHeap.insert(17)
+minHeap.insert(10)
+minHeap.insert(84)
+minHeap.insert(19)
+minHeap.insert(6)
+minHeap.insert(22)
+minHeap.insert(9)
+minHeap.minHeap()
+minHeap.printHeap();
+console.log(`The min val is ${minHeap.remove()}.`);

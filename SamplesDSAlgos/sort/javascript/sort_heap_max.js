@@ -56,25 +56,25 @@ binary tree represented as array
 */
 
 // HEAP SORT:
-    // data structure optimized for retrieving either maximal or minimal values of a dataset
-    // all about maximizing priority
-    // binary tree data structure centered around the heap property
-        // always satisfies the heap property
-    // root element of heap is max value of all heap elements
-    // array representing the data structure
-    // has to be sorted in particular way to represent that tree priority queues often 
-        // represented as heaps
-        // often these terms used interchangeably
-    // priority queues are often heaps; easy to tell largest number
-        // none of other guaranteed, but once you dequeue, easy to find next item in queue
-    // combining of tree & array based approaches doesn't make heap a particularly intuitive
-        // data structure to understand & grasp
-    // maximally efficient at what they do
-    // very flexible since we can generalize idea of priority to many different contexts
-    // arrays well-suited to storing heaps not just because off constant-time access to any element,
-        // but also we can more easily swap elements in different positions throughout heap easily, 
-            // again due to array indexing
-    // can use queue 
+// data structure optimized for retrieving either maximal or minimal values of a dataset
+// all about maximizing priority
+// binary tree data structure centered around the heap property
+    // always satisfies the heap property
+// root element of heap is max value of all heap elements
+// array representing the data structure
+// has to be sorted in particular way to represent that tree priority queues often 
+    // represented as heaps
+    // often these terms used interchangeably
+// priority queues are often heaps; easy to tell largest number
+    // none of other guaranteed, but once you dequeue, easy to find next item in queue
+// combining of tree & array based approaches doesn't make heap a particularly intuitive
+    // data structure to understand & grasp
+// maximally efficient at what they do
+// very flexible since we can generalize idea of priority to many different contexts
+// arrays well-suited to storing heaps not just because off constant-time access to any element,
+    // but also we can more easily swap elements in different positions throughout heap easily, 
+        // again due to array indexing
+// can use queue 
 
 // to fetch a node's parent, floor((x-1)/2)
     // emulates a binary tree structure of a heap using an array, with added benefit of 
@@ -86,43 +86,51 @@ binary tree represented as array
 // time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
 // space complexity:  O(1)
 
-def heapify(arr, heap_size, root_index):
-    largest_item_index = root_index  // Initialize largest as root
-    left_child_index = 2 * root_index + 1     // left = 2*i + 1
-    right_child_index = 2 * root_index + 2     // right = 2*i + 2
+heapify = (arr, heapSize, rootIndex) => {
+    let largestItemIndex = rootIndex;  // Initialize largest as root
+    let leftCIndex = 2 * rootIndex + 1;     // left = 2*i + 1
+    let rightCIndex = 2 * rootIndex + 2;    // right = 2*i + 2
 
     // check if left child of root exists and is greater than root
-    root_value = arr[root_index]
-    if left_child_index < heap_size and root_value < arr[left_child_index]:
-        largest_item_index = left_child_index
-
+    let rootVal = arr[rootIndex];
+    if (leftCIndex < heapSize && rootVal < arr[leftCIndex]) {
+        largestItemIndex = leftCIndex
+    }
     // check if right child of root exists and is greater than root
-    if right_child_index < heap_size and arr[largest_item_index] < arr[right_child_index]:
-        largest_item_index = right_child_index
+    if (rightCIndex < heapSize && arr[largestItemIndex] < arr[rightCIndex]) {
+        largestItemIndex = rightCIndex;
+    }
 
     // if largest & root indexes don't match, swap them
-    if largest_item_index != root_index:
-        arr[root_index], arr[largest_item_index] = arr[largest_item_index], arr[root_index]
-
+    if (largestItemIndex != rootIndex) {
+        let temp = arr[rootIndex]; 
+        arr[rootIndex] = arr[largestItemIndex]; 
+        arr[largestItemIndex] = temp; 
         // heapify the root
-        heapify(arr, heap_size, largest_item_index)
+        heapify(arr, heapSize, largestItemIndex);
+    }
+
+}
 
 // main function to sort an array of given size
-def heap_sort(arr):
-    array_length = len(arr)
-
+heapSort = (arr) => {
     // build a max heap
-    for i in range(array_length//2 - 1, -1, -1):
-        heapify(arr, array_length, i)
-
+    for (let x = 0; x < arr.length; x++) { //2 - 1, -1, -1
+        heapify(arr, arr.length, x);
+    }
     // One by one extract elements
-    for i in range(array_length-1, 0, -1):
-        arr[i], arr[0] = arr[0], arr[i]  // swap
-        heapify(arr, i, 0)
+    for (let x = arr.length; x > -1; x--) {
+        let temp = arr[0]; // swap
+        arr[0] = arr[x]; 
+        arr[x] = temp; 
+        heapify(arr, x, 0);
+    }
+}
 
 arr = [12, 11, 13, 5, 6, 7]
-heap_sort(arr)
-n = len(arr)
-print("Sorted array is " + str(arr))
+console.log(`Original array is ${arr}.`);
+heapSort(arr);
+n = arr.length;
+console.log(`Sorted array is   ${arr}.`);
 
 // contributed by Mohit Kumra
