@@ -94,7 +94,7 @@ class Trie2 {
         else if (command === 'startsWith') return true;
     }
 }
-class Trie {
+class Trie3 {
     constructor() {
         this.child = {};
     }

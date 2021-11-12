@@ -250,8 +250,7 @@ class LRUCache3 {
         }
     }
 }
-
-class LRUCache {
+class LRUCache4 {
     constructor(limit = 10) {
         this.storage = {};
         this.max = limit;
@@ -275,6 +274,29 @@ class LRUCache {
     }
 }
 
+class LRUCache {
+    constructor(limit = 10) {
+        this.storage = {};
+        this.max = limit;
+        this.list = new DoublyLinkedList();
+    }
+    get = (key) => {
+        if (!key in this.storage === null) return null;
+        let listValue = this.storage[key];
+        let lrucNode = this.list.find(key);
+        this.list.moveToFront(lrucNode);
+        return listValue;
+    }
+    set = (key, value) => {
+        this.storage[key] = value;
+        let lnode = this.list.find(key);
+        this.list.moveToFront(lnode);
+        if (this.list.length > this.max) {
+            delete this.storage[this.list.tail.element];
+            this.list.pop();
+        }
+    }
+}
 
 /*
 class LRUCache {
