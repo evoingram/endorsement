@@ -19,13 +19,13 @@ What is the difference between using an array vs. a linked list when
 
 // STACK
 // A stack is a data structure whose primary purpose is to store and
-    // return elements in (Last In First Out)/FIFO order. 
+// return elements in (Last In First Out)/FIFO order. 
 
 // time complexity:   Avg   | Worst
-    // Access:       O(n)   |   O(n)
-    // Search:       O(n)   |   O(n)
-    // Insertion:    O(1)   |   O(1)
-    // Deletion:     O(1)   |   O(1)
+// Access:       O(n)   |   O(n)
+// Search:       O(n)   |   O(n)
+// Insertion:    O(1)   |   O(1)
+// Deletion:     O(1)   |   O(1)
 
 // space complexity:  O(n)
 
@@ -50,7 +50,7 @@ class Stack1 {
     isEmpty = () => { return this.size === 0 }
     get last() {
         if (this.size === 0) return null;
-        return this.storage[this.size-1];
+        return this.storage[this.size - 1];
     }
 
     static isStack(testInstance) { return testInstance instanceof Stack }
@@ -74,13 +74,13 @@ class Stack2 {
     isEmpty = () => this.size === 0;
     get last() {
         if (this.size === 0) return null;
-        return this.storage[this.size-1];
+        return this.storage[this.size - 1];
     }
 
     static isStack(testInstance) { return testInstance instanceof Stack };
 }
 
-class Stack {
+class Stack3 {
     constructor() {
         this.size = 0;
         this.storage = [];
@@ -103,6 +103,27 @@ class Stack {
     static isStack(testInstance) { return testInstance instanceof Stack }
 }
 
+class Stack {
+    constructor() {
+        this.size = 0;
+        this.storage = [];
+    }
+
+    push = (valueNew) => {
+        this.size++;
+        this.storage.push(valueNew);
+    }
+    pop = () => { 
+        if (this.size <= 0) return null;
+        this.size--;
+        return this.storage.pop();
+    }
+    isEmpty = () => this.size === 0;
+    len = () => this.size;
+    get last() { return this.storage[this.size - 1]};
+
+    static isStack(testInstance) { return testInstance instanceof Stack }
+}
 
 const newStack = new Stack()
 console.log(`Is it a Stack?  TRUE:  ${Stack.isStack(newStack)}`)

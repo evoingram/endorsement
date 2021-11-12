@@ -13,7 +13,7 @@ class Heap {
         // add value to end of array 
         this.storage.append(x)
         // bubble it up appropriately 
-        this._bubble_up(this.storage.length-1)
+        this.bubbleUp(this.storage.length-1)
     }
 
     // delete last node  
@@ -28,7 +28,7 @@ class Heap {
         this.storage.splice(this.storage.length-1, 1)
 
         // shift down as appropriate 
-        if (this.storage.length) this._sift_down(0)
+        if (this.storage.length) this.siftDown(0)
 
         // return original first node 
         return first
@@ -46,14 +46,14 @@ class Heap {
 
     // if current index greater than parent index, swap them; recursively run
 
-    _bubble_up = (currentIndex) => {
+    bubbleUp = (currentIndex) => {
         // get parent index
         // check if current index greater than parent index
             // if it is, swap them
             // recursively run this
     }
 
-    _sift_down = (index) => {
+    siftDown = (index) => {
         // assign to variables nodes converted to array/indexes:
         // (left 2x+1 | right 2x+2) minus one for index number 
         let ln = index * 2
@@ -119,4 +119,4 @@ class Heap {
 }
 
             
-for (const [index, value] of this.storage.entries()) this._bubble_up(index);
+for (const [index, value] of this.storage.entries()) this.bubbleUp(index);

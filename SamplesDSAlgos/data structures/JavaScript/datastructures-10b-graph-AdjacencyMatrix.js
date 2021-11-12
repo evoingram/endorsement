@@ -28,7 +28,7 @@ class Graph {
         } else {
             this.matrix[vertex1][vertex2] = 0;
             this.matrix[vertex2][vertex1] = 0;
-        } 
+        }
     }
     addVertex() {
         this.size++;
@@ -38,23 +38,23 @@ class Graph {
             this.matrix[this.size - 1][i] = 0;
         }
     }
-    removeVertex(vertex) {  
-        if (vertex < 0 || vertex > this.size - 1) { 
+    removeVertex(vertex) {
+        if (vertex < 0 || vertex > this.size - 1) {
             console.log('Invalid vertex');
-        } else { 
-            while ( vertex < this.size - 1) {  
-                for (let i = 0; i < this.size; i++) { 
-                    this.matrix[i][vertex] = graph[i][vertex + 1]; 
-                } 
-                for (let i = 0; i < this.size; i++) { 
-                    this.matrix[vertex][i] = this.matrix[vertex + 1][i]; 
-                } 
-                vertex++; 
-            } 
+        } else {
+            while (vertex < this.size - 1) {
+                for (let i = 0; i < this.size; i++) {
+                    this.matrix[i][vertex] = graph[i][vertex + 1];
+                }
+                for (let i = 0; i < this.size; i++) {
+                    this.matrix[vertex][i] = this.matrix[vertex + 1][i];
+                }
+                vertex++;
+            }
             this.matrix.pop();
             this.size--;
-        } 
-    } 
+        }
+    }
     printMatrix() {
         for (let i = 0; i < this.size; i++) {
             let row = '';
@@ -65,3 +65,25 @@ class Graph {
         }
     }
 }
+
+let g = new Graph();
+
+// add the vertices
+g.addVertex();
+g.addVertex();
+g.addVertex();
+g.addVertex();
+
+console.log(g);
+g.printMatrix();
+// create the edges
+g.addEdge(0, 1, 3);
+g.addEdge(4, 2, 2);
+g.addEdge(2, 3, 5);
+g.addEdge(3, 4, 6);
+console.log('------');
+
+// should log
+// { A: null, B: 'A', C: 'A', D: 'B' 
+// { A: 0, B: 3, C: 2, D: 5 }
+g.printMatrix();

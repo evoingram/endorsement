@@ -114,8 +114,7 @@ class HashTable1 {
         string = `${string.trim()} }`;
         return string;
     }
-}
-class HashTable2 {
+}class HashTable2 {
     constructor(size) {
         this.values = {};
         this.size = size;
@@ -181,9 +180,7 @@ class HashTable2 {
         }
         string = `${string.trim()} }`;
     }
-}
-
-class HashTable {
+}class HashTable3 {
     constructor(size) {
         this.values = {};
         this.size = size;
@@ -250,6 +247,21 @@ class HashTable {
         string = `${string.trim()} }`;
         return string;
     }
+}
+class HashTable {
+    constructor(size) {
+        this.numberOfValues = 0;
+        this.size = size;
+        this.values = {};
+    }
+    add = () => {}
+    remove = () => {}
+    calculateHash = () => {}
+    search = () => {}
+    getValues = () => {}
+    keys = () => {}
+    length = () => {}
+    print = () => {}
 }
 /*
 class HashTable {
