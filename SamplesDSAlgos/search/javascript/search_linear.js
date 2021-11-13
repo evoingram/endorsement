@@ -15,16 +15,6 @@
 */
 
 linearSearch1 = (arr, target) => {
-   for (let x = 0; x < arr.length; x++) if (arr[x] == target) return x;
-   return -1;
-}
-
-linearSearch2 = (arr, target) => {
-   for (let x = 0; x < arr.length; x++) if (arr[x] === target) return x;
-   return -1;
-}
-
-linearSearch3 = (arr, target) => {
    for (let x = 0; x < arr.length; x++) if (arr[x] === target) return x;
    return -1;
 }
