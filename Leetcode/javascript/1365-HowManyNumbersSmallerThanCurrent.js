@@ -29,6 +29,15 @@ Constraints:
     0 <= nums[i] <= 100
 */
 
-var smallerNumbersThanCurrent = function(nums) {
-    
+let smallerNumbersThanCurrent = (nums) => {
+    const sorted = Array.from(nums).sort((n1, n2) => n2 - n1);
+    const sortedMap = sorted.map((num, index) => [num, nums.length - index - 1]);
+    const map = new Map(sortedMap);
+    return nums.map(num => map.get(num));
 };
+
+
+console.log(smallerNumbersThanCurrent(nums = [8,1,2,2,3]));
+console.log(smallerNumbersThanCurrent(nums = [6,5,4,8]));
+console.log(smallerNumbersThanCurrent(nums = [7,7,7,7]));
+// console.log(smallerNumbersThanCurrent(nums = []));
