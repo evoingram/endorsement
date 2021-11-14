@@ -175,9 +175,7 @@ class BinarySearchTree1 {
             console.log(node.data)
         }
     }
-}
-
-class Node2 {
+} class Node2 {
     constructor(data) {
         this.data = data;
         this.left = null;
@@ -297,15 +295,14 @@ class BinarySearchTree2 {
             console.log(node.data);
         }
     }
-}
-class Node {
+} class Node3 {
     constructor(data) {
         this.data = data;
         this.left = null;
         this.right = null;
     }
 }
-class BinarySearchTree {
+class BinarySearchTree3 {
     constructor() {
         this.root = null;
         this.traverseMethod = 'preorder';
@@ -327,8 +324,8 @@ class BinarySearchTree {
     contains = (valueToSearch) => {
         let current = this.root;
         while (current) {
-            if (current.value === valueToSearch) return true;
-            else if (current.value > valueToSearch) current = current.left
+            if (current.data === valueToSearch) return true;
+            else if (current.data > valueToSearch) current = current.left
             else current = current.right;
         }
         return false;
@@ -413,6 +410,121 @@ class BinarySearchTree {
     }
 }
 
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+class BinarySearchTree {
+    constructor() {
+        this.root = null;
+        this.tMethod = 'preorder';
+    }
+    insert = (value) => { 
+        let addThisNode = new Node(value);
+        if (this.root === null) this.root = addThisNode;
+        else this.insertNode(this.root, addThisNode);
+    }
+    insertNode = (cNode, nNode) => { 
+        if (nNode.data < cNode.data) {
+            if(cNode.left === null) cNode.left = nNode
+            else this.insertNode(cNode.left, nNode);
+        }
+        else {
+            if (cNode.right === null) cNode.right = nNode
+            else this.insertNode(cNode.right, nNode);
+        }
+    }
+    contains = (valueToSearch) => { 
+        let current = this.root;
+        while (current) {
+            if (current.data === valueToSearch) return true
+            else if (current.data > valueToSearch) current = current.left
+            else current = current.right;
+        }
+        return false;
+    }
+    getMin = (node) => {
+        if (node.left === null) return node;
+        return this.getMin(node.left);
+    }
+    getMax = (node) => {
+        if (node.right === null) return node;
+        return this.getMax(node.right);
+    }
+    getRoot = () => this.root;
+    remove = (data) => this.root = this.removeNode(this.root, data);
+    removeNode = (node, key) => { 
+        if (node === null) return null
+        else if (key < node.data) {
+            node.left = this.removeNode(node.left, key);
+            return node;
+        }
+        else if (key > node.data) {
+            node.right = this.removeNode(node.right, key);
+            return node;
+        }
+        else {
+            if (node.left === null && node.right === null) {
+                node = null;
+                return node;
+            }
+            if (node.left === null) {
+                node = node.right;
+                return node;
+            }
+            else if (node.right === null) {
+                node = node.left;
+                return node;
+            }
+            let minNode = this.getMin(node.right);
+            node.data = minNode.data;
+            node.right = this.removeNode(node.right, minNode.data);
+            return node;
+        }
+    }
+    setTraverseMethod = (tMethod) => this.tMethod = tMethod;
+    getTraverseMethod = () => this.tMethod;
+    traverse = (value) => {
+        switch (this.tMethod) {
+            case 'preorder':
+                this.preOrderDFT(value);
+                break;
+            case 'inorder':
+                this.inOrderPrint(value);
+                break;
+            case 'postorder':
+                this.postOrderDFT(value);
+                break;
+            default:
+                return new Error(`Please select a valid traverse method:  preorder, inorder, or postorder.`);
+        }
+    }
+    inOrderPrint = (node) => {
+        if (node !== null) {
+            this.inOrderPrint(node.left);
+            console.log(node.data);
+            this.inOrderPrint(node.right);
+        }
+    }
+    preOrderDFT = (node) => {
+        if (node !== null) {
+            console.log(node.data);
+            this.preOrderDFT(node.left);
+            this.preOrderDFT(node.right);
+        }
+
+    }
+    postOrderDFT = (node) => {
+        if (node !== null) {
+            this.postOrderDFT(node.left);
+            this.postOrderDFT(node.right);
+            console.log(node.data);
+        }
+    }
+}
 /*
 class Node {
     constructor() {}
@@ -457,7 +569,7 @@ BST.insert(27);
 //    5   9  17
 
 let root = BST.getRoot();
-console.log("inorder traversal");
+console.log(`-----------inorder traversal-------------`);
 // prints 5 7 9 10 13 15 17 22 25 27
 BST.setTraverseMethod('inorder');
 BST.traverse(root);
@@ -472,7 +584,7 @@ BST.remove(5);
 //       \    /
 //        9  17
 root = BST.getRoot();
-console.log("inorder traversal");
+console.log(`-----------inorder traversal-------------`);
 // prints 7 9 10 13 15 17 22 25 27
 BST.setTraverseMethod('inorder');
 BST.traverse(root);
@@ -486,7 +598,7 @@ BST.remove(7);
 //            /
 //           17
 root = BST.getRoot();
-console.log("inorder traversal");
+console.log(`-----------inorder traversal-------------`);
 // prints 9 10 13 15 17 22 25 27
 BST.setTraverseMethod('inorder');
 BST.traverse(root);
@@ -499,46 +611,16 @@ BST.remove(15);
 //      9  13 22  27
 
 root = BST.getRoot();
-console.log("inorder traversal");
+console.log(`-----------inorder traversal-------------`);
 // prints 9 10 13 17 22 25 27
 BST.setTraverseMethod('inorder');
 BST.traverse(root);
-console.log("postorder traversal");
+console.log(`-----------postorder traversal-------------`);
 // prints 9 13 10 22 27 25 17
 BST.setTraverseMethod('postorder');
 BST.traverse(root);
 // prints 17 10 9 13 25 22 27
-console.log("preorder traversal");
+console.log(`-----------preorder traversal-------------`);
 BST.setTraverseMethod('preorder');
 BST.traverse(root);
 console.log("---------------");
-
-/*
-let newBST = new BinarySearchTree();
-newBST.insert(1);
-newBST.insert(2);
-newBST.insert(3);
-console.log(`-----------BST bft print 3-------------`);
-newBST.traverseMethod = 'bft';
-newBST.traverse(3);
-console.log(`-----------BST dft print 3-------------`);
-newBST.traverseMethod = 'dft';
-newBST.traverse(3);
-console.log(`----------BST inorder 3--------------`);
-newBST.traverseMethod = 'inorder';
-newBST.traverse(3);
-console.log(`----------newBST.contains(3)--------------`);
-console.log(`does BST contain 3?  ${newBST.contains(3)}`);
-console.log(`What's the current max? ${newBST.getMax()}`);
-newBST.insert(4);
-newBST.insert(5);
-console.log(`----------BST preorder 4--------------`);
-newBST.traverseMethod = 'preorder';
-newBST.traverse(4);
-console.log(`---------BST postorder 5---------------`);
-newBST.traverseMethod = 'postorder';
-newBST.traverse(5);
-console.log(`------------------------`);
-console.log(`What's the current max? ${newBST.getMax()}`);
-console.log(`------------------------`);
-*/

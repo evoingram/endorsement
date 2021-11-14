@@ -51,7 +51,6 @@ selectionSort1 = (originalArray) => {
     // return sorted array
     return originalArray
 }
-
 selectionSort2 = (oArray) => {
     let nextToLast = oArray.length-1
     let curIndex, smallestIndex, nextIndex, curItemX, curItemY, smallestItem;
@@ -73,7 +72,6 @@ selectionSort2 = (oArray) => {
     }
     return oArray;
 }
-
 selectionSort3 = (oArray) => {
     let cIndex, smallestIndex, nextIndex, xcItem, curItemY, smallestItem;
     for (let x = 0; x < oArray.length - 1; x++) {
@@ -94,8 +92,7 @@ selectionSort3 = (oArray) => {
     }
     return oArray;
 }
-
-selectionSort = (toSort) => {
+selectionSort4 = (toSort) => {
     let cIndex, smallestIndex, nextIndex, xcItem, ycItem, smallestItem;
     for (let x = 0; x < toSort.length - 1; x++) {
         cIndex = x; 
@@ -115,6 +112,29 @@ selectionSort = (toSort) => {
     }
     return toSort;
 }
+
+selectionSort = (oa) => {
+    let cindex, smallestindex, nextindex, xcitem, ycitem, smallestitem;
+    for (let x = 0; x < oa.length; x++) {
+        cindex = x;
+        smallestindex = cindex;
+        nextindex = x + 1;
+        for (let y = nextindex; y < oa.length; y++) {
+            ycitem = oa[y];
+            smallestitem = oa[smallestindex];
+            if (ycitem < smallestitem) smallestindex = y;
+        };
+        if (smallestindex !== x) {
+            smallestitem = oa[smallestindex];
+            xcitem = oa[x];
+            oa[smallestindex] = xcitem;
+            oa[x] = smallestitem;
+        }
+    }
+    return oa;
+}
+
+// selectionSort = (oa) => {}
 
 var inputArr = [2, 7, 9, 1, 8, 0, 6, 5, 3, 4];
 console.log(`Here is the input array:   ${inputArr}`);

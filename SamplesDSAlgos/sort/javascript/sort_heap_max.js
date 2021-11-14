@@ -1,58 +1,58 @@
 
-/*
-binary heap:    binary tree, similar to BSTs
-heap property:  states that, for any node in the heap, value of node = larger than values 
-    of its children if they exist
-heapify:        once heap constructed, removing item done in constant time because 
-    you need to find next largest node to move to root process
+/* HEAP SORT MAX
+    binary heap:    binary tree, similar to BSTs
+    heap property:  states that, for any node in the heap, value of node = larger than values 
+        of its children if they exist
+    heapify:        once heap constructed, removing item done in constant time because 
+        you need to find next largest node to move to root process
 
-heaps implemented using array
-    visualize heap as binary tree
-    start at top of tree
-    root node = 1st element of array
-    second-level 1st node = 2nd element
-    goes left to right, then down
+    heaps implemented using array
+        visualize heap as binary tree
+        start at top of tree
+        root node = 1st element of array
+        second-level 1st node = 2nd element
+        goes left to right, then down
 
-pseudocode:
-    1. Store reference to first heap element.
-    2. Set value of first heap element to value of last heap element.
-    3. Pop from heap's storage array to remove last heap element.
-    4. In a loop:
-        A. Have first new heap element check its children using given 
-            formulas.
-        B. If either of element's children are larger, swap heap value
-            of parent node with value of larger child's value via their
-            respective indices.
-    5. Continue this loop until element is in spot where neither of its 
-        children are larger than it or it's reached a spot where it has
-        no children.
+    pseudocode:
+        1. Store reference to first heap element.
+        2. Set value of first heap element to value of last heap element.
+        3. Pop from heap's storage array to remove last heap element.
+        4. In a loop:
+            A. Have first new heap element check its children using given 
+                formulas.
+            B. If either of element's children are larger, swap heap value
+                of parent node with value of larger child's value via their
+                respective indices.
+        5. Continue this loop until element is in spot where neither of its 
+            children are larger than it or it's reached a spot where it has
+            no children.
 
-how to access in O(1):
-    if we know element index up front
-    if we know key of value up front
-    root off tree always (entry point of tree)
+    how to access in O(1):
+        if we know element index up front
+        if we know key of value up front
+        root off tree always (entry point of tree)
 
-how heap sort works
-    construct internal priority queue
-    remove one item at a time and stick it at end
-    find next largest item in priority queue
+    how heap sort works
+        construct internal priority queue
+        remove one item at a time and stick it at end
+        find next largest item in priority queue
 
-heap sort process
-    make array max heap
-    loop over array
-        dequeue root node (gives you largest item)
-        swap with last item in array
-    after dequeueing each item, run heapify again to find next root node
-    on next loop, dequeue root node & swap with second to last item in array
-    run heapify again
-    once items run out, you now have sorted array
+    heap sort process
+        make array max heap
+        loop over array
+            dequeue root node (gives you largest item)
+            swap with last item in array
+        after dequeueing each item, run heapify again to find next root node
+        on next loop, dequeue root node & swap with second to last item in array
+        run heapify again
+        once items run out, you now have sorted array
 
-binary tree represented as array
-    for any index of an array x, its left child is stored @ 2x+1, right @ 2x+2
-    root node always 0
-    root node's left child always @ 1
-    root node's right child always @ 2
-    1's left @ 3, right @ 4
+    binary tree represented as array
+        for any index of an array x, its left child is stored @ 2x+1, right @ 2x+2
+        root node always 0
+        root node's left child always @ 1
+        root node's right child always @ 2
+        1's left @ 3, right @ 4
 */
 
 // HEAP SORT:
@@ -86,7 +86,7 @@ binary tree represented as array
 // time complexity:  Best O(n log(n))   |   Avg O(n log(n))   |   Worst O(n log(n))
 // space complexity:  O(1)
 
-heapify = (arr, heapSize, rootIndex) => {
+heapify1 = (arr, heapSize, rootIndex) => {
     let largestItemIndex = rootIndex;  // Initialize largest as root
     let leftCIndex = 2 * rootIndex + 1;     // left = 2*i + 1
     let rightCIndex = 2 * rootIndex + 2;    // right = 2*i + 2
@@ -109,11 +109,9 @@ heapify = (arr, heapSize, rootIndex) => {
         // heapify the root
         heapify(arr, heapSize, largestItemIndex);
     }
-
 }
-
 // main function to sort an array of given size
-heapSort = (arr) => {
+heapSort1 = (arr) => {
     // build a max heap
     for (let x = 0; x < arr.length; x++) { //2 - 1, -1, -1
         heapify(arr, arr.length, x);
@@ -126,7 +124,31 @@ heapSort = (arr) => {
         heapify(arr, x, 0);
     }
 }
+heapify = (oa, hsize, rindex) => {
+    let largestitemindex = rindex;
+    let leftCindex = 2 * rindex + 1;
+    let rightCindex = 2 * rindex + 2;
+    let rval = oa[rindex];
+    if (leftCindex < hsize && rval < oa[leftCindex]) largestitemindex = leftCindex;
+    if (rightCindex < hsize && rval < oa[rightCindex]) largestitemindex = rightCindex;
+    if (largestitemindex !== rindex) {
+        let temp = oa[rindex];
+        oa[rindex] = oa[largestitemindex];
+        oa[largestitemindex] = temp;
+        heapify(oa, hsize, largestitemindex);
+    }
+}
+heapSort = (oa) => {
+    for (let x = 0; x < oa.length; x++) heapify(oa, oa.length, x);
+    for (let x = oa.length; x > -1; x--) {
+        let temp = oa[0];
+        oa[0] = oa[x];
+        oa[x] = temp;
+        heapify(oa, x, 0);
+    }
+}
 
+// heapSort = (oa) => {} heapify = () => {}
 arr = [12, 11, 13, 5, 6, 7]
 console.log(`Original array is ${arr}.`);
 heapSort(arr);
