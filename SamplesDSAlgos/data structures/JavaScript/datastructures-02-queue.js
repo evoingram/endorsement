@@ -152,8 +152,7 @@ class Queue3 {
     };
     static isQueue(testInstance) { return testInstance instanceof Queue };
 }
-
-class Queue {
+class Queue4 {
     constructor() {
         this.items = [];
     }
@@ -182,6 +181,43 @@ class Queue {
         return string;
     };
 }
+class Queue5 {
+    constructor() {
+        this.items = [];
+    }
+    enqueue = (value) => this.items.push(value);
+    dequeue = () => {
+        if (this.items.length === 0) return new Error("Queue Underflow");
+        return this.items.shift();
+    };
+    isEmpty = () => this.items.length === 0;
+    get len() { return this.items.length };
+    printQueue = () => {
+        let string = `{ `;
+        for (let x = 0; x < this.items.length; x++) {
+            string += `${x}: ${this.items[x]}, `;
+        }
+        string = `${string.trim()} }`;
+        return string;
+    };
+    front = () => this.items[0];
+    back = () => this.items[this.items.length - 1];
+    static isQueue(testInstance) { return testInstance instanceof Queue };
+}
+
+/*
+class Queue {
+    constructor() {}
+    enqueue = () => {}
+    dequeue = () => {}
+    isEmpty = () => {}
+    get len() {}
+    printQueue = () => {}
+    front = () => {}
+    back = () => {}
+    static isQueue() {}
+}
+*/
 
 const newQueue = new Queue()
 console.log(`Is queue empty?  YES:  ${newQueue.isEmpty()}`)

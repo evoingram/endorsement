@@ -248,7 +248,7 @@ class HashTable1 {
         return string;
     }
 }
-class HashTable {
+class HashTable4 {
     constructor(size) {
         this.numberOfValues = 0;
         this.size = size;
@@ -315,6 +315,7 @@ class HashTable {
         string = `${string.trim()} }`;
     }
 }
+
 /*
 class HashTable {
     constructor() {}

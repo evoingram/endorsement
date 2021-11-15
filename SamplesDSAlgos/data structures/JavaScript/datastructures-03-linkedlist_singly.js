@@ -197,7 +197,7 @@ class LinkedList3 {
         }
     };
 }
-class Node {
+class Node4 {
     constructor(value = null, next = null) {
         this.value = value;
         this.next = next;
@@ -206,7 +206,7 @@ class Node {
     get getNext() { return this.next };
     get getValue() { return this.value };
 }
-class LinkedList {
+class LinkedList4 {
     constructor() {
         this.head = null;
         this.tail = null;
@@ -245,6 +245,73 @@ class LinkedList {
         }
     };
 }
+
+class Node {
+    constructor(value = null, next = null) {
+        this.next = next,
+        this.value = value
+    }
+    setNext = (value) => { this.next = value };
+    get getNext() { return this.next }
+    get getValue() { return this.value }
+}
+
+class LinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+    }
+    addHead = (value) => {
+        let node = new Node(value);
+        if (!this.head && !this.tail) {
+            this.head = node;
+            this.tail = node;
+        } else {
+            node.setNext(this.head);
+            this.head = node;
+        }
+    }
+    addTail = (value) => {
+        let node = new Node(value);
+        if (!this.head && !this.tail) {
+            this.head = node;
+            this.tail = node;
+        } else {
+            this.tail.setNext(node);
+            this.tail = node;
+        }
+    }
+    removeHead = () => {
+        if (!this.head) return null;
+        let value = this.head.getValue;
+        this.head = this.head.getNext;
+        return value;
+    }
+    printNodes = () => {
+        let current = this.head;
+        while (current) {
+            console.log(`current's value = ${current.value}`);
+            current = current.next;
+        }
+    }
+}
+
+/*
+class Node {
+    constructor() {}
+    setNext = () => {}
+    get getNext() {}
+    get getValue() {}
+}
+
+class LinkedList {
+    constructor() {}
+    addHead = () => {}
+    addTail = () => {}
+    removeHead = () => {}
+    printNodes = () => {}
+}
+*/
 
 const linkedList = new LinkedList();
 linkedList.addHead(3);

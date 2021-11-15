@@ -19,9 +19,14 @@ linearSearch1 = (arr, target) => {
    return -1;
 }
 
-linearSearch = (arr, target) => {
+linearSearch2 = (arr, target) => {
    for (let x = 0; x < arr.length; x++) if (arr[x] === target) return x;
    return -1;
+}
+
+linearSearch = (arr, target) => {
+   for (let x = 0; x < arr.length; x++) if (arr[x] === target) return x;
+   return false;
 }
 
 array = [4, 22, 41, 40, 27, 30, 36, 16, 42, 37, 14, 39, 3, 6, 34, 9, 21, 2, 29, 47]
