@@ -21,7 +21,7 @@
 
 // complete the helper function below to merge 2 sorted arrays 
 
-merge = (originalArrayA, originalArrayB) => {
+merge1 = (originalArrayA, originalArrayB) => {
     /*
     procedure merge( var originalArrayA as array, var originalArrayB as array )
         var mergedArray as array
@@ -60,7 +60,7 @@ merge = (originalArrayA, originalArrayB) => {
 }
 
 // implement the Merge Sort function below USING RECURSION
-mergeSort = (originalArray) => {
+mergeSort1 = (originalArray) => {
     /*
     procedure mergesort( var a as array )
         if ( n == 1 ) return a
@@ -83,7 +83,7 @@ mergeSort = (originalArray) => {
   }
 
 // implement an in-place merge sort algorithm
-mergeInPlace = (
+mergeInPlace1 = (
     originalArray, 
     startPoint=0, 
     midPoint=Math.floor(originalArray.length/2), 
@@ -140,7 +140,7 @@ mergeInPlace = (
     return originalArray
 }
 
-mergeSortInPlace = (originalArray, leftPoint, rightPoint) => {
+mergeSortInPlace1 = (originalArray, leftPoint, rightPoint) => {
     /*
     procedure mergesort( var a as array )
         if ( n == 1 ) return a
@@ -164,7 +164,7 @@ mergeSortInPlace = (originalArray, leftPoint, rightPoint) => {
 }
 
 // this function & next from https://www.geeksforgeeks.org/in-place-merge-sort/
-function mergeSIP(arr, start, mid, end)
+function mergeSIP1(arr, start, mid, end)
 {
     let start2 = mid + 1;
  
@@ -208,7 +208,7 @@ function mergeSIP(arr, start, mid, end)
  
 /* l is for left index and r is right index
 of the sub-array of arr to be sorted */
-function sortInPlace(arr, l, r)
+function sortInPlace1(arr, l, r)
 {
     if (l < r)
     {
@@ -225,6 +225,160 @@ function sortInPlace(arr, l, r)
     }
 }
 
+
+merge1 = (originalArrayA, originalArrayB) => {
+    let mergedArray = [];
+    while (originalArrayA.length && originalArrayB.length) {
+        if (originalArrayA[0] <= originalArrayB[0]) mergedArray.push(originalArrayA.shift())
+        else mergedArray.push(originalArrayB.shift());
+    }
+    while (originalArrayA.length) mergedArray.push(originalArrayA.shift());
+    while (originalArrayB.length) mergedArray.push(originalArrayB.shift());
+    return mergedArray
+}
+mergeSort1 = (originalArray) => {
+    const { length: arraySize } = originalArray;
+    if (arraySize < 2) return originalArray;
+    const midPoint = Math.floor(arraySize / 2);
+    const leftArray = originalArray.slice(0, midPoint);
+    const sortedLeftArray = mergeSort(leftArray);
+    const rightArray = originalArray.slice(midPoint, arraySize);
+    const sortedRightArray = mergeSort(rightArray);
+    return merge(sortedLeftArray, sortedRightArray);
+}
+mergeInPlace1 = (
+    originalArray,
+    startPoint = 0,
+    midPoint = Math.floor(originalArray.length / 2),
+    endPoint = originalArray.length - 1
+) => {
+    let midPlus1 = midPoint + 1;
+    if (originalArray[midPlus1] >= originalArray[midPoint]) return;
+    while (startPoint <= midPoint && endPoint >= midPlus1) {
+        if (originalArray[startPoint] <= originalArray[midPlus1]) startPoint += 1;
+        else {
+            currentUpperMidValue = originalArray[midPlus1];
+            currentUpperMidIndex = midPlus1;
+            while (startPoint != currentUpperMidIndex) {
+                originalArray[currentUpperMidIndex] = originalArray[currentUpperMidIndex - 1];
+                currentUpperMidIndex -= 1;
+            }
+            originalArray[startPoint] = currentUpperMidValue;
+            startPoint += 1;
+            midPoint += 1;
+            midPlus1 += 1;
+        }
+    }
+    return originalArray;
+}
+mergeSortInPlace1 = (originalArray, leftPoint, rightPoint) => {
+    if (rightPoint > leftPoint) {
+        let midPoint = leftPoint + Math.floor((rightPoint - leftPoint) / 2);
+        mergeSortInPlace(originalArray, leftPoint, midPoint);
+        mergeSortInPlace(originalArray, midPoint + 1, rightPoint);
+        mergeInPlace(originalArray, leftPoint, midPoint, rightPoint);
+    }
+    return originalArray;
+}
+mergeSIP1 = (arr, start, mid, end) => {
+    let start2 = mid + 1;
+    if (arr[mid] <= arr[start2]) return;
+
+    while (start <= mid && start2 <= end) {
+        if (arr[start] <= arr[start2]) start++;
+        else {
+            let value = arr[start2];
+            let index = start2;
+            while (index != start) {
+                arr[index] = arr[index - 1];
+                index--;
+            }
+            arr[start] = value;
+            start++;
+            mid++;
+            start2++;
+        }
+    }
+}
+sortInPlace1 = (arr, l, r) => {
+    if (l < r) {
+        let m = l + Math.floor((r - l) / 2);
+        sortInPlace(arr, l, m);
+        sortInPlace(arr, m + 1, r);
+        mergeSIP(arr, l, m, r);
+    }
+}
+
+merge = (oaa, oab) => {
+    let ma = [];
+    while (oaa.length && oab.length) {
+        if (oaa[0] <= oab[0]) ma.push(oaa.shift())
+        else ma.push(oab.shift());
+    };
+    while(oaa.length) ma.push(oaa.shift());
+    while (oab.length) ma.push(oab.shift());
+    return ma;
+}
+mergeSort = (oa) => {
+    const { length: asize } = oa;
+    if (asize < 2) return oa;
+    const mid = Math.floor(asize / 2);
+    const la = oa.slice(0, mid);
+    const sla = mergeSort(la);
+    const ra = oa.slice(mid, asize);
+    const sra = mergeSort(ra);
+    return merge(sla, sra);
+}
+mergeInPlace = (
+    oa,
+    start = 0,
+    mid = Math.floor(oa.length / 2),
+    end = oa.length - 1
+) => {
+    let midp1 = mid + 1;
+    if (oa[midp1] >= oa[mid]) return;
+    while(start <= mid && end >= midp1) {
+        if (oa[start] <= oa[midp1]) start++;
+        else {
+            let currentUpperMidValue = oa[midp1];
+            let currentUpperMidIndex = midp1;
+            while (start !== currentUpperMidIndex) {
+                oa[currentUpperMidIndex] = oa[currentUpperMidIndex - 1];
+                currentUpperMidIndex--;
+            }
+            oa[start] = currentUpperMidValue;
+            start++;
+            mid++;
+            midp1++;
+        }
+    }
+    return oa;
+}
+mergeSortInPlace = (oa, left, right) => {
+    if (right > left) {
+        let mid = left + Math.floor((right - left) / 2);
+        mergeSortInPlace(oa, left, mid);
+        mergeSortInPlace(oa, mid + 1, right);
+        mergeInPlace(oa, left, mid, right);
+    }
+    return oa;
+}
+
+/*
+
+merge = (originalArrayA, originalArrayB) => {}
+mergeSort = (originalArray) => {}
+mergeInPlace = (
+    originalArray,
+    startPoint = 0,
+    midPoint = Math.floor(originalArray.length / 2),
+    endPoint = originalArray.length - 1
+) => {}
+mergeSortInPlace = (originalArray, leftPoint, rightPoint) => {}
+mergeSIP = (arr, start, mid, end) => {}
+sortInPlace = (arr, l, r) => {}
+*/
+
 array = [4, 22, 41, 40, 27, 30, 36, 16, 42, 37, 14, 39, 3, 6, 34, 9, 21, 2, 29, 47]
 console.log('--------------------mergeSort (recursion)-------------------------');
 console.log(`original array:  ${array}`)
@@ -234,10 +388,5 @@ console.log('---------------------mergeSortInPlace (in place)-------------------
 array = [4, 22, 41, 40, 27, 30, 36, 16, 42, 37, 14, 39, 3, 6, 34, 9, 21, 2, 29, 47]
 console.log(`original array:  ${array}`)
 mergeSortInPlace(array, 0, array.length - 1);
-console.log(`sorted array:  ${sortedArray}`)
-console.log('--------------------sortInPlace (in place)--------------------------');
-array = [4, 22, 41, 40, 27, 30, 36, 16, 42, 37, 14, 39, 3, 6, 34, 9, 21, 2, 29, 47]
-console.log(`original array:  ${array}`)
-sortInPlace(array, 0, array.length - 1);
 console.log(`sorted array:  ${sortedArray}`)
 console.log('---------------------------------------------');

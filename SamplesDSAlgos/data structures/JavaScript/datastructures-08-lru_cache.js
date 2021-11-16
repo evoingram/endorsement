@@ -204,96 +204,51 @@ class LRUCache1 {
         }
     }
 }
+
 class LRUCache2 {
-    constructor(limit = 10) {
+    constructor(limit) {
         this.max = limit;
         this.storage = {};
-        this.list = new DoublyLinkedList();
+        this.nList = new DoublyLinkedList();
     }
     get = (key) => {
-        if (!key in this.storage === null) return null;
-        let listValue = this.storage[key];
-        let lrucNode = this.list.find(key);
-        this.list.moveToFront(lrucNode);
-        return listValue;
+        if(!key in this.storage) return null;
+        let listVal = this.storage[key];
+        let node = this.nList.find(key);
+        this.nList.moveToFront(node);
+        return listVal;
     }
     set = (key, value) => {
         this.storage[key] = value;
-        let lrucNode = this.list.find(key);
-        this.list.moveToFront(lrucNode);
-        if (this.list.length > this.max) {
-            delete this.storage[this.list.tail.element];
-            this.list.pop();
-        }
-    }
-}
-class LRUCache3 {
-    constructor(limit = 10) {
-        this.max = limit;
-        this.storage = {};
-        this.list = new DoublyLinkedList();
-    }
-    get = (key) => {
-        if (!key in this.storage === null) return null;
-        let listValue = this.storage[key];
-        let lrucNode = this.list.find(key);
-        this.list.moveToFront(lrucNode);
-        return listValue;
-    }
-    set = (key, value) => {
-        this.storage[key] = value;
-        let lrucNode = this.list.find(key);
-        this.list.moveToFront(lrucNode);
-        if (this.list.length > this.max) {
-            delete this.storage[this.list.tail.element];
-            this.list.pop();
-        }
-    }
-}
-class LRUCache4 {
-    constructor(limit = 10) {
-        this.storage = {};
-        this.max = limit;
-        this.list = new DoublyLinkedList();
-    }
-    get = (key) => {
-        if (!key in this.storage === null) return null;
-        let listValue = this.storage[key];
-        let lrucNode = this.list.find(key);
-        this.list.moveToFront(lrucNode);
-        return listValue;
-    }
-    set = (key, value) => {
-        this.storage[key] = value;
-        let lrucNode = this.list.find(key);
-        this.list.moveToFront(lrucNode);
-        if (this.list.length > this.max) {
-            delete this.storage[this.list.tail.element];
-            this.list.pop();
+        let node = this.nList.find(key);
+        this.nList.moveToFront(node);
+        if (this.nList.length > this.max) {
+            delete this.storage[this.nList.tail.element];
+            this.nList.pop();
         }
     }
 }
 
 class LRUCache {
-    constructor(limit = 10) {
-        this.storage = {};
+    constructor(limit) {
         this.max = limit;
-        this.list = new DoublyLinkedList();
+        this.storage = {};
+        this.nlist = new DoublyLinkedList();
     }
     get = (key) => {
-        if (!key in this.storage === null) return null;
-        let listValue = this.storage[key];
-        let lrucNode = this.list.find(key);
-        this.list.moveToFront(lrucNode);
-        return listValue;
+        if (!key in this.storage) return null;
+        let listval = this.storage[key];
+        let node = this.nlist.find(key);
+        this.nlist.moveToFront(node);
+        return listval;
     }
     set = (key, value) => {
         this.storage[key] = value;
-        let lnode = this.list.find(key);
-        this.list.moveToFront(lnode);
-        if (this.list.length > this.max) {
-            delete this.storage[this.list.tail.element];
-            this.list.pop();
+        let node = this.nlist.find(key);
+        this.nlist.moveToFront(node);
+        if (this.nlist.length > this.max) {
+            delete this.storage[this.nlist.tail.element];
+            this.nlist.pop();
         }
     }
 }

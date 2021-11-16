@@ -168,8 +168,8 @@ class DoublyLinkedList1 {
 class Node2 {
   constructor(element) {
     this.element = element;
-    this.next = null;
     this.previous = null;
+    this.next = null;
   }
 }
 class DoublyLinkedList2 {
@@ -178,130 +178,15 @@ class DoublyLinkedList2 {
     this.tail = null;
     this.size = 0;
   }
-  push = (valueToAdd) => {
-    const newNode = new Node(valueToAdd);
-    if (this.size === 0) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      this.tail.next = newNode;
-      newNode.previous = this.tail;
-      this.tail = newNode;
-    }
-    this.size++;
-    return this;
-  }
-  pop = () => {
-    if (this.size === 0) return null;
-    let current = this.tail;
-    if (this.size === 1) {
-      this.head = null;
-      this.tail = null;
-    } else {
-      this.tail = current.previous;
-      this.tail.next = null;
-      current.previous = null;
-    }
-    this.size--;
-    return current;
-  }
-  shift = () => {
-    if (this.size === 0) return null;
-    let current = this.head;
-    if (this.size === 1) {
-      this.head = null;
-      this.tail = null;
-    } else {
-      this.head = current.next;
-      this.head.previous = null;
-      current.next = null;
-    }
-    this.size--;
-    return current;
-  }
-  unshift = (valueToAdd) => {
-    const newNode = new Node(valueToAdd);
-    if (this.size === 0) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      newNode.next = this.head;
-      this.head.previous = newNode;
-      this.head = newNode;
-    }
-    this.size++;
-    return this;
-  }
-  indexOf = (element) => {
-    let count = 0;
-    let current = this.head;
-    while (current !== null) {
-      if (current.element === element) return count;
-      count++;
-      current = current.next;
-    }
-    return -1;
-  }
-  getLength = () => this.size;
-  getLast = () => {
-    let current = this.head;
-    while (current.next) {
-      current = current.next;
-    }
-    return current;
-  }
-  printNodes = () => {
-    let count = 0;
-    let string = `{ `;
-    let current = this.head;
-    while (current) {
-      string += `${count}: ${current.element}, `;
-      count++;
-      current = current.next;
-    }
-    string = `${string.trim()} }`;
-    return string;
-  }
-  isEmpty = () => this.size === 0;
-  traverse = (fn) => {
-    let current = this.head;
-    while (current) {
-      if (fn) fn(current);
-      current = current.next;
-    }
-  }
-  traverseReverse = (fn) => {
-    let current = this.getLast();
-    let count = this.size - 1;
-    while (count > -1) {
-      if (fn) fn(current);
-      current = current.previous;
-      count--;
-    }
-  }
-}
-class Node3 {
-  constructor(element) {
-    this.element = element;
-    this.previous = null;
-    this.next = null;
-  }
-}
-class DoublyLinkedList3 {
-  constructor() {
-    this.head = null;
-    this.tail = null;
-    this.size = 0;
-  }
   push = (element) => {
-    const madeNode = new Node(element);
-    if (this.size === 0) {
-      this.head = madeNode;
-      this.tail = madeNode;
+    let node = new Node(element);
+    if (!this.head && !this.tail) {
+      this.head = node;
+      this.tail = node;
     } else {
-      this.tail.next = madeNode;
-      madeNode.previous = this.tail;
-      this.tail = madeNode;
+      this.tail.next = node;
+      node.previous = this.tail;
+      this.tail = node;
     }
     this.size++;
     return this;
@@ -328,32 +213,32 @@ class DoublyLinkedList3 {
       this.tail = null;
     } else {
       this.head = current.next;
-      this.head.previous = null;
       current.next = null;
+      this.head.previous = null;
     }
     this.size--;
     return current;
   }
   unshift = (element) => {
-    const madeNode = new Node(element);
-    if (this.size === 0) {
-      this.head = madeNode;
-      this.tail = madeNode;
+    let node = new Node(element);
+    if (!this.head && !this.tail) {
+      this.head = node;
+      this.tail = node;
     } else {
-      madeNode.next = this.head;
-      this.head.previous = madeNode;
-      this.head = madeNode;
+      this.head.previous = node;
+      node.next = this.head;
+      this.head = node;
     }
     this.size++;
     return this;
   }
   indexOf = (element) => {
-    let count = 0;
     let current = this.head;
+    let count = 0;
     while (current !== null) {
       if (current.element === element) return count;
-      count++;
       current = current.next;
+      count++;
     }
     return -1;
   }
@@ -364,9 +249,9 @@ class DoublyLinkedList3 {
     return current;
   }
   printNodes = () => {
-    let count = 0;
     let string = `{ `;
     let current = this.head;
+    let count = 0;
     while (current) {
       string += `${count}: ${current.element}, `;
       current = current.next;
@@ -393,7 +278,6 @@ class DoublyLinkedList3 {
     }
   }
 }
-
 class Node {
   constructor(element) {
     this.element = element;
@@ -407,15 +291,15 @@ class DoublyLinkedList {
     this.tail = null;
     this.size = 0;
   }
-  push = (element) => {
-    const nodeElement = new Node(element);
-    if (this.size === 0) {
-      this.head = nodeElement;
-      this.tail = nodeElement;
+  push = (value) => {
+    let node = new Node(value);
+    if (!this.head && !this.tail) {
+      this.head = node;
+      this.tail = node;
     } else {
-      this.tail.next = nodeElement;
-      nodeElement.previous = this.tail;
-      this.tail = nodeElement;
+      this.tail.next = node;
+      node.previous = this.tail;
+      this.tail = node;
     }
     this.size++;
     return this;
@@ -426,7 +310,8 @@ class DoublyLinkedList {
     if (this.size === 1) {
       this.head = null;
       this.tail = null;
-    } else {
+    }
+    else {
       this.tail = current.previous;
       this.tail.next = null;
       current.previous = null;
@@ -440,55 +325,46 @@ class DoublyLinkedList {
     if (this.size === 1) {
       this.head = null;
       this.tail = null;
-    } else {
+    }
+    else {
       this.head = current.next;
-      this.head.previous = null;
       current.next = null;
+      this.head.previous = null;
     }
     this.size--;
     return current;
   }
-  unshift = (element) => {
-    const madeNode = new Node(element);
-    if (this.size === 0) {
-      this.head = madeNode;
-      this.tail = madeNode;
+  unshift = (value) => {
+    let node = new Node(value);
+    if (!this.head && !this.tail) {
+      this.head = node;
+      this.tail = node;
     } else {
-      madeNode.next = this.head;
-      this.head.previous = madeNode;
-      this.head = madeNode;
+      this.head.previous = node;
+      node.next = this.head;
+      this.head = node;
+
     }
     this.size++;
     return this;
   }
-  indexOf = (element) => {
-    let count = 0;
+  indexOf = (key) => {
     let current = this.head;
-    while (current !== null) {
-      if (current.element === element) return count;
+    let count = 0;
+    while (current) {
+      if (current.element === key) return count;
       count++;
       current = current.next;
     }
     return -1;
   }
   getLength = () => this.size;
-  getLast = () => { 
+  getLast = () => {
     let current = this.head;
     while (current.next) current = current.next;
     return current;
   }
-  printNodes = () => {
-    let count = 0;
-    let string = `{ `;
-    let current = this.head;
-    while (current) {
-      string += `${count}: ${current.element}, `;
-      current = current.next;
-      count++;
-    }
-    string = `${string.trim()} }`;
-    return string;
-  }
+  printNodes = () => {}
   isEmpty = () => this.size === 0;
   traverse = (fn) => {
     let current = this.head;
@@ -498,13 +374,14 @@ class DoublyLinkedList {
     }
   }
   traverseReverse = (fn) => {
-    let current = this.getLast();
+    let current = this.tail;
     let count = this.size - 1;
     while (count > -1) {
       if (fn) fn(current);
       current = current.previous;
       count--;
     }
+
   }
 }
 

@@ -36,56 +36,31 @@ insertionSort1 = (originalArray) => {
     }
     return originalArray
 }
-insertionSort2 = (oArray) => {
-    let cPosition, cItem;
-    for (let index = 1; index < oArray.length; index++) {
-        cItem = oArray[index];
-        cPosition = index;
-        while (cPosition > 0 && oArray[cPosition - 1] > cItem) { 
-            oArray[cPosition] = oArray[cPosition - 1];
-            cPosition = cPosition - 1;
+
+insertionSort2 = (oa) => {
+    let cp, ci;
+    for (let x = 1; x < oa.length; x++) {
+        ci = oa[x];
+        cp = x;
+        while (cp > 0 && oa[cp - 1] > ci) {
+            oa[cp] = oa[cp - 1];
+            cp--;
         }
-        oArray[cPosition] = cItem;
+        oa[cp] = ci;
     }
-    return oArray;
-}
-insertionSort3 = (oArr) => {
-    let cPosition, cItem;
-    for (let index = 1; index < oArr.length; index++) {
-        cItem = oArr[index];
-        cPosition = index;
-        while (cPosition > 0 && oArr[cPosition - 1] > cItem) {
-            oArr[cPosition] = oArr[cPosition - 1];
-            cPosition = cPosition - 1;
-        }
-        oArr[cPosition] = cItem;
-    }
-    return oArr;
-}
-insertionSort4 = (oArr) => {
-    let cPos, cItem;
-    for (let index = 1; index < oArr.length; index++) {
-        cItem = oArr[index];
-        cPos = index;
-        while(cPos > 0 && oArr[cPos - 1] > cItem) {
-            oArr[cPos] = oArr[cPos - 1];
-            cPos = cPos - 1;
-        }
-        oArr[cPos] = cItem;
-    }
-    return oArr;
+    return oa;
 }
 
 insertionSort = (oa) => {
-    let cpos, citem;
-    for (let index = 1; index < oa.length; index++) {
-        citem = oa[index];
-        cpos = index;
-        while (cpos > 0 && oa[cpos - 1] > citem) {
-            oa[cpos] = oa[cpos - 1];
-            cpos -= 1;
+    let cp, ci;
+    for (let x = 1; x < oa.length; x++) {
+        ci = oa[x];
+        cp = x;
+        while (cp > 0 && oa[cp - 1] > ci) {
+            oa[cp] = oa[cp - 1];
+            cp--;
         }
-        oa[cpos] = citem;
+        oa[cp] = ci;
     }
     return oa;
 }

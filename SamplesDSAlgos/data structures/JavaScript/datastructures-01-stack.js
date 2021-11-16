@@ -55,77 +55,58 @@ class Stack1 {
 
     static isStack(testInstance) { return testInstance instanceof Stack }
 }
-
 class Stack2 {
     constructor() {
         this.size = 0;
         this.storage = [];
     }
-    push = (valueToAdd) => {
+    push = (value) => {
         this.size++;
-        this.storage.push(valueToAdd);
-    };
+        this.storage.push(value);
+    }
     pop = () => {
         if (this.size === 0) return new Error("Stack Underflow");
         this.size--;
         return this.storage.pop();
-    };
-    len = () => this.size;
-    isEmpty = () => this.size === 0;
-    get last() {
-        if (this.size === 0) return null;
-        return this.storage[this.size - 1];
     }
-
+    isEmpty = () => this.size === 0;
+    len = () => this.size;
+    get last() { return this.storage[this.size - 1] };
     static isStack(testInstance) { return testInstance instanceof Stack };
 }
-
-class Stack3 {
+class Stack {
     constructor() {
-        this.size = 0;
         this.storage = [];
+        this.size = 0;
     }
-
-    push = (valueToAdd) => {
+    push = (value) => {
+        this.storage.push(value);
         this.size++;
-        this.storage.push(valueToAdd);
-    };
-
+    }
     pop = () => {
         if (this.size === 0) return null;
         this.size--;
         return this.storage.pop();
-    };
-
+    }
     isEmpty = () => this.size === 0;
     len = () => this.size;
     get last() { return this.storage[this.size - 1] };
-    static isStack(testInstance) { return testInstance instanceof Stack }
+    static isStack(testInstance) {return testInstance instanceof Stack };
 }
 
+/*
 class Stack {
-    constructor() {
-        this.size = 0;
-        this.storage = [];
-    }
-
-    push = (valueNew) => {
-        this.size++;
-        this.storage.push(valueNew);
-    }
-    pop = () => { 
-        if (this.size <= 0) return null;
-        this.size--;
-        return this.storage.pop();
-    }
-    isEmpty = () => this.size === 0;
-    len = () => this.size;
-    get last() { return this.storage[this.size - 1]};
-
-    static isStack(testInstance) { return testInstance instanceof Stack }
+    constructor() {}
+    push = () => {}
+    pop = () => {}
+    isEmpty = () => {}
+    len = () => {}
+    get last = () => {}
+    static isStack() {}
 }
+*/
 
-const newStack = new Stack()
+const newStack = new Stack();
 console.log(`Is it a Stack?  TRUE:  ${Stack.isStack(newStack)}`)
 console.log(`Is stack empty?  TRUE:  ${newStack.isEmpty()}`)
 newStack.push('Hello world')
