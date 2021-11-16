@@ -51,83 +51,42 @@ selectionSort1 = (originalArray) => {
     // return sorted array
     return originalArray
 }
-selectionSort2 = (oArray) => {
-    let nextToLast = oArray.length-1
-    let curIndex, smallestIndex, nextIndex, curItemX, curItemY, smallestItem;
-    for (let x = 0; x < nextToLast; x++) {
-        curIndex = x;
-        smallestIndex = curIndex;
-        nextIndex = x + 1;
-        for (let y = nextIndex; y < oArray.length; y++) {
-            curItemY = oArray[y];
-            smallestItem = oArray[smallestIndex];
-            if (curItemY < smallestItem) smallestIndex = y;
+selectionSort2 = (oa) => {
+    let ci, si, nexti, xcitem, ycitem, smallestitem;
+    for (let x = 0; x < oa.length; x++) {
+        ci = x;
+        si = ci;
+        nexti = x + 1;
+        for(let y = nexti; y < oa.length; y++) {
+            ycitem = oa[y];
+            smallestitem = oa[si];
+            if(ycitem < smallestitem) si = y;
         };
-        if (smallestIndex != x) {
-            smallestItem = oArray[smallestIndex];
-            curItemX = oArray[x];
-            oArray[smallestIndex] = curItemX;
-            oArray[x] = smallestItem;
+        if (si !== x) {
+            smallestitem = oa[si];
+            xcitem = oa[x];
+            oa[si] = xcitem;
+            oa[x] = smallestitem;
         }
     }
-    return oArray;
-}
-selectionSort3 = (oArray) => {
-    let cIndex, smallestIndex, nextIndex, xcItem, curItemY, smallestItem;
-    for (let x = 0; x < oArray.length - 1; x++) {
-        cIndex = x;
-        smallestIndex = cIndex;
-        nextIndex = x + 1;
-        for (let y = nextIndex; y < oArray.length; y++) {
-            curItemY = oArray[y];
-            smallestItem = oArray[smallestIndex];
-            if (curItemY < smallestItem) smallestIndex = y;
-        };
-        if (smallestIndex !== x) {
-            smallestItem = oArray[smallestIndex];
-            xcItem = oArray[x];
-            oArray[smallestIndex] = xcItem;
-            oArray[x] = smallestItem;
-        }
-    }
-    return oArray;
-}
-selectionSort4 = (toSort) => {
-    let cIndex, smallestIndex, nextIndex, xcItem, ycItem, smallestItem;
-    for (let x = 0; x < toSort.length - 1; x++) {
-        cIndex = x; 
-        smallestIndex = cIndex;
-        nextIndex = x + 1;
-        for (let y = nextIndex; y < toSort.length; y++) {
-            ycItem = toSort[y];
-            smallestItem = toSort[smallestIndex];
-            if (ycItem < smallestItem) smallestIndex = y;
-        };
-        if (smallestIndex !== x) {
-            smallestItem = toSort[smallestIndex];
-            xcItem = toSort[x];
-            toSort[smallestIndex] = xcItem;
-            toSort[x] = smallestItem;
-        }
-    }
-    return toSort;
+    return oa;
 }
 
 selectionSort = (oa) => {
-    let cindex, smallestindex, nextindex, xcitem, ycitem, smallestitem;
-    for (let x = 0; x < oa.length; x++) {
-        cindex = x;
-        smallestindex = cindex;
-        nextindex = x + 1;
-        for (let y = nextindex; y < oa.length; y++) {
+    let ci, si, ni, xcitem, ycitem, smallestitem;
+    for(let x = 0; x < oa.length; x++) {
+        ci = x;
+        si = ci;
+        ni = x + 1;
+        for (let y = ni; y < oa.length; y++) {
             ycitem = oa[y];
-            smallestitem = oa[smallestindex];
-            if (ycitem < smallestitem) smallestindex = y;
+            smallestitem = oa[si];
+            if (ycitem < smallestitem) si = y;
         };
-        if (smallestindex !== x) {
-            smallestitem = oa[smallestindex];
+        if (si !== x) {
+            smallestitem = oa[si];
             xcitem = oa[x];
-            oa[smallestindex] = xcitem;
+            oa[si] = xcitem;
             oa[x] = smallestitem;
         }
     }

@@ -59,7 +59,6 @@ bubbleSort2 = (toSort) => {
     }
     return toSort;
 }
-
 bubbleSort = (toSort) => {
     let next2Last = toSort.length - 2;
     let swapped, yVal, nextYVal;
@@ -74,7 +73,6 @@ bubbleSort = (toSort) => {
                 swapped = true;
             }
         }
-        if (swapped === false) break;
     }
     return toSort;
 }

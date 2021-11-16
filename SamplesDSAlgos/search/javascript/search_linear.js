@@ -24,6 +24,11 @@ linearSearch2 = (arr, target) => {
    return -1;
 }
 
+linearSearch3 = (arr, target) => {
+   for (let x = 0; x < arr.length; x++) if (arr[x] === target) return x;
+   return false;
+}
+
 linearSearch = (arr, target) => {
    for (let x = 0; x < arr.length; x++) if (arr[x] === target) return x;
    return false;

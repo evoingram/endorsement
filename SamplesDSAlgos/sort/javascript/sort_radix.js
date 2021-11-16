@@ -38,7 +38,7 @@ Counting sort can’t be used if a range of key value is large (suppose range is
 
 // https://learnersbucket.com/tutorials/algorithms/radix-sort-algorithm-in-javascript/
 
-const countingSort = (arr, size, place) => {
+const countingSort1 = (arr, size, place) => {
     let output = new Array(size + 1).fill(0);
     let max = Math.max(...arr);
     let freq = new Array(max + 1).fill(0);
@@ -62,13 +62,60 @@ const countingSort = (arr, size, place) => {
     //Copy the output array
     for (let i = 0; i < size; i++) arr[i] = output[i];
 }
-
-const radixSort = (arr, size = arr.length) => {
+const radixSort1 = (arr, size = arr.length) => {
     // Get the max element
     let max = Math.max(...arr);
     // Sort the array using counting sort
     for (let i = 1; parseInt(max / i) > 0; i *= 10) countingSort(arr, size, i);
 }
+const countingSort2 = (arr, size, place) => {
+    let output = new Array(size + 1).fill(0);
+    let max = Math.max(...arr);
+    let freq = new Array(max + 1).fill(0);
+    for (let i = 0; i < size; i++) {
+        const num = Math.floor(arr[i] / place) % 10;
+        freq[num]++;
+    }
+    for (let i = 1; i < 10; i++) freq[i] += freq[i - 1];
+    for (let i = size - 1; i >= 0; i--) {
+        const num = Math.floor(arr[i] / place) % 10;
+        output[freq[num] - 1] = arr[i];
+        freq[num]--;
+    }
+    for (let i = 0; i < size; i++) arr[i] = output[i];
+}
+const radixSort2 = (arr, size = arr.length) => {
+    let max = Math.max(...arr);
+    for (let i = 1; parseInt(max / i) > 0; i *= 10) countingSort(arr, size, i);
+}
+
+const countingSort = (oa, size, place) => {
+    let output = new Array(size + 1).fill(0);
+    let max = Math.max(...oa);
+    let freq = new Array(max + 1).fill(0);
+    for (let x = 0; x < size; x++) {
+        const num = Math.floor(oa[x] / place) % 10;
+        freq[num]++;
+    }
+    for (let x = 1; x < 10; x++) freq[x] += freq[x - 1];
+    for (let x = size - 1; x >= 0; x--) {
+        const num = Math.floor(oa[x] / place) % 10;
+        output[freq[num] - 1] = oa[x];
+        freq[num]--;
+        
+    }
+    for (let x = 0; x < size; x++) oa[x] = output[x];
+}
+
+const radixSort = (oa, size = oa.length) => {
+    let max = Math.max(...oa);
+    for (let x = 1; parseInt(max / x) > 0; x *= 10) countingSort(oa, size, x);
+}
+/*
+const countingSort = (arr, size, place) => {}
+
+const radixSort = (arr, size = arr.length) => {}
+*/
 
 arr = [170, 45, 75, 90, 802, 24, 2, 66];
 console.log(`Original array is ${arr}`);

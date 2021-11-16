@@ -124,18 +124,27 @@ heapSort1 = (arr) => {
         heapify(arr, x, 0);
     }
 }
-heapify = (oa, hsize, rindex) => {
-    let largestitemindex = rindex;
-    let leftCindex = 2 * rindex + 1;
-    let rightCindex = 2 * rindex + 2;
+heapSort2 = (oa) => {
+    for (let x = 0; x < oa.length; x++) heapify(oa, oa.length, x);
+    for (let x = arr.length; x > -1; x--) {
+        let temp = oa[0];
+        oa[0] = oa[x];
+        oa[x] = temp;
+        heapify(oa, x, 0);
+    }
+};
+heapify2 = (oa, hsize, rindex) => {
+    let largestii = rindex;
+    let leftci = 2 * rindex + 1;
+    let rightci = 2 * rindex + 2;
     let rval = oa[rindex];
-    if (leftCindex < hsize && rval < oa[leftCindex]) largestitemindex = leftCindex;
-    if (rightCindex < hsize && rval < oa[rightCindex]) largestitemindex = rightCindex;
-    if (largestitemindex !== rindex) {
+    if (leftci < hsize && rval < oa[leftci]) largestii = leftci;
+    if (rightci < hsize && oa[largestii] < oa[rightci]) largestii = rightci;
+    if (largestii !== rindex) {
         let temp = oa[rindex];
-        oa[rindex] = oa[largestitemindex];
-        oa[largestitemindex] = temp;
-        heapify(oa, hsize, largestitemindex);
+        oa[rindex] = oa[largestii];
+        oa[largestii] = temp;
+        heapify(oa, hsize, largestii);
     }
 }
 heapSort = (oa) => {
@@ -146,13 +155,25 @@ heapSort = (oa) => {
         oa[x] = temp;
         heapify(oa, x, 0);
     }
-}
-
+};
+heapify = (oa, hs, ri) => {
+    let lii = ri;
+    let leftci = 2 * ri + 1;
+    let rightci = 2 * ri + 2;
+    let rval = oa[ri];
+    if (leftci < hs && rval < oa[leftci]) lii = leftci;
+    if (rightci < hs && oa[lii] < oa[rightci]) lii = rightci;
+    if (lii !== ri) {
+        let temp = oa[ri];
+        oa[ri] = oa[lii];
+        oa[lii] = temp;
+        heapify(oa, hs, lii);
+    }
+};
 // heapSort = (oa) => {} heapify = () => {}
 arr = [12, 11, 13, 5, 6, 7]
 console.log(`Original array is ${arr}.`);
 heapSort(arr);
-n = arr.length;
 console.log(`Sorted array is   ${arr}.`);
 
 // contributed by Mohit Kumra

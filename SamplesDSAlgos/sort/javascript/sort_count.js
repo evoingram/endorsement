@@ -39,35 +39,7 @@ let countingSort1 = (
     }
     return sortedArray;
 };
-let countingSort2 = (oArr) => {
-    let minVal = Math.min(...oArr);
-    let maxVal = Math.max(...oArr);
-    const count = {}, sArr = [];
-    for (let x = minVal; x <= maxVal; x++) count[x] = 0;
-    for (let x = 0; x < oArr.length; x++) count[oArr[x]] += 1;
-    for (let x = minVal; x <= maxVal; x++) {
-        while (count[x] > 0) {
-            sArr.push(x);
-            count[x]--;
-        }
-    }
-    return sArr;
-}
-countingSort3 = (oa) => {
-    let minVal = Math.min(...oa);
-    let maxVal = Math.max(...oa);
-    const count = {}, sarr = [];
-    for (let x = minVal; x <= maxVal; x++) count[x] = 0;
-    for (let x = 0; x < oa.length; x++) count[oa[x]] += 1;
-    for (let x = minVal; x <= maxVal; x++) {
-        while (count[x] > 0) {
-            sarr.push(x);
-            count[x]--;
-        }
-    }
-    return sarr;
-}
-countingSort = (oa) => {
+let countingSort2 = (oa) => {
     let minVal = Math.min(...oa);
     let maxVal = Math.max(...oa);
     const count = {}, sa = [];
@@ -79,6 +51,20 @@ countingSort = (oa) => {
             count[x]--;
         }
     }
+    return sa;
+}
+let countingSort = (oa) => {
+    let min = Math.min(...oa);
+    let max = Math.max(...oa);
+    const count = {}, sa = [];
+    for (let x = min; x <= max; x++) count[x] = 0;
+    for (let x = 0; x < oa.length; x++) count[oa[x]] += 1;
+    for (let x = min; x <= max; x++) {
+        while  (count[x] > 0) {
+            sa.push(x);
+            count[x]--;
+        }
+    };
     return sa;
 }
 
