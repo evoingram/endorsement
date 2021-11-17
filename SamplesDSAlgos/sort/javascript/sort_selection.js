@@ -72,7 +72,7 @@ selectionSort2 = (oa) => {
     return oa;
 }
 
-selectionSort = (oa) => {
+selectionSort3 = (oa) => {
     let ci, si, ni, xcitem, ycitem, smallestitem;
     for(let x = 0; x < oa.length; x++) {
         ci = x;
@@ -92,6 +92,8 @@ selectionSort = (oa) => {
     }
     return oa;
 }
+
+selectionSort = (oa) => {}
 
 // selectionSort = (oa) => {}
 
