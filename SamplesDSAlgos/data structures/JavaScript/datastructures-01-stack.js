@@ -74,7 +74,7 @@ class Stack2 {
     get last() { return this.storage[this.size - 1] };
     static isStack(testInstance) { return testInstance instanceof Stack };
 }
-class Stack {
+class Stack3 {
     constructor() {
         this.storage = [];
         this.size = 0;
@@ -94,6 +94,29 @@ class Stack {
     static isStack(testInstance) {return testInstance instanceof Stack };
 }
 
+class Stack {
+    constructor() {
+        this.size = 0;
+        this.storage = [];
+    }
+    push = (value) => {
+        this.size++;
+        this.storage.push(value);
+    }
+    pop = () => {
+        if (this.size === 0) return new Error ("Stack Underflow");
+        this.size--;
+        this.storage.pop();
+    }
+    isEmpty = () => this.size === 0;
+    len = () => this.size;
+    get last() {
+        if (this.size === 0) return new Error ("Stack Underflow");
+        return this.storage[this.size - 1];
+    }
+    static isStack(testInstance) { return testInstance instanceof Stack };
+}
+
 /*
 class Stack {
     constructor() {}
@@ -101,7 +124,7 @@ class Stack {
     pop = () => {}
     isEmpty = () => {}
     len = () => {}
-    get last = () => {}
+    get last() {}
     static isStack() {}
 }
 */
