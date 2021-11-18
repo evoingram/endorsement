@@ -123,45 +123,7 @@ bucketSort2 = (oArray, bSize) => {
     })
     return oArray;
 }
-insertionSort = (bucket) => {
-    let cx, citem, px;
-    for (let x = 1; x < bucket.length; x++) {
-        citem = bucket[x];
-        px = x - 1;
-        while (px >= 0 && bucket[px] > citem) {
-            cx = px + 1;
-            bucket[cx] = bucket[px];
-            px -= 1;
-            cx = px + 1;
-        }
-        bucket[cx] = citem;
-    }
-}
-bucketSort = (oArr, bSize) => {
-    if (oArr.length === 0) return oArr;
-    let minval = oArr[0];
-    let maxval = oArr[0];
-    bSize = bSize || oArr.length || 5;
-    oArr.forEach(curval => {
-        if (curval < minval) minval = curval;
-        else if (curval > minval) maxval = curval;
-    });
-    let bCount = Math.floor((maxval - minval) / bSize) + 1;
-    let bHolder = new Array(bCount);
-    for(let x = 0; x < bHolder.length; x++) bHolder[x] = [];
-    let cmindif, flindex;
-    oArr.forEach(curval => {
-        cmindif = curval - minval;
-        flindex = Math.floor(cmindif / bSize);
-        bHolder[flindex].push(curval);
-    });
-    oArr.length = 0;
-    bHolder.forEach(bucket => {
-        insertionSort(bucket);
-        bucket.forEach(element => oArr.push(element));
-    });
-    return oArr;
-}
+
 
 // insertionSort = () => {}
 // bucketSort = () => {}

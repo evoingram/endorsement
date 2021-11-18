@@ -72,9 +72,30 @@ selectionSort2 = (oa) => {
     return oa;
 }
 
-selectionSort = (oa) => {
+selectionSort3 = (oa) => {
     let ci, si, ni, xcitem, ycitem, smallestitem;
     for(let x = 0; x < oa.length; x++) {
+        ci = x;
+        si = ci;
+        ni = x + 1;
+        for (let y = ni; y < oa.length; y++) {
+            ycitem = oa[y];
+            smallestitem = oa[si];
+            if (ycitem < smallestitem) si = y;
+        };
+        if (si !== x) {
+            smallestitem = oa[si];
+            xcitem = oa[x];
+            oa[si] = xcitem;
+            oa[x] = smallestitem;
+        }
+    }
+    return oa;
+}
+
+selectionSort = (oa) => {
+    let ci, si, ni, xcitem, ycitem, smallestitem;
+    for (let x = 0; x < oa.length; x++) {
         ci = x;
         si = ci;
         ni = x + 1;

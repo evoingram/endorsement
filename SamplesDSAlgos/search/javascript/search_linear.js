@@ -19,21 +19,10 @@ linearSearch1 = (arr, target) => {
    return -1;
 }
 
-linearSearch2 = (arr, target) => {
-   for (let x = 0; x < arr.length; x++) if (arr[x] === target) return x;
-   return -1;
-}
-
-linearSearch3 = (arr, target) => {
-   for (let x = 0; x < arr.length; x++) if (arr[x] === target) return x;
-   return false;
-}
-
 linearSearch = (arr, target) => {
-   for (let x = 0; x < arr.length; x++) if (arr[x] === target) return x;
+   for (let x = 0; x < arr.length - 1; x++) if (arr[x] === target) return x;
    return false;
 }
-
 array = [4, 22, 41, 40, 27, 30, 36, 16, 42, 37, 14, 39, 3, 6, 34, 9, 21, 2, 29, 47]
 console.log(`original array:  ${array}`);
 console.log(`find 40 (index 3):  ${linearSearch(array, 40)}`);
