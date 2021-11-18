@@ -166,66 +166,32 @@ class Node {
 class BinarySearchTree {
     constructor() {
         this.root = null;
-        this.tMethod = 'preorder';
+        this.tm = 'preorder';
     }
-    insert = (value) => {
+    insert = (node) => {
         let node = new Node(value);
-        if (this.root === null) this.root = node;
+        if(this.root === null) this.root = node;
         else this.insertNode(this.root, node);
     }
-    insertNode = (cNode, nNode) => {
-        if (nNode.data < cNode.data) {
-            if (cNode.left === null) cNode.left = nNode;
-            else this.insertNode(cNode.left, nNode);
-        } else {
-            if (cNode.right === null) cNode.right = nNode;
-            else this.insertNode(cNode.right, nNode);
-        }
-    }
-    contains = () => { }
+    insertNode = () => {}
+    contains = () => {}
     getMin = (node) => {
         if (node.left === null) return node;
         return this.getMin(node.left);
     }
     getMax = (node) => {
         if (node.right === null) return node;
-        return this.getMax(node.right);
+        return this.getMax(node.right)
     }
     getRoot = () => this.root;
     remove = (data) => this.root = this.removeNode(this.root, data);
-    removeNode = (node, key) => {
-        if (node === null) return null
-        else if (key < node.data) {
-            node.left = this.removeNode(node.left, key);
-            return node;
-        }
-        else if (key > node.data) {
-            node.right = this.removeNode(node.right, key);
-            return node;
-        }
-        else {
-            if (node.left === null && node.right === null) {
-                node = null;
-                return node;
-            }
-            if (node.left === null) {
-                node = node.right;
-                return node;
-            }
-            else if (node.right === null) {
-                node = node.left;
-                return node;
-            }
-            let minNode = this.getMin(node.right);
-            node.data = minNode.data;
-            node.right = this.removeNode(node.right, minNode.data);
-            return node;
-        }
+    removeNode = (cNode, nNode) => {
+
     }
-    setTraverseMethod = (tMethod) => this.tMethod = tMethod;
-    getTraverseMethod = () => this.tMethod;
+    setTraverseMethod = (tm) => this.tm = tm;
+    getTraverseMethod = () => this.tm;
     traverse = (value) => {
-        switch (this.tMethod) {
+        switch (this.tm) {
             case 'preorder':
                 this.preOrderDFT(value);
                 break;
@@ -236,33 +202,20 @@ class BinarySearchTree {
                 this.postOrderDFT(value);
                 break;
             default:
-                console.error(`Please select a valid traverse method:  preorder, inorder, or postorder.`);
+                console.error('Invalid traverse method.');
                 return new Error("Invalid traverse method");
         }
     }
-    inOrderPrint = (node) => {
-        if (node !== null) {
-            this.inOrderPrint(node.left);
-            console.log(node.data);
-            this.inOrderPrint(node.right);
-        }
+    inOrderPrint = (value) => {
+        
     }
-    preOrderDFT = (node) => {
-        if (node !== null) {
-            console.log(node.data);
-            this.preOrderDFT(node.left);
-            this.preOrderDFT(node.right);
-        }
+    preOrderDFT = (value) => {
+
     }
-    postOrderDFT = (node) => {
-        if (node !== null) {
-            this.postOrderDFT(node.left);
-            this.postOrderDFT(node.right);
-            console.log(node.data);
-        }
+    postOrderDFT = (value) => {
+
     }
 }
-
 
 /*
 class Node {

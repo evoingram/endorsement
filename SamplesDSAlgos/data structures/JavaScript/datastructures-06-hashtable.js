@@ -183,7 +183,7 @@ class HashTable2 {
     }
 }
 
-class HashTable {
+class HashTable3 {
     constructor(size) {
         this.size = size;
         this.numberOfValues = 0;
@@ -244,6 +244,74 @@ class HashTable {
         let string = `{ `;
         for (const value in this.values) {
             for (const key in this.values[value]) {
+                string += `${key}: ${this.values[value][key]}, `;
+            }
+        }
+        string = `${string.trim()} }`;
+        return string;
+    }
+}
+class HashTable {
+    constructor(size) {
+        this.size = size;
+        this.numberOfValues = 0;
+        this.values = {};
+    }
+    add = (key, value) => {
+        let hash = this.calculateHash(key);
+        if (
+            !this.values.hasOwnProperty(hash)
+        ) this.values[hash] = {}
+        if (
+            !this.values[hash].hasOwnProperty(key)
+        ) this.numberOfValues++;
+        this.values[hash][key] = value;
+     }
+    remove = (key) => {
+        let hash = this.calculateHash(key);
+        if (
+            this.values.hasOwnProperty(hash) &&
+            this.values[hash].hasOwnProperty(key)
+        ) {
+            delete this.values[hash][key];
+            this.numberOfValues--;
+        }
+    }
+    calculateHash = (key) => {
+        if (!key) return 17 % this.size;
+        return key.toString().length % this.size;
+    }
+    search = (key) => {
+        let hash = this.calculateHash(key);
+        if (
+            this.values.hasOwnProperty(hash) &&
+            this.values[hash].hasOwnProperty(key)
+        ) return this.values[hash][key];
+        return null;
+    }
+    getValues = () => {
+        let values = [];
+        for (const value in this.values) {
+            for (const key in this.values[value]) {
+                values.push(this.values[value][key]);
+            }
+        }
+        return values;
+    }
+    keys = () => {
+        let keys = [];
+        for (const value in this.values) {
+            for (const key in this.values[value]) {
+                keys.push(key);
+            }
+        }
+        return keys;
+    }
+    length = () => this.size;
+    print = () => {
+        let string = `{ `;
+        for (const value in this.values) {
+            for(const key in this.values[value]) {
                 string += `${key}: ${this.values[value][key]}, `;
             }
         }
