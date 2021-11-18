@@ -59,7 +59,7 @@ bubbleSort2 = (toSort) => {
     }
     return toSort;
 }
-bubbleSort = (toSort) => {
+bubbleSort3 = (toSort) => {
     let next2Last = toSort.length - 2;
     let swapped, yVal, nextYVal;
     for (let x = 0; x < next2Last; x++) {
@@ -75,6 +75,24 @@ bubbleSort = (toSort) => {
         }
     }
     return toSort;
+}
+
+bubbleSort = (oa) => {
+    let n2l = oa.length - 2;
+    let swapped, yVal, nextYval;
+    for (let x = 0; x < n2l; x++) {
+        swapped = false;
+        for (let y = 0; y < n2l; y++) {
+            if (oa[y] > oa[y+1]) {
+                yVal  = oa[y];
+                nextYval = oa[y+1];
+                oa[y] = nextYval;
+                oa[y+1] = yVal;
+                swapped = true;
+            }
+        }
+    }
+    return oa;
 }
 
 // bubbleSort = () => {}
