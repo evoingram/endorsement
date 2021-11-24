@@ -118,7 +118,7 @@ class Queue2 {
     };
     static isQueue(testInstance) { return testInstance instanceof Queue };
 }
-class Queue {
+class Queue3 {
     constructor() {
         this.items = [];
     }
@@ -142,6 +142,27 @@ class Queue {
     static isQueue(testInstance) { return testInstance instanceof Queue }
 }
 
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+    enqueue = (value) => this.items.push(value);
+    dequeue = () => {
+        if (this.items.length === 0) return new Error("Queue Underflow");
+        return this.items.shift();
+    };
+    isEmpty = () => this.items.length === 0;
+    get len() { return this.items.length };
+    printQueue = () => {
+        let string = `{ `;
+        for (let x = 0; x < this.items.length; x++) string += `${x}: ${this.items[x]}, `;
+        string = `${string.trim()} }`;
+        return string;
+    }
+    front = () => { return this.items[0]}
+    back = () => { return this.items[this.items.length - 1]};
+    static isQueue(testInstance) { return testInstance instanceof Queue };
+}
 /*
 class Queue {
     constructor() {}

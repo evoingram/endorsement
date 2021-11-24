@@ -147,7 +147,7 @@ heapify2 = (oa, hsize, rindex) => {
         heapify(oa, hsize, largestii);
     }
 }
-heapSort = (oa) => {
+heapSort3 = (oa) => {
     for (let x = 0; x < oa.length; x++) heapify(oa, oa.length, x);
     for (let x = oa.length; x > -1; x--) {
         let temp = oa[0];
@@ -156,7 +156,7 @@ heapSort = (oa) => {
         heapify(oa, x, 0);
     }
 };
-heapify = (oa, hs, ri) => {
+heapify3 = (oa, hs, ri) => {
     let lii = ri;
     let leftci = 2 * ri + 1;
     let rightci = 2 * ri + 2;
@@ -170,6 +170,32 @@ heapify = (oa, hs, ri) => {
         heapify(oa, hs, lii);
     }
 };
+
+heapSort = (oa) => {
+    for (let x = 0; x < oa.length; x++) heapify(oa, oa.length, x);
+    for (let x = oa.length; x > -1; x--) {
+        let temp = oa[0];
+        oa[0] = oa[x];
+        oa[x] = temp;
+        heapify(oa, x, 0);
+    }
+} 
+
+heapify = (oa, hs, ri) => {
+    let lii = ri;
+    let leftci = 2 * ri + 1;
+    let rightci = 2 * ri + 2;
+    let rval = oa[ri];
+    if (leftci < hs && rval < oa[leftci]) lii = leftci;
+    if (rightci < hs && oa[lii] < oa[rightci]) lii = rightci;
+    if (lii !== ri) {
+        let temp = oa[ri];
+        oa[ri] = oa[lii];
+        oa[lii] = temp;
+        heapify(oa, hs, lii);
+    }
+}
+
 // heapSort = (oa) => {} heapify = () => {}
 arr = [12, 11, 13, 5, 6, 7]
 console.log(`Original array is ${arr}.`);

@@ -176,7 +176,7 @@ class BloomFilter1 {
     }
   }
 
-  class BloomFilter {
+  class BloomFilter3 {
     constructor(size = 100) {
       this.size = size;
       this.storage = this.createStore(size);

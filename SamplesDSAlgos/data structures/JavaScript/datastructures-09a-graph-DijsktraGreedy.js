@@ -57,7 +57,7 @@ class Graph1 {
     }
 }
 
-class Graph {
+class Graph2 {
     constructor() {
         this.vertices = [];
         this.aList = {};
@@ -109,10 +109,65 @@ class Graph {
         console.log(distances);
     };
 }
+class Graph {
+    constructor() {
+        this.vertices = [];
+        this.aList = {};
+    }
+    addVertex = (v1) => {
+        this.vertices.push(v1);
+        this.aList[v1] = {};
+    };
+    addEdge = (v1, v2, weight) => this.aList[v1][v2] = weight;
+    vertexWithMinDistance = (distances, visited) => {
+        let mindist = Infinity, minvert = null;
+        for (let v1 in distances) {
+            let distance = distances[v1];
+            if (distance < mindist && !visited.has(v1)) {
+                mindist = distance;
+                minvert = v1;
+            }
+        }
+        return minvert;
+    };
+    dijkstra(source) {
+        let distances = {},
+            parents = {},
+            visited = new Set();
+        for (let i = 0; i < this.vertices.length; i++) {
+            if (this.vertices[i] === source) {
+                distances[source] = 0;
+            } else {
+                distances[this.vertices[i]] = Infinity;
+            }
+            parents[this.vertices[i]] = null;
+        }
+
+        let currVertex = this.vertexWithMinDistance(distances, visited);
+
+        while (currVertex !== null) {
+            let distance = distances[currVertex],
+                neighbors = this.aList[currVertex];
+            for (let neighbor in neighbors) {
+                let newDistance = distance + neighbors[neighbor];
+                if (distances[neighbor] > newDistance) {
+                    distances[neighbor] = newDistance;
+                    parents[neighbor] = currVertex;
+                }
+            }
+            visited.add(currVertex);
+            currVertex = this.vertexWithMinDistance(distances, visited);
+        }
+
+        console.log(parents);
+        console.log(distances);
+    }
+}
 /*
 
 class Graph {
-    constructor() {}
+    constructor() {
+    }
     addVertex = () => {};
     addEdge = () => {};
     vertexWithMinDistance = () => {};
