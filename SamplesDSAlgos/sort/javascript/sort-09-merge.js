@@ -314,13 +314,13 @@ merge = (oaa, oab) => {
     while (oaa.length && oab.length) {
         if (oaa[0] <= oab[0]) ma.push(oaa.shift())
         else ma.push(oab.shift());
-    };
-    while(oaa.length) ma.push(oaa.shift());
+    }
+    while (oaa.length) ma.push(oaa.shift());
     while (oab.length) ma.push(oab.shift());
     return ma;
 }
 mergeSort = (oa) => {
-    const { length: asize } = oa;
+    let asize = oa.length;
     if (asize < 2) return oa;
     const mid = Math.floor(asize / 2);
     const la = oa.slice(0, mid);
@@ -328,6 +328,7 @@ mergeSort = (oa) => {
     const ra = oa.slice(mid, asize);
     const sra = mergeSort(ra);
     return merge(sla, sra);
+
 }
 mergeInPlace = (
     oa,
@@ -336,38 +337,39 @@ mergeInPlace = (
     end = oa.length - 1
 ) => {
     let midp1 = mid + 1;
-    if (oa[midp1] >= oa[mid]) return;
-    while(start <= mid && end >= midp1) {
-        if (oa[start] <= oa[midp1]) start++;
+    if (oa[midp1 >= oa[mid]]) return;
+    while (start <= mid && end >= midp1) {
+        if (oa[start] <= oa[midp1]) start++
         else {
-            let currentUpperMidValue = oa[midp1];
-            let currentUpperMidIndex = midp1;
-            while (start !== currentUpperMidIndex) {
-                oa[currentUpperMidIndex] = oa[currentUpperMidIndex - 1];
-                currentUpperMidIndex--;
+            cumv = oa[midp1];
+            cumi = midp1;
+            while (start != cumi) {
+                oa[cumi] = oa[cumi - 1];
+                cumi--;
             }
-            oa[start] = currentUpperMidValue;
+            oa[start] = cumv;
             start++;
             mid++;
             midp1++;
         }
-    }
+    };
     return oa;
 }
-mergeSortInPlace = (oa, left, right) => {
-    if (right > left) {
-        let mid = left + Math.floor((right - left) / 2);
-        mergeSortInPlace(oa, left, mid);
-        mergeSortInPlace(oa, mid + 1, right);
-        mergeInPlace(oa, left, mid, right);
+mergeSortInPlace = (oa, lp, rp) => {
+    if (rp > lp) {
+        let mid = lp + Math.floor((rp - lp) / 2);
+        mergeSortInPlace(oa, lp, mid);
+        mergeSortInPlace(oa, mid + 1, rp);
+        mergeInPlace(oa, lp, mid, rp);
     }
     return oa;
 }
 
 /*
-
+- recursive
 merge = (originalArrayA, originalArrayB) => {}
 mergeSort = (originalArray) => {}
+- iterative
 mergeInPlace = (
     originalArray,
     startPoint = 0,
@@ -375,8 +377,6 @@ mergeInPlace = (
     endPoint = originalArray.length - 1
 ) => {}
 mergeSortInPlace = (originalArray, leftPoint, rightPoint) => {}
-mergeSIP = (arr, start, mid, end) => {}
-sortInPlace = (arr, l, r) => {}
 */
 
 array = [4, 22, 41, 40, 27, 30, 36, 16, 42, 37, 14, 39, 3, 6, 34, 9, 21, 2, 29, 47]
