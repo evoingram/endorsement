@@ -249,12 +249,59 @@ class BloomFilter1 {
       const hashValues = this.getHashValues(item);
       hashValues.forEach(val => this.storage.setValue(val));
     }
-    mayContain(item) {}
-    createStore(size) {}
-    hash1(item) {}
-    hash2(item) {}
-    hash3(item) {}
-    getHashValues(item) {}
+    mayContain(item) {
+      const hashValues = this.getHashValues(item);
+      for (let hi = 0; hi < hashValues.length; hi++) {
+        if (!this.storage.getValue(hashValues[hi])) return false;
+      }
+      return true;
+    }
+    createStore(size) {
+      const storage = [];
+      for (let storagecelli = 0; storagecelli < size; storagecelli++) {
+        storage.push(false);
+      }
+      const storageinterface = {
+        getValue(index) { return storage[index]},
+        setValue(index) { storage[index] = true }
+      };
+      return storageinterface;
+    }
+    hash1(item) {
+      let hash = 0;
+      for (let chari = 0; chari < item.length; chari++) {
+        const char = item.charCodeAt(chari);
+        hash = (hash << 5) + hash + char;
+        hash &= hash;
+        hash = Math.abs(hash);
+      }
+      return hash % this.size;
+    }
+    hash2(item) {
+      let hash = 5381;
+      for (let ci = 0; ci < item.length; ci++) {
+        const char = item.charCodeAt(ci);
+        hash = (hash << 5) + hash + char;
+      }
+      return Math.abs(hash % this.size);
+    }
+    hash3(item) {
+      let hash = 0;
+      for (let ci = 0; ci < item.length;ci++) {
+        const char = item.charCodeAt(ci);
+        hash = (hash << 5) - hash;
+        hash += char;
+        hash &= hash;
+      }
+      return Math.abs(hash % this.size);
+    }
+    getHashValues(item) {
+      return [
+        this.hash1(item),
+        this.hash2(item),
+        this.hash3(item)
+      ];
+    }
   }
 
   /*
@@ -279,8 +326,9 @@ class BloomFilter {
 
   bloomFilter = new BloomFilter();
   people.forEach((person) => bloomFilter.insert(person));
-  console.log(`bloom filter may contain Barry = ${bloomFilter.mayContain('Barry')}`);
-  console.log(`bloom filter may contain Barry Allen = ${bloomFilter.mayContain('Barry Allen')}`);
-  console.log(`bloom filter may contain apple = ${bloomFilter.mayContain('apple')}`);
-  console.log(`bloom filter may contain Wayne = ${bloomFilter.mayContain('Wayne')}`);
+  console.log(`bloom filter may contain Barry false = ${bloomFilter.mayContain('Barry')}`);
+  console.log(`bloom filter may contain Barry Allen true = ${bloomFilter.mayContain('Barry Allen')}`);
+  console.log(`bloom filter may contain apple false = ${bloomFilter.mayContain('apple')}`);
+  console.log(`bloom filter may contain Wayne false = ${bloomFilter.mayContain('Wayne')}`);
+  console.log(`bloom filter may contain Bruce Wayne true = ${bloomFilter.mayContain('Bruce Wayne')}`);
   // console.log(`bloom filter may contain <term> = ${bloomFilter.mayContain('')}`);
