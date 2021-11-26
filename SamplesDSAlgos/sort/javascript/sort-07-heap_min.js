@@ -178,154 +178,8 @@ class MinHeap1 {
         return popped;
     }
 }
-class MinHeap2 {
-    constructor(maxSize) {
-        this.maxSize = maxSize;
-        this.heapSize = 0;
-        this.heap = [];
-        this.FRONT = 1;
-        this.heap[0] = -1 * maxSize;
-    }
-    parent = (pos) => Math.floor(pos / 2);
-    leftC = (pos) => 2 * pos;
-    rightC = (pos) => (2 * pos) + 1;
-    isLeaf = (node) => {
-        let floor = (Math.floor(this.heapSize / 2));
-        if (node >= floor && node <= this.heapSize) return true;
-        return false
-    }
-    swap = (firstN, secondN) => {
-        let temp = this.heap[firstN];
-        this.heap[firstN] = this.heap[secondN];
-        this.heap[secondN] = temp;
-    }
-    minHeapify = (node) => {
-        if (!this.isLeaf(node)) {
-            if (
-                this.heap[node] > this.heap[this.leftC(node)] ||
-                this.heap[node] > this.heap[this.rightC(node)]
-            ) {
-                if (this.heap[this.leftC(node)] < this.heap[this.rightC(node)]) {
-                    this.swap(node, this.leftC(node));
-                    this.minHeapify(this.leftC(node));
-                } else {
-                    this.swap(node, this.rightC(node));
-                    this.minHeapify(this.rightC(node));
-                }
-            }
-        }
-    }
-    insert = (element) => {
-        if (this.heapSize >= this.maxSize) return;
-        this.heapSize += 1;
-        this.heap[this.heapSize] = element;
-        let cIndex = this.heapSize;
-        while (this.heap[cIndex] < this.heap[this.parent(cIndex)]) {
-            this.swap(cIndex, this.parent(cIndex));
-            cIndex = this.parent(cIndex);
-        }
-    }
-    printHeap = () => {
-        let floor = (Math.floor(this.heapSize / 2)) + 1;
-        let parentVal, parentText, leftCVal, leftCText, rightCVal, rightCText;
-        for (let x = 1; x < floor; x++) {
-            parentVal = this.heap[x];
-            parentText = ` PARENT : ${parentVal}`;
-            leftCVal = this.heap[2 * x];
-            leftCText = ` LEFT CHILD : ${leftCVal}`;
-            rightCVal = this.heap[2 * x + 1];
-            rightCText = ` RIGHT CHILD : ${rightCVal}`;
-            console.log(parentText + leftCText + rightCText);
-        }
-    }
-    minHeap = () => {
-        let floorHeapSize = Math.floor(this.heapSize / 2)
-        for (let x = floorHeapSize; x > -1; x--) {
-            this.minHeapify(x);
-        }
-    }
-    remove = () => {
-        let popped = this.heap[this.FRONT];
-        this.heap[this.FRONT] = this.heap[this.heapSize];
-        this.heapSize -= 1;
-        this.minHeapify(this.FRONT);
-        return popped;
-    }
-}
-class MinHeap3 {
-    constructor(max) {
-        this.max = max;
-        this.hsize = 0;
-        this.heap = [];
-        this.FRONT = 1;
-        this.heap[0] = -1 * max;
-    }
-    parent = (pos) => Math.floor(pos / 2);
-    leftC = (pos) => 2 * pos;
-    rightC = (pos) => (2 * pos) + 1;
-    isLeaf = (node) => {
-        let fl = (Math.floor(this.hsize / 2));
-        if (node >= fl && node <= this.hsize) return;
-        return false;
-    }
-    swap = (firstN, secondN) => {
-        let temp = this.heap[firstN];
-        this.heap[firstN] = this.heap[secondN];
-        this.heap[secondN] = temp;
-    }
-    minHeapify = (node) => {
-        if (!(this.isLeaf(node))) {
-            if(
-                this.heap[node] > this.heap[this.leftC(node)] || 
-                this.heap[node] > this.heap[this.rightC(node)]
-            ) {
-                if (this.heap[this.leftC(node)] < this.heap[this.rightC(node)]) {
-                    this.swap(node, this.leftC(node));
-                    this.minHeapify(this.leftC(node));
-                } else {
-                    this.swap(node, this.rightC(node));
-                    this.minHeapify(this.rightC(node));
-                }
-            }
-        }
-    }
-    insert = (element) => {
-        if (this.hsize >= this.max) return;
-        this.hsize++;
-        this.heap[this.hsize] = element;
-        let ci = this.hsize;
-        while (this.heap[ci] < this.heap[this.parent(ci)]) {
-            this.swap(ci, this.parent(ci));
-            ci = this.parent(ci);
-        }
-    }
-    printHeap = () => {
-        let fl = (Math.floor(this.hsize / 2)) + 1;
-        let pval, ptext, lcval, lctext, rcval, rctext;
-        for(let x = 1; x < fl; x++) {
-            pval = this.heap[x];
-            ptext = `PARENT : ${pval}`;
-            lcval = this.heap[2 * x];
-            lctext = `LEFT CHILD:  ${lcval}`;
-            rcval = this.heap[2 * x + 1];
-            rctext = `RIGHT CHILD:  ${rcval}`;
-            console.log(`${ptext} ${lctext} ${rctext}`);
-        }
-    }
-    minHeap = () => {
-        let flhsize = Math.floor(this.hsize / 2);
-        for (let x = flhsize; x > -1; x--) this.minHeapify(x);
-    }
-    remove = () => {
-        let popped = this.heap[this.FRONT];
-        this.heap[this.FRONT] = this.heap[this.hsize];
-        this.hsize--;
-        this.minHeapify(this.FRONT);
-        return popped;
-    }
-}
 
-class MinHeap {
+class MinHeap2 {
     constructor(max) {
         this.max = max;
         this.hsize = 0;
@@ -380,7 +234,7 @@ class MinHeap {
             pval = this.heap[x];
             ptxt = `PARENT:  ${pval}`;
             lcval = this.heap[2 * x];
-            lctxt = `LEFT CHILD:  ${rcval}`;
+            lctxt = `LEFT CHILD:  ${lcval}`;
             rcval = this.heap[2 * x + 1];
             rctxt = `RIGHT CHILD:  ${rcval}`;
             console.log(`${ptxt} ${lctxt} ${rctxt}`);
@@ -398,10 +252,83 @@ class MinHeap {
         return popped;
     }
 }
+class MinHeap {
+    constructor(max) {
+        this.max = max;
+        this.hsize = 0;
+        this.heap = [];
+        this.FRONT = 1;
+        this.heap[0] = -1 * max;
+    }
+    parent = (pos) => { Math.floor(pos / 2)};
+    leftC = (pos) => 2 * pos;
+    rightC = (pos) => (2 * pos) + 1;
+    isLeaf = (node) => {
+        let fl = (Math.floor(this.hsize / 2));
+        if (node >= fl && node <= this.hsize) return;
+        return false;
+    }
+    swap = (n1, n2) => {
+        let temp = this.heap[n1];
+        this.heap[n1] = this.heap[n2];
+        this.heap[n2] = temp;
+    }
+    minHeapify = (node) => {
+        if (!(this.isLeaf(node))) {
+            if (
+                this.heap[node] > this.heap[this.leftC(node)] ||
+                this.heap[node] > this.heap[this.rightC(node)]
+            ) {
+                if (this.heap[this.leftC(node)] < this.heap[this.rightC(node)]) {
+                    this.swap(node, this.leftC(node));
+                    this.minHeapify(this.leftC(node));
+                } else {
+                    this.swap(node, this.rightC(node));
+                    this.minHeapify(this.rightC(node));
+
+                }
+            }
+        }
+    }
+    insert = (element) => {
+        if (this.hsize >= this.max) return;
+        this.hsize++;
+        this.heap[this.hsize] = element;
+        let ci = this.hsize;
+        while (this.heap[ci] < this.heap[this.parent(ci)]) {
+            this.swap(ci, this.parent(ci));
+            ci = this.parent(ci);
+        }
+    }
+    printHeap = () => {
+        let fl = (Math.floor(this.hsize / 2)) + 1;
+        let pval, ptext, lcval, lctext, rcval, rctext;
+        for (let x = 1; x < fl; x++) {
+            pval = this.heap[x];
+            ptext = `PARENT:  ${pval}`;
+            lcval = this.heap[2 * x];
+            lctext = `LEFT CHILD:  ${lcval}`;
+            rcval = this.heap[2 * x + 1];
+            rctext = `RIGHT CHILD:  ${rcval}`;
+            console.log(`${ptext} ${lctext} ${rctext}`);
+        }
+    }
+    minHeap = () => {
+        let flhsize = Math.floor(this.hsize / 2);
+        for (let x = flhsize; x > -1; x--) this.minHeapify(x);
+    }
+    remove = () => {
+        let popped = this.heap[this.FRONT];
+        this.heap[this.FRONT] = this.heap[this.hsize];
+        this.hsize--;
+        this.minHeapify(this.FRONT);
+        return popped;
+    }
+}
 
 /*
 class MinHeap {
-    constructor(maxSize) {}
+    constructor(max) {}
     parent = (pos) => {};
     leftC = (pos) => {};
     rightC = (pos) => {};
@@ -414,7 +341,7 @@ class MinHeap {
     remove = () => {}
 }
 */
-console.log(`The min heap is;`);
+console.log(`The min heap is:`);
 minHeap = new MinHeap(15)
 minHeap.insert(5)
 minHeap.insert(3)
