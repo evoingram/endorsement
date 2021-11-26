@@ -240,6 +240,23 @@ class BloomFilter1 {
     }
   }
 
+  class BloomFilter {
+    constructor(size = 100) {
+      this.size = size;
+      this.storage = this.createStore(size);
+    }
+    insert(item) {
+      const hashValues = this.getHashValues(item);
+      hashValues.forEach(val => this.storage.setValue(val));
+    }
+    mayContain(item) {}
+    createStore(size) {}
+    hash1(item) {}
+    hash2(item) {}
+    hash3(item) {}
+    getHashValues(item) {}
+  }
+
   /*
 class BloomFilter {
     constructor(size = 100) {}
