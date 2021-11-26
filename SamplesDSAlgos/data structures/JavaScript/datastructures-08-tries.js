@@ -95,7 +95,6 @@ class Trie2 {
         else if (command === 'startsWith') return true;
     }
 }
-
 class Trie3 {
     constructor() {
         this.child = {}
@@ -142,8 +141,7 @@ class Trie4 {
         else if (command === 'startsWith') return true;
     }
 }
-
-class Trie {
+class Trie5 {
     constructor() {
         this.child = {};
     }
@@ -162,6 +160,29 @@ class Trie {
             cc = cc[letter];
         }
         if (command === 'insert') cc['//'] = 1
+        else if (command === 'search') return '//' in cc
+        else if (command === 'startsWith') return true;
+    }
+}
+class Trie {
+    constructor() {
+        this.child = {}
+    }
+    selectProcess = (word, command) => {
+        if (command !== 'insert' && command !== 'search' && command !== 'startsWith') {
+            console.error(`Please select a valid command:  search, insert, or startsWith`);
+            return new Error(`Invalid trie command`);
+        }
+        let cc = this.child, letter;
+        for (let x = 0; x < word.length; x++) {
+            letter = word[x];
+            if (!(letter in cc)) {
+                if (command === 'insert') cc[letter] = {};
+                else return false;
+            }
+            cc = cc[letter];
+        }
+        if (command === 'insert') cc['//'] = 1;
         else if (command === 'search') return '//' in cc
         else if (command === 'startsWith') return true;
     }

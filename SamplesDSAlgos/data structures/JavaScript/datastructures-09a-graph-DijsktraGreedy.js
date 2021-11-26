@@ -56,59 +56,6 @@ class Graph1 {
         console.log(distances);
     }
 }
-
-class Graph2 {
-    constructor() {
-        this.vertices = [];
-        this.aList = {};
-    }
-    addVertex = (v1) => {
-        this.vertices.push(v1);
-        this.aList[v1] = {};
-    };
-    addEdge = (v1, v2, weight) => {
-        this.aList[v1][v2] = weight;
-    };
-    vertexWithMinDistance = (distances, visited) => {
-        let mindist = Infinity;
-        let minvert = null;
-        for (let v1 in distances) {
-            let distance = distances[v1];
-            if (distance < mindist && !visited.has(v1)) {
-                mindist = distance;
-                minvert = v1;
-            }
-        }
-        return minvert;
-    };
-    dijkstra = (source) => {
-        let distances = {};
-        let parents = {};
-        let visited = new Set();
-        
-        for (let x = 0; x < this.vertices.length; x++) {
-            if (this.vertices[x] === source) distances[source] = 0
-            else distances[this.vertices[x]] = Infinity;
-            parents[this.vertices[x]] = null;
-        }
-        let cv1 = this.vertexWithMinDistance(distances, visited);
-        while (cv1 === null) {
-            let distance = distances[cv1];
-            let neighbors = this.aList[cv1];
-            for (let neighbor in neighbors) {
-                let newdist = distance + neighbors[neighbor];
-                if (distances[neighbor] < newdist) {
-                    distances[neighbor] = newdist;
-                    parents[neighbor] = cv1;
-                }
-            }
-            visited.add(cv1);
-            cv1 = this.vertexWithMinDistance(distances, visited);
-        }
-        console.log(parents);
-        console.log(distances);
-    };
-}
 class Graph {
     constructor() {
         this.vertices = [];
@@ -119,46 +66,40 @@ class Graph {
         this.aList[v1] = {};
     };
     addEdge = (v1, v2, weight) => this.aList[v1][v2] = weight;
-    vertexWithMinDistance = (distances, visited) => {
-        let mindist = Infinity, minvert = null;
-        for (let v1 in distances) {
-            let distance = distances[v1];
-            if (distance < mindist && !visited.has(v1)) {
-                mindist = distance;
-                minvert = v1;
+    vertexWithMinDistance(distances, visited) {
+        let minDistance = Infinity,
+            minVertex = null;
+        for (let vertex in distances) {
+            let distance = distances[vertex];
+            if (distance < minDistance && !visited.has(vertex)) {
+                minDistance = distance;
+                minVertex = vertex;
             }
         }
-        return minvert;
-    };
+        return minVertex;
+    }
     dijkstra(source) {
-        let distances = {},
-            parents = {},
-            visited = new Set();
-        for (let i = 0; i < this.vertices.length; i++) {
-            if (this.vertices[i] === source) {
-                distances[source] = 0;
-            } else {
-                distances[this.vertices[i]] = Infinity;
-            }
-            parents[this.vertices[i]] = null;
+        let distances = {}, parents = {}, visited = new Set();
+        
+        for (let x = 0; x < this.vertices.length; x++) {
+            if (this.vertices[x] === source) distances[source] = 0;
+            else distances[this.vertices[x]] = Infinity;
+            parents[this.vertices[x]] = null;
         }
-
-        let currVertex = this.vertexWithMinDistance(distances, visited);
-
-        while (currVertex !== null) {
-            let distance = distances[currVertex],
-                neighbors = this.aList[currVertex];
+        let cv = this.vertexWithMinDistance(distances, visited);
+        while (cv !== null) {
+            let distance = distances[cv],
+                neighbors = this.aList[cv];
             for (let neighbor in neighbors) {
-                let newDistance = distance + neighbors[neighbor];
-                if (distances[neighbor] > newDistance) {
-                    distances[neighbor] = newDistance;
-                    parents[neighbor] = currVertex;
+                let newdist = distance + neighbors[neighbor];
+                if (distances[neighbor] > newdist) {
+                    distances[neighbor] = newdist;
+                    parents[neighbor] = cv;
                 }
             }
-            visited.add(currVertex);
-            currVertex = this.vertexWithMinDistance(distances, visited);
+            visited.add(cv);
+            cv = this.vertexWithMinDistance(distances, visited);
         }
-
         console.log(parents);
         console.log(distances);
     }

@@ -204,7 +204,6 @@ class LRUCache1 {
         }
     }
 }
-
 class LRUCache2 {
     constructor(limit) {
         this.max = limit;
@@ -228,7 +227,29 @@ class LRUCache2 {
         }
     }
 }
-
+class LRUCache3 {
+    constructor(limit = 10) {
+        this.max = limit;
+        this.storage = {};
+        this.nList = new DoublyLinkedList();
+    }
+    get = (key) => {
+        if (!key in this.storage) return null;
+        let listval = this.storage[key];
+        let node = this.nList.find(key);
+        this.nList.moveToFront(node);
+        return listval;
+    }
+    set = (key, value) => {
+        this.storage[key] = value;
+        let node = this.nList.find(key);
+        this.nList.moveToFront(node);
+        if (this.nList.length > this.max) {
+            delete this.storage[this.storage.tail.element];
+            this.nList.pop();
+        }
+    }
+}
 class LRUCache {
     constructor(limit = 10) {
         this.max = limit;
