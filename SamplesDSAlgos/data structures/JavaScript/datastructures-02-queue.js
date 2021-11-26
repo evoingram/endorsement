@@ -118,7 +118,7 @@ class Queue2 {
     };
     static isQueue(testInstance) { return testInstance instanceof Queue };
 }
-class Queue {
+class Queue3 {
     constructor() {
         this.items = [];
     }
@@ -140,6 +140,54 @@ class Queue {
     front = () => this.items[0]
     back = () => this.items[this.items.length - 1]
     static isQueue(testInstance) { return testInstance instanceof Queue }
+}
+class Queue4 {
+    constructor() {
+        this.items = [];
+    }
+    enqueue = (value) => this.items.push(value);
+    dequeue = () => {
+        if (this.items.length === 0) return new Error("Queue Underflow");
+        return this.items.shift();
+    };
+    isEmpty = () => this.items.length === 0;
+    get len() { return this.items.length };
+    printQueue = () => {
+        let string = `{ `;
+        for (let x = 0; x < this.items.length; x++) string += `${x}: ${this.items[x]}, `;
+        string = `${string.trim()} }`;
+        return string;
+    }
+    front = () => { return this.items[0]}
+    back = () => { return this.items[this.items.length - 1]};
+    static isQueue(testInstance) { return testInstance instanceof Queue };
+}
+
+class Queue {
+    constructor() {
+        this.size = 0;
+        this.storage = [];
+    }
+    enqueue = (value) => {
+        this.size++;
+        this.storage.push(value);
+    }
+    dequeue = () => {
+        if (this.size === 0) return new Error(`Empty Queue`);
+        this.size--;
+        return this.storage.shift();
+    }
+    isEmpty = () => this.size === 0;
+    get len() { return this.size }
+    printQueue = () => {
+        let string = `{ `;
+        for (let x = 0; x < this.size; x++) string += `${x}:  ${this.storage[x]}, `;
+        string = `${string.trim()} }`;
+        return string;
+    }
+    front = () => this.storage[0];
+    back = () => this.storage[this.size - 1];
+    static isQueue(ti) { return ti instanceof Queue }
 }
 
 /*

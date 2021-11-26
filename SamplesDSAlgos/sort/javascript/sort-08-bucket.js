@@ -124,6 +124,45 @@ bucketSort2 = (oArray, bSize) => {
     return oArray;
 }
 
+insertionSort = (bucket) => {
+    let cx, ci, px;
+    for (let x = 1; x < bucket.length; x++) {
+        ci = bucket[x];
+        px = x - 1;
+        while (px >= 0 && bucket[px] > ci) {
+            cx = px + 1;
+            bucket[cx] = bucket[px];
+            px -= 1;
+            cx = px + 1;
+        }
+        bucket[cx] = ci;
+    }
+}
+bucketSort = (oa, bsize) => {
+    if (oa.length === 0) return oa;
+    let minval = oa[0];
+    let maxval = oa[0];
+    bsize = bsize || oa.length || 5;
+    oa.forEach(curval => {
+        if (curval < minval) minval = curval
+        else if (curval > maxval) maxval = curval;
+    })
+    let bc = Math.floor((maxval - minval) / bsize) + 1;
+    let bh = new Array(bc);
+    for (let x = 0; x < bh.length; x++) bh[x] = [];
+    let cmd, flri;
+    oa.forEach(curval => {
+        cmd = curval - minval;
+        flri = Math.floor(cmd / bsize);
+        bh[flri].push(curval);
+    });
+    oa.length = 0;
+    bh.forEach(bucket => {
+        insertionSort(bucket);
+        bucket.forEach(element => oa.push(element));
+    });
+    return oa;
+}
 
 // insertionSort = () => {}
 // bucketSort = () => {}
