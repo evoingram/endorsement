@@ -1,4 +1,3 @@
-// https://reginafurness.medium.com/dijkstras-algorithm-in-javascript-4b5db48a93d4
 
 class Queue {
     constructor() {
@@ -26,64 +25,8 @@ class Queue {
     back = () => this.storage[this.size - 1];
     static isQueue(ti) { return ti instanceof Queue }
 }
-class Graph1 {
-    constructor() {
-        this.vertices = [];
-        this.aList = {};
-    }
-    addVertex(vertex) {
-        this.vertices.push(vertex);
-        this.aList[vertex] = {};
-    }
-    addEdge(vertex1, vertex2, weight) {
-        this.aList[vertex1][vertex2] = weight;
-    }
-    vertexWithMinDistance(distances, visited) {
-        let minDistance = Infinity,
-            minVertex = null;
-        for (let vertex in distances) {
-            let distance = distances[vertex];
-            if (distance < minDistance && !visited.has(vertex)) {
-                minDistance = distance;
-                minVertex = vertex;
-            }
-        }
-        return minVertex;
-    }
-    dijkstra(source) {
-        let distances = {},
-            parents = {},
-            visited = new Set();
-        for (let i = 0; i < this.vertices.length; i++) {
-            if (this.vertices[i] === source) {
-                distances[source] = 0;
-            } else {
-                distances[this.vertices[i]] = Infinity;
-            }
-            parents[this.vertices[i]] = null;
-        }
 
-        let currVertex = this.vertexWithMinDistance(distances, visited);
-
-        while (currVertex !== null) {
-            let distance = distances[currVertex],
-                neighbors = this.aList[currVertex];
-            for (let neighbor in neighbors) {
-                let newDistance = distance + neighbors[neighbor];
-                if (distances[neighbor] > newDistance) {
-                    distances[neighbor] = newDistance;
-                    parents[neighbor] = currVertex;
-                }
-            }
-            visited.add(currVertex);
-            currVertex = this.vertexWithMinDistance(distances, visited);
-        }
-
-        console.log(parents);
-        console.log(distances);
-    }
-}
-class Graph2 {
+class Graph {
 
     // Constructor
     constructor(v) {
@@ -220,106 +163,21 @@ class Graph2 {
         console.log(` distances = ${JSON.stringify(distances)}`);
     }
 }
-class Graph {
-    constructor() {
-        this.vertices = [];
-        this.aList = {};
-    }
-    addVertex = (v1) => {
-        this.vertices.push(v1);
-        this.aList[v1] = {};
-    };
-    addEdge = (v1, v2, weight) => {
-        this.aList[v1][v2] = weight;
-    }
-    printGraph = () => {
-        var keys = Object.keys(this.aList);
-        for (var i of keys) {
-            var values = Object.values(this.aList[i]);
-            var conc = "";
-            for (var j of values)
-                conc += j + " ";
-            console.log(i + " -> " + conc);
-        }
-        console.log(this.aList);
-    }
-    vertexWithMinDistance(distances, visited) {
-        let minDistance = Infinity,
-            minVertex = null;
-        for (let vertex in distances) {
-            let distance = distances[vertex];
-            if (distance < minDistance && !visited.has(vertex)) {
-                minDistance = distance;
-                minVertex = vertex;
-            }
-        }
-        return minVertex;
-    }
-    dijkstra(source) {
-        let distances = {}, parents = {}, visited = new Set();
-        
-        for (let x = 0; x < this.vertices.length; x++) {
-            if (this.vertices[x] === source) distances[source] = 0;
-            else distances[this.vertices[x]] = Infinity;
-            parents[this.vertices[x]] = null;
-        }
-        let cv = this.vertexWithMinDistance(distances, visited);
-        while (cv !== null) {
-            let distance = distances[cv],
-                neighbors = this.aList[cv];
-            for (let neighbor in neighbors) {
-                let newdist = distance + neighbors[neighbor];
-                if (distances[neighbor] > newdist) {
-                    distances[neighbor] = newdist;
-                    parents[neighbor] = cv;
-                }
-            }
-            visited.add(cv);
-            cv = this.vertexWithMinDistance(distances, visited);
-        }
-        console.log(` parents =   ${JSON.stringify(parents)}`);
-        console.log(` distances = ${JSON.stringify(distances)}`);
-    }
-}
+g = new Graph(4);
 
-/*
+g.addEdge(0, 1);
+g.addEdge(0, 2);
+g.addEdge(1, 2);
+g.addEdge(2, 0);
+g.addEdge(2, 3);
+g.addEdge(3, 3);
 
-class Graph {
-    constructor() {
-    }
-    addVertex = () => {};
-    addEdge = () => {};
-    vertexWithMinDistance = () => {};
-    dijkstra = () => {};
-}
-*/
-let g = new Graph();
-
-// add the vertices
-g.addVertex('A');
-g.addVertex('B');
-g.addVertex('C');
-g.addVertex('D');
-
-// create the edges
-g.addEdge('A', 'B', 3);
-g.addEdge('A', 'C', 2);
-g.addEdge('B', 'D', 2);
-g.addEdge('C', 'D', 6);
-g.addEdge("A","B", 3);
-g.addEdge("A","C", 2);
-g.addEdge("A","D", 4);
-g.addEdge("B","C", 2);
-g.addEdge("B","D", 2);
-g.addEdge("C","D", 6);
-
-// should log
-// { A: null, B: 'A', C: 'A', D: 'B' }
-console.log(`------------dijkstra------------`);
-console.log(`  answer =   { A: null, B: 'A', C: 'A', D: 'A' }`);
-// run dijkstra's algorithm, with A as the source vertex.
-g.dijkstra('A');
-// { A: 0, B: 3, C: 2, D: 5 }
-console.log(`    answer = { A: 0, B: 3, C: 2, D: 4 }`);
-console.log(`--------------------------------`);
+console.log("Depth First Traversal");
+g.dfs(2);
+console.log("Breadth First Traversal");
+g.bfs(2);
+console.log("-----printGraph-----");
 g.printGraph();
+console.log("--------djikstra------------");
+g.dijkstra(2);
+console.log("----------------------------");
