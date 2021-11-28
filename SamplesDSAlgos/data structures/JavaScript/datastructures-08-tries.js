@@ -95,94 +95,24 @@ class Trie2 {
         else if (command === 'startsWith') return true;
     }
 }
-class Trie3 {
-    constructor() {
-        this.child = {}
-    }
-    selectProcess = (word, command) => {
-        if (command !== 'insert' && command !== 'search' && command !== 'startsWith') {
-            console.error('Please select a valid command:  insert, search, or startsWith.');
-            return new Error(`Invalid command.`);
-        }
-        let cc = this.child, letter;
-        for(let x = 0; x < word.length; x++) {
-            letter = word[x];
-            if (!(letter in cc)) {
-                if (command === 'insert') cc[letter] = {};
-                else return false;
-            }
-            cc = cc[letter];
-        }
-        if (command === 'insert') cc['//'] = 1
-        else if (command === 'search') return '//' in cc
-        else if (command === 'startsWith') return true;
-    }
-}
-class Trie4 {
-    constructor() {
-        this.child = {}
-    }
-    selectProcess = (word, command) => {
-        if (command !== 'insert' && command !== 'search' && command !== 'startsWith') {
-            console.error(`Please select a valid command: insert, search, or startsWith.`);
-            return new Error(`Invalid command`);
-        }
-        let cc = this.child, letter;
-        for (let x = 0; x < word.length; x++) {
-            letter = word[x];
-            if (!(letter in cc)) {
-                if (command === 'insert') cc[letter] = {};
-                else return false;
-            }
-            cc = cc[letter];
-        }
-        if (command === 'insert') cc['//'] = 1
-        else if (command === 'search') return '//' in cc
-        else if (command === 'startsWith') return true;
-    }
-}
-class Trie5 {
+class Trie {
     constructor() {
         this.child = {};
     }
     selectProcess = (word, command) => {
         if (command !== 'insert' && command !== 'search' && command !== 'startsWith') {
-            console.error(`Please select a valid command:  insert, search, or startsWith.`);
-            return new Error("Invalid command.");
+            return new Error(`Please select a valid command:  insert, search, or startsWith.`);
         }
         let cc = this.child, letter;
         for (let x = 0; x < word.length; x++) {
             letter = word[x];
             if (!(letter in cc)) {
-                if (command === 'insert') cc[letter] = {};
+                if (command === 'insert') cc[letter] = {}
                 else return false;
             }
             cc = cc[letter];
         }
         if (command === 'insert') cc['//'] = 1
-        else if (command === 'search') return '//' in cc
-        else if (command === 'startsWith') return true;
-    }
-}
-class Trie {
-    constructor() {
-        this.child = {}
-    }
-    selectProcess = (word, command) => {
-        if (command !== 'insert' && command !== 'search' && command !== 'startsWith') {
-            console.error(`Please select a valid command:  search, insert, or startsWith`);
-            return new Error(`Invalid trie command`);
-        }
-        let cc = this.child, letter;
-        for (let x = 0; x < word.length; x++) {
-            letter = word[x];
-            if (!(letter in cc)) {
-                if (command === 'insert') cc[letter] = {};
-                else return false;
-            }
-            cc = cc[letter];
-        }
-        if (command === 'insert') cc['//'] = 1;
         else if (command === 'search') return '//' in cc
         else if (command === 'startsWith') return true;
     }
