@@ -60,11 +60,11 @@ quickSort = (oa) => {
     const oafl = Math.floor(flp);
     const pivot = oa[oafl];
     let left = []; let right = []; let equal = [];
-    for (curval of oa) {
-        if (curval < pivot) left.push(curval)
-        else if (curval > pivot) right.push(curval)
-        else equal.push(curval);
-    }
+    for (let cv of oa) {
+        if (cv < pivot) left.push(cv)
+        else if (cv > pivot) right.push(cv)
+        else equal.push(cv);
+    };
     return [
         ...quickSort(left),
         equal,
