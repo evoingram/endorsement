@@ -41,61 +41,7 @@ bubbleSort1 = (arr) => {
     // return sorted array
     return arr
 }
-bubbleSort2 = (toSort) => {
-    let next2Last = toSort.length - 2;
-    let swapped, yVal, nextYVal;
-    for (let x = 0; x < next2Last; x++) {
-        swapped = false;
-        for (let y = 0; y < next2Last; y++) {
-            if (toSort[y] > toSort[y+1]) {
-                yVal = toSort[y];
-                nextYVal = toSort[y+1];
-                toSort[y] = nextYVal;
-                toSort[y+1] = yVal;
-                swapped = true;
-            }
-        }
-        if (swapped === false) break;
-    }
-    return toSort;
-}
-bubbleSort3 = (toSort) => {
-    let next2Last = toSort.length - 2;
-    let swapped, yVal, nextYVal;
-    for (let x = 0; x < next2Last; x++) {
-        swapped = false;
-        for (let y = 0; y < next2Last; y++) {
-            if (toSort[y] > toSort[y+1]) {
-                yVal = toSort[y];
-                nextYVal = toSort[y+1];
-                toSort[y] = nextYVal;
-                toSort[y+1] = yVal;
-                swapped = true;
-            }
-        }
-    }
-    return toSort;
-}
-
-bubbleSort4 = (oa) => {
-    let n2l = oa.length - 2;
-    let swapped, yVal, nextYval;
-    for (let x = 0; x < n2l; x++) {
-        swapped = false;
-        for (let y = 0; y < n2l; y++) {
-            if (oa[y] > oa[y+1]) {
-                yVal  = oa[y];
-                nextYval = oa[y+1];
-                oa[y] = nextYval;
-                oa[y+1] = yVal;
-                swapped = true;
-            }
-        }
-    }
-    return oa;
-}
-
-bubbleSort = (oa) => {
+bubbleSort2 = (oa) => {
     let n2l = oa.length - 2;
     let swapped, yVal, nextYval;
     for (let x = 0; x < n2l; x++) {
@@ -106,6 +52,24 @@ bubbleSort = (oa) => {
                 nextYVal = oa[y+1];
                 oa[y] = nextYVal;
                 oa[y+1] = yVal;
+                swapped = true;
+            }
+        }
+    }
+    return oa;
+}
+
+bubbleSort = (oa) => {
+    let n2l = oa.length - 2;
+    let swapped, yval, nyval;
+    for (let x = 0; x < oa.length; x++) {
+        swapped = false;
+        for (let y = 0; y < oa.length; y++) {
+            if (oa[y] > oa[y+1]) {
+                yval = oa[y];
+                nyval = oa[y+1];
+                oa[y] = nyval;
+                oa[y+1] = yval;
                 swapped = true;
             }
         }

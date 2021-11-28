@@ -144,14 +144,39 @@ heapify = (oa, hs, ri) => {
     }
 }
 heapSort = (oa) => {
-    for (let x = 0; x < arr.length; x++) heapify(arr, arr.length, x);
-    for (let x = arr.length - 1; x > -1; x--) {
-        let temp = arr[0];
-        arr[0] = arr[x];
-        arr[x] = temp;
-        heapify(arr, x, 0);
+    for (let x = 0; x < oa.length; x++) heapify(oa, oa.length, x);
+    for (let x = oa.length - 1; x > -1; x--) {
+        let temp = oa[0];
+        oa[0] = oa[x];
+        oa[x] = temp;
+        heapify(oa, x, 0);
     }
 } 
+
+heapSort3 = (oa) => {
+    for (let x = 0; x < oa.length; x++) heapify(oa, oa.length, x);
+    for (let x = oa.length - 1; x > -1; x--) {
+        let temp = oa[x];
+        oa[0] = oa[x];
+        oa[x] = temp;
+        heapify(oa, x, 0);
+    }
+
+} 
+heapify = (oa, hs, ri) => {
+    let lii = ri;
+    let lci = 2 * ri + 1;
+    let rci = 2 * ri + 2;
+    let rv = oa[ri];
+    if (lci < hs && rv < oa[lci]) lii = lci;
+    if (rci < hs && oa[lii] < oa[rci]) lii = rci;
+    if (lii !== ri) {
+        let temp = oa[ri];
+        oa[ri] = oa[lii];
+        oa[lii] = temp;
+        heapify(oa, hs, lii);
+    }
+}
 
 // heapSort = (oa) => {} heapify = () => {}
 arr = [12, 11, 13, 5, 6, 7]

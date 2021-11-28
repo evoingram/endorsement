@@ -51,34 +51,6 @@ insertionSort2 = (oa) => {
     return oa;
 }
 
-insertionSort3 = (oa) => {
-    let cp, ci;
-    for (let x = 1; x < oa.length; x++) {
-        ci = oa[x];
-        cp = x;
-        while (cp > 0 && oa[cp - 1] > ci) {
-            oa[cp] = oa[cp - 1];
-            cp--;
-        }
-        oa[cp] = ci;
-    }
-    return oa;
-}
-
-insertionSort4 = (oa) => {
-    let cp, ci;
-    for (let x = 1; x < oa.length; x++) {
-        ci = oa[x];
-        cp = x;
-        while (cp > 0 && oa[cp - 1] > ci) {
-            oa[cp] = oa[cp - 1];
-            cp--;
-        }
-        oa[cp] = ci;
-    }
-    return oa;
-}
-
 insertionSort = (oa) => {
     let cp, ci;
     for (let x = 1; x < oa.length; x++) {

@@ -21,289 +21,146 @@
 
 // https://github.com/masahito1997/algorithms/blob/master/src/data-structures/bloom-filter/BloomFilter.js
 class BloomFilter1 {
-    // size - the size of the storage.
-    constructor(size = 100) {
-      // Bloom filter size directly affects the likelihood of false positives.
-      // The bigger the size the lower the likelihood of false positives.
-      this.size = size;
-      this.storage = this.createStore(size);
-    }
-
-    insert(item) {
-      const hashValues = this.getHashValues(item);
-      // Set each hashValue index to true.
-      hashValues.forEach((val) => this.storage.setValue(val));
-    }
-
-    mayContain(item) {
-      const hashValues = this.getHashValues(item);
-      for (let hashIndex = 0; hashIndex < hashValues.length; hashIndex += 1) {
-        if (!this.storage.getValue(hashValues[hashIndex])) {
-          // We know that the item was definitely not inserted.
-          return false;
-        }
-      }
-      // The item may or may not have been inserted.
-      return true;
-    }
-  
-    /*
-     * Creates the data store for our filter.
-     * We use this method to generate the store in order to
-     * encapsulate the data itself and only provide access
-     * to the necessary methods.
-     */
-    createStore(size) {
-      const storage = [];
-      // Initialize all indexes to false
-      for (let storageCellIndex = 0; storageCellIndex < size; storageCellIndex += 1) {
-        storage.push(false);
-      }
-      const storageInterface = {
-        getValue(index) {
-          return storage[index];
-        },
-        setValue(index) {
-          storage[index] = true;
-        },
-      };
-      return storageInterface;
-    }
-  
-    hash1(item) {
-      let hash = 0;
-      for (let charIndex = 0; charIndex < item.length; charIndex += 1) {
-        const char = item.charCodeAt(charIndex);
-        hash = (hash << 5) + hash + char;
-        hash &= hash; // Convert to 32bit integer
-        hash = Math.abs(hash);
-      }
-      return hash % this.size;
-    }
-
-    hash2(item) {
-      let hash = 5381;
-      for (let charIndex = 0; charIndex < item.length; charIndex += 1) {
-        const char = item.charCodeAt(charIndex);
-        hash = (hash << 5) + hash + char; /* hash * 33 + c */
-      }
-      return Math.abs(hash % this.size);
-    }
-
-    hash3(item) {
-      let hash = 0;
-      for (let charIndex = 0; charIndex < item.length; charIndex += 1) {
-        const char = item.charCodeAt(charIndex);
-        hash = (hash << 5) - hash;
-        hash += char;
-        hash &= hash; // Convert to 32bit integer
-      }
-      return Math.abs(hash % this.size);
-    }
-  
-    // Runs all 3 hash functions on the input and returns an array of results.
-    getHashValues(item) {
-      return [
-        this.hash1(item),
-        this.hash2(item),
-        this.hash3(item),
-      ];
-    }
-  }
-  class BloomFilter2 {
-    constructor(size = 100) {
-      this.size = size;
-      this.storage = this.createStore(size);
-    }
-    insert(item) {
-      const hashValues = this.getHashValues(item);
-      hashValues.forEach((val) => this.storage.setValue(val));
-    }
-    mayContain(item) {
-      const hashValues = this.getHashValues(item);
-      for (let hashIndex = 0; hashIndex < hashValues.length; hashIndex += 1) {
-        if (!this.storage.getValue(hashValues[hashIndex])) {
-          return false;
-        }
-      }
-      return true;
-    }
-    createStore(size) {
-      const storage = [];
-      for (let storageCellIndex = 0; storageCellIndex < size; storageCellIndex += 1) {
-        storage.push(false);
-      }
-      const storageInterface = {
-        getValue(index) { return storage[index] },
-        setValue(index) { storage[index] = true },
-      };
-      return storageInterface;
-    }
-    hash1(item) {
-      let hash = 0;
-      for (let charIndex = 0; charIndex < item.length; charIndex += 1) {
-        const char = item.charCodeAt(charIndex);
-        hash = (hash << 5) + hash + char;
-        hash &= hash; // Convert to 32bit integer
-        hash = Math.abs(hash);
-      }
-      return hash % this.size;
-    }
-    hash2(item) {
-      let hash = 5381;
-      for (let charIndex = 0; charIndex < item.length; charIndex += 1) {
-        const char = item.charCodeAt(charIndex);
-        hash = (hash << 5) + hash + char; /* hash * 33 + c */
-      }
-      return Math.abs(hash % this.size);
-    }
-    hash3(item) {
-      let hash = 0;
-      for (let charIndex = 0; charIndex < item.length; charIndex += 1) {
-        const char = item.charCodeAt(charIndex);
-        hash = (hash << 5) - hash;
-        hash += char;
-        hash &= hash; // Convert to 32bit integer
-      }
-      return Math.abs(hash % this.size);
-    }
-    getHashValues(item) {
-      return [
-        this.hash1(item),
-        this.hash2(item),
-        this.hash3(item),
-      ];
-    }
-  }
-
-  class BloomFilter3 {
-    constructor(size = 100) {
-      this.size = size;
-      this.storage = this.createStore(size);
-    }
-    insert(item) {
-      const hashValues = this.getHashValues(item);
-      hashValues.forEach(val => this.storage.setValue(val));
-    }
-    mayContain(item) {
-      const hashValues = this.getHashValues(item);
-      for (let hi = 0; hi < hashValues.length; hi++) {
-        if (!this.storage.getValue(hashValues[hi])) return false;
-      }
-      return true;
-    }
-    createStore(size) {
-      const storage = [];
-      for (let storageCellI = 0; storageCellI < size; storageCellI++) {
-        storage.push(false);
-      };
-      const storageInterface = {
-        getValue(index) { return storage[index] },
-        setValue(index) { storage[index] = true },
-      };
-      return storageInterface;
-    }
-    hash1(item) {
-      let hash = 0;
-      for (let charI = 0; charI < item.length; charI++) {
-        const char = item.charCodeAt(charI);
-        hash = (hash << 5) + hash + char;
-        hash &= hash;
-        hash = Math.abs(hash);
-      }
-      return hash % this.size;
-    }
-    hash2(item) {
-      let hash = 5381;
-      for (let ci = 0; ci < item.length; ci++) {
-        const char = item.charCodeAt(ci);
-        hash = (hash << 5) + hash + char;
-      }
-      return Math.abs(hash % this.size);
-    }
-    hash3(item) {
-      let hash = 0;
-      for (let ci = 0; ci < item.length; ci++) {
-        const char = item.charCodeAt(ci);
-        hash = (hash << 5) - hash;
-        hash += char;
-        hash &= hash;
-      }
-      return Math.abs(hash % this.size);
-    }
-    getHashValues(item) {
-      return [
-        this.hash1(item),
-        this.hash2(item),
-        this.hash3(item)
-      ];
-    }
-  }
-
-  class BloomFilter {
-    constructor(size = 100) {
-      this.size = size;
-      this.storage = this.createStore(size);
-    }
-    insert(item) {
-      const hashValues = this.getHashValues(item);
-      hashValues.forEach(val => this.storage.setValue(val));
-    }
-    mayContain(item) {
-      const hashValues = this.getHashValues(item);
-      for (let hi = 0; hi < hashValues.length; hi++) {
-        if (!this.storage.getValue(hashValues[hi])) return false;
-      }
-      return true;
-    }
-    createStore(size) {
-      const storage = [];
-      for (let storagecelli = 0; storagecelli < size; storagecelli++) {
-        storage.push(false);
-      }
-      const storageinterface = {
-        getValue(index) { return storage[index]},
-        setValue(index) { storage[index] = true }
-      };
-      return storageinterface;
-    }
-    hash1(item) {
-      let hash = 0;
-      for (let chari = 0; chari < item.length; chari++) {
-        const char = item.charCodeAt(chari);
-        hash = (hash << 5) + hash + char;
-        hash &= hash;
-        hash = Math.abs(hash);
-      }
-      return hash % this.size;
-    }
-    hash2(item) {
-      let hash = 5381;
-      for (let ci = 0; ci < item.length; ci++) {
-        const char = item.charCodeAt(ci);
-        hash = (hash << 5) + hash + char;
-      }
-      return Math.abs(hash % this.size);
-    }
-    hash3(item) {
-      let hash = 0;
-      for (let ci = 0; ci < item.length;ci++) {
-        const char = item.charCodeAt(ci);
-        hash = (hash << 5) - hash;
-        hash += char;
-        hash &= hash;
-      }
-      return Math.abs(hash % this.size);
-    }
-    getHashValues(item) {
-      return [
-        this.hash1(item),
-        this.hash2(item),
-        this.hash3(item)
-      ];
-    }
-  }
-
+	// size - the size of the storage.
+	constructor(size = 100) {
+		// Bloom filter size directly affects the likelihood of false positives.
+		// The bigger the size the lower the likelihood of false positives.
+		this.size = size;
+		this.storage = this.createStore(size);
+	}
+	insert(item) {
+		const hashValues = this.getHashValues(item);
+		// Set each hashValue index to true.
+		hashValues.forEach((val) => this.storage.setValue(val));
+	}
+	mayContain(item) {
+		const hashValues = this.getHashValues(item);
+		for (let hashIndex = 0; hashIndex < hashValues.length; hashIndex += 1) {
+			if (!this.storage.getValue(hashValues[hashIndex])) {
+				// We know that the item was definitely not inserted.
+				return false;
+			}
+		}
+		// The item may or may not have been inserted.
+		return true;
+	}
+	/*
+	 * Creates the data store for our filter.
+	 * We use this method to generate the store in order to
+	 * encapsulate the data itself and only provide access
+	 * to the necessary methods.
+	 */
+	createStore(size) {
+		const storage = [];
+		// Initialize all indexes to false
+		for (let storageCellIndex = 0; storageCellIndex < size; storageCellIndex += 1) {
+			storage.push(false);
+		}
+		const storageInterface = {
+			getValue(index) {
+				return storage[index];
+			},
+			setValue(index) {
+				storage[index] = true;
+			},
+		};
+		return storageInterface;
+	}
+	hash1(item) {
+		let hash = 0;
+		for (let charIndex = 0; charIndex < item.length; charIndex += 1) {
+			const char = item.charCodeAt(charIndex);
+			hash = (hash << 5) + hash + char;
+			hash &= hash; // Convert to 32bit integer
+			hash = Math.abs(hash);
+		}
+		return hash % this.size;
+	}
+	hash2(item) {
+		let hash = 5381;
+		for (let charIndex = 0; charIndex < item.length; charIndex += 1) {
+			const char = item.charCodeAt(charIndex);
+			hash = (hash << 5) + hash + char; /* hash * 33 + c */
+		}
+		return Math.abs(hash % this.size);
+	}
+	hash3(item) {
+		let hash = 0;
+		for (let charIndex = 0; charIndex < item.length; charIndex += 1) {
+			const char = item.charCodeAt(charIndex);
+			hash = (hash << 5) - hash;
+			hash += char;
+			hash &= hash; // Convert to 32bit integer
+		}
+		return Math.abs(hash % this.size);
+	}
+	// Runs all 3 hash functions on the input and returns an array of results.
+	getHashValues(item) {
+		return [
+			this.hash1(item),
+			this.hash2(item),
+			this.hash3(item),
+		];
+	}
+}
+class BloomFilter {
+	constructor(size = 100) {
+		this.size = size;
+		this.storage = this.createStore(size);
+	}
+	insert = (item) => this.getHashValues(item).forEach(val => this.storage.setValue(val));
+	mayContain = (item) => { 
+		const hashValues = this.getHashValues(item);
+		for (let hi = 0; hi < hashValues.length; hi++) {
+			if (!this.storage.getValue(hashValues[hi])) return false;
+		};
+		return true;
+	}
+	createStore = (size) => {
+		const storage = [];
+		for (let sci = 0; sci < size; sci++) storage.push(false);
+		const storageInterface = {
+			getValue(index) { return storage[index] },
+			setValue(index) { storage[index] = true }
+		};
+		return storageInterface;
+	}
+	hash1 = (item) => { 
+		let hash = 0;
+		for (let ci = 0; ci < item.length; ci++) {
+			const character = item.charCodeAt(ci);
+			hash = (hash << 5) + hash + character;
+			hash &= hash;
+			hash = Math.abs(hash);
+		}
+		return hash % this.size;
+	}
+	hash2 = (item) => { 
+		let hash = 5381;
+		for (let ci = 0; ci < item.length; ci++) {
+			const character = item.charCodeAt(ci);
+			hash = (hash << 5) + hash + character;
+		}
+		return Math.abs(hash % this.size);
+	}
+	hash3 = (item) => { 
+		let hash = 0;
+		for (let ci = 0; ci < item.length; ci++) {
+			const character = item.charCodeAt(ci);
+			hash = (hash << 5) - hash;
+			hash += character;
+			hash &= hash;
+		}
+		return Math.abs(hash % this.size);
+	}
+	getHashValues = (item) => { 
+		return [
+			this.hash1(item),
+			this.hash2(item),
+			this.hash3(item)
+		];
+	}
+}
   /*
 class BloomFilter {
     constructor(size = 100) {}

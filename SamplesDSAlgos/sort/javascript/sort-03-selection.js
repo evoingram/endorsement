@@ -52,48 +52,6 @@ selectionSort1 = (originalArray) => {
     return originalArray
 }
 selectionSort2 = (oa) => {
-    let ci, si, nexti, xcitem, ycitem, smallestitem;
-    for (let x = 0; x < oa.length; x++) {
-        ci = x;
-        si = ci;
-        nexti = x + 1;
-        for(let y = nexti; y < oa.length; y++) {
-            ycitem = oa[y];
-            smallestitem = oa[si];
-            if(ycitem < smallestitem) si = y;
-        };
-        if (si !== x) {
-            smallestitem = oa[si];
-            xcitem = oa[x];
-            oa[si] = xcitem;
-            oa[x] = smallestitem;
-        }
-    }
-    return oa;
-}
-
-selectionSort3 = (oa) => {
-    let ci, si, ni, xcitem, ycitem, smallestitem;
-    for(let x = 0; x < oa.length; x++) {
-        ci = x;
-        si = ci;
-        ni = x + 1;
-        for (let y = ni; y < oa.length; y++) {
-            ycitem = oa[y];
-            smallestitem = oa[si];
-            if (ycitem < smallestitem) si = y;
-        };
-        if (si !== x) {
-            smallestitem = oa[si];
-            xcitem = oa[x];
-            oa[si] = xcitem;
-            oa[x] = smallestitem;
-        }
-    }
-    return oa;
-}
-
-selectionSort4 = (oa) => {
     let ci, si, ni, xcitem, ycitem, smallestitem;
     for (let x = 0; x < oa.length; x++) {
         ci = x;
@@ -103,7 +61,7 @@ selectionSort4 = (oa) => {
             ycitem = oa[y];
             smallestitem = oa[si];
             if (ycitem < smallestitem) si = y;
-        };
+        }
         if (si !== x) {
             smallestitem = oa[si];
             xcitem = oa[x];
@@ -127,7 +85,7 @@ selectionSort = (oa) => {
         }
         if (si !== x) {
             smallestitem = oa[si];
-            xcitem = oa[x];
+            xcitem =  oa[x];
             oa[si] = xcitem;
             oa[x] = smallestitem;
         }
