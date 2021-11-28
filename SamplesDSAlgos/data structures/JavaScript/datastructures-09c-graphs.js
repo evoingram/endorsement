@@ -1,4 +1,5 @@
 
+// see also https://jarednielsen.com/data-structure-graph-topological-sort/
 class Queue {
     constructor() {
         this.size = 0;
@@ -26,74 +27,37 @@ class Queue {
     static isQueue(ti) { return ti instanceof Queue }
 }
 
-class Graph {
-
-    // Constructor
+class Graph1 {
     constructor(v) {
         this.V = v;
         this.adj = new Array(v);
         for (let i = 0; i < v; i++) this.adj[i] = [];
     }
-
-    addEdge(v, w) {
-
-        // Add w to v's list.
-        this.adj[v].push(w);
-    }
-
-    DFSUtil(v, visited) {
-
-        // Mark the current node as visited and print it
+    addEdge = (v, w) => this.adj[v].push(w);
+    dfsUtil = (v, visited) => {
         visited[v] = true;
         console.log(v + " ");
-
-        // Recur for all the vertices adjacent to this
-        // vertex
         for (let i of this.adj[v].values()) {
-            let n = i
-            if (!visited[n])
-                this.DFSUtil(n, visited);
+            let n = i;
+            if (!visited[n]) this.dfsUtil(n, visited);
         }
     }
-
-    dfs(v) {
-
-        // Mark all the vertices as
-        // not visited(set as
-        // false by default in java)
+    dfs = (v) => {
         let visited = new Array(this.V);
-        for (let i = 0; i < this.V; i++)
-            visited[i] = false;
-
-        // Call the recursive helper
-        // function to print DFS
-        // traversal
-        this.DFSUtil(v, visited);
+        for (let i = 0; i < this.V; i++) visited[i] = false;
+        this.dfsUtil(v, visited);
     }
     bfs(startingNode) {
-
-        var visited = {};
-        var q = new Queue();
-
-        // add the starting node to the queue
+        let visited = {};
+        let q = new Queue();
         visited[startingNode] = true;
         q.enqueue(startingNode);
-
-        // loop until queue is element
         while (!q.isEmpty()) {
-            // get the element from the queue
-            var getQueueElement = q.dequeue();
-
-            // passing the current vertex to callback function
+            let getQueueElement = q.dequeue();
             console.log(getQueueElement);
-
-            // get the adjacent list for current vertex
-            var get_List = Object.values(this.adj[getQueueElement]);
-
-            // loop through the list and add the element to the
-            // queue if it is not processed yet
-            for (var i in get_List) {
-                var neighbor = get_List[i];
+            let getList = Object.values(this.adj[getQueueElement]);
+            for (let i in getList) {
+                let neighbor = getList[i];
 
                 if (!visited[neighbor]) {
                     visited[neighbor] = true;
@@ -103,27 +67,13 @@ class Graph {
         }
     }
     printGraph = () => {
-        var keys = Object.keys(this.adj);
-        for (var i of keys) {
-            var values = Object.values(this.adj[i]);
-            var conc = "";
-            for (var j of values)
-                conc += j + " ";
-            console.log(i + " -> " + conc);
+        let keys = Object.keys(this.adj);
+        for (let i of keys) {
+            let values = Object.values(this.adj[i]);
+            let conc = "";
+            for (let value of values) conc += `${value} `;
+            console.log(`${i} -> ${conc}`);
         }
-    }
-    topoSort(v = this.V[0], discovered = [], s) {
-        // https://jarednielsen.com/data-structure-graph-topological-sort/
-        const stack = s || [];
-        let adj = this.adj;
-        discovered[v] = true;
-        console.log(`adj = ${adj} || v = ${v}`);
-        for (let i = 0; i < adj[v].length; i++){
-            let w = adj[v][i];
-            if (!discovered[w]) this.topoSort(w, discovered, stack);
-        }
-        stack.unshift(v);
-        return stack || false;
     }
     vertexWithMinDistance(distances, visited) {
         let minDistance = Infinity,
@@ -162,7 +112,117 @@ class Graph {
         console.log(` parents =   ${JSON.stringify(parents)}`);
         console.log(` distances = ${JSON.stringify(distances)}`);
     }
+}class Graph {
+    constructor(v) {
+        this.V = v;
+        this.alist = new Array(v);
+        for (let x = 0; x < v; x++) this.alist[x] = [];
+    }
+    addEdge = (v, w) => this.alist[v].push(w);
+    dfsUtil = (v, visited) => {
+        visited[v] = true;
+        console.log(v + " ");
+        for (let x of this.alist[v].values()) {
+            let n = x;
+            if (!visited[n]) this.dfsUtil(n, visited);
+        }
+    }
+    dfs = (v) => {
+        let visited = new Array(this.V);
+        for (let x = 0; x < this.V; x++) visited[x] = false;
+        this.dfsUtil(v, visited);
+    }
+    bfs = (startingNode) => {
+        let visited = {};
+        let q = new Queue();
+        visited[startingNode] = true;
+        q.enqueue(startingNode);
+        while (!q.isEmpty()) {
+            let currentQElement = q.dequeue();
+            console.log(currentQElement);
+            let list = Object.values(this.alist[currentQElement]);
+            for (let key in list) {
+                let neighbor = list[key];
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    q.enqueue(neighbor);
+                }
+            }
+        }
+    }
+    printGraph = () => {
+        let keys = Object.keys(this.alist);
+        for (let key of keys) {
+            let values = Object.values(this.alist[key]);
+            let conc = ``;
+            for (let value of values) conc += `${value} `;
+            console.log(`${key} -> ${conc}`);
+        }
+    }
+    vertexWithMinDistance = (distances, visited) => {
+        let mindist = Infinity;
+        let minvert = null;
+        for (let vertex in distances) {
+            let distance = distances[vertex];
+            if (distance < mindist && !visited.has(vertex)) {
+                mindist = distance;
+                minvert = vertex;
+            }
+        }
+        return minvert;
+    }
+    dijkstra = (source) => {
+        let distances = {}, parents = {}, visited = new Set();
+        for (let x = 0; x < this.alist.length; x++) {
+            if (this.V[x] === source) distances[source] = 0
+            else distances[this.alist[x]] = Infinity;
+            parents[this.alist[x]] = null;
+        }
+        let cv = this.vertexWithMinDistance(distances, visited);
+        while (cv !== null) {
+            let distance = distances[cv];
+            let neighbors = this.alist[cv];
+            for (let neighbor in neighbors) {
+                let newdist = distance + neighbors[neighbor];
+                if (distances[neighbor] > newdist) {
+                    distances[neighbor] = newdist;
+                    parents[neighbor] = cv;
+                }
+            }
+            visited.add(cv);
+            cv = this.vertexWithMinDistance(distances, visited);
+        }
+
+        while (cv !== null) {
+            let distance = distances[cv],
+                neighbors = this.adj[cv];
+            for (let neighbor in neighbors) {
+                let newdist = distance + neighbors[neighbor];
+                if (distances[neighbor] > newdist) {
+                    distances[neighbor] = newdist;
+                    parents[neighbor] = cv;
+                }
+            }
+            visited.add(cv);
+            cv = this.vertexWithMinDistance(distances, visited);
+        }
+        console.log(` parents =   ${JSON.stringify(parents)}`);
+        console.log(` distances = ${JSON.stringify(distances)}`);
+    }
 }
+
+/*
+class Graph {
+    constructor() {}
+    addEdge = () => {};
+    dfsUtil = () => {}
+    dfs = () => {}
+    bfs = () => {}
+    printGraph = () => {}
+    vertexWithMinDistance = () => {}
+    dijkstra = () => {}
+}
+*/
 g = new Graph(4);
 
 g.addEdge(0, 1);

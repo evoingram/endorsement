@@ -76,165 +76,24 @@ class Graph2 {
     }
     addEdge(v1, v2, weight = 1) {
         if (v1 > this.size - 1 || v2 > this.size - 1) {
-            console.error(`Invalid vertex.`);
-            return new Error(`Invalid vertex.`)
-        }
-        else if (v1 === v2) {
-            console.error(`Same vertex.`);
-            return new Error(`Same vertex.`);
-        } else {
-            this.matrix[v1][v2] = weight;
-            this.matrix[v2][v1] = weight;
-        }
-    }
-    removeEdge(v1, v2) {
-        if (v1 > this.size - 1 || v2 > this.size - 1) {
-            console.error(`Invalid vertex.`);
-            return new Error(`Invalid vertex.`);
+            console.error(`Invalid vertex`);
+            return new Error(`Invalid vertex`);
         } else if (v1 === v2) {
-            console.error(`Same vertex.`);
-            return new Error(`Same vertex.`);
+            console.error(`Vertexes are identical.`);
+            return new Error(`Identical vertexes`);
         } else {
-            this.matrix[v1][v2] = 0;
-            this.matrix[v2][v1] = 0;
-        }
-    }
-    addVertex() {
-        this.size++;
-        this.matrix.push([]);
-        for (let x = 0; x < this.size; x++) {
-            this.matrix[x][this.size - 1] = 0;
-            this.matrix[this.size - 1][x] = 0;
-        }
-    }
-    removeVertex(vertex) {
-        if (vertex < 0 || vertex > this.size - 1) console.error(`Invalid vertex.`);
-        else {
-            while(vertex < this.size - 1) {
-                for (let x = 0; x < this.size; x++) {
-                    this.matrix[x][vertex] = graph[x][vertex - 1];
-                }
-                for (let x = 0; x < this.size; x++) {
-                    this.matrix[vertex][x] = graph[vertex - 1][x];
-                }
-                vertex++;
-            }
-            this.matrix.pop();
-            this.size--;
-        }
-    }
-    printMatrix() {
-        for (let x = 0; x < this.size; x++) {
-            let row = ``;
-            for (let y = 0; y < this.size; y++) row += ` ${this.matrix[x][y]}`;
-            console.log(row);
-        }
-    }
-}
-class Graph3 {
-    constructor(size = 1) { 
-        this.size = size;
-        this.matrix = [];
-        for (let x = 0; x < size; x++) {
-            this.matrix.push([]);
-            for (let y = 0; y < size; y++) this.matrix[x][y] = 0;
-        }
-    }
-    addEdge(v1, v2, weight = 1) {
-        if (v1 > this.size - 1 || v2 > this.size - 1) {
-            console.error(`Invalid vertex.`);
-            return new Error("Invalid vertex.");
-        }
-        else if (v1 === v2) {
-            console.error(`Same vertex.`);
-            return new Error("Same vertex.");
-        }
-        else {
             this.matrix[v1][v2] = weight;
             this.matrix[v2][v1] = weight;
         }
     }
     removeEdge(v1, v2) {
         if (v1 > this.size - 1 || v2 > this.size - 1) {
-            console.error(`Invalid vertex.`);
-            return new Error("Invalid vertex.");
-        }
-        else if (v1 === v2) {
-            console.error(`Same vertex.`);
-            return new Error("Same vertex.");
-        }
-        else {
-            this.matrix[v1][v2] = 0;
-            this.matrix[v2][v1] = 0;
-        }
-    }
-    addVertex() {
-        this.size++;
-        this.matrix.push([]);
-        for (let x = 0; x < this.size; x++) {
-            this.matrix[x][this.size - 1] = 0;
-            this.matrix[this.size - 1][x] = 0;
-        }
-    }
-    removeVertex(v1) {
-        if (v1 < 0 || v1 > this.size - 1) {
-            console.error("Invalid vertex.");
-            return new Error("Invalid vertex.");
+            console.error(`Invalid vertex`);
+            return new Error(`Invalid vertex`);
+        } else if (v1 === v2) {
+            console.error(`Vertexes are identical.`);
+            return new Error(`Identical vertexes`);
         } else {
-            while (v1 < this.size - 1) {
-                for (let x = 0; x < this.size; x++) {
-                    this.matrix[x][v1] = graph[x][v1 - 1];
-                }
-                for (let x = 0; x < this.size; x++) {
-                    this.matrix[v1][x] = graph[v1 - 1][x];
-                }
-                v1++;
-            }
-            this.matrix.pop();
-            this.size--;
-        }
-    }
-    printMatrix() {
-        for (let x = 0; x < this.size; x++) {
-            let row = ``;
-            for (let y = 0; y < this.size; y++) row += `${this.matrix[x][y]}`;
-            console.log(row);
-        }
-    }
-}
-class Graph4 {
-    constructor(size = 1) {
-        this.size = size;
-        this.matrix = [];
-        for (let x = 0; x < size; x++) {
-            this.matrix.push([]);
-            for (let y = 0; y < size; y++) this.matrix[x][y] = 0;
-        }
-    }
-    addEdge(v1, v2, weight = 1) {
-        if (v1 > this.size - 1 || v2 > this.size - 1) {
-            console.error(`Invalid vertex.`);
-            return new Error(`Invalid vertex.`);
-        }
-        else if (v1 === v2) {
-            console.error(`Same vertex.`);
-            return new Error(`Same vertex`);
-        }
-        else {
-            this.matrix[v1][v2] = weight;
-            this.matrix[v2][v1] = weight;
-        }
-    }
-    removeEdge(v1, v2) {
-        if (v1 > this.size - 1 || v2 > this.size - 1) {
-            console.error(`Invalid vertex.`);
-            return new Error(`Invalid vertex.`);
-        } 
-        else if (v1 === v2) {
-            console.error(`Same vertex.`);
-            return new Error(`Same vertex.`);
-        } 
-        else {
             this.matrix[v1][v2] = 0;
             this.matrix[v2][v1] = 0;
         }
@@ -251,8 +110,7 @@ class Graph4 {
         if (v1 < 0 || v1 > this.size - 1) {
             console.error(`Invalid vertex.`);
             return new Error(`Invalid vertex.`);
-        }
-        else {
+        } else {
             while (v1 < this.size - 1) {
                 for (let x = 0; x < this.size; x++) {
                     this.matrix[x][v1] = graph[x][v1 - 1];
@@ -260,7 +118,6 @@ class Graph4 {
                 for (let x = 0; x < this.size; x++) {
                     this.matrix[v1][x] = graph[v1 - 1][x];
                 }
-                v1++;
             }
             this.matrix.pop();
             this.size--;
@@ -289,20 +146,20 @@ class Graph {
             console.error(`Invalid vertex`);
             return new Error(`Invalid vertex`);
         } else if (v1 === v2) {
-            console.error(`Vertexes are identical.`);
-            return new Error(`Identical vertexes`);
+            console.error(`Same vertex`);
+            return new Error(`Same vertex`);
         } else {
             this.matrix[v1][v2] = weight;
             this.matrix[v2][v1] = weight;
         }
     }
     removeEdge(v1, v2) {
-        if (v1 > this.size - 1 || v2 > this.size - 1) {
+        if (v1 >this.size - 1 || v2 > this.size - 1) {
             console.error(`Invalid vertex`);
             return new Error(`Invalid vertex`);
         } else if (v1 === v2) {
-            console.error(`Vertexes are identical.`);
-            return new Error(`Identical vertexes`);
+            console.error(`Same vertexes`);
+            return new Error(`Same vertexes`);
         } else {
             this.matrix[v1][v2] = 0;
             this.matrix[v2][v1] = 0;
@@ -318,16 +175,12 @@ class Graph {
     }
     removeVertex(v1) {
         if (v1 < 0 || v1 > this.size - 1) {
-            console.error(`Invalid vertex.`);
-            return new Error(`Invalid vertex.`);
+            console.error(`Invalid vertex`);
+            return new Error(`Invalid vertex`);
         } else {
             while (v1 < this.size - 1) {
-                for (let x = 0; x < this.size; x++) {
-                    this.matrix[x][v1] = graph[x][v1 - 1];
-                }
-                for (let x = 0; x < this.size; x++) {
-                    this.matrix[v1][x] = graph[v1 - 1][x];
-                }
+                for (let x = 0; x < this.size; x++) this.matrix[x][v1] = graph[x][v1 - 1];
+                for (let x = 0; x < this.size; x++) this.matrix[v1][x] = graph[v1 - 1][x];
             }
             this.matrix.pop();
             this.size--;
@@ -341,7 +194,6 @@ class Graph {
         }
     }
 }
-
 /*
 
 class Graph {
