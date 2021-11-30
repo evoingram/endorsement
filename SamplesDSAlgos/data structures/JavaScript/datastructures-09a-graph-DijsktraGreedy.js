@@ -281,7 +281,7 @@ class Graph3 {
         console.log(` distances = ${JSON.stringify(distances)}`);
     }
 }
-class Graph {
+class Graph4 {
     constructor() {
         this.vertices = [];
         this.alist = {};
@@ -338,6 +338,63 @@ class Graph {
         console.log(` distances = ${JSON.stringify(distances)}`);
     }
 };
+class Graph {
+    constructor() {
+        this.vertices = [];
+        this.alist = {};
+    }
+    addVertex = (v1) => {
+        this.vertices.push(v1);
+        this.alist[v1] = {};
+    };
+    addEdge = (v1, v2, weight) => this.alist[v1][v2] = weight;
+    printGraph = () => {
+        let keys = Object.keys(this.alist);
+        for (let key of keys) {
+            let values = Object.values(this.alist[key]);
+            let conc = ``;
+            for (let value of values) conc += `${value} `;
+            console.log(`${key} -> ${conc}`);
+        }
+        console.log(this.alist);
+    }
+    vertexWithMinDistance = (distances, visited) => {
+        let mindist = Infinity;
+        let minvert = null;
+        for (let vertex in distances) {
+            let distance = distances[vertex];
+            if (distance < mindist && !visited.has(vertex)) {
+                mindist = distance;
+                minvert = vertex;
+            }
+        }
+        return minvert;
+    };
+    dijkstra = (source) => {
+        let distances = {}, parents = {}, visited = new Set();
+        for (let x = 0; x < this.vertices.length; x++) {
+            if (this.vertices[x] === source) distances[source] = 0;
+            else distances[this.vertices[x]] = Infinity;
+            parents[this.vertices[x]] = null;
+        };
+        let cv = this.vertexWithMinDistance(distances, visited);
+        while (cv !== null) {
+            let distance = distances[cv];
+            let neighbors = this.alist[cv];
+            for (let neighbor in neighbors) {
+                let newdist = distance + neighbors[neighbor];
+                if (distances[neighbor] > newdist) {
+                    distances[neighbor] = newdist;
+                    parents[neighbor] = cv;
+                }
+            };
+            visited.add(cv);
+            cv = this.vertexWithMinDistance(distances, visited);
+        }
+        console.log(`   parents = ${JSON.stringify(parents)}`);
+        console.log(` distances = ${JSON.stringify(distances)}`);
+    };
+}
 
 /*
 class Graph {
