@@ -204,8 +204,31 @@ class LRUCache1 {
         }
     }
 }
-class LRUCache {
+class LRUCache2 {
     constructor(limit) {
+        this.limit = limit;
+        this.storage = {};
+        this.nlist = new DoublyLinkedList();
+    }
+    get = (key) => {
+        if (!key in this.storage) return null;
+        let listval = this.storage[key];
+        let node = this.nlist.find(key);
+        this.nlist.moveToFront(node);
+        return listval;
+    }
+    set = (key, value) => {
+        this.storage[key] = value;
+        let node = this.nlist.find(key);
+        this.nlist.moveToFront(node);
+        if (this.nlist.length > this.limit) {
+            delete this.storage[this.nlist.tail.element];
+            this.storage.pop();
+        }
+    }
+}
+class LRUCache {
+    constructor(limit = 10) {
         this.limit = limit;
         this.storage = {};
         this.nlist = new DoublyLinkedList();
@@ -239,6 +262,14 @@ let lruc = new LRUCache();
 lruc.set(1, "Erica");
 lruc.set(2, "Adam");
 lruc.set(3, "Muffin Man");
+lruc.set(4, "Candy Man");
+lruc.set(5, "Hubs");
+lruc.set(6, "John");
+lruc.set(7, "Jacob");
+lruc.set(8, "Santa");
+lruc.set(9, "Santa Claus");
+lruc.set(10, "Hank Hill");
+lruc.set(11, "Peggy Hill");
 console.log(`Erica = ${lruc.get(1)}`);
 console.log(`Adam = ${lruc.get(2)}`);
 console.log(`Muffin Man = ${lruc.get(3)}`);
