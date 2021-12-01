@@ -50,8 +50,26 @@ bubbleSort2 = (oa) => {
             if (oa[y] > oa[y+1]) {
                 yVal = oa[y];
                 nextYVal = oa[y+1];
-                oa[y] = nextYVal;
+                oa[y] = nextYval;
                 oa[y+1] = yVal;
+                swapped = true;
+            }
+        }
+    }
+    return oa;
+}
+
+bubbleSort3 = (oa) => {
+    let n2l = oa.length - 2;
+    let swapped, yval, nyval;
+    for (let x = 0; x < n2l; x++) {
+        swapped = false;
+        for (let y = 0; y < n2l; y++) {
+            if (oa[y] > oa[y+1]) {
+                yval = oa[y];
+                nyval = oa[y+1];
+                oa[y] = nyval;
+                oa[y+1] = yval;
                 swapped = true;
             }
         }
@@ -61,15 +79,15 @@ bubbleSort2 = (oa) => {
 
 bubbleSort = (oa) => {
     let n2l = oa.length - 2;
-    let swapped, yval, nyval;
-    for (let x = 0; x < oa.length; x++) {
+    let swapped, yv, nyv;
+    for (let x = 0; x < n2l; x++) {
         swapped = false;
-        for (let y = 0; y < oa.length; y++) {
+        for (let y = 0; y < n2l; y++) {
             if (oa[y] > oa[y+1]) {
-                yval = oa[y];
-                nyval = oa[y+1];
-                oa[y] = nyval;
-                oa[y+1] = yval;
+                yv = oa[y];
+                nyv = oa[y+1];
+                oa[y] = nyv;
+                oa[y+1] = yv;
                 swapped = true;
             }
         }
