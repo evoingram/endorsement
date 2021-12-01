@@ -72,6 +72,24 @@ quickSort = (oa) => {
     ];
 }
 
+quickSort = (oa) => {
+    if (oa.length < 2) return oa;
+    const flp = Math.random() * oa.length;
+    const oafl = Math.floor(flp);
+    const pivot = oa[oafl];
+    let left = []; let right = []; let equal = [];
+    for (let cv of oa) {
+        if (cv < pivot) left.push(cv)
+        else if (cv > pivot) right.push(cv)
+        else equal.push(cv);
+    }
+    return [
+        ...quickSort(left),
+        equal,
+        ...quickSort(right)
+    ];
+}
+
 // quickSort = (oa) => {}
 
 let items = [5, 3, 7, 6, 2, 9];

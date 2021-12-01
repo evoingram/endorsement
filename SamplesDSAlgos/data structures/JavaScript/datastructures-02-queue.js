@@ -89,7 +89,7 @@ class Queue1 {
     len = () => this.items.length;
     static isQueue(testInstance) { testInstance instanceof Queue }
 }
-class Queue {
+class Queue2 {
     constructor() {
         this.size = 0;
         this.storage = [];
@@ -108,6 +108,32 @@ class Queue {
     printQueue = () => {
         let string = `{ `;
         for (let x = 0; x < this.size; x++) string += `item ${x}:  ${this.storage[x]}, `;
+        string = `${string.trim()} }`;
+        return string;
+    }
+    front = () => this.storage[0];
+    back = () => this.storage[this.size - 1];
+    static isQueue(ti) { return ti instanceof Queue };
+}
+class Queue {
+    constructor() {
+        this.size = 0;
+        this.storage = [];
+    }
+    enqueue = (value) => {
+        this.size++;
+        this.storage.push(value);
+    }
+    dequeue = () => {
+        if (this.size === 0) return null;
+        this.size--;
+        return this.storage.shift();
+    }
+    isEmpty = () => this.size === 0;
+    get len() { return this.size };
+    printQueue = () => {
+        let string = `{ `;
+        for (let x = 0; x < this.size; x++) string += `${x}:  ${this.storage[x]}, `;
         string = `${string.trim()} }`;
         return string;
     }

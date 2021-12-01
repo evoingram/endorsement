@@ -53,7 +53,7 @@ countingSort2 = (oa) => {
     }
     return sa;
 }
-countingSort = (oa) => {
+countingSort3 = (oa) => {
     let min = Math.min(...oa);
     let max = Math.max(...oa);
     const count = {}, sa = [];
@@ -61,6 +61,22 @@ countingSort = (oa) => {
     for (let x = 0; x < oa.length; x++) count[oa[x]]++;
     for (let x = min; x <= max; x++) {
         while (count[x] > 0) {
+            sa.push(x);
+            count[x]--;
+        }
+    };
+    return sa;
+}
+
+countingSort = (oa) => {
+    let min = Math.min(...oa);
+    let max = Math.max(...oa);
+    const count = {};
+    const sa = [];
+    for (let x = min; x <= max; x++) count[x] = 0;
+    for (let x = 0; x < oa.length; x++) count[oa[x]]++;
+    for (let x = min; x <= max; x++) {
+        while(count[x] > 0) {
             sa.push(x);
             count[x]--;
         }

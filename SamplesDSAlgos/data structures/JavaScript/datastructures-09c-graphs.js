@@ -112,7 +112,8 @@ class Graph1 {
         console.log(` parents =   ${JSON.stringify(parents)}`);
         console.log(` distances = ${JSON.stringify(distances)}`);
     }
-}class Graph {
+}
+class Graph2 {
     constructor(v) {
         this.V = v;
         this.alist = new Array(v);
@@ -205,6 +206,167 @@ class Graph1 {
             }
             visited.add(cv);
             cv = this.vertexWithMinDistance(distances, visited);
+        }
+        console.log(` parents =   ${JSON.stringify(parents)}`);
+        console.log(` distances = ${JSON.stringify(distances)}`);
+    }
+}
+class Graph3 {
+    constructor(v) {
+        this.V = v;
+        this.alist = new Array(v);
+        for (let x = 0; x < v; x++) this.alist[x] = [];
+    }
+    addEdge = (v, w) => this.alist[v].push(w);
+    dfsUtil = (v, visited) => {
+        visited[v] = true;
+        for (let x of this.alist[v].values()) if (!visited[x]) this.dfsUtil(x, visited);
+    }
+    dfs = (v) => {
+        let visited = new Array(this.V);
+        for (let x = 0; x < this.V; x++) visited[x] = false;
+        this.dfsUtil(v, visited);
+    }
+    bfs = (startingNode) => {
+        let visited = {};
+        let q = new Queue();
+        visited[startingNode] = true;
+        q.enqueue(startingNode);
+        while (!q.isEmpty()) {
+            let currentQElement = q.dequeue();
+            console.log(currentQElement);
+            let list = Object.values(this.alist[currentQElement]);
+            for (let key in list) {
+                let neighbor = list[key];
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    q.enqueue(neighbor);
+                }
+            }
+        }
+    }
+    printGraph = () => {
+        let keys = Object.keys(this.alist);
+        let string = ``;
+        for (let key of keys) {
+            let values = Object.values(this.alist[key]);
+            for (let value of values) string += `${value} `;
+            console.log(`${key} -> ${string}`);
+            string = ``;
+        }
+    }
+    vertexWithMinDistance = (distances, visited) => {
+        let mindist = Infinity;
+        let minvert = null;
+        for (let vertex in distances) {
+            let distance = distances[vertex];
+            if (distance < mindist && !visited.has(vertex)) {
+                mindist = distance;
+                minvert = vertex;
+            }
+        }
+        return minvert;
+    }
+    dijkstra = (source) => {
+        let distances = {}, parents = {}, visited = new Set();
+        for (let x = 0; x < this.alist.length; x++) {
+            if (this.V[x] === source) distances[source] = 0
+            else distances[this.alist[x]] = Infinity;
+            parents[this.alist[x]] = null;
+        }
+        let cv = this.vertexWithMinDistance(distances, visited);
+        while (cv !== null) {
+            let distance = distances[cv];
+            let neighbors = this.alist[cv];
+            for (let neighbor in neighbors) {
+                let newdist = distance + neighbors[neighbor];
+                if (distances[neighbor] > newdist) {
+                    distances[neighbor] = newdist;
+                    parents[neighbor] = cv;
+                }
+            }
+            visited.add(cv);
+            cv = this.vertexWithMinDistance(distances, visited);
+        }
+        console.log(` parents =   ${JSON.stringify(parents)}`);
+        console.log(` distances = ${JSON.stringify(distances)}`);
+    }
+}
+class Graph {
+    constructor(v) {
+        this.V = v;
+        this.alist = new Array(v);
+        for (let x = 0; x < v; x++) this.alist[x] = [];
+    }
+    addEdge = (v, w) => this.alist[v].push(w);
+    dfsUtil = (v, visited) => {
+        visited[v] = true;
+        for (let x of this.alist[v].values()) if (!visited[x]) this.dfsUtil(x, visited);
+    }
+    dfs = (v) => {
+        let visited = new Array(this.V);
+        for (let x = 0; x < this.V; x++) visited[x] = false;
+        this.dfsUtil(v, visited);
+    }
+    bfs = (startingNode) => {
+        let visited = {};
+        let q = new Queue();
+        visited[startingNode] = true;
+        q.enqueue(startingNode);
+        while (!q.isEmpty()) {
+            let currentQelement = q.dequeue();
+            console.log(currentQelement);
+            let list = Object.values(this.alist[currentQelement]);
+            for (let key in list) {
+                let neighbor = list[key];
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    q.enqueue(neighbor);
+                }
+            }
+        }
+    }
+    printGraph = () => {
+        let keys = Object.keys(this.alist);
+        for (let key of keys) {
+            let string = ``;
+            let values = Object.values(this.alist[key]);
+            for (let value of values) string += `${value}`;
+            console.log(`${key} ${string}`);
+        }
+    }
+    vertexWithMinDistance = (distances, visited) => {
+        let mindist = Infinity;
+        let minvert = null;
+        for (let vertex in distances) {
+            let distance = distances[vertex];
+            if (distance < mindist && !visited.has(vertex)) {
+                mindist = distance;
+                minvert = vertex;
+            }
+        }
+        return minvert;
+    }
+    dijkstra = (source) => {
+        let distances = {}, parents = {}, visited = new Set();
+        for (let x = 0; x < this.alist.length; x++) {
+            if (this.V[x] === source) distances[source] = 0
+            else distances[this.alist[x]] = Infinity;
+            parents[this.alist[x]] = null;
+        }
+        let cv = this.vertexWithMinDistance(distances, visited);
+        while (cv !== null) {
+            let distance = distances[cv];
+            let neighbors = this.alist[cv];
+            for (let neighbor in neighbors) {
+                let newdist = distance + neighbors[neighbor];
+                if (distances[neighbor] > newdist) {
+                    distances[neighbor] = newdist;
+                    parents[neighbor] = cv;
+                }
+            }
+            visited.add(cv);
+            cv = this.vertex(distances, visited);
         }
         console.log(` parents =   ${JSON.stringify(parents)}`);
         console.log(` distances = ${JSON.stringify(distances)}`);

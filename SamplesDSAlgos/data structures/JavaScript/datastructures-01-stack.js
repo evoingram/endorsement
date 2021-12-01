@@ -74,7 +74,7 @@ class Stack2 {
     get last() { return this.storage[this.size - 1] }
     static isStack(testInstance) { return testInstance instanceof Stack }
 }
-class Stack {
+class Stack3 {
     constructor() {
         this.size = 0;
         this.storage = [];
@@ -92,6 +92,25 @@ class Stack {
     len = () => this.size;
     get last() { return this.storage[this.size - 1] };
     static isStack(ti) { return ti instanceof Stack };
+}
+class Stack {
+    constructor() {
+        this.size = 0;
+        this.storage = [];
+    }
+    push = (value) => {
+        this.size++;
+        this.storage.push(value);
+    }
+    pop = () => {
+        if (this.size === 0) return null;
+        this.size--;
+        return this.storage.pop();
+    }
+    isEmpty = () => this.size === 0;
+    len = () => this.size;
+    get last() { return this.storage[this.size - 1] }
+    static isStack(ti) { return ti instanceof Stack }
 }
 
 /*
