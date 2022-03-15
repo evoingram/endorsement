@@ -261,6 +261,11 @@ I have read and highly recommend every one of these.
 * [ ] Pro Git
 * [ ] Elements of Computing Systems:  Building a Modern Computer from First Principles
 * [ ] Art of Computer Programming
+* [ ] Node.js Design Patterns
+* [ ] Programming TypeScript
+* [ ] Common Sense Guide to Data Structures & Algorithms
+* [ ] Clean Craftsmanship
+* [ ] Code That Fits In Your Head
 
 ## What project do I do next?
 
