@@ -225,6 +225,10 @@ I have read and highly recommend every one of these.
 * [X] Code Complete, Steve McConnell
 * [X] Enterprise Integration Patterns, Gregor, Hohpe, Woolf
 * [X] Atomic Habits, James Clear
+* [X] How To Win Friends and Influence People
+* [X] Pragmatic Programmer
+* [X] Bullet Journal
+* [X] ActiveMQ In Action
 
 #### On my shelf to read
 
