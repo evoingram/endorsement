@@ -250,22 +250,21 @@ I have read and highly recommend every one of these.
 * [ ] Working Effectively with Legacy Code, Michael Feathers
 * [ ] Docker Bootcamp, McKendrick, Raj, Chelladhurai, Singh
 * [ ] Hands-On Design Patterns with Kotlin, Alexey Soshin
-* [ ] RabbitMQ Essentials, Johansson, Dossot
 * [ ] SQL For Data Analytics, Malik, Goldwasser
 * [ ] SQL Antipatterns, Bill Karwin
-* [ ] Node.js Design Patterns, Casciaro, Mammino
-* [ ] Natural Language Processing in Action, Lane, Hapke
 * [ ] Beautiful Code
-* [ ] Beej's TCPIP Guide
-* [ ] Assembly Language for x86 Processors
 * [ ] Pro Git
-* [ ] Elements of Computing Systems:  Building a Modern Computer from First Principles
-* [ ] Art of Computer Programming
-* [ ] Node.js Design Patterns
-* [ ] Programming TypeScript
 * [ ] Common Sense Guide to Data Structures & Algorithms
 * [ ] Clean Craftsmanship
 * [ ] Code That Fits In Your Head
+* [ ] RabbitMQ Essentials, Johansson, Dossot
+* [ ] Node.js Design Patterns, Casciaro, Mammino
+* [ ] Programming TypeScript
+* [ ] Natural Language Processing in Action, Lane, Hapke
+* [ ] Beej's TCPIP Guide
+* [ ] Assembly Language for x86 Processors
+* [ ] Elements of Computing Systems:  Building a Modern Computer from First Principles
+* [ ] Art of Computer Programming
 
 ## What project do I do next?
 
