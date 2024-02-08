@@ -1,6 +1,6 @@
 // Binary Search Trees:
-// Average: O(log n) for insertion, deletion, and search
-// Worst case: O(n) if the tree is skewed
+// Time Complexity: O(h) for insertion, deletion, and search, where h is the height of the tree (average case)
+// Space Complexity: O(n)
 class TreeNode(var value: Int) {
     var left: TreeNode? = null
     var right: TreeNode? = null

@@ -1,4 +1,6 @@
-// Bloom Filter: O(k), where k is the number of hash functions
+// Bloom Filter:
+// Time Complexity: O(k) for insertion and search, where k is the number of hash functions
+// Space Complexity: O(n)
 class BloomFilter(private val size: Int) {
     private val bitArray = BooleanArray(size)
 

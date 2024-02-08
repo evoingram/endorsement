@@ -1,4 +1,6 @@
-// Insertion Sort: O(n^2)
+// Insertion Sort:
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)
 fun insertionSort(arr: IntArray) {
     val n = arr.size
     for (i in 1 until n) {

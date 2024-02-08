@@ -1,4 +1,6 @@
-// Quick Sort: O(n log n) average case, O(n^2) worst case
+// Quick Sort:
+// Time Complexity: O(n log n) average case, O(n^2) worst case
+// Space Complexity: O(log n) average case, O(n) worst case
 fun quickSort(arr: IntArray, low: Int, high: Int) {
     if (low < high) {
         val pivotIndex = partition(arr, low, high)

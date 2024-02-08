@@ -1,4 +1,6 @@
-// Selection Sort: O(n^2)
+// Selection Sort:
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)
 fun selectionSort(arr: IntArray) {
     val n = arr.size
     for (i in 0 until n - 1) {

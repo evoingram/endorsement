@@ -1,5 +1,6 @@
-// Linked Lists Double: O(1) for
-// insertion and deletion at the beginning or end, O(n) for search
+// Linked Lists Double:
+// Time Complexity: O(1) for insertion and deletion at the beginning, O(n) for insertion and deletion at the end or in the middle
+// Space Complexity: O(n)
 class ListNode(var value: Int) {
     var prev: ListNode? = null
     var next: ListNode? = null

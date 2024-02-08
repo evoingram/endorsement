@@ -1,4 +1,6 @@
-// Stacks: O(1) for insertion and deletion at the top
+// Stacks:
+// Time Complexity: O(1) for push and pop operations
+// Space Complexity: O(n)
 class Stack<T> {
     val items: MutableList<T> = mutableListOf()
 

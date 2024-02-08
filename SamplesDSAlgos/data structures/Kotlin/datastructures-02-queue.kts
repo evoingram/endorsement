@@ -1,4 +1,6 @@
-// Queues: O(1) for insertion and deletion at the end, O(1) for retrieval of the front element
+// Queues:
+// Time Complexity: O(1) for enqueue and dequeue operations
+// Space Complexity: O(n)
 class Queue<T> {
     val items: MutableList<T> = mutableListOf()
 

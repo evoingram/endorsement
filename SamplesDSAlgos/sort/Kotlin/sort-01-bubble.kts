@@ -1,9 +1,6 @@
 // Bubble Sort:
-// Time Complexity:
-// Best Case: O(n) - when the array is already sorted
-// Average Case: O(n^2)
-// Worst Case: O(n^2) - when the array is sorted in reverse order
-// Space Complexity: O(1) - it is an in-place sorting algorithm
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)
 fun bubbleSort(arr: IntArray) {
     val n = arr.size
     var swapped: Boolean

@@ -1,4 +1,6 @@
-// Binary Search: O(log n)
+// Binary Search:
+// Time Complexity: O(log n)
+// Space Complexity: O(1)
 fun binarySearch(arr: IntArray, target: Int): Int {
     var left = 0
     var right = arr.size - 1

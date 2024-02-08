@@ -1,6 +1,8 @@
 import kotlin.random.Random
 
-// Skip Lists: O(log n) for search, insertion, and deletion
+// Skip Lists:
+// Time Complexity: O(log n) for search, insertion, and deletion
+// Space Complexity: O(n log n)
 class SkipListNode(var value: Int, var next: MutableList<SkipListNode?>)
 
 class SkipList {

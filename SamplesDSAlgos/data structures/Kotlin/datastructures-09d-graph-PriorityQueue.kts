@@ -1,9 +1,8 @@
 import java.util.*
 
-// The time complexity of Dijkstra's algorithm
-// using a priority queue is typically O((V+E)log V)
-// where V is the number of vertices and
-// E is the number of edges in the graph.
+// Dijkstra's using priority queue:
+// Time Complexity: O((V + E) log V)
+// Space Complexity: O(V + E)
 class Graph {
     private val vertices: MutableMap<Int, MutableMap<Int, Int>> = mutableMapOf()
 

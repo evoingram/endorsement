@@ -1,4 +1,6 @@
-// Min Heaps: O(log n) for insertion and extraction of the minimum element
+// Min Heaps:
+// Time Complexity: O(n log n) for building the heap, O(log n) for insertion and deletion
+// Space Complexity: O(n)
 
 class MinHeap {
     private val heap = mutableListOf<Int>()

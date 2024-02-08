@@ -1,6 +1,6 @@
-// Counting Sort: O(n + k), where
-// n is the number of elements and
-// k is the range of input
+// Counting Sort:
+// Time Complexity: O(n + k), where n is the number of elements and k is the range of the input
+// Space Complexity: O(n + k)
 fun countingSort(arr: IntArray) {
     val maxValue = arr.maxOrNull() ?: return
     val countArray = IntArray(maxValue + 1) { 0 }

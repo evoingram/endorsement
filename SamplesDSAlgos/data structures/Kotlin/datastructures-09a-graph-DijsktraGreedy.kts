@@ -1,7 +1,8 @@
 import java.util.*
 
-// Dijsktra's Greedy: O((V + E) * log V)
-// using a min heap priority queue for the relaxed edges
+// Dijsktra's Greedy:
+// Time Complexity: O((V + E) log V) using priority queue with binary heap or Fibonacci heap
+// Space Complexity: O(V + E) for the adjacency list representation
 class WeightedGraph(private val numVertices: Int) {
     private val adjacencyList: Array<MutableList<Pair<Int, Int>>> = Array(numVertices) { mutableListOf() }
 
