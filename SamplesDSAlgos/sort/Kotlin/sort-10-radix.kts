@@ -1,3 +1,6 @@
+// Radix Sort: O(n * k), where
+// n is the number of elements and
+// k is the number of digits in the largest number.
 fun radixSort(arr: IntArray) {
     val maxDigits = getMaxDigits(arr)
 

@@ -1,3 +1,6 @@
+// Bucket Sort: O(n + k), where
+// n is the number of elements and
+// k is the number of buckets
 fun bucketSort(arr: DoubleArray) {
     val n = arr.size
     val buckets = Array<MutableList<Double>>(n) { mutableListOf() }

@@ -1,3 +1,6 @@
+// Binary Search Trees:
+// Average: O(log n) for insertion, deletion, and search
+// Worst case: O(n) if the tree is skewed
 class TreeNode(var value: Int) {
     var left: TreeNode? = null
     var right: TreeNode? = null

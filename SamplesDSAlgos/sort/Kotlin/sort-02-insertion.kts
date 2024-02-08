@@ -1,3 +1,4 @@
+// Insertion Sort: O(n^2)
 fun insertionSort(arr: IntArray) {
     val n = arr.size
     for (i in 1 until n) {

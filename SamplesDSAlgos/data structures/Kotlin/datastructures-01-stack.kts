@@ -1,3 +1,4 @@
+// Stacks: O(1) for insertion and deletion at the top
 class Stack<T> {
     val items: MutableList<T> = mutableListOf()
 

@@ -1,3 +1,4 @@
+// Linked Lists Single: O(n) for insertion, deletion, and search
 class ListNode(var value: Int) {
     var next: ListNode? = null
 }

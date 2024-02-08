@@ -1,3 +1,6 @@
+// Hash Tables:
+// Average: O(1) for insertion, deletion, and search (assuming a good hash function)
+// Worst case: O(n) if there are many collisions
 class HashTable<K, V>(private val capacity: Int) {
     private val table: Array<MutableList<Pair<K, V>>> = Array(capacity) { mutableListOf() }
 

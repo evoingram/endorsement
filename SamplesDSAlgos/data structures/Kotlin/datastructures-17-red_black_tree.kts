@@ -1,3 +1,6 @@
+// Red-Black Tree:
+// O(log n) for insertion, deletion, and search
+// O(1) for rotations and color changes
 enum class Color {
     RED,
     BLACK

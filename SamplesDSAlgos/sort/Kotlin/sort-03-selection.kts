@@ -1,3 +1,4 @@
+// Selection Sort: O(n^2)
 fun selectionSort(arr: IntArray) {
     val n = arr.size
     for (i in 0 until n - 1) {

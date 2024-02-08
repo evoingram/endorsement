@@ -1,3 +1,4 @@
+// Bloom Filter: O(k), where k is the number of hash functions
 class BloomFilter(private val size: Int) {
     private val bitArray = BooleanArray(size)
 

@@ -1,3 +1,4 @@
+// greedy:  O(n), where n is the number of coins used in the solution.
 fun coinChange(coins: List<Int>, amount: Int): List<Int>? {
     val sortedCoins = coins.sortedDescending() // Sort coins in descending order
     var remainingAmount = amount

@@ -1,3 +1,4 @@
+// Queues: O(1) for insertion and deletion at the end, O(1) for retrieval of the front element
 class Queue<T> {
     val items: MutableList<T> = mutableListOf()
 

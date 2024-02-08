@@ -1,3 +1,4 @@
+// Min and Max Heaps: O(log n) for insertion, extraction of the minimum/maximum element
 class MinHeap<T : Comparable<T>> {
     private val heapArray = mutableListOf<T>()
 

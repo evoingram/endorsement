@@ -1,3 +1,6 @@
+// Tries:
+// O(m) for insertion, deletion, and search, where m is the length of the key
+// Space complexity: O(n * m), where n is the number of keys and m is the average length of a key
 class TrieNode {
     val children = mutableMapOf<Char, TrieNode>()
     var isEndOfWord = false

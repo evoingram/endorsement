@@ -1,3 +1,4 @@
+// Max Heaps: O(log n) for insertion and extraction of the maximum element
 class MaxHeap {
     private val heap = mutableListOf<Int>()
 

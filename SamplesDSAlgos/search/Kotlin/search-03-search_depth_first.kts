@@ -1,3 +1,6 @@
+// Depth-First Search (DFS): O(V + E), where
+// V is the number of vertices and
+// E is the number of edges in the graph.
 class Graph(private val numVertices: Int) {
     private val adjacencyList: Array<MutableList<Int>> = Array(numVertices) { mutableListOf() }
 

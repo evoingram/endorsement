@@ -1,5 +1,7 @@
 import java.util.*
 
+// Dijsktra's Greedy: O((V + E) * log V)
+// using a min heap priority queue for the relaxed edges
 class WeightedGraph(private val numVertices: Int) {
     private val adjacencyList: Array<MutableList<Pair<Int, Int>>> = Array(numVertices) { mutableListOf() }
 

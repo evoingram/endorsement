@@ -1,3 +1,9 @@
+// Timsort:
+// Time Complexity:
+// Best Case: O(n log n)
+// Average Case: O(n log n)
+// Worst Case: O(n log n)
+// Space Complexity: O(n) - it uses auxiliary space for merging
 class TimSort {
     private val MIN_MERGE = 32
 

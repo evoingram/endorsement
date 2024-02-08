@@ -1,3 +1,4 @@
+// LRU Cache: O(1) for get and put operations
 class LRUCache(private val capacity: Int) {
     private val cache: MutableMap<Int, Int> = LinkedHashMap(capacity, 0.75f, true)
 

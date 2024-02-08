@@ -1,3 +1,5 @@
+// Graphs Adjacency Matrix:
+// O(V^2) for space and O(V^2) for search (for unweighted graphs)
 class AdjacencyMatrix(private val numVertices: Int) {
     private val matrix: Array<IntArray> = Array(numVertices) { IntArray(numVertices) }
 

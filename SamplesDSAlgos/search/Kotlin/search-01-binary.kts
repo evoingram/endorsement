@@ -1,3 +1,4 @@
+// Binary Search: O(log n)
 fun binarySearch(arr: IntArray, target: Int): Int {
     var left = 0
     var right = arr.size - 1
@@ -41,6 +42,7 @@ main()
 
 
 /*
+
 This code defines a binarySearch function that takes
 a sorted array and a target value and returns the index of the
 target value if it exists in the array, otherwise returns -1.

@@ -1,3 +1,4 @@
+// Merge Sort: O(n log n)
 fun mergeSort(arr: IntArray) {
     if (arr.size < 2) {
         return

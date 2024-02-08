@@ -1,4 +1,5 @@
-// MinHeap data structure
+// Min Heaps: O(log n) for insertion and extraction of the minimum element
+
 class MinHeap {
     private val heap = mutableListOf<Int>()
 

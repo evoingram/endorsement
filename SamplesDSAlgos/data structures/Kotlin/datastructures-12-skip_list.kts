@@ -1,5 +1,6 @@
 import kotlin.random.Random
 
+// Skip Lists: O(log n) for search, insertion, and deletion
 class SkipListNode(var value: Int, var next: MutableList<SkipListNode?>)
 
 class SkipList {

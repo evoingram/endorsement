@@ -1,3 +1,6 @@
+// AVL Tree:
+// O(log n) for insertion, deletion, and search
+// O(log n) for rotation operations
 class TreeNode(var key: Int) {
     var left: TreeNode? = null
     var right: TreeNode? = null

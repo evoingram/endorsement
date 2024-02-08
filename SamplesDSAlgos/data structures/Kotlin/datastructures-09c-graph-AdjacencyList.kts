@@ -1,4 +1,5 @@
-
+// Graphs Adjacency List:
+// O(V + E) for space and O(V + E) for search
 class Graph(private val numVertices: Int) {
     private val adjacencyList: Array<MutableList<Int>> = Array(numVertices) { mutableListOf() }
 

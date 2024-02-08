@@ -1,3 +1,4 @@
+// Linked Lists Reverse: O(n) for reversing the list
 class ListNode(var value: Int) {
     var next: ListNode? = null
 }
