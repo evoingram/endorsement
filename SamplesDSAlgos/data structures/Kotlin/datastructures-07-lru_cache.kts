@@ -1,3 +1,6 @@
+// LRU Cache:
+// Time Complexity: O(1) for cache access and update
+// Space Complexity: O(n)
 class LRUCache(private val capacity: Int) {
     private val cache: MutableMap<Int, Int> = LinkedHashMap(capacity, 0.75f, true)
 

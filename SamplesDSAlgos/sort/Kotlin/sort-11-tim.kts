@@ -1,3 +1,6 @@
+// Timsort:
+// Time Complexity: O(n log n)
+// Space Complexity: O(n)
 class TimSort {
     private val MIN_MERGE = 32
 

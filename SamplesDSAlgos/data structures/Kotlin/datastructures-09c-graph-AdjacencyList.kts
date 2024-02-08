@@ -1,4 +1,6 @@
-
+// Graphs Adjacency List:
+// Time Complexity:
+// Adjacency Matrix: O(V^2) for space complexity, O(V^2)
 class Graph(private val numVertices: Int) {
     private val adjacencyList: Array<MutableList<Int>> = Array(numVertices) { mutableListOf() }
 

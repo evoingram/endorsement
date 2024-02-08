@@ -1,3 +1,6 @@
+// Linear Search:
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 fun linearSearch(arr: IntArray, target: Int): Int {
     for (i in arr.indices) {
         if (arr[i] == target) {

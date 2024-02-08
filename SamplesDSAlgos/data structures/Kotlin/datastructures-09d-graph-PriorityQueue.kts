@@ -1,5 +1,8 @@
 import java.util.*
 
+// Dijkstra's using priority queue:
+// Time Complexity: O((V + E) log V)
+// Space Complexity: O(V + E)
 class Graph {
     private val vertices: MutableMap<Int, MutableMap<Int, Int>> = mutableMapOf()
 

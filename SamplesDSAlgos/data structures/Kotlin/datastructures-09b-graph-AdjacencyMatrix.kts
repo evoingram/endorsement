@@ -1,3 +1,6 @@
+// Graphs Adjacency Matrix:
+// Time Complexity:
+// Adjacency Matrix: O(V^2) for space complexity, O(V^2)
 class AdjacencyMatrix(private val numVertices: Int) {
     private val matrix: Array<IntArray> = Array(numVertices) { IntArray(numVertices) }
 

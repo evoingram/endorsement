@@ -1,3 +1,6 @@
+// Bubble Sort:
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)
 fun bubbleSort(arr: IntArray) {
     val n = arr.size
     var swapped: Boolean

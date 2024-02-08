@@ -1,3 +1,6 @@
+// Merge Sort:
+// Time Complexity: O(n log n)
+// Space Complexity: O(n)
 fun mergeSort(arr: IntArray) {
     if (arr.size < 2) {
         return

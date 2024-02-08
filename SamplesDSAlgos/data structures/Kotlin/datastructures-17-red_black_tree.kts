@@ -1,3 +1,9 @@
+// Red-Black Tree:
+// Time Complexity:
+// Search: O(log n)
+// Insertion: O(log n)
+// Deletion: O(log n)
+// Space Complexity: O(n)
 enum class Color {
     RED,
     BLACK

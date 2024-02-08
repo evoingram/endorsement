@@ -1,3 +1,6 @@
+// AVL Tree:
+// Time Complexity: O(log n) for insertion, deletion, and search
+// Space Complexity: O(n)
 class TreeNode(var key: Int) {
     var left: TreeNode? = null
     var right: TreeNode? = null

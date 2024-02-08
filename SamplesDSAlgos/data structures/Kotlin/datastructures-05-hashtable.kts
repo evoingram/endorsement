@@ -1,3 +1,6 @@
+// Hash Tables:
+// Time Complexity: O(1) average case for insertion, deletion, and search
+// Space Complexity: O(n)
 class HashTable<K, V>(private val capacity: Int) {
     private val table: Array<MutableList<Pair<K, V>>> = Array(capacity) { mutableListOf() }
 

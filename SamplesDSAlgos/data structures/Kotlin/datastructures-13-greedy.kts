@@ -1,3 +1,6 @@
+// greedy:
+// Time Complexity: O(n), where n is the number of coins in the coin denominations list
+// Space Complexity: O(1)
 fun coinChange(coins: List<Int>, amount: Int): List<Int>? {
     val sortedCoins = coins.sortedDescending() // Sort coins in descending order
     var remainingAmount = amount

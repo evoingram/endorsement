@@ -1,3 +1,6 @@
+// Depth-First Search (DFS):
+// Time Complexity: O(V + E)
+// Space Complexity: O(V) (for recursive implementation)
 class Graph(private val numVertices: Int) {
     private val adjacencyList: Array<MutableList<Int>> = Array(numVertices) { mutableListOf() }
 

@@ -1,4 +1,6 @@
-
+// Min and Max Heaps:
+// Time Complexity: O(log n) for insertion, deletion, and search
+// Space Complexity: O(n)
 class MaxHeap {
     private val heapArray = mutableListOf<Int>()
 

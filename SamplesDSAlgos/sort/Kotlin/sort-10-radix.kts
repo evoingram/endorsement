@@ -1,3 +1,9 @@
+// Radix Sort:
+// Time Complexity: O(d(n + k)),
+// where d is the number of digits in the input,
+// n is the number of elements, and
+// k is the range of the input
+// Space Complexity: O(n + k)
 fun radixSort(arr: IntArray) {
     val maxDigits = getMaxDigits(arr)
 
