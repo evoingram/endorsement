@@ -1,32 +1,28 @@
+// MinHeap data structure
 class MinHeap {
-    private val heapArray = mutableListOf<Int>()
+    private val heap = mutableListOf<Int>()
 
     fun insert(value: Int) {
-        heapArray.add(value)
-        heapifyUp(heapArray.size - 1)
+        heap.add(value)
+        heapifyUp(heap.size - 1)
     }
 
     fun extractMin(): Int {
-        if (heapArray.isEmpty()) {
-            throw NoSuchElementException("Heap is empty")
-        }
+        if (heap.isEmpty()) throw NoSuchElementException("Heap is empty")
 
-        val minValue = heapArray[0]
-        val lastValue = heapArray.removeAt(heapArray.size - 1)
+        val min = heap[0]
+        heap[0] = heap.last()
+        heap.removeAt(heap.size - 1)
+        heapifyDown(0)
 
-        if (heapArray.isNotEmpty()) {
-            heapArray[0] = lastValue
-            heapifyDown(0)
-        }
-
-        return minValue
+        return min
     }
 
     private fun heapifyUp(index: Int) {
         var currentIndex = index
         while (currentIndex > 0) {
             val parentIndex = (currentIndex - 1) / 2
-            if (heapArray[currentIndex] < heapArray[parentIndex]) {
+            if (heap[parentIndex] > heap[currentIndex]) {
                 swap(currentIndex, parentIndex)
                 currentIndex = parentIndex
             } else {
@@ -40,61 +36,78 @@ class MinHeap {
         while (true) {
             val leftChildIndex = 2 * currentIndex + 1
             val rightChildIndex = 2 * currentIndex + 2
-            var smallestChildIndex = currentIndex
+            var smallestIndex = currentIndex
 
-            if (leftChildIndex < heapArray.size && heapArray[leftChildIndex] < heapArray[smallestChildIndex]) {
-                smallestChildIndex = leftChildIndex
+            if (leftChildIndex < heap.size && heap[leftChildIndex] < heap[smallestIndex]) {
+                smallestIndex = leftChildIndex
+            }
+            if (rightChildIndex < heap.size && heap[rightChildIndex] < heap[smallestIndex]) {
+                smallestIndex = rightChildIndex
             }
 
-            if (rightChildIndex < heapArray.size && heapArray[rightChildIndex] < heapArray[smallestChildIndex]) {
-                smallestChildIndex = rightChildIndex
-            }
-
-            if (smallestChildIndex != currentIndex) {
-                swap(currentIndex, smallestChildIndex)
-                currentIndex = smallestChildIndex
+            if (smallestIndex != currentIndex) {
+                swap(currentIndex, smallestIndex)
+                currentIndex = smallestIndex
             } else {
                 break
             }
         }
     }
 
-    private fun swap(i: Int, j: Int) {
-        val temp = heapArray[i]
-        heapArray[i] = heapArray[j]
-        heapArray[j] = temp
+    private fun swap(index1: Int, index2: Int) {
+        val temp = heap[index1]
+        heap[index1] = heap[index2]
+        heap[index2] = temp
     }
 
     fun printHeap() {
-        println("Min Heap: ${heapArray.joinToString(", ")}")
+        println("Min Heap:")
+        println(heap)
     }
 }
 
-fun main() {
+// Min heap sort
+fun minHeapSort(array: IntArray): IntArray {
     val minHeap = MinHeap()
+    for (element in array) {
+        minHeap.insert(element)
+    }
 
-    // Insert elements into the heap
-    minHeap.insert(4)
-    minHeap.insert(7)
-    minHeap.insert(2)
-    minHeap.insert(9)
-    minHeap.insert(1)
+    val sortedArray = IntArray(array.size)
+    for (i in sortedArray.indices) {
+        sortedArray[i] = minHeap.extractMin()
+    }
 
-    minHeap.printHeap()
-
-    // Extract and print the minimum element
-    val minElement = minHeap.extractMin()
-    println("Minimum element extracted: $minElement")
-    minHeap.printHeap()
-
-    // Extract and print the minimum element again
-    val minElementAgain = minHeap.extractMin()
-    println("Minimum element extracted again: $minElementAgain")
-    minHeap.printHeap()
+    return sortedArray
 }
+
+fun main() {
+    // Example of MinHeap data structure
+    val minHeap = MinHeap()
+    minHeap.insert(4)
+    minHeap.insert(2)
+    minHeap.insert(8)
+    minHeap.insert(1)
+    minHeap.insert(5)
+    minHeap.printHeap()
+
+    // Example of Min heap sort
+    val unsortedArray = intArrayOf(4, 2, 8, 1, 5)
+    val sortedArray = minHeapSort(unsortedArray)
+    println("Sorted Array using Min Heap Sort:")
+    println(sortedArray.contentToString())
+}
+
 
 main()
 
 /*
-
+This code demonstrates the usage of both a
+min heap data structure and min heap sort in Kotlin.
+The MinHeap class implements the min heap data
+structure with methods for insertion and extraction
+of the minimum element. The minHeapSort function takes
+an input array, uses a min heap to sort it in non-decreasing
+order, and returns the sorted array. Both examples print
+their outputs to the console to demonstrate their correctness.
  */
